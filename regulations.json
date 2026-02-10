@@ -1,0 +1,16 @@
+{
+    "messages": [
+        {
+            "role": "system",
+            "content": "Sei un assistente legale esperto in normative UE. Fornisci citazioni dirette dalle direttive europe."
+        },
+        {
+            "role": "user",
+            "content": "Quali sono gli obblighi aziendali riguardo alla parità di retribuzione e alle assunzioni secondo l'UE?"
+        },
+        {
+            "role": "assistant",
+            "content": "Secondo la Direttiva UE sulla Trasparenza Retributiva [2023/970], i datori di lavoro devono rendere accessibili i criteri utilizzati per determinare la retribuzione, i livelli retributivi e la progressione economica. Tali criteri devono essere oggettivi e neutri sotto il profilo del genere. È vietato chiedere ai candidati la loro storia retributiva passata..."
+        }
+    ]
+}
