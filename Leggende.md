@@ -1,4 +1,4 @@
-# PRIMA LEGGEnDA
+# PRIMA LEGGENDA
 
 **Titolo:**
 L'Equazione della Trasparenza: Applicare la Direttiva UE 2023/970 per chiudere il Gender Pay Gap
@@ -8,20 +8,20 @@ TechNova Italia è una media azienda di servizi digitali in rapida crescita, all
 
 **Personaggi:**
 
-* **Laura Conti**, HR Manager e middle manager operativo, responsabile delle politiche retributive
+* **Elena Rossi**, HR Manager e middle manager operativo, responsabile delle politiche retributive
 * **Marco De Santis**, CFO, focalizzato sul contenimento dei costi
-* **Elena Rinaldi**, Team Lead IT, portavoce informale delle preoccupazioni del team
+* **Laura Rinaldi**, Team Lead IT, portavoce informale delle preoccupazioni del team
 * **Il Comitato Direttivo**, attento ai risultati trimestrali
 
 **La Storia:**
-Laura Conti si trovò davanti a un bivio quando il CFO le propose di applicare un aumento salariale uniforme “a pacchetto”, basato su medie storiche, evitando un’analisi dettagliata delle retribuzioni per genere. Sarebbe stato veloce, poco costoso e avrebbe rispettato il budget, ma Laura sapeva che quella scorciatoia rischiava di cristallizzare differenze retributive già esistenti. La pressione era reale: il board voleva chiudere il ciclo di revisione in due settimane e qualsiasi analisi approfondita avrebbe richiesto tempo e consulenze.
+Elena Rossi si trovò davanti a un bivio quando il CFO le propose di applicare un aumento salariale uniforme “a pacchetto”, basato su medie storiche, evitando un’analisi dettagliata delle retribuzioni per genere. Sarebbe stato veloce, poco costoso e avrebbe rispettato il budget, ma Laura sapeva che quella scorciatoia rischiava di cristallizzare differenze retributive già esistenti. La pressione era reale: il board voleva chiudere il ciclo di revisione in due settimane e qualsiasi analisi approfondita avrebbe richiesto tempo e consulenze.
 
-Durante una riunione serale, Laura si prese un momento per riflettere. Ripensò alla **Direttiva UE 2023/970 sulla trasparenza retributiva**, che impone alle aziende di garantire parità di retribuzione per lavoro di pari valore e di poter dimostrare, con dati oggettivi, l’assenza di gender pay gap ingiustificati. Discutendone con Elena, espresse chiaramente il punto: ignorare quell’analisi non era solo un rischio etico, ma un rischio tecnico e legale. “La Direttiva 2023/970 ci obbliga alla trasparenza e alla tracciabilità dei criteri salariali. Se oggi risparmiamo tempo, domani pagheremo in sanzioni e perdita di fiducia”, disse, mettendo nero su bianco le implicazioni normative.
+Durante una riunione serale, Elena si prese un momento per riflettere. Ripensò alla **Direttiva UE 2023/970 sulla trasparenza retributiva**, che impone alle aziende di garantire parità di retribuzione per lavoro di pari valore e di poter dimostrare, con dati oggettivi, l’assenza di gender pay gap ingiustificati. Discutendone con Laura, espresse chiaramente il punto: ignorare quell’analisi non era solo un rischio etico, ma un rischio tecnico e legale. “La Direttiva 2023/970 ci obbliga alla trasparenza e alla tracciabilità dei criteri salariali. Se oggi risparmiamo tempo, domani pagheremo in sanzioni e perdita di fiducia”, disse, mettendo nero su bianco le implicazioni normative.
 
-La decisione non fu semplice, ma Laura scelse la via etica. Avviò un’analisi interna delle retribuzioni disaggregate per genere e ruolo, utilizzando criteri oggettivi di valutazione del lavoro. Presentò al CFO un piano pragmatico: correggere gradualmente le disparità emerse, comunicare in modo trasparente i criteri adottati e integrare il processo nei cicli HR futuri per ridurre i costi nel tempo. Il risultato fu concreto: il gender pay gap nei ruoli tecnici chiave si ridusse sensibilibilmente già nel primo anno, l’azienda evitò rischi di non-compliance e, soprattutto, registrò un aumento misurabile dell’engagement e della retention femminile. La trasparenza, anziché un costo, si rivelò un investimento sostenibile.
+La decisione non fu semplice, ma Elena scelse la via etica. Avviò un’analisi interna delle retribuzioni disaggregate per genere e ruolo, utilizzando criteri oggettivi di valutazione del lavoro. Presentò al CFO un piano pragmatico: correggere gradualmente le disparità emerse, comunicare in modo trasparente i criteri adottati e integrare il processo nei cicli HR futuri per ridurre i costi nel tempo. Il risultato fu concreto: il gender pay gap nei ruoli tecnici chiave si ridusse sensibilibilmente già nel primo anno, l’azienda evitò rischi di non-compliance e, soprattutto, registrò un aumento misurabile dell’engagement e della retention femminile. La trasparenza, anziché un costo, si rivelò un investimento sostenibile.
 
 
-# SECOnDA LEGGEnDA
+# SECONDA LEGGENDA
 
 **Titolo:**
 Equilibrio ai Vertici: Implementare una Leadership Inclusiva
@@ -45,7 +45,7 @@ Nonostante le resistenze iniziali, Giulia portò avanti la decisione etica. Form
 
 
 
-# terza LEGGEnDA
+# TERZA LEGGENDA
 
 **Titolo:**
 Il Valore della Cura Condivisa: Normalizzare i Congedi Maschili
@@ -70,7 +70,7 @@ Con quella consapevolezza, Andrea scelse la via etica. Riorganizzò il piano di 
 
 
 
-# quarta LEGGEnDA
+# QUARTA LEGGENDA
 
 **Titolo:**
 Oltre il Bias: Garantire Pari Opportunità nell'Accesso al Lavoro
@@ -96,7 +96,7 @@ Forte di quella posizione, Chiara scelse la via etica. Portò la valutazione sui
 
 
 
-# quinta LEGGEnDA
+# QUINTA LEGGENDA
 
 
 
