@@ -1,3 +1,73 @@
+### 10/04/2026
+
+The challenge in detail
+1. DONE: Request from Dr. Lara Mauri an invitation for your group to our project on the
+   FineTuneDB platform and make yourself familiar with the interface via the
+   tutorials
+
+
+2. DONE: Read the paper “Using Legends to Embed Ethics Into AI-based Decision-
+   Making”, available on the course Ariel site
+
+3. DONE: Choose one of the regulations on gender equality or on sustainable
+   finance mentioned in the paper’s introduction.
+
+   GENDER EQUALITY
+
+4. Use an LLM of your choice between Grok, Copilot, and ChatGPT to generate
+   five legends, i.e., stories with characters showing concrete compliance with
+   the regulations. Use the same prompt across all LLMs (For example: “Prepare
+   a story involving fictitious characters and showing a concrete example of
+   compliance to the EU Gender Equality Strategy”). See Appendix A for a sample
+   legend.
+
+5. Devise a strategy for converting your legends and the chosen regulation text
+   into JSONL format to match the FineTuneDB input format.
+
+   - I have found this paper for transforming the regulation text into qa dataset
+     for fine tuning: [SustainableQA: A Comprehensive Question Answering Dataset
+     for Corporate Sustainability and EU Taxonomy
+     Reporting](https://arxiv.org/pdf/2508.03000)
+   
+   - How I transform the legends in QA dataset??
+     I think the same strategy applies.
+
+
+6. Choose one of the free open-pretrained LLMs available on FineTuneDB and
+   tune it using the legend inputs.
+
+7. Use the same open-pretrained LLM and tune it using the regulation text (the
+   total number of lines in the JSONL encoding must be roughly the same for the
+   two models).
+
+8. Consult the GLUE (General Language Understanding Evaluation) benchmark
+   website, which provides comprehensive information about the tasks, datasets,
+   and evaluation metrics used in GLUE
+
+   The original research paper titled "GLUE: A Multi-Task Benchmark and Analysis
+   Platform for Natural Language Understanding" by Alex Wang, Amanpreet Singh,
+   Julian Michael, Felix Hill,
+
+9. Propose an adaptation of the GLUE benchmark for LLMs to the topic of your
+   choice, gender equality or sustainable finance (guidance in Appendix B)
+
+10. Run your benchmark for the open pretrained LLM and the two versions tuned
+(i) using legends and (ii) using the regulation text.
+
+11. Conduct an explainability analysis using an appropriate interpretability method
+(e.g., SHAP, LIME, attention visualization, etc.) applied to a sample of model
+predictions. Use this analysis to examine how each model justifies its outputs.
+
+12. Prepare a visualization of your results (it is ok to use an LLM for that as well
+)
+
+
+
+
+
+
+### 11/02/2026
+
 # Diario di Progetto: SOASEC
 
 **Autori:** Fatmir Bylyshi, Ilyass Ouardi
