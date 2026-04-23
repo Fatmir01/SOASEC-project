@@ -12,7 +12,22 @@ The challenge in detail
 3. DONE: Choose one of the regulations on gender equality or on sustainable
    finance mentioned in the paper’s introduction.
 
-   GENDER EQUALITY
+   GENDER EQUALITY: EU Gender Equality Strategy 2020-2025
+
+   Regolamentazione: EU Gender Equality Strategy 2020-2025 Te la confermo come
+   scelta migliore per questi motivi:
+   - Ha obiettivi concreti e discreti (pay gap, women on boards, violenza di
+   genere, stereotipi, partecipazione al mercato del lavoro) che si prestano
+   bene sia alla generazione di legends sia alla creazione di task per il
+   benchmark.
+   - L'Appendix A del progetto mostra già un esempio di legend su questa
+   regolamentazione, quindi hai un riferimento chiaro su cosa ci si aspetta.
+   - Il paper del professore la usa come esempio principale, il che ti allinea
+   con le aspettative.
+
+
+   Esiste anche la EU Gender Equality Strategy 2026-2030: aggiornare o usare
+   quella vecchia??
 
 4. Use an LLM of your choice between Grok, Copilot, and ChatGPT to generate
    five legends, i.e., stories with characters showing concrete compliance with
@@ -21,16 +36,119 @@ The challenge in detail
    compliance to the EU Gender Equality Strategy”). See Appendix A for a sample
    legend.
 
+   - Abbiamo deciso di generare 15 leggende, 5 per ogni LLM: all'orale possiamo
+   dire che abbiamo sfruttato tutti e tre gli LLM per massimizzare la diversità
+   stilistica e contestuale dei dati di training, spiegando che leggende
+   generate da modelli diversi introducono variabilità che rende il fine-tuning
+   più robusto.
+
+   - Abbiamo introdotto un passaggio di quality check per eliminare eventuali
+   leggende troppo simili tra loro (ad esempio se due LLM hanno prodotto storie
+   quasi identiche sullo stesso pilastro). 
+   
+   Claude: Da quello che ho letto, le 15 sono sufficientemente diverse — stessi
+   temi ma contesti, personaggi e soluzioni differenti.
+
+   Faccio l'analisi e poi creo il file corretto. Ecco cosa ho trovato:
+   Problemi individuati:
+
+   - Copilot Legend 2 cita la "Employment Equality Directive (2000/78/EC)" — è
+   sbagliato. Quella direttiva copre discriminazione per religione, disabilità,
+   età, orientamento sessuale, ma non il genere. Va sostituita con la Direttiva
+   2006/54/CE. 
+   
+   - Copilot Legend 4 è ambientata in Svizzera. La Svizzera non è membro
+   UE — è debole come esempio di compliance EU anche con la nota "operating across
+   the EU." Cambio il paese. 
+   
+   - Pillar 2 (AI/stereotipi): le 3 leggende sono le più
+   simili tra loro (tutte: AI screening CV → bias → audit → fix). Sono comunque
+   sufficientemente diverse per contesto e soluzioni, quindi le tengo, ma rafforzo
+   le differenze. 
+   
+   - Alcune leggende di ChatGPT hanno riferimenti normativi troppo
+   vaghi — aggiungo i riferimenti precisi alla Strategy (sezione e pagina).
+
+   - Uniformo il formato di tutte e 15 (stessa struttura, stessi heading).
+
+
+
+
 5. Devise a strategy for converting your legends and the chosen regulation text
    into JSONL format to match the FineTuneDB input format.
 
-   - I have found this paper for transforming the regulation text into qa dataset
-     for fine tuning: [SustainableQA: A Comprehensive Question Answering Dataset
-     for Corporate Sustainability and EU Taxonomy
+
+   - I have found this paper for transforming the regulation and legends text
+     into qa dataset for fine tuning: [SustainableQA: A Comprehensive Question
+     Answering Dataset for Corporate Sustainability and EU Taxonomy
      Reporting](https://arxiv.org/pdf/2508.03000)
-   
-   - How I transform the legends in QA dataset??
-     I think the same strategy applies.
+
+   SustainableQA dataset generation pipeline adattata al nostro caso specifico:
+
+   - Data acquisition: sostituita dai punti precedenti di generazione delle
+     leggende e il testo della regolamentazione già disponibile.
+
+   - Document preprocessing:  Raw PDF reports undergo streamlined preprocessing
+      to convert them into a structured, clean, and manageable format. 
+
+      1. The regulation's PDF is first transformed into Markdown text using the
+      Marker library (Paruchuri, 2024), which preserves structural elements. 
+
+      [Marker library (Paruchuri, 2024)](https://github.com/datalab-to/marker)
+
+      Input: file della regolamentaione in PDF 
+         `gender-equality-strategy-2026-2030.pdf`
+
+      Process: script che usa marker library per trasformare questo file in md
+         `document_preprocessing\pre_processing.py`
+
+      Output: gender-equality-strategy-2026-2030.md
+         `documents\pre_processing_output\gender-equality-strategy-2020-2025.md`
+
+
+      2. The Markdown is then cleaned to remove non-substantive elements such as
+      footnotes, images, and page markers, while consolidating blank lines and
+      removing empty heading sections.
+
+         - Post-processing sul file Markdown generato tramite regole regex.
+
+         Cleaning: ./gender-equality-strategy-2020-2025.md
+         Original: 64723 chars
+         Cleaned:  64188 chars
+         Reduction: 0.8%
+
+         `documents\gender-equality-strategy-2020-2025_cleaned.md`
+
+      3. Finally, the cleaned text is segmented into semantically coherent
+      passages based on markdown headings, with a word-count constraint (e.g.,
+      max_words=350) applied to ensure each passage remains within an optimal
+      context window for subsequent LLM-based processing. 
+
+         - Questa fase si basa su una segmentazione basata sugli heading con
+           vincolo di max parole.
+
+            Total passages: 42
+            Word counts: min=5, max=348, avg=202
+
+         - (mettiamo il codice della funzione python della segmentazione?)
+
+            
+
+      Note: SustainableQA prevedeva una diversa gestione delle tabelle cosa a
+      noi non utile in quanto ne il testo della regolamentazione ne quello delle
+      leggende ne contiene.
+
+
+   - Q&N dataset generation:
+
+
+     - FASE 1 — Content Classification (equivalente a SustainableQA §3.3) Ogni
+      leggenda è stata classificata per pillar della Strategy usando keyword matching.
+      Risultato: 3 legends per ciascuno dei 5 pilastri, nessun contenuto "Unknown"
+      scartato. Tutte le regolamentazioni citate sono state identificate
+      automaticamente. All'orale: "Ho classificato ogni leggenda per pillar tematico
+      per garantire copertura completa della Strategy e per taggare ogni coppia Q&A
+      con il suo dominio normativo."
 
 
 6. Choose one of the free open-pretrained LLMs available on FineTuneDB and
