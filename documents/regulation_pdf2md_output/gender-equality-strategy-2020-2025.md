@@ -124,7 +124,7 @@ Women and girls form the vast majority of victims of trafficking in human beings
 
 The EU needs comprehensive, updated and comparable data for policies on combating gender-based violence to be effective. To get a complete picture of gender-based violence, data should be disaggregated by relevant intersectional aspects and indicators such as age, disability status, migrant status and rural-urban residence. An EU-wide survey, coordinated by Eurostat, will provide data on the prevalence and dynamics of violence against women and other forms of interpersonal violence, with results presented in 2023.
 
-#### Challenging gender stereotypes
+### Challenging gender stereotypes
 
 Gender stereotypes are a root cause of gender inequality and affect all areas of society<sup>27</sup>. Stereotypical expectations based on fixed norms for women and men, girls and boys, limit their aspirations, choices and freedom, and therefore need to be dismantled. Gender stereotypes strongly contribute to the gender pay gap. They are often combined with other
 
@@ -162,13 +162,13 @@ https://ec.europa.eu/programmes/creative-europe/node\_en.
 
 https://ec.europa.eu/digital-single-market/en/media-sub-programme-creative-europe.
 
-#### In addition to the Commission actions listed above, the Commission calls:
+**In addition to the Commission actions listed above, the Commission calls:**
 
-#### - on the Council to:
+**- on the Council to:**
 
 • conclude the EU's accession to the Istanbul Convention and ensure swift EU ratification.
 
-#### on the Member States to:
+**on the Member States to:**
 
 - ratify and implement the Istanbul Convention;
 - ratify and implement the ILO Convention to combat violence and harassment in the world of work:
@@ -180,7 +180,7 @@ https://ec.europa.eu/digital-single-market/en/media-sub-programme-creative-europ
 
 A prosperous and social Europe depends on us all. Women and men in all their diversity should have equal opportunities to thrive and be economically independent, be paid equally for their work of equal value, have equal access to finance and receive fair pensions. Women and men should equally share caring and financial responsibilities.
 
-#### Closing gender gaps in the labour market
+### Closing gender gaps in the labour market
 
 Increasing women's participation in the labour market has a strong, positive impact on the economy, notably in the context of a shrinking workforce and skills shortages. It also empowers women to shape their own lives, play a role in public life and be economically independent.
 
@@ -264,7 +264,7 @@ The **Updated Skills Agenda for Europe** will help address horizontal segregatio
 
 In the Commission's forthcoming **communication on the European Education Area**, gender equality will be put forward as one of the key elements. The renewed **strategic framework for gender equality in sport** will promote women's and girls' participation in sport and physical activity and gender balance in leadership positions within sport organisations.
 
-#### Addressing the gender pay and pension gap
+### Addressing the gender pay and pension gap
 
 The principle of equal pay for equal work or work of equal value has been enshrined in the Treaties since 1957 and translated into EU law. It ensures that there are legal remedies in case of discrimination. Yet, women still earn on average less than men<sup>55</sup>. Accumulated lifetime gender employment and pay gaps result in an even wider pension gap and consequently older women are more at risk of poverty than men.
 
@@ -296,7 +296,7 @@ Such an initiative will strengthen the rights of employees to get more informati
 
 Reduced earnings, higher concentration in part-time work and career gaps linked to women's caring responsibilities contribute substantially to the **gender pension gap**. In the 2021 edition of the **Pension Adequacy Report**, the Commission, together with the Council's Social Protection Committee, will assess how risks and resources are shared in pension systems between women and men. To protect pension rights and encourage equal sharing of care responsibilities between women and men, the Commission will explore with Member States and stakeholders the provision of **pension credits for care-related career breaks in occupational pension schemes**, as recommended by the High-level group on pensions<sup>59</sup>.
 
-#### Closing the gender care gap
+### Closing the gender care gap
 
 Thriving at work while managing caring responsibilities at home is a challenge, especially for women. Women often align their decision to work, and how to work, with their caring responsibilities and with whether and how these duties are shared with a partner. This is a particular challenge for single parents, most of whom are women<sup>60</sup>, and for people living in remote rural areas for whom support solutions are often lacking. Women also carry a disproportionate burden of unpaid work, which constitutes a significant share of economic activity<sup>61</sup>.
 
@@ -326,7 +326,7 @@ The Commission will continue supporting Member States' work on improving the ava
 
 At the end of 2020, the Commission will launch the consultation process for a Green Paper on Ageing with a focus on long-term care, pensions and active ageing.
 
-### In addition to the Commission actions listed above, the Commission calls on Member **States to:**
+**In addition to the Commission actions listed above, the Commission calls on Member States to:**
 
 - transpose the Work-Life Balance Directive and properly implement EU gender equality and labour law<sup>65</sup>;
 - follow up on the Council conclusions of June 2019 "Closing the Gender Pay Gap: Key Policies and Measures";
@@ -403,19 +403,19 @@ The Commission will support Member States in developing and implementing more ef
 
 <sup>&</sup>lt;sup>77</sup> https://ec.europa.eu/info/policies/justice-and-fundamental-rights/gender-equality/who-we-work-gender-equality/mutual-learning-programme-gender-equality en.
 
-### **In addition to the Commission actions listed above, the Commission calls:**
+**In addition to the Commission actions listed above, the Commission calls:**
 
-## - **on the European Parliament and the Council to:**
+**- on the European Parliament and the Council to:**
 
 - adopt the proposal for a Directive on improving the gender balance on corporate boards; and
 - adopt measures to improve gender balance at all levels of their management and in leadership positions.
 
-### - **on the Member States to:**
+**- on the Member States to:**
 
 - transpose and implement the Directive on improving the gender balance on corporate boards, once adopted; and
 - develop and implement strategies to increase the number of women in decisionmaking positions in politics and policy-making.
 
-# **4. Gender mainstreaming and an intersectional perspective in EU policies**
+## **4. Gender mainstreaming and an intersectional perspective in EU policies**
 
 **The core challenges affecting the EU today – including the green and digital transitions and demographic change – all have a gender dimension**. The inclusion of a gender perspective in all EU policies and processes is essential to reach the goal of gender equality.
 
@@ -461,7 +461,7 @@ The Commission's guidance on **socially responsible public procurement** will fi
 
 In line with repeated calls by several Member States and the European Parliament<sup>82</sup> , **the Commission will look at the gender impact of its activities and at how to measure expenditure related to gender equality at programme level** in the 2021-2027 MFF. The outcome of the recently launched audit by the European Court of Auditors on **gender mainstreaming in the EU budget** to promote equality will contribute to this process. This will improve gender mainstreaming in the Commission's budget process, further increasing the contribution made by policy design and resource allocation to gender equality objectives.
 
-# **6. Addressing gender equality and women's empowerment across the world**
+## **6. Addressing gender equality and women's empowerment across the world**
 
 **Gender inequality is a global problem. Gender equality and women's empowerment is a core objective of EU external action.** It is important that the EU's internal and external actions in this field are coherent and mutually reinforce each other. The EU promotes gender equality and women's empowerment in its international partnerships, political and human rights dialogues with third countries, EU trade policy as well as in the EU's neighbourhood and enlargement policies, including in the context of accession negotiations and the Stabilisation and Association Process. Moreover, gender-related actions are included in the EU's actions in fragile, conflict and emergency situations.
 
