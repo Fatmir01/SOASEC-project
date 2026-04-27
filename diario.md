@@ -1,3 +1,23 @@
+### 26/04/2026
+
+1. Data Acquisition
+2. Document Preprocessing
+   2.1 Regulation text conversion pdf2md
+   2.2 Markdown cleaning
+   2.3 Segmentation
+      2.3.1 Thematic segmentation
+      2.3.2 Word-count constrained sub-segmentation
+3. Legends Generation
+4. Question-Answering Dataset Generation
+  4.1 Passage Classification.
+  4.2 Two-Stage LLM-Driven Span Extraction for Factoid Q&A 
+    4.2.1 Stage 1: LLMAugmented Span Extraction
+    4.2.2 Stage 2: Contextual Verification, Filtering, and Thematic Organization
+  4.3 Text-based Question-Answering
+    4.3.1 Factoid Q&A Generation
+    4.3.2 Non-Factoid Q&A Generation
+
+
 
 ### 23/04/2026
 
@@ -63,6 +83,14 @@ Legends or champion profiles can be defined as idealized representations of
 individuals who perfectly embody the traits, behaviors, and characteristics that
 align with regulatory requirements and organizational values.
 
+To generate our legends we used a two stage pipeline:
+1. Regulation text preprocessing
+2. llm based legend generation
+
+
+
+
+
 We used the example legend from Appendix A as a base to draft our system prompt
 that will be used across all LLMs:
 
@@ -111,7 +139,7 @@ The context used for the $n-th$ legend is found in
 `prompts/regulation_chunk_n.md`.
 
 
-### LLM-based refinement
+##### LLM-based refinement
 Generated legends undergo streamlined preprocessing to convert them into a
 structured, standard, and manageable format. Each legend is standardized in line
 with the structure presented below using an LLM (Gemini). This preprocessing
