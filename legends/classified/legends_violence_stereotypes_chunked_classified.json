@@ -1,0 +1,96 @@
+{
+  "source_file": "legends_violence_stereotypes_chunked.md",
+  "taxonomy": "EU Gender Equality Strategy 2020-2025",
+  "chunks": [
+    {
+      "chunk_number": 1,
+      "title": "Breaking the Silence Protocol",
+      "subtitle": null,
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 2,
+      "title": "Breaking the Silence Protocol",
+      "subtitle": "Setting",
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 3,
+      "title": "Breaking the Silence Protocol",
+      "subtitle": "Characters",
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 4,
+      "title": "Breaking the Silence Protocol",
+      "subtitle": "The Story",
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 5,
+      "title": "Breaking the Silence Protocol",
+      "subtitle": "The Story",
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 6,
+      "title": "The Code of Neutrality",
+      "subtitle": null,
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 7,
+      "title": "The Code of Neutrality",
+      "subtitle": "Setting",
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 8,
+      "title": "The Code of Neutrality",
+      "subtitle": "Characters",
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 9,
+      "title": "The Code of Neutrality",
+      "subtitle": "The Story",
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 10,
+      "title": "The Code of Neutrality",
+      "subtitle": "The Story",
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 11,
+      "title": "Breaking the Silence",
+      "subtitle": null,
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 12,
+      "title": "Breaking the Silence",
+      "subtitle": "Setting",
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 13,
+      "title": "Breaking the Silence",
+      "subtitle": "Characters",
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 14,
+      "title": "Breaking the Silence",
+      "subtitle": "The Story",
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 15,
+      "title": "Breaking the Silence",
+      "subtitle": "The Story",
+      "classification": "violence_stereotypes"
+    }
+  ]
+}

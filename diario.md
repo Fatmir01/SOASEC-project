@@ -1,3 +1,112 @@
+### 27/04/2026
+
+**Passage classification prompt**
+
+**System Prompt:**
+> You are an expert policy analyst specializing in the EU Gender Equality Strategy 2020-2025. Your task is to accurately classify text chunks into predefined thematic pillars. You must output **only** the exact category label. Do not include any explanations, reasoning, punctuation, or formatting.
+
+**User Prompt Template:**
+> Title: {title}
+> Subtitle: {subtitle}
+> Content: {content}
+> 
+> Based primarily on the Content provided, classify this text chunk into one of the following categories. Use the Title and Subtitle for additional context if needed. Return *only* the single most appropriate class label from the list below. 
+> 
+> Categories:
+> 1) **Freedom from Violence and Stereotypes**: Focuses on eliminating gender-based violence, preventing physical/sexual violence, addressing online harassment, ratifying the Istanbul Convention, and tackling gender bias in AI and media.
+> **Label:** violence_stereotypes
+> 
+> 2) **Thriving in a Gender-Equal Economy**: Focuses on economic independence, closing labor/pay/pension gaps, Work-Life Balance Directive, pay transparency, women in STEM/entrepreneurship, and childcare (Barcelona targets).
+> **Label:** equal_economy
+> 
+> 3) **Leading Equally Throughout Society**: Focuses on women's representation in leadership (politics, agencies, boards), inclusive leadership, Women on Boards Directive, and gender balance in management/elections.
+> **Label:** leadership_participation
+> 
+> 4) **Gender Mainstreaming and Intersectional Perspective**: Focuses on integrating gender into all EU policies (green transition, digital, health), the Task Force for Equality, intersectionality (disability, migrant status, age), and specific initiatives like the Green Deal or Cancer Plan.
+> **Label:** mainstreaming_intersectionality
+> 
+> 5) **Funding and Global Action for Equality**: Focuses on financial mechanisms (MFF, European Social Fund Plus, Horizon Europe) and global empowerment (GAP III, international partnerships, trade).
+> **Label:** funding_global_action
+> 
+> 6) **Unknown**: Encompasses text that does not directly relate to the specific pillars above. Includes semantically irrelevant text, administrative metadata, headers, or general information outside the defined scopes.
+> **Label:** unknown
+
+---
+
+### Python Implementation
+
+
+```python
+def classify_with_llm(title, subtitle, content):
+    """
+    Classifies a chunk into one of the EU Gender Equality Strategy pillars or 'unknown'.
+    """
+    prompt = f"""Title: {title or 'N/A'}
+Subtitle: {subtitle or 'N/A'}
+Content: {content}
+
+Based primarily on the Content provided, classify this text chunk into one of the following categories. Use the Title and Subtitle for additional context if needed. Return *only* the single most appropriate class label from the list below.
+
+Categories:
+1) Freedom from Violence and Stereotypes: Focuses on eliminating gender-based violence, preventing physical/sexual violence, addressing online harassment, ratifying the Istanbul Convention, and tackling gender bias in AI and media.
+Label: violence_stereotypes
+
+2) Thriving in a Gender-Equal Economy: Focuses on economic independence, closing labor/pay/pension gaps, Work-Life Balance Directive, pay transparency, women in STEM/entrepreneurship, and childcare (Barcelona targets).
+Label: equal_economy
+
+3) Leading Equally Throughout Society: Focuses on women's representation in leadership (politics, agencies, boards), inclusive leadership, Women on Boards Directive, and gender balance in management/elections.
+Label: leadership_participation
+
+4) Gender Mainstreaming and Intersectional Perspective: Focuses on integrating gender into all EU policies (green transition, digital, health), the Task Force for Equality, intersectionality (disability, migrant status, age), and specific initiatives like the Green Deal or Cancer Plan.
+Label: mainstreaming_intersectionality
+
+5) Funding and Global Action for Equality: Focuses on financial mechanisms (MFF, European Social Fund Plus, Horizon Europe) and global empowerment (GAP III, international partnerships, trade).
+Label: funding_global_action
+
+6) Unknown: Encompasses text that does not directly relate to the specific pillars above. Includes semantically irrelevant text, administrative metadata, headers, or general information outside the defined scopes.
+Label: unknown"""
+
+    response = together_client.chat.completions.create(
+        model=CLASSIFICATION_MODEL,
+        messages=[
+            {
+                "role": "system", 
+                "content": "You are an expert policy analyst specializing in the EU Gender Equality Strategy 2020-2025. Your task is to accurately classify text chunks into predefined thematic pillars. You must output only the exact category label. Do not include any explanations, reasoning, punctuation, or formatting."
+            },
+            {
+                "role": "user", 
+                "content": prompt
+            },
+        ],
+        max_tokens=10,
+        temperature=0.0, # Lowered to 0.0 for maximum determinism in classification
+        top_p=1,
+        stop=None,
+    )
+    
+    classification_raw = response.choices[0].message.content.strip().lower() # Added .lower() for safety
+
+    valid_classes = [
+        "violence_stereotypes", 
+        "equal_economy", 
+        "leadership_participation", 
+        "mainstreaming_intersectionality", 
+        "funding_global_action", 
+        "unknown"
+    ]
+    
+    # Strip any potential markdown artifacts the LLM might stubbornly include (like `**label**`)
+    clean_classification = classification_raw.replace('*', '').replace('`', '').strip()
+
+    if clean_classification in valid_classes:
+        return clean_classification
+    else:
+        print(f"Warning: LLM returned unexpected classification '{classification_raw}'. Defaulting to unknown.")
+        return "unknown"
+```
+
+Do this for every chunk you find in the file 
+
 ### 26/04/2026
 
 1. Data Acquisition

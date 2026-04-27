@@ -1,0 +1,567 @@
+{
+  "source_file": "gender-equality-strategy-2020-2025_chunked.md",
+  "taxonomy": "EU Gender Equality Strategy 2020-2025",
+  "chunks": [
+    {
+      "chunk_number": 1,
+      "title": "COMMUNICATION FROM THE COMMISSION",
+      "subtitle": "A Union of Equality: Gender Equality Strategy 2020-2025",
+      "classification": "unknown",
+      "spans": { "groups": [] }
+    },
+    {
+      "chunk_number": 2,
+      "title": "TOWARDS A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown",
+      "spans": { "groups": [] }
+    },
+    {
+      "chunk_number": 3,
+      "title": "TOWARDS A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown",
+      "spans": { "groups": [] }
+    },
+    {
+      "chunk_number": 4,
+      "title": "TOWARDS A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown",
+      "spans": { "groups": [] }
+    },
+    {
+      "chunk_number": 5,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": null,
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "Safety Domains",
+            "spans": ["safe in their homes", "close relationships", "public spaces", "online"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["stereotypical gender norms", "chosen educational and professional paths"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 6,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "GBV Prevalence Statistics",
+            "spans": ["33% of women", "22% of women", "55% of women", "physical and/or sexual violence", "violence by an intimate partner", "sexually harassed"]
+          },
+          {
+            "label": "Legal Instruments & EU Accession",
+            "spans": ["Istanbul Convention", "EU's accession to the Istanbul Convention", "Article 83(1) TFEU", "Eurocrimes"]
+          },
+          {
+            "label": "Forms of Gender Violence",
+            "spans": ["sexual harassment", "female genital mutilation (FGM)"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 7,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "Harmful Practices Against Women",
+            "spans": ["female genital mutilation", "forced abortion", "forced sterilisation", "early and forced marriage", "honour-related violence"]
+          },
+          {
+            "label": "Victim Support Instruments",
+            "spans": ["Victims' Rights Strategy", "Victims' Rights Directive"]
+          },
+          {
+            "label": "Prevention & Network Mechanisms",
+            "spans": ["EU network on the prevention of gender-based violence and domestic violence", "ILO Convention"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["women who have a health problem or disability", "non-violent relationships"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 8,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "Online Violence & Platform Policy",
+            "spans": ["Online violence targeting women", "Digital Services Act", "new framework for cooperation between internet platforms"]
+          },
+          {
+            "label": "Trafficking & Sexual Exploitation",
+            "spans": ["trafficking in human beings", "sexual exploitation", "EU strategy on the eradication of trafficking in human beings"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["child sexual abuse"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 9,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "Data Disaggregation Variables",
+            "spans": ["age, disability status, migrant status and rural-urban residence", "intersectional aspects"]
+          },
+          {
+            "label": "GBV Data Collection Mechanisms",
+            "spans": ["EU-wide survey", "Eurostat", "gender-disaggregated data"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["prevalence and dynamics of violence against women", "2023"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 10,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Challenging gender stereotypes",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "AI & Algorithmic Bias",
+            "spans": ["Artificial Intelligence (AI)", "gender biases", "algorithms and related machine-learning"]
+          },
+          {
+            "label": "Cultural Sector Initiatives",
+            "spans": ["Creative Europe", "Music Moves Europe", "gender equality strategy in the audio-visual industry", "MEDIA sub-programme"]
+          },
+          {
+            "label": "Awareness & Research Funding",
+            "spans": ["Horizon Europe", "EU-wide communication campaign combatting gender stereotypes"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 11,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Challenging gender stereotypes",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "Legal Instruments to Ratify/Implement",
+            "spans": ["Istanbul Convention", "ILO Convention", "Victims' Rights Directive", "Child Sexual Abuse Directive"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["citizens, equality, rights and values programme (2021-2027)", "gender-based violence data", "civil society"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 12,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": null,
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Economic Equality Goals",
+            "spans": ["economically independent", "equal pay for work of equal value", "equal access to finance", "fair pensions"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 13,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing gender gaps in the labour market",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Work-Life Balance Policy Instruments",
+            "spans": ["Work-Life-Balance Directive", "family leave", "flexible working arrangements", "childcare"]
+          },
+          {
+            "label": "Labour Market Monitoring Frameworks",
+            "spans": ["European Semester", "Social Scoreboard", "European Pillar of Social Rights", "SDG 5"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["gender employment gap", "caring responsibilities"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 14,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing gender gaps in the labour market",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Gender Investment Gap Statistics",
+            "spans": ["1 in 10 decision-makers", "72% female partners", "92% of all capital invested in Europe", "venture capital and private equity firms"]
+          },
+          {
+            "label": "Women's Entrepreneurship Instruments",
+            "spans": ["Horizon Europe European Innovation Council", "women-led start-ups", "InvestEU programme"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["structural reform support programme", "gender employment gap", "second earners"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 15,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Achieving equal participation across different sectors of the economy",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Women in STEM & Digital Statistics",
+            "spans": ["17% of people in ICT studies and careers", "36% of STEM graduates", "22% of AI programmers are women", "3.1 times greater"]
+          },
+          {
+            "label": "Digital & Education Policy Instruments",
+            "spans": ["Digital Education Action Plan", "Women in Digital", "Skills Agenda for Europe", "European Education Area"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["Youth Guarantee", "vocational education and training", "gender equality in sport"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 16,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Addressing the gender pay and pension gap",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Pay Equality Principles",
+            "spans": ["gender pay gap", "equal pay for equal work or work of equal value"]
+          },
+          {
+            "label": "Pay Transparency Measures",
+            "spans": ["binding measures on pay transparency", "pay transparency"]
+          },
+          {
+            "label": "Structural Labour Inequality",
+            "spans": ["part-time work", "career breaks", "vertical and horizontal segregation"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 17,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Addressing the gender pay and pension gap",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Pension Equality Measures",
+            "spans": ["gender pension gap", "pension credits", "care-related career breaks in occupational pension schemes"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["Pension Adequacy Report", "High-level group on pensions"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 18,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing the gender care gap",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Care Policy Benchmarks",
+            "spans": ["Barcelona targets", "early childhood education and care", "Child Guarantee", "long-term care"]
+          },
+          {
+            "label": "Care Service Funding Instruments",
+            "spans": ["European Social Fund Plus", "European Regional Development Fund", "InvestEU programme", "European Agricultural Fund for Rural Development"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["single parents", "Green Paper on Ageing"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 19,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing the gender care gap",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Legal Instruments for Member States",
+            "spans": ["Work-Life Balance Directive", "gender equality and labour law"]
+          },
+          {
+            "label": "Care Services",
+            "spans": ["early childhood education", "long-term care services"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["Women in Digital"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 20,
+      "title": "3. Leading equally throughout society",
+      "subtitle": null,
+      "classification": "leadership_participation",
+      "spans": {
+        "groups": [
+          {
+            "label": "Individual",
+            "spans": ["led by both women and men"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 21,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation",
+      "spans": {
+        "groups": [
+          {
+            "label": "Corporate Board Parity Instruments",
+            "spans": ["Directive on improving the gender balance on corporate boards", "40% of non-executive members of the under-represented sex", "glass ceiling"]
+          },
+          {
+            "label": "Monitoring & Exchange Mechanisms",
+            "spans": ["EU Platform of Diversity Charters", "European Gender Diversity Index"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["unconscious bias", "inclusive and diverse leadership"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 22,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation",
+      "spans": {
+        "groups": [
+          {
+            "label": "EU Parliament Gender Representation",
+            "spans": ["2024 European Parliament elections", "39% of elected MEPs were women", "37% of MEPs in 2014"]
+          },
+          {
+            "label": "Commission Parity Targets",
+            "spans": ["gender balance of 50% at all levels of its management by the end of 2024", "quantitative targets for female appointments", "leadership development programmes"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["EU agencies", "Mutual Learning Programme in Gender Equality"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 23,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation",
+      "spans": {
+        "groups": [
+          {
+            "label": "Corporate Board & Political Leadership",
+            "spans": ["Directive on improving the gender balance on corporate boards", "women in decision-making positions in politics and policy-making"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 24,
+      "title": "4. Gender mainstreaming and an intersectional perspective in EU policies",
+      "subtitle": null,
+      "classification": "mainstreaming_intersectionality",
+      "spans": {
+        "groups": [
+          {
+            "label": "Mainstreaming Governance Bodies",
+            "spans": ["Task Force for Equality", "Commissioner for Equality"]
+          },
+          {
+            "label": "Green Deal Policy Areas",
+            "spans": ["European Green Deal", "Building Renovation Wave", "EU Strategy on Climate Adaptation"]
+          },
+          {
+            "label": "Gender-Specific Climate Impacts",
+            "spans": ["energy poverty", "climate refugees", "emission-free transport"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["green and digital transitions"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 25,
+      "title": "4. Gender mainstreaming and an intersectional perspective in EU policies",
+      "subtitle": null,
+      "classification": "mainstreaming_intersectionality",
+      "spans": {
+        "groups": [
+          {
+            "label": "Gender-Specific Health Instruments",
+            "spans": ["EU Beating Cancer Plan", "EU Drugs Agenda 2021-2025", "sexual and reproductive health and rights"]
+          },
+          {
+            "label": "Intersectional Identity Groups",
+            "spans": ["migrant woman with a disability", "LGBTI+", "Roma inclusion"]
+          },
+          {
+            "label": "Inclusion Policy Instruments",
+            "spans": ["Action Plan on Integration and Inclusion", "intersectionality"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 26,
+      "title": "5. Funding actions to make progress in gender equality in the EU",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "spans": {
+        "groups": [
+          {
+            "label": "EU Structural Funding Instruments",
+            "spans": ["European Social Fund Plus", "European Regional Development Fund", "Cohesion Fund", "European Maritime and Fisheries Fund", "Multi-Annual Financial Framework"]
+          },
+          {
+            "label": "Rights, Innovation & Migration Funding",
+            "spans": ["InvestEU Programme", "Creative Europe", "Horizon Europe", "Citizens, Equality, Rights and Values Programme", "Asylum and Migration Fund"]
+          },
+          {
+            "label": "Enabling Conditions",
+            "spans": ["national gender equality strategic framework", "Charter of Fundamental Rights", "Common Provisions Regulation", "enabling conditions"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["gender equality plan from applicants"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 27,
+      "title": "5. Funding actions to make progress in gender equality in the EU",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "spans": {
+        "groups": [
+          {
+            "label": "Sectoral Funding Instruments",
+            "spans": ["Common Agricultural Policy", "European Maritime and Fisheries Fund for 2021-2027", "Erasmus+", "blue economy"]
+          },
+          {
+            "label": "Budget Gender Mainstreaming",
+            "spans": ["gender mainstreaming in the EU budget", "European Court of Auditors", "2021-2027 MFF"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["socially responsible public procurement", "Inclusion and Diversity Strategy"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 28,
+      "title": "6. Addressing gender equality and women's empowerment across the world",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "spans": {
+        "groups": [
+          {
+            "label": "EU Global Action Plans & Frameworks",
+            "spans": ["GAPII", "GAP III", "EU Action Plan on Human Rights and Democracy (2020-2024)", "Women, Peace and Security"]
+          },
+          {
+            "label": "Global Programmes & Campaigns",
+            "spans": ["Spotlight Initiative", "EUR 500 million", "#WithHer"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["sexual and reproductive health and rights", "gender-based violence"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 29,
+      "title": "6. Addressing gender equality and women's empowerment across the world",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "spans": {
+        "groups": [
+          {
+            "label": "External Investment Instruments",
+            "spans": ["External Investment Plan", "Women's Financial Inclusion Facility", "EUR 100 million"]
+          },
+          {
+            "label": "Trade & International Engagement",
+            "spans": ["trade policy", "World Trade Organisation", "EU Strategy with Africa"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["85% of all new programmes", "gender mainstreaming"]
+          }
+        ]
+      }
+    },
+    {
+      "chunk_number": 30,
+      "title": "WORKING TOGETHER FOR A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown",
+      "spans": { "groups": [] }
+    }
+  ]
+}

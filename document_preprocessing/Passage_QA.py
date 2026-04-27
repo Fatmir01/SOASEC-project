@@ -174,7 +174,15 @@ def classify_with_llm(title, subtitle, content):
     )
     classification_raw = response.choices[0].message.content.strip()
 
-    valid_classes = ["EU Taxonomy", "ESG", "Sustainability", "Unknown"]
+    valid_classes = [
+        "violence_stereotypes", 
+        "equal_economy", 
+        "leadership_participation", 
+        "mainstreaming_intersectionality", 
+        "funding_global_action", 
+        "Unknown"
+    ]
+    
     if classification_raw in valid_classes:
         return classification_raw
     else:

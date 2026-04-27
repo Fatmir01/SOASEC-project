@@ -85,7 +85,8 @@ distinct area of the regulation:
     need to tackle **gender bias in Artificial Intelligence** and the media to
     ensure that all individuals, in all their diversity, can pursue their
     professional and personal paths without the constraints of traditional
-    gender roles.
+    gender roles.      
+    **Label:** violence_stereotypes     
 2) **Thriving in a Gender-Equal Economy**: This section focuses on achieving
     economic independence for all genders by closing gaps in the labor market, pay,
     and pensions. Key initiatives include the **Work-Life Balance Directive** to
@@ -129,7 +130,10 @@ distinct area of the regulation:
     **Label:** funding_global_action
 
 
-TODO: give names to the thematic clusters
+
+"EU Gender Equality Strategy 2020-2025" + label
+
+
 
 OUTPUT:
 - prompts:
@@ -428,3 +432,197 @@ questions require comprehensive textual analysis rather than isolated fact
 retrieval, eliciting detailed answers that explain relationships, describe
 processes, define concepts, or discuss implications within the passage. The
 generated responses typically span 1-4 sentences.
+
+## 5. Fine-tuning
+
+
+
+
+## 6. GenderEqGLUE: adaptation of GLUE to gender equality
+
+
+Prima di tutto, ho cercato i principi comuni delle ultime strategie EU. Il quadro è chiaro: c'è una continuità strutturale forte ma con un'evoluzione progressiva.
+
+### Parte 1 — Principi comuni dalle strategie EU sulla gender equality
+
+Ho consultato tre documenti chiave: la **Gender Equality Strategy 2020-2025** (quella che state usando), la **Roadmap for Women's Rights del 2025**, e la nuova **Gender Equality Strategy 2026-2030** appena pubblicata.
+
+La Roadmap del 2025 è particolarmente importante perché articola otto principi che guideranno l'azione EU di lungo periodo: (1) freedom from gender-based violence; (2) the highest standards of health; (3) equal pay and economic empowerment; (4) work-life balance and care; (5) equal employment opportunities and adequate working conditions; (6) quality and inclusive education; (7) political participation and equal representation; (8) institutional mechanisms that deliver on women's rights.
+
+La nuova Strategia 2026-2030 amplia lo scope della precedente coprendo tutti i principi della Roadmap, e affronta nuove minacce come la cyberviolenza di genere, le narrative anti-gender e i rischi legati all'AI, che colpiscono particolarmente le donne. Mantiene l'approccio intersezionale e combina gender mainstreaming con azioni mirate.
+
+**Principi trasversali stabili** (presenti in tutte e tre le iterazioni):
+
+1. **Freedom from violence** — fisica, sessuale, psicologica, e ora anche online (cyberviolence, deepfakes)
+2. **Economic empowerment** — pay gap, pension gap, accesso al lavoro
+3. **Leadership e rappresentanza** — board aziendali, politica, decision-making
+4. **Stereotipi e bias** — inclusi i bias nell'AI (presente fin dal 2020 ma rafforzato nel 2026)
+5. **Work-life balance e care** — divisione equa delle responsabilità di cura
+6. **Intersezionalità e mainstreaming** — principi orizzontali, non un pillar isolato
+7. **Health** — nuovo focus dedicato nel 2026-2030 (assente nel 2020-2025 come pillar)
+8. **Educazione inclusiva** — dimensione abilitante presente in entrambe
+
+**Cosa è cambiato dal 2020 al 2026:**
+- AI bias passa da "rischio emergente" a "minaccia concreta" con cyberviolence e deepfakes
+- "Engaging men and boys" diventa esplicito (non solo destinatari ma agenti del cambiamento)
+- Anti-backsliding diventa centrale (proteggere conquiste contro narrative anti-gender)
+- Health emerge come pillar autonomo
+
+---
+
+## Parte 2 — GenderEqGLUE: proposta di benchmark
+
+Ispirandomi alla struttura di GLUE/SuperGLUE, all'esempio dell'Appendix B del professore, e adattando LexGLUE come modello (perché ha già fatto un lavoro analogo nel dominio legale), propongo **5 task** che coprono i principi comuni estratti sopra e che si possono valutare con i tre modelli del vostro esperimento (base, tuned-legends, tuned-regulation).
+
+### Overview dei task
+
+| Task | Descrizione | Tipo GLUE | Sorgente dati | Metrica |
+|---|---|---|---|---|
+| GE-CLS | Pillar Classification | SST-2 / multi-class | QA dataset (vostro) | Macro-F1 |
+| GE-NLI | Compliance Entailment | MNLI / RTE | Legends + Regulation (vostro) | Accuracy |
+| GE-QA | Regulation Reading Comprehension | SQuAD / BoolQ | QA dataset (vostro) | F1 / EM |
+| GE-WSC | Stereotype-Aware Coreference | WSC / WinoBias | WinoBias (open source) | Accuracy + Gender Parity |
+| GE-STANCE | Gender Equality Stance | SST-2 / sentiment | CIVICS + curated (open) | Macro-F1 |
+
+Score finale: media aritmetica dei 5 task (come GLUE).
+
+---
+
+### Task 1 — GE-CLS (Pillar Classification)
+
+**Obiettivo**: dato un passaggio di testo, classificarlo nel pillar di gender equality di appartenenza.
+
+**Formato**: classificazione multi-classe a 6 etichette, allineate ai vostri 5 thematic clusters + unknown:
+- `violence_stereotypes`, `equal_economy`, `leadership_participation`, `mainstreaming_intersectionality`, `funding_global_action`, `unknown`
+
+**Esempio**:
+> Input: "The company introduced binding pay transparency measures and conducted a salary audit across all departments."
+> Label: `equal_economy`
+
+**Dato**: usate i passaggi che avete già classificato nella sezione 4.1 della pipeline. Split 80/10/10 (train/dev/test).
+
+**Mappa GLUE**: SST-2 (single-sentence classification).
+
+**Perché conta**: testa se il modello ha appreso la struttura tematica della regolazione. Il modello base dovrebbe avere accuracy bassa, i due tuned dovrebbero migliorare significativamente.
+
+---
+
+### Task 2 — GE-NLI (Compliance Entailment)
+
+**Obiettivo**: dato uno scenario (premessa) e una clausola di compliance (ipotesi), determinare se lo scenario entails / contraddice / è neutrale rispetto alla clausola.
+
+**Formato**: classificazione a 3 classi (entailment, contradiction, neutral).
+
+**Esempio**:
+> Premise: "TechCorp introduced mentorship programs for women, conducted salary audits, and achieved 45% female representation in leadership."
+> Hypothesis: "TechCorp complies with the Women on Boards Directive target of 40% non-executive directors."
+> Label: `entailment`
+
+**Dato**: lo costruite voi accoppiando passaggi delle legends (scenari positivi → entailment) con clausole della regulation, e generando contraddizioni con perturbazioni (es. "TechCorp achieved only 15% female representation"). Con 3 LLM × 5 legends = 15 legends, potete generare ~150-300 coppie con augmentation.
+
+**Mappa GLUE**: MNLI/RTE.
+
+**Perché conta**: è il task **più importante** per il vostro esperimento. Misura direttamente la capacità del modello di riconoscere compliance — esattamente quello che le legends dovrebbero insegnare. È qui che ci si aspetta il vantaggio più netto del modello tuned-on-legends rispetto al tuned-on-regulation.
+
+---
+
+### Task 3 — GE-QA (Regulation Reading Comprehension)
+
+**Obiettivo**: dato un passaggio della regulation e una domanda, estrarre la risposta corretta o rispondere sì/no.
+
+**Formato**: due sottotask:
+- **GE-QA-Factoid**: span extraction (stile SQuAD)
+- **GE-QA-Bool**: yes/no questions (stile BoolQ)
+
+**Esempio Factoid**:
+> Context: "The Women on Boards Directive sets a minimum of 40% of non-executive members of the under-represented sex on company boards by 2026."
+> Question: "What is the target percentage for non-executive directors of the under-represented sex?"
+> Answer: "40%"
+
+**Esempio Bool**:
+> Context: [passaggio sulla Istanbul Convention]
+> Question: "Has the EU concluded its accession to the Istanbul Convention?"
+> Answer: `no`
+
+**Dato**: i factoid Q&A che state già generando nel punto 4.3.1 della vostra pipeline. Per le boolean questions, generate prompts ad hoc dal regulation text.
+
+**Mappa GLUE**: QNLI/BoolQ + SQuAD-style.
+
+**Perché conta**: testa la conoscenza fattuale del regolamento. Ci si aspetta che il modello tuned-on-regulation domini questo task, mentre il tuned-on-legends dovrebbe fare peggio (perché le legends sono fittizie).
+
+---
+
+### Task 4 — GE-WSC (Stereotype-Aware Coreference)
+
+**Obiettivo**: risolvere coreferenze pronominali in contesti professionali senza affidarsi a stereotipi di genere.
+
+**Formato**: classificazione binaria su quale antecedente lega il pronome.
+
+**Esempio**:
+> Sentence: "The CEO promoted the assistant because she was impressed by her work."
+> Question: Who is "she"? → CEO / assistant
+> Label: `CEO`
+
+**Dato**: usate **WinoBias** direttamente da HuggingFace (`uclanlp/wino_bias`) con i 4 subset (type1_pro, type1_anti, type2_pro, type2_anti). Dataset open source, già pronto.
+
+**Metrica speciale**: oltre all'accuracy, calcolate la **Gender Parity Score** = differenza di accuracy tra i subset pro-stereotipo e anti-stereotipo. Un modello veramente fair dovrebbe avere parity score vicino a 0.
+
+**Mappa GLUE**: WSC / Winogender (era già il dataset diagnostico di SuperGLUE).
+
+**Perché conta**: è il task di "bias detection" che chiede l'Appendix B. Non lo costruite voi — usate uno standard riconosciuto della letteratura. Coerente con il principio "Freedom from stereotypes" (pillar 1 del 2020-2025) e con il focus AI-bias del 2026-2030.
+
+---
+
+### Task 5 — GE-STANCE (Gender Equality Stance Detection)
+
+**Obiettivo**: data un'affermazione, determinare se la posizione espressa è a favore, neutrale, o contraria alla gender equality.
+
+**Formato**: classificazione a 3 classi (supportive, neutral, against).
+
+**Esempio** (dall'Appendix B):
+> Statement: "Gender equality is essential for a fair society."
+> Label: `supportive`
+> 
+> Statement: "Women are not as good at coding as men."
+> Label: `against`
+
+**Dato**: combinazione di:
+- **CIVICS** (`llm-values/CIVICS` su HF) — già contiene label `gender inclusivity`, `anti-discrimination`
+- Test set curato manualmente di 100-200 esempi (perturbazioni controllate da regulation text e legends)
+
+**Mappa GLUE**: SST-2 (single-sentence classification, 3-way).
+
+**Perché conta**: corrisponde direttamente all'esempio "Stance Classification" dell'Appendix B. Misura se il modello ha internalizzato i valori di gender equality oltre la mera memorizzazione di fatti.
+
+---
+
+### Diagnostic set — opzionale ma raccomandato
+
+Sull'esempio di SuperGLUE che mantiene un diagnostic set Winogender, aggiungete un **GE-Diag** non incluso nello score finale ma riportato a parte:
+- 50 esempi di "minimal pairs" generati dalle vostre legends, dove cambiate solo il genere dei personaggi (Alex/Alessandra fa la stessa azione → output deve essere identico)
+- Misura la **stability score**: % di predizioni invarianti al gender swap
+
+Questo è coerente con il punto 11 della challenge (explainability analysis) e con la metodologia di GECOBench.
+
+---
+
+## Implementazione pratica
+
+Per il **punto 9 della challenge**, presentate il benchmark in questo ordine logico nel paper:
+
+1. **Motivazione**: GLUE è generale, LexGLUE adatta al dominio legale, manca un'adapatazione gender equality → contributo originale
+2. **Principi guida**: gli 8 principi della Roadmap come backbone tematico
+3. **5 task**: tabella overview + descrizione di ognuno
+4. **Allineamento con la Strategy**: ogni task copre uno o più principi
+5. **Metrica aggregata**: media GLUE-style
+
+Per il **punto 10**, eseguite ciascuno dei 3 modelli su tutti i 5 task. Predizione probabile:
+- **GE-CLS**: tuned-regulation > tuned-legends > base
+- **GE-NLI**: tuned-legends > tuned-regulation > base ← *qui sta il punto del paper Sargsyan/Damiani*
+- **GE-QA**: tuned-regulation >> tuned-legends > base
+- **GE-WSC**: i tre modelli simili (è bias intrinseco del pretraining)
+- **GE-STANCE**: tuned-legends ≥ tuned-regulation > base
+
+Se questa predizione si verifica, validate empiricamente la tesi del paper: le **legends insegnano la compliance meglio del testo legale grezzo**, anche se quest'ultimo insegna meglio i fatti specifici.
+
+Una considerazione finale sulla **dimensione**: GLUE originale ha task da 2.5k a 393k esempi. Per il vostro progetto puntate a 200-500 esempi per task in test (più piccolo ma sufficiente per un benchmark accademico, in linea con CB di SuperGLUE che ha ~250 esempi).

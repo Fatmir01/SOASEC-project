@@ -1,0 +1,186 @@
+{
+  "source_file": "gender-equality-strategy-2020-2025_chunked.md",
+  "taxonomy": "EU Gender Equality Strategy 2020-2025",
+  "chunks": [
+    {
+      "chunk_number": 1,
+      "title": "COMMUNICATION FROM THE COMMISSION",
+      "subtitle": "A Union of Equality: Gender Equality Strategy 2020-2025",
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 2,
+      "title": "TOWARDS A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 3,
+      "title": "TOWARDS A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 4,
+      "title": "TOWARDS A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown"
+    },
+    {
+      "chunk_number": 5,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": null,
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 6,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 7,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 8,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 9,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 10,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Challenging gender stereotypes",
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 11,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Challenging gender stereotypes",
+      "classification": "violence_stereotypes"
+    },
+    {
+      "chunk_number": 12,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": null,
+      "classification": "equal_economy"
+    },
+    {
+      "chunk_number": 13,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing gender gaps in the labour market",
+      "classification": "equal_economy"
+    },
+    {
+      "chunk_number": 14,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing gender gaps in the labour market",
+      "classification": "equal_economy"
+    },
+    {
+      "chunk_number": 15,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Achieving equal participation across different sectors of the economy",
+      "classification": "equal_economy"
+    },
+    {
+      "chunk_number": 16,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Addressing the gender pay and pension gap",
+      "classification": "equal_economy"
+    },
+    {
+      "chunk_number": 17,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Addressing the gender pay and pension gap",
+      "classification": "equal_economy"
+    },
+    {
+      "chunk_number": 18,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing the gender care gap",
+      "classification": "equal_economy"
+    },
+    {
+      "chunk_number": 19,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing the gender care gap",
+      "classification": "equal_economy"
+    },
+    {
+      "chunk_number": 20,
+      "title": "3. Leading equally throughout society",
+      "subtitle": null,
+      "classification": "leadership_participation"
+    },
+    {
+      "chunk_number": 21,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation"
+    },
+    {
+      "chunk_number": 22,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation"
+    },
+    {
+      "chunk_number": 23,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation"
+    },
+    {
+      "chunk_number": 24,
+      "title": "4. Gender mainstreaming and an intersectional perspective in EU policies",
+      "subtitle": null,
+      "classification": "mainstreaming_intersectionality"
+    },
+    {
+      "chunk_number": 25,
+      "title": "4. Gender mainstreaming and an intersectional perspective in EU policies",
+      "subtitle": null,
+      "classification": "mainstreaming_intersectionality"
+    },
+    {
+      "chunk_number": 26,
+      "title": "5. Funding actions to make progress in gender equality in the EU",
+      "subtitle": null,
+      "classification": "funding_global_action"
+    },
+    {
+      "chunk_number": 27,
+      "title": "5. Funding actions to make progress in gender equality in the EU",
+      "subtitle": null,
+      "classification": "funding_global_action"
+    },
+    {
+      "chunk_number": 28,
+      "title": "6. Addressing gender equality and women's empowerment across the world",
+      "subtitle": null,
+      "classification": "funding_global_action"
+    },
+    {
+      "chunk_number": 29,
+      "title": "6. Addressing gender equality and women's empowerment across the world",
+      "subtitle": null,
+      "classification": "funding_global_action"
+    },
+    {
+      "chunk_number": 30,
+      "title": "WORKING TOGETHER FOR A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown"
+    }
+  ]
+}

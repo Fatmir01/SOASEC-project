@@ -1,0 +1,1276 @@
+{
+  "source_file": "gender-equality-strategy-2020-2025_chunked.md",
+  "taxonomy": "EU Gender Equality Strategy 2020-2025",
+  "chunks": [
+    {
+      "chunk_number": 1,
+      "title": "COMMUNICATION FROM THE COMMISSION",
+      "subtitle": "A Union of Equality: Gender Equality Strategy 2020-2025",
+      "classification": "unknown",
+      "spans": { "groups": [] },
+      "qa_pairs": []
+    },
+    {
+      "chunk_number": 2,
+      "title": "TOWARDS A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown",
+      "spans": { "groups": [] },
+      "qa_pairs": []
+    },
+    {
+      "chunk_number": 3,
+      "title": "TOWARDS A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown",
+      "spans": { "groups": [] },
+      "qa_pairs": []
+    },
+    {
+      "chunk_number": 4,
+      "title": "TOWARDS A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown",
+      "spans": { "groups": [] },
+      "qa_pairs": []
+    },
+    {
+      "chunk_number": 5,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": null,
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "Safety Domains",
+            "spans": ["safe in their homes", "close relationships", "public spaces", "online"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["stereotypical gender norms", "chosen educational and professional paths"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "In which four environments does the EU Gender Equality Strategy assert that everyone must be protected from gender-based harm?",
+          "answer": "safe in their homes, close relationships, public spaces, online",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What societal construct must be dismantled so that individuals can freely pursue their educational and professional ambitions?",
+          "answer": "stereotypical gender norms",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What personal freedom, beyond physical safety, does the Strategy seek to guarantee for every person?",
+          "answer": "chosen educational and professional paths",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 6,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "GBV Prevalence Statistics",
+            "spans": ["33% of women", "22% of women", "55% of women", "physical and/or sexual violence", "violence by an intimate partner", "sexually harassed"]
+          },
+          {
+            "label": "Legal Instruments & EU Accession",
+            "spans": ["Istanbul Convention", "EU's accession to the Istanbul Convention", "Article 83(1) TFEU", "Eurocrimes"]
+          },
+          {
+            "label": "Forms of Gender Violence",
+            "spans": ["sexual harassment", "female genital mutilation (FGM)"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What share of women in the EU have experienced physical and/or sexual violence since the age of 15?",
+          "answer": "33% of women",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What proportion of women have suffered violence by an intimate partner?",
+          "answer": "22% of women",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What fraction of women have been sexually harassed in a work or work-related context?",
+          "answer": "55% of women",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Which international convention does the EU Gender Equality Strategy designate as the benchmark standard for combating violence against women?",
+          "answer": "Istanbul Convention",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Which Treaty provision would allow gender-based violence to be classified among the most serious cross-border offences in the EU?",
+          "answer": "Article 83(1) TFEU",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What category of serious EU-wide criminal offences could gender-based violence be added to under the Commission's proposed approach?",
+          "answer": "Eurocrimes",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Which two forms of gender violence mentioned in the Strategy fall under both criminal law and public health frameworks?",
+          "answer": "sexual harassment, female genital mutilation (FGM)",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 7,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "Harmful Practices Against Women",
+            "spans": ["female genital mutilation", "forced abortion", "forced sterilisation", "early and forced marriage", "honour-related violence"]
+          },
+          {
+            "label": "Victim Support Instruments",
+            "spans": ["Victims' Rights Strategy", "Victims' Rights Directive"]
+          },
+          {
+            "label": "Prevention & Network Mechanisms",
+            "spans": ["EU network on the prevention of gender-based violence and domestic violence", "ILO Convention"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["women who have a health problem or disability", "non-violent relationships"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which five harmful traditional practices against women and girls does the EU Gender Equality Strategy explicitly commit to eliminating?",
+          "answer": "female genital mutilation, forced abortion, forced sterilisation, early and forced marriage, honour-related violence",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Which two EU instruments are proposed to strengthen support and protection for victims of gender-based violence?",
+          "answer": "Victims' Rights Strategy, Victims' Rights Directive",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What EU coordination mechanism is specifically devoted to sharing good practices on preventing domestic violence?",
+          "answer": "EU network on the prevention of gender-based violence and domestic violence",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What international labour organisation convention is referenced in the context of addressing violence and harassment in the world of work?",
+          "answer": "ILO Convention",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Which group of women facing compounded vulnerability is explicitly identified as requiring targeted support under the Strategy's victim protection measures?",
+          "answer": "women who have a health problem or disability",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 8,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "Online Violence & Platform Policy",
+            "spans": ["Online violence targeting women", "Digital Services Act", "new framework for cooperation between internet platforms"]
+          },
+          {
+            "label": "Trafficking & Sexual Exploitation",
+            "spans": ["trafficking in human beings", "sexual exploitation", "EU strategy on the eradication of trafficking in human beings"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["child sexual abuse"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What form of harm disproportionately affecting women in digital environments does the Strategy specifically commit to addressing?",
+          "answer": "Online violence targeting women",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Which legislative instrument does the Strategy propose to regulate platform accountability for combating online violence?",
+          "answer": "Digital Services Act",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What cross-border crime involving exploitation for commercial purposes does the Strategy commit to eradicating?",
+          "answer": "trafficking in human beings",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Which dedicated EU strategy will address the criminal phenomenon of trafficking for commercial exploitation?",
+          "answer": "EU strategy on the eradication of trafficking in human beings",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 9,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "Data Disaggregation Variables",
+            "spans": ["age, disability status, migrant status and rural-urban residence", "intersectional aspects"]
+          },
+          {
+            "label": "GBV Data Collection Mechanisms",
+            "spans": ["EU-wide survey", "Eurostat", "gender-disaggregated data"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["prevalence and dynamics of violence against women", "2023"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which four personal characteristics are identified for disaggregating GBV data to capture intersectional dimensions?",
+          "answer": "age, disability status, migrant status and rural-urban residence",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What EU-wide data collection instrument will be used to measure the scope of violence against women across Member States?",
+          "answer": "EU-wide survey",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Which EU statistical body is designated to collect and publish gender-disaggregated data on violence?",
+          "answer": "Eurostat",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "By which year does the Strategy plan to conduct a comprehensive EU-wide survey on gender-based violence?",
+          "answer": "2023",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 10,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Challenging gender stereotypes",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "AI & Algorithmic Bias",
+            "spans": ["Artificial Intelligence (AI)", "gender biases", "algorithms and related machine-learning"]
+          },
+          {
+            "label": "Cultural Sector Initiatives",
+            "spans": ["Creative Europe", "Music Moves Europe", "gender equality strategy in the audio-visual industry", "MEDIA sub-programme"]
+          },
+          {
+            "label": "Awareness & Research Funding",
+            "spans": ["Horizon Europe", "EU-wide communication campaign combatting gender stereotypes"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What technology does the Strategy identify as a vector through which gender biases can be perpetuated at scale?",
+          "answer": "Artificial Intelligence (AI)",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Which EU cultural funding programme is mobilised to promote gender equality in creative and media sectors?",
+          "answer": "Creative Europe",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What sector-specific plan does the Strategy call for to address gender imbalance in film and television?",
+          "answer": "gender equality strategy in the audio-visual industry",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Which EU research and innovation funding programme will finance work on countering gender stereotypes?",
+          "answer": "Horizon Europe",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What awareness-raising initiative will the Commission launch to address stereotypical representations across the EU?",
+          "answer": "EU-wide communication campaign combatting gender stereotypes",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 11,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Challenging gender stereotypes",
+      "classification": "violence_stereotypes",
+      "spans": {
+        "groups": [
+          {
+            "label": "Legal Instruments to Ratify/Implement",
+            "spans": ["Istanbul Convention", "ILO Convention", "Victims' Rights Directive", "Child Sexual Abuse Directive"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["citizens, equality, rights and values programme (2021-2027)", "gender-based violence data", "civil society"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which four legal instruments does the Strategy call on all Member States to ratify or fully implement as a priority action?",
+          "answer": "Istanbul Convention, ILO Convention, Victims' Rights Directive, Child Sexual Abuse Directive",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Which EU funding programme (2021-2027) will support civil society organisations working on gender equality and anti-violence initiatives?",
+          "answer": "citizens, equality, rights and values programme (2021-2027)",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What type of non-governmental actor does the Strategy identify as essential for delivering and monitoring GBV interventions?",
+          "answer": "civil society",
+          "type": "Factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 12,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": null,
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Economic Equality Goals",
+            "spans": ["economically independent", "equal pay for work of equal value", "equal access to finance", "fair pensions"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What four economic conditions does the Strategy set as goals for women's full participation in the EU economy?",
+          "answer": "economically independent, equal pay for work of equal value, equal access to finance, fair pensions",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What remuneration principle does the Strategy commit to enforcing to close the gender pay gap?",
+          "answer": "equal pay for work of equal value",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What retirement income goal does the Strategy set to ensure women are not penalised for career patterns shaped by caregiving?",
+          "answer": "fair pensions",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 13,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing gender gaps in the labour market",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Work-Life Balance Policy Instruments",
+            "spans": ["Work-Life-Balance Directive", "family leave", "flexible working arrangements", "childcare"]
+          },
+          {
+            "label": "Labour Market Monitoring Frameworks",
+            "spans": ["European Semester", "Social Scoreboard", "European Pillar of Social Rights", "SDG 5"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["gender employment gap", "caring responsibilities"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which EU directive specifically targets the reconciliation of work and family life to improve women's labour market participation?",
+          "answer": "Work-Life-Balance Directive",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What forms of workplace accommodation does the Strategy promote to support workers with caring responsibilities?",
+          "answer": "family leave, flexible working arrangements, childcare",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which EU economic coordination framework tracks Member States' performance on employment indicators including gender gaps?",
+          "answer": "European Semester",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What monitoring dashboard within the European Semester tracks social progress including gender employment outcomes?",
+          "answer": "Social Scoreboard",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which Sustainable Development Goal is explicitly referenced in relation to gender equality in the EU's labour market policy?",
+          "answer": "SDG 5",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 14,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing gender gaps in the labour market",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Gender Investment Gap Statistics",
+            "spans": ["1 in 10 decision-makers", "72% female partners", "92% of all capital invested in Europe", "venture capital and private equity firms"]
+          },
+          {
+            "label": "Women's Entrepreneurship Instruments",
+            "spans": ["Horizon Europe European Innovation Council", "women-led start-ups", "InvestEU programme"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["structural reform support programme", "gender employment gap", "second earners"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What fraction of decision-makers in venture capital and private equity firms are women?",
+          "answer": "1 in 10 decision-makers",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What share of all capital invested in Europe flows through firms in which women are severely underrepresented at decision-making level?",
+          "answer": "92% of all capital invested in Europe",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which EU innovation funding body will provide targeted support to women-led start-ups?",
+          "answer": "Horizon Europe European Innovation Council",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which EU investment programme will be mobilised alongside the European Innovation Council to back female entrepreneurship?",
+          "answer": "InvestEU programme",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What tax-related barrier to women's full-time employment does the Strategy commit to removing through structural reform?",
+          "answer": "second earners",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 15,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Achieving equal participation across different sectors of the economy",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Women in STEM & Digital Statistics",
+            "spans": ["17% of people in ICT studies and careers", "36% of STEM graduates", "22% of AI programmers are women", "3.1 times greater"]
+          },
+          {
+            "label": "Digital & Education Policy Instruments",
+            "spans": ["Digital Education Action Plan", "Women in Digital", "Skills Agenda for Europe", "European Education Area"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["Youth Guarantee", "vocational education and training", "gender equality in sport"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What share of people enrolled in ICT studies and careers are women?",
+          "answer": "17% of people in ICT studies and careers",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What proportion of STEM graduates across the EU are women?",
+          "answer": "36% of STEM graduates",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What percentage of AI programmers in Europe are women?",
+          "answer": "22% of AI programmers are women",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which EU digital literacy programme specifically targets women and girls for digital skills development?",
+          "answer": "Women in Digital",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which EU skills strategy addresses the gender gap in technical and digital education?",
+          "answer": "Skills Agenda for Europe",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which EU education framework will integrate gender equality objectives into national and cross-border learning systems?",
+          "answer": "European Education Area",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 16,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Addressing the gender pay and pension gap",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Pay Equality Principles",
+            "spans": ["gender pay gap", "equal pay for equal work or work of equal value"]
+          },
+          {
+            "label": "Pay Transparency Measures",
+            "spans": ["binding measures on pay transparency", "pay transparency"]
+          },
+          {
+            "label": "Structural Labour Inequality",
+            "spans": ["part-time work", "career breaks", "vertical and horizontal segregation"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What remuneration principle does the Strategy commit to enforcing across all Member States to eliminate unjustified wage differences?",
+          "answer": "equal pay for equal work or work of equal value",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What legislative measure will the Commission propose to compel employers to disclose wage information and close the gender pay gap?",
+          "answer": "binding measures on pay transparency",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which three structural labour market factors does the Strategy identify as underlying drivers of the persistent gender pay gap?",
+          "answer": "part-time work, career breaks, vertical and horizontal segregation",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 17,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Addressing the gender pay and pension gap",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Pension Equality Measures",
+            "spans": ["gender pension gap", "pension credits", "care-related career breaks in occupational pension schemes"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["Pension Adequacy Report", "High-level group on pensions"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What retirement income disparity does the Strategy commit to closing alongside the gender pay gap?",
+          "answer": "gender pension gap",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What financial mechanism will be introduced in occupational pension schemes to compensate workers for caregiving interruptions?",
+          "answer": "pension credits",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What specific pension scheme reform will address the negative retirement income impact of interruptions caused by care duties?",
+          "answer": "care-related career breaks in occupational pension schemes",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which advisory body will examine pension adequacy from a gender equality perspective?",
+          "answer": "High-level group on pensions",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 18,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing the gender care gap",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Care Policy Benchmarks",
+            "spans": ["Barcelona targets", "early childhood education and care", "Child Guarantee", "long-term care"]
+          },
+          {
+            "label": "Care Service Funding Instruments",
+            "spans": ["European Social Fund Plus", "European Regional Development Fund", "InvestEU programme", "European Agricultural Fund for Rural Development"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["single parents", "Green Paper on Ageing"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What EU-level childcare provision benchmarks form the baseline for measuring Member States' progress on closing the care gap?",
+          "answer": "Barcelona targets",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which EU initiative will address child poverty and ensure equitable access to services including childcare for the most vulnerable?",
+          "answer": "Child Guarantee",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which four EU funding instruments will finance the expansion of childcare and long-term care services?",
+          "answer": "European Social Fund Plus, European Regional Development Fund, InvestEU programme, European Agricultural Fund for Rural Development",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Which group of families in particularly vulnerable financial situations is specifically named in the care gap section of the Strategy?",
+          "answer": "single parents",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 19,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing the gender care gap",
+      "classification": "equal_economy",
+      "spans": {
+        "groups": [
+          {
+            "label": "Legal Instruments for Member States",
+            "spans": ["Work-Life Balance Directive", "gender equality and labour law"]
+          },
+          {
+            "label": "Care Services",
+            "spans": ["early childhood education", "long-term care services"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["Women in Digital"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which EU directive will be used to ensure Member States improve both access to care services and flexible working arrangements?",
+          "answer": "Work-Life Balance Directive",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What two types of care provision does the Strategy prioritise to close the gender care gap across Member States?",
+          "answer": "early childhood education, long-term care services",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What normative field will the Commission review and potentially reform to better address gender care inequality?",
+          "answer": "gender equality and labour law",
+          "type": "Factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 20,
+      "title": "3. Leading equally throughout society",
+      "subtitle": null,
+      "classification": "leadership_participation",
+      "spans": {
+        "groups": [
+          {
+            "label": "Individual",
+            "spans": ["led by both women and men"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What fundamental leadership principle does the EU Gender Equality Strategy seek to achieve across EU institutions and all sectors?",
+          "answer": "led by both women and men",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        }
+      ]
+    },
+    {
+      "chunk_number": 21,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation",
+      "spans": {
+        "groups": [
+          {
+            "label": "Corporate Board Parity Instruments",
+            "spans": ["Directive on improving the gender balance on corporate boards", "40% of non-executive members of the under-represented sex", "glass ceiling"]
+          },
+          {
+            "label": "Monitoring & Exchange Mechanisms",
+            "spans": ["EU Platform of Diversity Charters", "European Gender Diversity Index"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["unconscious bias", "inclusive and diverse leadership"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which EU legislative proposal would mandate listed companies to meet a minimum gender representation threshold among non-executive board members?",
+          "answer": "Directive on improving the gender balance on corporate boards",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "What minimum share of non-executive board seats does the proposed directive set for the under-represented sex?",
+          "answer": "40% of non-executive members of the under-represented sex",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "What informal barrier to women's advancement in senior positions does the Strategy explicitly name as requiring removal?",
+          "answer": "glass ceiling",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Which two EU mechanisms will be used to monitor corporate gender diversity and exchange good practices across Member States?",
+          "answer": "EU Platform of Diversity Charters, European Gender Diversity Index",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "What type of cognitive bias does the Strategy commit to addressing in recruitment and promotion processes to achieve inclusive leadership?",
+          "answer": "unconscious bias",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        }
+      ]
+    },
+    {
+      "chunk_number": 22,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation",
+      "spans": {
+        "groups": [
+          {
+            "label": "EU Parliament Gender Representation",
+            "spans": ["2024 European Parliament elections", "39% of elected MEPs were women", "37% of MEPs in 2014"]
+          },
+          {
+            "label": "Commission Parity Targets",
+            "spans": ["gender balance of 50% at all levels of its management by the end of 2024", "quantitative targets for female appointments", "leadership development programmes"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["EU agencies", "Mutual Learning Programme in Gender Equality"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What share of MEPs elected in the 2024 European Parliament elections were women?",
+          "answer": "39% of elected MEPs were women",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "What was the share of women among MEPs elected in 2014, prior to the progress recorded in 2024?",
+          "answer": "37% of MEPs in 2014",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "What internal gender balance target has the Commission set for its management structure, and by what deadline?",
+          "answer": "gender balance of 50% at all levels of its management by the end of 2024",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "What career advancement initiatives will the Commission implement to increase the pipeline of women into senior roles?",
+          "answer": "leadership development programmes",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Which peer-learning mechanism will support Member States in sharing best practices for achieving gender balance in decision-making?",
+          "answer": "Mutual Learning Programme in Gender Equality",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        }
+      ]
+    },
+    {
+      "chunk_number": 23,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation",
+      "spans": {
+        "groups": [
+          {
+            "label": "Corporate Board & Political Leadership",
+            "spans": ["Directive on improving the gender balance on corporate boards", "women in decision-making positions in politics and policy-making"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which legislative instrument does the Strategy renew its commitment to advancing women's representation in corporate governance?",
+          "answer": "Directive on improving the gender balance on corporate boards",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "In addition to corporate boards, what other sphere does the Strategy identify as a key priority for increasing female decision-making presence?",
+          "answer": "women in decision-making positions in politics and policy-making",
+          "type": "Factoid",
+          "tag": "leadership_participation"
+        }
+      ]
+    },
+    {
+      "chunk_number": 24,
+      "title": "4. Gender mainstreaming and an intersectional perspective in EU policies",
+      "subtitle": null,
+      "classification": "mainstreaming_intersectionality",
+      "spans": {
+        "groups": [
+          {
+            "label": "Mainstreaming Governance Bodies",
+            "spans": ["Task Force for Equality", "Commissioner for Equality"]
+          },
+          {
+            "label": "Green Deal Policy Areas",
+            "spans": ["European Green Deal", "Building Renovation Wave", "EU Strategy on Climate Adaptation"]
+          },
+          {
+            "label": "Gender-Specific Climate Impacts",
+            "spans": ["energy poverty", "climate refugees", "emission-free transport"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["green and digital transitions"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which high-level Commission body is responsible for integrating gender perspectives across all EU policy areas?",
+          "answer": "Task Force for Equality",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Which senior Commission role carries specific accountability for advancing gender equality within the EU institutional agenda?",
+          "answer": "Commissioner for Equality",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Which EU flagship sustainability programme does the Strategy explicitly require to be mainstreamed with a gender perspective?",
+          "answer": "European Green Deal",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Which EU climate-aligned construction programme is identified as requiring a gender equality lens in its implementation?",
+          "answer": "Building Renovation Wave",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "What type of energy-related hardship does the Strategy identify as a gendered consequence of the green transition?",
+          "answer": "energy poverty",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "What term describes women and girls displaced by climate disasters, identified as a specific intersectional concern in the Strategy?",
+          "answer": "climate refugees",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        }
+      ]
+    },
+    {
+      "chunk_number": 25,
+      "title": "4. Gender mainstreaming and an intersectional perspective in EU policies",
+      "subtitle": null,
+      "classification": "mainstreaming_intersectionality",
+      "spans": {
+        "groups": [
+          {
+            "label": "Gender-Specific Health Instruments",
+            "spans": ["EU Beating Cancer Plan", "EU Drugs Agenda 2021-2025", "sexual and reproductive health and rights"]
+          },
+          {
+            "label": "Intersectional Identity Groups",
+            "spans": ["migrant woman with a disability", "LGBTI+", "Roma inclusion"]
+          },
+          {
+            "label": "Inclusion Policy Instruments",
+            "spans": ["Action Plan on Integration and Inclusion", "intersectionality"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which EU cancer treatment and prevention programme must integrate a gender mainstreaming perspective?",
+          "answer": "EU Beating Cancer Plan",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Which EU drug policy framework (2021-2025) is identified as an area where gender mainstreaming must be applied?",
+          "answer": "EU Drugs Agenda 2021-2025",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "What health rights must be integrated into EU health policies to ensure equal access for all women?",
+          "answer": "sexual and reproductive health and rights",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Which composite identity does the Strategy use to illustrate the compounded disadvantages that an intersectional approach must address?",
+          "answer": "migrant woman with a disability",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Which community's inclusion is explicitly named alongside LGBTI+ persons as requiring an intersectional policy response?",
+          "answer": "Roma inclusion",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Which EU framework will support the integration of marginalised communities, including migrant women, into mainstream services?",
+          "answer": "Action Plan on Integration and Inclusion",
+          "type": "Factoid",
+          "tag": "mainstreaming_intersectionality"
+        }
+      ]
+    },
+    {
+      "chunk_number": 26,
+      "title": "5. Funding actions to make progress in gender equality in the EU",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "spans": {
+        "groups": [
+          {
+            "label": "EU Structural Funding Instruments",
+            "spans": ["European Social Fund Plus", "European Regional Development Fund", "Cohesion Fund", "European Maritime and Fisheries Fund", "Multi-Annual Financial Framework"]
+          },
+          {
+            "label": "Rights, Innovation & Migration Funding",
+            "spans": ["InvestEU Programme", "Creative Europe", "Horizon Europe", "Citizens, Equality, Rights and Values Programme", "Asylum and Migration Fund"]
+          },
+          {
+            "label": "Enabling Conditions",
+            "spans": ["national gender equality strategic framework", "Charter of Fundamental Rights", "Common Provisions Regulation", "enabling conditions"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["gender equality plan from applicants"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which five EU structural and investment funds are mobilised to deliver gender equality commitments across Member States?",
+          "answer": "European Social Fund Plus, European Regional Development Fund, Cohesion Fund, European Maritime and Fisheries Fund, Multi-Annual Financial Framework",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Which EU rights and innovation programmes include gender equality as a cross-cutting funding priority?",
+          "answer": "InvestEU Programme, Creative Europe, Horizon Europe, Citizens, Equality, Rights and Values Programme, Asylum and Migration Fund",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "What national-level document must Member States produce as a precondition for accessing EU structural funds related to gender equality?",
+          "answer": "national gender equality strategic framework",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "What EU foundational rights instrument is embedded as a binding enabling condition for the allocation of structural funds?",
+          "answer": "Charter of Fundamental Rights",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "What requirement must applicants submit to access certain EU research and innovation funds as part of gender mainstreaming obligations?",
+          "answer": "gender equality plan from applicants",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        }
+      ]
+    },
+    {
+      "chunk_number": 27,
+      "title": "5. Funding actions to make progress in gender equality in the EU",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "spans": {
+        "groups": [
+          {
+            "label": "Sectoral Funding Instruments",
+            "spans": ["Common Agricultural Policy", "European Maritime and Fisheries Fund for 2021-2027", "Erasmus+", "blue economy"]
+          },
+          {
+            "label": "Budget Gender Mainstreaming",
+            "spans": ["gender mainstreaming in the EU budget", "European Court of Auditors", "2021-2027 MFF"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["socially responsible public procurement", "Inclusion and Diversity Strategy"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which four sectoral funding programmes covering agriculture, fisheries, education and the ocean economy must integrate gender equality?",
+          "answer": "Common Agricultural Policy, European Maritime and Fisheries Fund for 2021-2027, Erasmus+, blue economy",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Which EU external audit institution will scrutinise the integration of gender mainstreaming across the 2021-2027 MFF?",
+          "answer": "European Court of Auditors",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "What budget-wide process will be reinforced to ensure gender equality is systematically tracked in EU spending?",
+          "answer": "gender mainstreaming in the EU budget",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "What procurement approach will be promoted to ensure public contracts contribute to gender equality goals?",
+          "answer": "socially responsible public procurement",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        }
+      ]
+    },
+    {
+      "chunk_number": 28,
+      "title": "6. Addressing gender equality and women's empowerment across the world",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "spans": {
+        "groups": [
+          {
+            "label": "EU Global Action Plans & Frameworks",
+            "spans": ["GAPII", "GAP III", "EU Action Plan on Human Rights and Democracy (2020-2024)", "Women, Peace and Security"]
+          },
+          {
+            "label": "Global Programmes & Campaigns",
+            "spans": ["Spotlight Initiative", "EUR 500 million", "#WithHer"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["sexual and reproductive health and rights", "gender-based violence"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "Which two successive EU Gender Action Plans guide the Commission's external policy on women's empowerment and gender equality?",
+          "answer": "GAPII, GAP III",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Which EU external action plan covering 2020-2024 integrates women's rights as a cross-cutting theme in EU foreign policy?",
+          "answer": "EU Action Plan on Human Rights and Democracy (2020-2024)",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Which international framework ensures that gender equality is integrated into peace, security and conflict-resolution policies?",
+          "answer": "Women, Peace and Security",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "What global EU-UN partnership programme is dedicated to eliminating all forms of violence against women and girls?",
+          "answer": "Spotlight Initiative",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "What is the total budget committed to the Spotlight Initiative by the EU and its Member States?",
+          "answer": "EUR 500 million",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "What EU-led international campaign advocates for women's rights and gender equality globally?",
+          "answer": "#WithHer",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        }
+      ]
+    },
+    {
+      "chunk_number": 29,
+      "title": "6. Addressing gender equality and women's empowerment across the world",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "spans": {
+        "groups": [
+          {
+            "label": "External Investment Instruments",
+            "spans": ["External Investment Plan", "Women's Financial Inclusion Facility", "EUR 100 million"]
+          },
+          {
+            "label": "Trade & International Engagement",
+            "spans": ["trade policy", "World Trade Organisation", "EU Strategy with Africa"]
+          },
+          {
+            "label": "Individual",
+            "spans": ["85% of all new programmes", "gender mainstreaming"]
+          }
+        ]
+      },
+      "qa_pairs": [
+        {
+          "question": "What dedicated financial facility under the EU's External Investment Plan focuses on closing the gender gap in access to financial services?",
+          "answer": "Women's Financial Inclusion Facility",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "What funding amount has been allocated under the Women's Financial Inclusion Facility to expand economic opportunities for women in partner countries?",
+          "answer": "EUR 100 million",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "What international body will the EU engage with to mainstream gender equality considerations into global trade rules?",
+          "answer": "World Trade Organisation",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Which regional partnership will incorporate gender equality commitments as a cross-cutting priority in EU external relations?",
+          "answer": "EU Strategy with Africa",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "What share of all new EU-funded programmes in partner countries will be required to have gender as a principal or significant objective?",
+          "answer": "85% of all new programmes",
+          "type": "Factoid",
+          "tag": "funding_global_action"
+        }
+      ]
+    },
+    {
+      "chunk_number": 30,
+      "title": "WORKING TOGETHER FOR A GENDER-EQUAL EUROPE",
+      "subtitle": null,
+      "classification": "unknown",
+      "spans": { "groups": [] },
+      "qa_pairs": []
+    }
+  ]
+}

@@ -1,0 +1,711 @@
+{
+  "taxonomy": "EU Gender Equality Strategy 2020-2025",
+  "sources": [
+    {
+      "source_file": "legends_violence_stereotypes_chunked.md",
+      "chunks": [
+        { "chunk_number": 1, "title": "Breaking the Silence Protocol", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 2, "title": "Breaking the Silence Protocol", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 3, "title": "Breaking the Silence Protocol", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 4,
+          "title": "Breaking the Silence Protocol",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "GBV Hospital Interventions",
+                "spans": ["mandatory training program", "GBV alert", "Safe Pathway", "confidential consultation room", "on-call psychologist"]
+              },
+              {
+                "label": "Policy & Legal Grounding",
+                "spans": ["EU Gender Equality Strategy 2020-2025", "Victims' Rights Directive", "trauma-informed communication"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["domestic or gender-based violence", "legal obligations"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 5,
+          "title": "Breaking the Silence Protocol",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "GBV Reporting Outcomes",
+                "spans": ["9% to 37%", "60%", "referral rates to psychological services", "perceived safety and support"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025", "best practice model"]
+              }
+            ]
+          }
+        },
+        { "chunk_number": 6, "title": "The Code of Neutrality", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 7, "title": "The Code of Neutrality", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 8, "title": "The Code of Neutrality", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 9,
+          "title": "The Code of Neutrality",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "AI Bias Mitigation Tools",
+                "spans": ["Gender-Neutral Logic layer", "Bias-Detection Wrapper", "deep-cleansing of the training sets", "gendered language"]
+              },
+              {
+                "label": "Stereotype Eradication Protocol",
+                "spans": ["Stereotype Eradication protocol", "gender stereotypes", "unconscious biases"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["OptiHire", "EU Gender Equality Strategy 2020-2025", "5%"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 10,
+          "title": "The Code of Neutrality",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "AI Debiasing Outcomes",
+                "spans": ["28%", "selection rate of qualified women", "ethical AI", "Estonian Ministry of Economic Affairs"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025", "gender stereotypes in technical infrastructure"]
+              }
+            ]
+          }
+        },
+        { "chunk_number": 11, "title": "Breaking the Silence", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 12, "title": "Breaking the Silence", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 13, "title": "Breaking the Silence", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 14,
+          "title": "Breaking the Silence",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "Online Harassment Response Measures",
+                "spans": ["emergency protocol", "automated flagging of abusive content", "mandatory training series", "temporary access restrictions"]
+              },
+              {
+                "label": "Digital Safety Resources",
+                "spans": ["NGO specialising in digital safety for women and girls", "digital safety", "confidential counselling and legal guidance"]
+              },
+              {
+                "label": "Policy Grounding",
+                "spans": ["online gender-based violence", "EU Gender Equality Strategy 2020-2025"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["VPN", "metadata traces", "code of conduct"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 15,
+          "title": "Breaking the Silence",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "Online Safety Outcomes",
+                "spans": ["40% increase in staff reporting feeling safe online", "complete adoption of the new anti-violence protocols"]
+              },
+              {
+                "label": "EU Network & Data Collection",
+                "spans": ["EU network on the prevention of gender-based violence and domestic violence", "intersectional data collection"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025", "digital safety"]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "legends_gender_equal_economy_chunked.md",
+      "chunks": [
+        { "chunk_number": 1, "title": "Equal Time, Equal Opportunity", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 2, "title": "Equal Time, Equal Opportunity", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 3, "title": "Equal Time, Equal Opportunity", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 4,
+          "title": "Equal Time, Equal Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Work-Life Balance Measures",
+                "spans": ["flexible working framework", "childcare support program", "return-to-career pathway", "subsidized childcare slots", "compressed workweeks", "emergency childcare vouchers"]
+              },
+              {
+                "label": "Policy Grounding",
+                "spans": ["Work-Life Balance Directive", "EU Gender Equality Strategy 2020-2025"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["parental leave", "Shared Responsibility"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 5,
+          "title": "Equal Time, Equal Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Retention & Leadership Outcomes",
+                "spans": ["25%", "retention rates for women", "30% of leadership roles", "35%", "perceived work-life balance"]
+              },
+              {
+                "label": "Parental Leave Uptake",
+                "spans": ["8% to 41%", "proportion of men taking parental leave"]
+              }
+            ]
+          }
+        },
+        { "chunk_number": 6, "title": "Balancing the Scales of Opportunity", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 7, "title": "Balancing the Scales of Opportunity", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 8, "title": "Balancing the Scales of Opportunity", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 9,
+          "title": "Balancing the Scales of Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Workplace Equality Measures",
+                "spans": ["flexible scheduling", "transparent pay-mapping exercise", "training-rotation model", "childcare partnership"]
+              },
+              {
+                "label": "Women's Economic Empowerment",
+                "spans": ["InvestEU-aligned funding streams", "women-led green-energy micro-enterprises"]
+              },
+              {
+                "label": "Policy Grounding",
+                "spans": ["Work-Life Balance Directive", "EU Gender Equality Strategy 2020-2025", "European Semester"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["gender pay gaps", "disincentives for second earners"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 10,
+          "title": "Balancing the Scales of Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Technical Training Outcomes",
+                "spans": ["45%", "women's participation in technical training"]
+              },
+              {
+                "label": "Pay Equity Outcomes",
+                "spans": ["12%", "gender pay gap", "two women-led solar-maintenance micro-enterprises"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["European Semester", "EU Gender Equality Strategy 2020-2025"]
+              }
+            ]
+          }
+        },
+        { "chunk_number": 11, "title": "The Parity Portfolio", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 12, "title": "The Parity Portfolio", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 13, "title": "The Parity Portfolio", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 14,
+          "title": "The Parity Portfolio",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Financial Inclusion Instruments",
+                "spans": ["InvestEU Alignment Pilot", "€50 million", "women-led startups in the renewable sector"]
+              },
+              {
+                "label": "Pay & Pension Equity Measures",
+                "spans": ["Binding Pay Transparency Protocol", "Returner's Pension Credit", "Work-Life Balance Directive"]
+              },
+              {
+                "label": "Investment Gender Gap",
+                "spans": ["94% of Vanguard's recent capital deployments", "all-male founding teams", "gender pay gap", "12%"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Parity Portfolio",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Pay Gap & Portfolio Outcomes",
+                "spans": ["3%", "internal gender pay gap", "30% of their new portfolio", "women-led ventures"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025"]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "legends_leading_chunked.md",
+      "chunks": [
+        { "chunk_number": 1, "title": "The Boardroom Turn", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 2, "title": "The Boardroom Turn", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 3, "title": "The Boardroom Turn", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 4,
+          "title": "The Boardroom Turn",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Board Recruitment Reforms",
+                "spans": ["gender-balanced longlist", "leadership mapping system", "board-readiness programme"]
+              },
+              {
+                "label": "Bias & Pipeline Barriers",
+                "spans": ["unconscious bias", "succession planning", "informal referral system"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025", "committee work", "budget responsibility"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 5,
+          "title": "The Boardroom Turn",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Board Representation Outcomes",
+                "spans": ["22% to 50%", "women's representation on the board", "women chaired two of the four key committees"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025"]
+              }
+            ]
+          }
+        },
+        { "chunk_number": 6, "title": "The Horizon of Shared Leadership", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 7, "title": "The Horizon of Shared Leadership", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 8, "title": "The Horizon of Shared Leadership", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 9,
+          "title": "The Horizon of Shared Leadership",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Leadership Representation Gap",
+                "spans": ["62% of junior and mid-level staff", "18% of leadership roles"]
+              },
+              {
+                "label": "Structural Reform Measures",
+                "spans": ["leadership-development pathways", "transparent appointment procedures", "40% minimum target", "public accountability dashboard"]
+              },
+              {
+                "label": "Policy Grounding",
+                "spans": ["Directive on improving the gender balance on corporate boards", "EU Platform of Diversity Charters", "2024 European Parliament elections", "EU Gender Equality Strategy 2020-2025"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 10,
+          "title": "The Horizon of Shared Leadership",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Leadership Representation Outcomes",
+                "spans": ["18% to 42%", "30% increase", "women applying for local-council candidate training programmes"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025"]
+              }
+            ]
+          }
+        },
+        { "chunk_number": 11, "title": "The Parity Path", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 12, "title": "The Parity Path", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 13, "title": "The Parity Path", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 14,
+          "title": "The Parity Path",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Board Appointment Protocol",
+                "spans": ["Transparent Appointment Protocol", "40% of candidates for non-executive board positions", "Leadership Parity Framework"]
+              },
+              {
+                "label": "Leadership Pipeline",
+                "spans": ["Leadership Development Programme", "50% gender balance at all management levels", "glass ceiling"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025", "informal referral system"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Parity Path",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Board Parity Outcomes",
+                "spans": ["42% of its board members were women", "Executive Director of International Operations"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025"]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "legends_mainstreaming_intersectional_chunked.md",
+      "chunks": [
+        { "chunk_number": 1, "title": "Designing for All", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 2, "title": "Designing for All", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 3, "title": "Designing for All", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 4,
+          "title": "Designing for All",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Intersectional Vulnerable Groups",
+                "spans": ["elderly women living alone", "migrant families", "residents with disabilities", "single mothers", "caregiving responsibilities"]
+              },
+              {
+                "label": "Gender Mainstreaming Tools",
+                "spans": ["Gender Impact Assessment Toolkit", "gender mainstreaming", "gender-disaggregated data"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025", "evacuation delays", "emergency transport"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 5,
+          "title": "Designing for All",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Urban Safety Outcomes",
+                "spans": ["40% increase in perceived safety among women residents", "25% reduction in evacuation time"]
+              },
+              {
+                "label": "Accessibility Measures",
+                "spans": ["wheelchair accessible", "mandatory gender mainstreaming checkpoint", "decentralized shelter points"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025"]
+              }
+            ]
+          }
+        },
+        { "chunk_number": 6, "title": "Weaving Equality Into Every Policy", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 7, "title": "Weaving Equality Into Every Policy", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 8, "title": "Weaving Equality Into Every Policy", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 9,
+          "title": "Weaving Equality Into Every Policy",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Mainstreaming Governance Structures",
+                "spans": ["Equality Integration Task Group", "Task Force for Equality"]
+              },
+              {
+                "label": "Cross-Sector Policy Instruments",
+                "spans": ["Digital Education Action Plan", "Women in Digital", "EU Beating Cancer Plan", "EU Drugs Agenda 2021-2025"]
+              },
+              {
+                "label": "Intersectional Groups & Methods",
+                "spans": ["Roma girl with a disability", "migrant woman", "intersectionality", "EIGE methodologies"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025", "gender-differentiated impact assessments"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 10,
+          "title": "Weaving Equality Into Every Policy",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Cross-Policy Outcomes",
+                "spans": ["gender-responsive transport planning", "38%", "girls' enrolment in the digital-skills pilot", "27%", "health-screening participation among migrant women"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025"]
+              }
+            ]
+          }
+        },
+        { "chunk_number": 11, "title": "The Intersection of Transit", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 12, "title": "The Intersection of Transit", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 13, "title": "The Intersection of Transit", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 14,
+          "title": "The Intersection of Transit",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Green Deal Gender Mainstreaming",
+                "spans": ["European Green Deal", "Building Renovation Wave", "Task Force for Equality", "EU Gender Equality Strategy 2020-2025"]
+              },
+              {
+                "label": "Inclusive Transit Design Measures",
+                "spans": ["low-floor bus boarding", "subsidized transit passes", "cooling centers", "green spaces"]
+              },
+              {
+                "label": "Intersectional Mobility Concepts",
+                "spans": ["intersectional lens", "energy poverty", "trip-chaining", "transport poverty"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Intersection of Transit",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Inclusive Transit Outcomes",
+                "spans": ["20% increase in transit usage among the local migrant population", "transport poverty"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025", "intersectional perspective"]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "source_file": "legends_funding_implementation_chunked.md",
+      "chunks": [
+        { "chunk_number": 1, "title": "Funding Equality Forward", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 2, "title": "Funding Equality Forward", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 3, "title": "Funding Equality Forward", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 4,
+          "title": "Funding Equality Forward",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "Funding Eligibility Requirements",
+                "spans": ["mandatory gender equality criterion", "gender impact assessment", "gender-disaggregated targets", "Gender Equality Plan template"]
+              },
+              {
+                "label": "Budget Tracking Tools",
+                "spans": ["gender budgeting tracking system", "gender relevance score"]
+              },
+              {
+                "label": "Funding Instruments Referenced",
+                "spans": ["Horizon Europe", "Citizens, Equality, Rights and Values Programme", "Multi-Annual Financial Framework"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["capacity-building initiative", "migrant women", "rural areas"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 5,
+          "title": "Funding Equality Forward",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "Gender Funding Outcomes",
+                "spans": ["12% to 68%", "€45 million", "50% increase", "women-led organizations in funding programs"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025", "Common Provisions Regulation"]
+              }
+            ]
+          }
+        },
+        { "chunk_number": 6, "title": "Investing in Equality", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 7, "title": "Investing in Equality", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 8, "title": "Investing in Equality", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 9,
+          "title": "Investing in Equality",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "EU Structural Funds Used",
+                "spans": ["European Maritime and Fisheries Fund (EMFF)", "European Social Fund Plus (ESF+)", "Common Agricultural Policy (CAP)", "Asylum and Migration Fund"]
+              },
+              {
+                "label": "Rights, Innovation & Values Funding",
+                "spans": ["Citizens, Equality, Rights and Values (CERV)", "Horizon Europe"]
+              },
+              {
+                "label": "Enabling Conditions",
+                "spans": ["national gender-equality strategic framework", "Charter of Fundamental Rights", "Common Provisions Regulation"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["socially responsible public-procurement clause", "childcare support", "EU Gender Equality Strategy 2020-2025"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 10,
+          "title": "Investing in Equality",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "Budget Monitoring Mechanisms",
+                "spans": ["gender-related expenditure", "2021-2027 MFF", "European Court of Auditors"]
+              },
+              {
+                "label": "Participation Outcomes",
+                "spans": ["32 women", "marine-engineering training", "12 migrant women", "apprenticeships"]
+              },
+              {
+                "label": "Procurement Outcomes",
+                "spans": ["60%", "gender-responsive tenders", "Erasmus+"]
+              }
+            ]
+          }
+        },
+        { "chunk_number": 11, "title": "The Blue Horizon Initiative", "subtitle": null, "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 12, "title": "The Blue Horizon Initiative", "subtitle": "Setting", "classification": "unknown", "spans": { "groups": [] } },
+        { "chunk_number": 13, "title": "The Blue Horizon Initiative", "subtitle": "Characters", "classification": "unknown", "spans": { "groups": [] } },
+        {
+          "chunk_number": 14,
+          "title": "The Blue Horizon Initiative",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "Funding Instruments Applied",
+                "spans": ["European Maritime and Fisheries Fund", "Horizon Europe", "InvestEU Programme", "Cohesion Fund"]
+              },
+              {
+                "label": "Enabling Conditions",
+                "spans": ["enabling conditions", "Common Provisions Regulation", "Gender Equality Plan", "40% of leadership roles in new research projects"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["women in rural coastal areas", "maritime certifications", "Multi-Annual Financial Framework"]
+              }
+            ]
+          }
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Blue Horizon Initiative",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "Investment & Participation Outcomes",
+                "spans": ["€1.2 million", "InvestEU Programme", "Cohesion Fund", "30% increase in female participation in maritime decision-making"]
+              },
+              {
+                "label": "Individual",
+                "spans": ["EU Gender Equality Strategy 2020-2025"]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
