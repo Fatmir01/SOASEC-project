@@ -1,0 +1,2348 @@
+{
+  "taxonomy": "EU Gender Equality Strategy 2020-2025",
+  "sources": [
+    {
+      "source_file": "legends_violence_stereotypes_chunked.md",
+      "chunks": [
+        {
+          "chunk_number": 1,
+          "title": "Breaking the Silence Protocol",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 2,
+          "title": "Breaking the Silence Protocol",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "A regional public hospital network operating in Gdańsk, specializing in emergency care and community health services. The institution employs over 1,200 staff and serves a diverse urban and rural population, with a growing focus on patient-centered care and compliance with EU public health standards."
+        },
+        {
+          "chunk_number": 3,
+          "title": "Breaking the Silence Protocol",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "* **Avery Nowak** – Clinical governance officer responsible for policy compliance and quality standards\n* **Marta Zielińska** – Senior nurse who frequently interacts with vulnerable patients in emergency units\n* **Jonas Petraitis** – IT systems manager overseeing digital patient reporting tools\n* **Elif Demir** – Psychologist coordinating trauma and victim support services"
+        },
+        {
+          "chunk_number": 4,
+          "title": "Breaking the Silence Protocol",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "GBV Hospital Interventions",
+                "spans": [
+                  "mandatory training program",
+                  "GBV alert",
+                  "Safe Pathway",
+                  "confidential consultation room",
+                  "on-call psychologist"
+                ]
+              },
+              {
+                "label": "Policy & Legal Grounding",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025",
+                  "Victims' Rights Directive",
+                  "trauma-informed communication"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "domestic or gender-based violence",
+                  "legal obligations"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What digital feature was integrated into patient records to enable frontline staff to flag suspected cases of gender-based violence?",
+              "answer": "GBV alert",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What victim-centered pathway was created to ensure no identified patient left the hospital without structured support?",
+              "answer": "Safe Pathway",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What facility was provided within the hospital to allow private and confidential consultations with GBV victims?",
+              "answer": "confidential consultation room",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Which clinical professional was automatically notified whenever the digital GBV alert was triggered in a patient's record?",
+              "answer": "on-call psychologist",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Which EU directive's legal obligations were incorporated into the hospital's mandatory frontline staff training?",
+              "answer": "Victims' Rights Directive",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What communication approach for sensitive patient interactions was made central to the hospital's training programme?",
+              "answer": "trauma-informed communication",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            }
+          ],
+          "content": "The issue first surfaced during a routine internal audit led by Avery Nowak. While reviewing anonymized patient records, Avery noticed a troubling inconsistency: cases with clear indicators of domestic or gender-based violence were rarely flagged as such in the system. Despite EU directives and national guidelines, reporting remained sporadic and fragmented.\nAvery called a meeting with Marta, Jonas, and Elif to understand the gap. “We’re seeing patients with injuries consistent with abuse,” Avery began, “but less than 10% are formally recorded as gender-based violence cases. That means they’re not receiving structured support.”\nMarta nodded. “In the emergency room, we’re under pressure. Sometimes it’s hard to ask sensitive questions, especially without proper training. And honestly, some staff fear saying the wrong thing.”\nElif added, “And even when cases are identified, referrals to psychological support are inconsistent. Victims often leave without knowing their rights or available services.”\nRecognizing that the problem required systemic intervention, the group designed a multi-layered response aligned with the principles of the EU Gender Equality Strategy 2020-2025.\nFirst, Avery introduced a mandatory training program for all frontline staff, focusing on early identification of gender-based violence, trauma-informed communication, and legal obligations under the Victims’ Rights Directive. The training included role-playing scenarios and was co-developed with local NGOs specializing in domestic violence.\nSecond, Jonas upgraded the hospital’s digital reporting system. He integrated a confidential “GBV alert” feature into patient records, allowing staff to flag suspected cases with a single click. The system automatically triggered a protocol: notifying the on-call psychologist and generating a checklist for follow-up actions, including documentation, referral, and patient consent.\nThird, Elif established a dedicated “Safe Pathway” for victims. This included a private consultation room, immediate psychological assessment, and a standardized information packet outlining legal rights, shelters, and support hotlines. The pathway ensured that no identified victim left the hospital without being offered structured support.\nTo reinforce accountability, Avery implemented monthly audits and published anonymized statistics internally. Departments were encouraged to share best practices, and staff could provide feedback anonymously."
+        },
+        {
+          "chunk_number": 5,
+          "title": "Breaking the Silence Protocol",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "GBV Reporting Outcomes",
+                "spans": [
+                  "9% to 37%",
+                  "60%",
+                  "referral rates to psychological services",
+                  "perceived safety and support"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025",
+                  "best practice model"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What was the increase in the proportion of formally reported gender-based violence cases after the hospital protocol was implemented?",
+              "answer": "9% to 37%",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What was the percentage increase in referrals to psychological support services following the introduction of the protocol?",
+              "answer": "60%",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What qualitative dimension of patient experience improved as a result of the Safe Pathway?",
+              "answer": "perceived safety and support",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What status did the hospital formally achieve with respect to its GBV protocol, contributing to national EU-aligned efforts?",
+              "answer": "best practice model",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            }
+          ],
+          "content": "Three months into implementation, the results were measurable. Reported cases of gender-based violence increased from 9% to 37% of suspected incidents. Referral rates to psychological services rose by 60%, and patient feedback indicated a significant improvement in perceived safety and support.\nDuring a follow-up meeting, Marta reflected, “At first, it felt like extra work. But now, it’s part of how we care. We’re not just treating injuries—we’re addressing the cause.”\nAvery concluded, “This is exactly what the EU Gender Equality Strategy 2020-2025 calls for: effective prevention, victim-centered support, and coordinated action. We’ve turned a blind spot into a standard.”\nThe hospital network formally documented the protocol as a best practice model, contributing to national efforts aligned with the broader EU framework to prevent and combat gender-based violence."
+        },
+        {
+          "chunk_number": 6,
+          "title": "The Code of Neutrality",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 7,
+          "title": "The Code of Neutrality",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "\"Apex Dynamics\" is a mid-sized software development firm specializing in recruitment AI and predictive analytics. Located in the bustling tech hub of **Tallinn, Estonia**, the company serves corporate clients across the Baltic region, providing automated tools for high-volume hiring processes."
+        },
+        {
+          "chunk_number": 8,
+          "title": "The Code of Neutrality",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "* **Jari** – Head of Data Science. A veteran programmer who oversees the development of machine learning models.\n* **Elizaveta** – Human Resources Director. Responsible for ensuring the company’s internal and external tools meet ethical and legal standards.\n* **Sam** – Junior Software Engineer. A recent graduate focused on \"de-biasing\" algorithms and auditing training datasets.\n* **Mika** – Compliance Officer. Tasked with aligning the firm’s technical output with European Union regulatory frameworks."
+        },
+        {
+          "chunk_number": 9,
+          "title": "The Code of Neutrality",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "AI Bias Mitigation Tools",
+                "spans": [
+                  "Gender-Neutral Logic layer",
+                  "Bias-Detection Wrapper",
+                  "deep-cleansing of the training sets",
+                  "gendered language"
+                ]
+              },
+              {
+                "label": "Stereotype Eradication Protocol",
+                "spans": [
+                  "Stereotype Eradication protocol",
+                  "gender stereotypes",
+                  "unconscious biases"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "OptiHire",
+                  "EU Gender Equality Strategy 2020-2025",
+                  "5%"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What algorithmic module was developed to prevent the AI recruitment tool from reproducing gender stereotypes in its scoring?",
+              "answer": "Gender-Neutral Logic layer",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What technical safeguard was integrated to flag any screening batch where one gender's success rate deviated beyond an acceptable threshold?",
+              "answer": "Bias-Detection Wrapper",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What data preparation process was applied to the AI training sets to remove discriminatory linguistic markers and proxies?",
+              "answer": "deep-cleansing of the training sets",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What multi-pillar protocol did the team implement to systematically eliminate bias from the AI recruitment platform?",
+              "answer": "Stereotype Eradication protocol",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What type of bias did the developer workshops specifically target to prevent programmers from inadvertently encoding discrimination?",
+              "answer": "unconscious biases",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What percentage deviation between gender success rates triggers the automated bias flagging system?",
+              "answer": "5%",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            }
+          ],
+          "content": "At Apex Dynamics, the team was preparing to launch \"OptiHire,\" an AI-driven platform designed to screen resumes for technical roles. During a preliminary audit, Sam discovered a troubling trend: the algorithm consistently ranked male candidates higher for leadership positions, even when female candidates possessed superior certifications. The AI had been trained on historical data from the past twenty years, a period dominated by stereotypical gender norms in the tech industry.\nMika convened a meeting in the glass-walled boardroom overlooking Tallinn’s Old Town. \"The current model is replicating historical biases,\" Mika noted, pointing to the data on the screen. \"It views leadership as a masculine trait because of the data it was fed. This directly contradicts our commitment to the **EU Gender Equality Strategy 2020-2025**, specifically the mandate to dismantle gender stereotypes in AI development.\"\nJari leaned back, crossing his arms. \"The data is the data, Mika. If we change it manually, aren't we just 'cooking' the results?\"\n\"It’s not about cooking the results, Jari,\" Sam countered. \"It’s about accuracy. The AI is assuming that because fewer women held these roles in 2005, they are less qualified in 2026. That is a factual error based on a stereotype. We need to implement a 'Gender-Neutral Logic' layer.\"\nElizaveta nodded in agreement. \"As a firm, we cannot sell a product that reinforces the glass ceiling. We need a concrete compliance plan.\"\nOver the next three months, the team implemented a three-pillar \"Stereotype Eradication\" protocol. First, Sam and Jari conducted a deep-cleansing of the training sets, removing \"gendered\" language and proxies—such as specific hobby groups or sports—that the AI was using to guess a candidate's gender. Second, they integrated a \"Bias-Detection Wrapper\" that flagged any screening batch where the success rate of one gender deviated by more than 5% from the other. Finally, Mika organized a series of workshops for the programmers to help them identify their own unconscious biases during the data selection process.\n\"The new framework doesn't just hide the gender; it ignores the stereotypical markers we didn't even realize were there,\" Jari admitted during the final review."
+        },
+        {
+          "chunk_number": 10,
+          "title": "The Code of Neutrality",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "AI Debiasing Outcomes",
+                "spans": [
+                  "28%",
+                  "selection rate of qualified women",
+                  "ethical AI",
+                  "Estonian Ministry of Economic Affairs"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025",
+                  "gender stereotypes in technical infrastructure"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "By what percentage did the selection rate of qualified women for senior engineering roles increase after the AI debiasing reforms?",
+              "answer": "28%",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Which national government body recognised the company as a model for responsible AI development following the debiasing reforms?",
+              "answer": "Estonian Ministry of Economic Affairs",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What broader concept does the AI debiasing initiative demonstrate can be challenged through changes in technical design?",
+              "answer": "gender stereotypes in technical infrastructure",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            }
+          ],
+          "content": "By the end of the fiscal year, Apex Dynamics released a transparency report showing that OptiHire had increased the selection rate of qualified women for senior engineering roles by 28%. The firm was subsequently highlighted by the Estonian Ministry of Economic Affairs as a model for ethical AI. This measurable shift proved that by actively challenging gender stereotypes in technical infrastructure, the company had successfully aligned its operations with the **EU Gender Equality Strategy 2020-2025**, ensuring that professional paths were no longer constrained by fixed norms."
+        },
+        {
+          "chunk_number": 11,
+          "title": "Breaking the Silence",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 12,
+          "title": "Breaking the Silence",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "The legend unfolds at **NordicTech Public Services**, a mid‑sized digital‑innovation agency based in **Reykjavík, Iceland**. The organisation develops digital tools for public institutions and employs a diverse workforce of engineers, social scientists and service‑design specialists."
+        },
+        {
+          "chunk_number": 13,
+          "title": "Breaking the Silence",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "- **Elín Mársdóttir** — Head of Human Resources; committed to building a safe and inclusive workplace.  \n- **Ravi Holm** — Cybersecurity Analyst; monitors online risks affecting staff and service users.  \n- **Sofia Lindgren** — Social Impact Researcher; leads internal assessments on gender equality and violence prevention.  \n- **Jonas Pettersson** — Team Lead for Software Development; responsible for implementing new workplace protocols.  \n- **Amina Yusuf** — Junior UX Designer; recently joined the organisation and becomes central to identifying a hidden problem."
+        },
+        {
+          "chunk_number": 14,
+          "title": "Breaking the Silence",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "Online Harassment Response Measures",
+                "spans": [
+                  "emergency protocol",
+                  "automated flagging of abusive content",
+                  "mandatory training series",
+                  "temporary access restrictions"
+                ]
+              },
+              {
+                "label": "Digital Safety Resources",
+                "spans": [
+                  "NGO specialising in digital safety for women and girls",
+                  "digital safety",
+                  "confidential counselling and legal guidance"
+                ]
+              },
+              {
+                "label": "Policy Grounding",
+                "spans": [
+                  "online gender-based violence",
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "VPN",
+                  "metadata traces",
+                  "code of conduct"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What immediate response measure was put in place to protect the victim of online gender-based violence at NordicTech?",
+              "answer": "emergency protocol",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What automated technical mechanism was added to the internal communication platform to detect and remove abusive content?",
+              "answer": "automated flagging of abusive content",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What type of organisation did NordicTech partner with to provide confidential support and legal guidance to victims of digital harassment?",
+              "answer": "NGO specialising in digital safety for women and girls",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What form of harm does the EU Gender Equality Strategy explicitly categorise anonymous online harassment targeting women as?",
+              "answer": "online gender-based violence",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What organisational document was updated to include an explicit prohibition on all forms of gender-based violence including digital abuse?",
+              "answer": "code of conduct",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            }
+          ],
+          "content": "When Amina joined NordicTech Public Services, she expected a collaborative environment where creativity thrived. Instead, within her first month, she began receiving anonymous messages through the company’s internal communication platform—comments about her appearance, insinuations about her competence as a woman in tech, and, eventually, explicit threats. At first, she tried to ignore them, but the messages escalated. One afternoon, she approached Elín, visibly shaken.\n“I don’t feel safe here,” Amina whispered. “Someone is targeting me online.”\nElín immediately convened a confidential meeting with Ravi, Sofia and Jonas. As Amina recounted the messages, Sofia recognised the situation as a form of **online gender‑based violence**, a phenomenon highlighted in the **EU Gender Equality Strategy 2020‑2025**. The team realised that while NordicTech had general anti‑harassment policies, it lacked specific measures addressing digital abuse—an increasingly pervasive threat.\n“We need to treat this as seriously as any physical or verbal harassment,” Sofia insisted. “Online violence is violence.”\nRavi began a forensic review of the platform’s logs, identifying patterns that suggested the perpetrator was using a VPN but still leaving metadata traces. Meanwhile, Elín and Jonas drafted an emergency protocol: immediate reporting channels, temporary access restrictions for suspected accounts, and guaranteed anonymity for victims.\nThe next step was prevention. Sofia proposed a comprehensive programme aligned with EU recommendations on **ending gender‑based violence** and **challenging gender stereotypes**. The plan included:\n- A mandatory training series on recognising and preventing online harassment, with modules tailored for managers and technical staff.  \n- A redesign of the internal communication platform to include automated flagging of abusive content, developed by Jonas’s team with input from gender‑equality experts.  \n- A partnership with a local NGO specialising in digital safety for women and girls, offering confidential counselling and legal guidance.  \n- A new clause in the organisation’s code of conduct explicitly prohibiting all forms of gender‑based violence, including harmful online practices.\nDuring a follow‑up meeting, Ravi announced, “We’ve identified the source. It was a contractor misusing remote access privileges.” The contractor was immediately suspended pending investigation, and the case was referred to the appropriate authorities, ensuring accountability."
+        },
+        {
+          "chunk_number": 15,
+          "title": "Breaking the Silence",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "spans": {
+            "groups": [
+              {
+                "label": "Online Safety Outcomes",
+                "spans": [
+                  "40% increase in staff reporting feeling safe online",
+                  "complete adoption of the new anti-violence protocols"
+                ]
+              },
+              {
+                "label": "EU Network & Data Collection",
+                "spans": [
+                  "EU network on the prevention of gender-based violence and domestic violence",
+                  "intersectional data collection"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025",
+                  "digital safety"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What measurable improvement in perceived online security was recorded after NordicTech's anti-harassment measures were implemented?",
+              "answer": "40% increase in staff reporting feeling safe online",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What level of organisational adoption was achieved for the new anti-violence protocols across all NordicTech departments?",
+              "answer": "complete adoption of the new anti-violence protocols",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Which EU coordination body did NordicTech contribute to by sharing its documented anti-harassment practices?",
+              "answer": "EU network on the prevention of gender-based violence and domestic violence",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What monitoring approach was embedded in NordicTech's ongoing policies to ensure future gender equality measures remain evidence-based?",
+              "answer": "intersectional data collection",
+              "type": "Factoid",
+              "tag": "violence_stereotypes"
+            }
+          ],
+          "content": "As the months passed, the impact of the new measures became visible. Staff reported feeling more confident using digital tools, and the number of harassment incidents—previously unreported—dropped to zero. Amina, now thriving in her role, volunteered to co‑lead a workshop on safe online communication.\nNordicTech documented the entire process and shared it with the emerging **EU network on the prevention of gender‑based violence and domestic violence**, contributing to the exchange of good practices. The organisation also integrated intersectional data collection to monitor risks and outcomes, ensuring that future policies remained evidence‑based.\nBy the end of the year, an internal audit showed a measurable improvement: a **40% increase in staff reporting feeling safe online**, and a **complete adoption of the new anti‑violence protocols** across all departments. The leadership acknowledged that this progress was not an endpoint but part of an ongoing commitment.\nThe legend closes with NordicTech reaffirming that its actions—strengthening digital safety, combating online harassment, and dismantling gender stereotypes—represent concrete compliance with the **EU Gender Equality Strategy 2020‑2025**, ensuring that everyone can work free from violence and fear."
+        }
+      ]
+    },
+    {
+      "source_file": "legends_gender_equal_economy_chunked.md",
+      "chunks": [
+        {
+          "chunk_number": 1,
+          "title": "Equal Time, Equal Opportunity",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 2,
+          "title": "Equal Time, Equal Opportunity",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "A mid-sized renewable energy engineering firm based in Valencia, specializing in solar infrastructure projects across Southern Europe. The company employs around 250 staff, including engineers, technicians, and administrative personnel, and has recently expanded into rural development initiatives."
+        },
+        {
+          "chunk_number": 3,
+          "title": "Equal Time, Equal Opportunity",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "* **Lucía Ferrer** – Human resources director leading internal policy reforms\n* **Mateo Ruiz** – Senior electrical engineer and team leader managing field operations\n* **Noor Haddad** – Project analyst balancing early-career progression with family responsibilities\n* **Sergio Vázquez** – Chief operations officer responsible for company-wide productivity and staffing"
+        },
+        {
+          "chunk_number": 4,
+          "title": "Equal Time, Equal Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Work-Life Balance Measures",
+                "spans": [
+                  "flexible working framework",
+                  "childcare support program",
+                  "return-to-career pathway",
+                  "subsidized childcare slots",
+                  "compressed workweeks",
+                  "emergency childcare vouchers"
+                ]
+              },
+              {
+                "label": "Policy Grounding",
+                "spans": [
+                  "Work-Life Balance Directive",
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "parental leave",
+                  "Shared Responsibility"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What six-measure package of workplace policies did the company introduce to improve women's retention and career progression?",
+              "answer": "flexible working framework, childcare support program, return-to-career pathway, subsidized childcare slots, compressed workweeks, emergency childcare vouchers",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Which EU directive provided the normative basis for the company's flexible working and parental leave reforms?",
+              "answer": "Work-Life Balance Directive",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What re-entry support was established to assist women returning to work after periods of leave?",
+              "answer": "return-to-career pathway",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What form of leave entitlement was reformed to encourage fathers to share caregiving responsibilities more equally?",
+              "answer": "parental leave",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            }
+          ],
+          "content": "The issue emerged during an internal workforce review initiated by Lucía Ferrer. Despite strong recruitment of women graduates, retention rates for women dropped sharply after three years. Promotion data revealed another disparity: only 18% of leadership roles were held by women, even though they represented nearly 40% of entry-level hires.\nLucía presented the findings to Sergio and Mateo. “We’re not losing talent randomly,” she explained. “We’re losing women at the point where work-life balance becomes critical—especially after starting families.”\nMateo, initially skeptical, responded, “Field operations are demanding. Deadlines, travel—it’s not always flexible.”\nNoor, invited to share her experience, added candidly, “It’s not just about flexibility. It’s about predictability and support. When my childcare arrangement fell through, I had no option but to take unpaid leave. That stalled my career progression.”\nRecognizing the structural nature of the issue, the leadership team committed to aligning their practices with the EU Gender Equality Strategy 2020-2025, particularly the implementation of the Work-Life Balance Directive.\nThe first measure was the introduction of a formal flexible working framework. Employees across all departments, including field engineers, were given access to adaptable schedules, remote planning days, and compressed workweeks. Crucially, the policy mandated equal eligibility for all genders, encouraging men to take parental leave and flexible arrangements without stigma.\nSecond, the company established a childcare support program. Partnering with local providers, they secured subsidized childcare slots for employees, including in nearby rural areas where project sites were located. Emergency childcare vouchers were also introduced for unexpected situations.\nThird, Lucía implemented a “return-to-career pathway.” Employees returning from parental leave were offered a phased reintegration plan, including reduced workloads for the first three months, mentorship pairing, and guaranteed eligibility for promotion reviews within six months.\nTo address cultural barriers, Sergio launched an internal campaign titled “Shared Responsibility,” featuring male employees who had taken parental leave. Mateo himself participated, taking four weeks of leave after the birth of his second child. In a team meeting, he stated, “If we expect balance, we all have to model it. This isn’t just a policy—it’s a shift in how we work.”"
+        },
+        {
+          "chunk_number": 5,
+          "title": "Equal Time, Equal Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Retention & Leadership Outcomes",
+                "spans": [
+                  "25%",
+                  "retention rates for women",
+                  "30% of leadership roles",
+                  "35%",
+                  "perceived work-life balance"
+                ]
+              },
+              {
+                "label": "Parental Leave Uptake",
+                "spans": [
+                  "8% to 41%",
+                  "proportion of men taking parental leave"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "By what percentage did retention rates for women improve after the company's work-life balance package was implemented?",
+              "answer": "25%",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What proportion of leadership roles were held by women following the programme's implementation?",
+              "answer": "30% of leadership roles",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What was the shift in the proportion of men taking parental leave after the company's revised policy was introduced?",
+              "answer": "8% to 41%",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What qualitative workplace indicator improved by 35% among employees following the introduction of the new work-life policies?",
+              "answer": "perceived work-life balance",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            }
+          ],
+          "content": "The company also began tracking usage of flexible arrangements and parental leave by gender, publishing quarterly reports to ensure transparency and accountability.\nWithin one year, measurable improvements were evident. Retention rates for women after three years increased by 25%, and the proportion of men taking parental leave rose from 8% to 41%. Promotion rates for women improved significantly, with women now holding 30% of leadership roles. Employee satisfaction surveys showed a 35% increase in perceived work-life balance across all staff.\nReflecting on the transformation, Noor noted, “I didn’t have to choose between my career and my family. That changed everything.”\nLucía concluded in her annual report, “By implementing concrete measures under the EU Gender Equality Strategy 2020-2025, we’ve not only closed internal gaps but strengthened our entire workforce.”\nThe company’s approach was later cited as a regional best practice in aligning economic performance with gender-equal labor policies."
+        },
+        {
+          "chunk_number": 6,
+          "title": "Balancing the Scales of Opportunity",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 7,
+          "title": "Balancing the Scales of Opportunity",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "This legend takes place at **Alentejo GreenWorks**, a renewable‑energy cooperative located in **Évora, Portugal**. The cooperative manages solar‑energy installations across rural municipalities and employs technicians, analysts and community‑outreach specialists."
+        },
+        {
+          "chunk_number": 8,
+          "title": "Balancing the Scales of Opportunity",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "- **Marisa Duarte** — Operations Manager; oversees staffing and workforce planning across project sites.  \n- **Tomasz Kurek** — Senior Solar Technician; advocates for fair training opportunities for all employees.  \n- **Leila Ben Amar** — Financial Inclusion Officer; responsible for supporting entrepreneurship and access to funding.  \n- **Hugo Ferreira** — Policy and Compliance Advisor; monitors alignment with EU labour‑market and equality frameworks.  \n- **Rosa Jiménez** — Apprentice Technician; a young mother re‑entering the labour market after a career break."
+        },
+        {
+          "chunk_number": 9,
+          "title": "Balancing the Scales of Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Workplace Equality Measures",
+                "spans": [
+                  "flexible scheduling",
+                  "transparent pay-mapping exercise",
+                  "training-rotation model",
+                  "childcare partnership"
+                ]
+              },
+              {
+                "label": "Women's Economic Empowerment",
+                "spans": [
+                  "InvestEU-aligned funding streams",
+                  "women-led green-energy micro-enterprises"
+                ]
+              },
+              {
+                "label": "Policy Grounding",
+                "spans": [
+                  "Work-Life Balance Directive",
+                  "EU Gender Equality Strategy 2020-2025",
+                  "European Semester"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "gender pay gaps",
+                  "disincentives for second earners"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What wage-assessment exercise was conducted to identify and address unjustified pay differences between employees?",
+              "answer": "transparent pay-mapping exercise",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What innovative training structure allowed employees to rotate through technical roles and close skills gaps?",
+              "answer": "training-rotation model",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Which EU-aligned funding streams were leveraged to support women-led green-energy enterprises in the region?",
+              "answer": "InvestEU-aligned funding streams",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What type of women-led businesses emerged from the company's economic empowerment initiative?",
+              "answer": "women-led green-energy micro-enterprises",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Which EU economic coordination framework was used to assess Member State compliance with the proposed labour market reforms?",
+              "answer": "European Semester",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            }
+          ],
+          "content": "When Rosa joined Alentejo GreenWorks as an apprentice technician, she was excited to enter a sector traditionally dominated by men. Yet within weeks, Marisa noticed a pattern: Rosa was frequently absent from afternoon training sessions. When she asked why, Rosa hesitated before admitting that the only childcare available in her village closed at 14:00. “I want to stay in this job,” she said quietly, “but I can’t be in two places at once.”\nMarisa brought the issue to the weekly management meeting. Hugo immediately recognised the broader structural challenge. “This is exactly what the **EU Gender Equality Strategy 2020‑2025** highlights,” he explained. “Women’s participation in the labour market is limited when work‑life balance isn’t supported. We need to align with the **Work‑Life‑Balance Directive** and go beyond the minimum standards.”\nThe team began by conducting an internal assessment of working patterns, pay levels and training access. They discovered that several women in administrative roles were also working reduced hours due to care responsibilities, limiting their chances for promotion. Meanwhile, men rarely requested flexible arrangements, even when eligible.\n“We need to normalise flexibility for everyone,” Tomasz argued. “If only women use it, the imbalance continues.”\nTogether, they designed a multi‑layered plan:\n- **Flexible scheduling** for all staff, including technicians, with equal encouragement for men and women to use it.  \n- A **childcare partnership** with a local cooperative to extend service hours in rural areas, subsidised through regional cohesion‑policy funds.  \n- A **transparent pay‑mapping exercise** to identify potential gender pay gaps, with results shared openly across the organisation.  \n- A new **training‑rotation model** allowing employees with care responsibilities to complete technical modules remotely or during morning shifts.  \n- A pilot programme led by Leila to support **women‑led green‑energy micro‑enterprises**, using InvestEU‑aligned funding streams.\nDuring a team workshop, Marisa addressed the staff directly. “Equal participation isn’t just a principle,” she said. “It’s an economic necessity. We need every talent we have.”"
+        },
+        {
+          "chunk_number": 10,
+          "title": "Balancing the Scales of Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Technical Training Outcomes",
+                "spans": [
+                  "45%",
+                  "women's participation in technical training"
+                ]
+              },
+              {
+                "label": "Pay Equity Outcomes",
+                "spans": [
+                  "12%",
+                  "gender pay gap",
+                  "two women-led solar-maintenance micro-enterprises"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "European Semester",
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "By what percentage did women's participation in technical training increase following the rotation model?",
+              "answer": "45%",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "By how many percentage points did the internal gender pay gap narrow after the pay-mapping and rotation programme?",
+              "answer": "12%",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What type of enterprises were established by women who participated in the green economy empowerment initiative?",
+              "answer": "two women-led solar-maintenance micro-enterprises",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            }
+          ],
+          "content": "The cultural shift began slowly but steadily. Hugo launched an internal campaign explaining how national tax and benefit systems can create **disincentives for second earners**, helping employees understand their rights and options. Tomasz volunteered to take afternoon training slots so that colleagues with care duties could rotate into morning sessions. Men began requesting flexible hours to share childcare, reducing the stigma around doing so.\nThree months later, the cooperative conducted its first monitoring cycle aligned with the **European Semester** indicators on gender equality. The results were striking:  \n- Women’s participation in technical training increased by **45%**.  \n- The gender pay gap, previously hidden due to lack of transparency, was reduced by **12%** after adjustments.  \n- Two women‑led solar‑maintenance micro‑enterprises were launched with Leila’s support.  \n- Staff satisfaction with work‑life balance rose across all genders.\nRosa, now fully integrated into the technician team, completed her certification ahead of schedule. “I didn’t need special treatment,” she said during the annual assembly. “I just needed the same chance to thrive.”\nAlentejo GreenWorks documented its reforms and shared them with regional authorities as a model for closing gender employment gaps in rural areas. The cooperative’s leadership reaffirmed that their progress—strengthening work‑life balance, improving pay transparency, and promoting women’s entrepreneurship—constituted concrete, measurable compliance with the **EU Gender Equality Strategy 2020‑2025**, helping build a truly gender‑equal economy."
+        },
+        {
+          "chunk_number": 11,
+          "title": "The Parity Portfolio",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 12,
+          "title": "The Parity Portfolio",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "\"Vanguard Ventures\" is a private equity and venture capital firm specializing in green energy startups. Based in the financial district of **Frankfurt, Germany**, the firm operates in a high-stakes environment where capital allocation has historically been dominated by all-male founding teams and male-led investment boards."
+        },
+        {
+          "chunk_number": 13,
+          "title": "The Parity Portfolio",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "* **Lukas** – Senior Managing Partner. A seasoned investor who oversees the firm’s primary capital allocation and long-term financial strategy.\n* **Amira** – Investment Director. An expert in sustainable infrastructure with a background in migrant entrepreneurship, focused on diversifying the pipeline.\n* **Elena** – Head of Human Resources. Responsible for internal policy compliance, pay transparency, and implementing work-life balance initiatives.\n* **Stefan** – Junior Analyst. A data specialist who tracks internal performance metrics and external investment trends."
+        },
+        {
+          "chunk_number": 14,
+          "title": "The Parity Portfolio",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Financial Inclusion Instruments",
+                "spans": [
+                  "InvestEU Alignment Pilot",
+                  "€50 million",
+                  "women-led startups in the renewable sector"
+                ]
+              },
+              {
+                "label": "Pay & Pension Equity Measures",
+                "spans": [
+                  "Binding Pay Transparency Protocol",
+                  "Returner's Pension Credit",
+                  "Work-Life Balance Directive"
+                ]
+              },
+              {
+                "label": "Investment Gender Gap",
+                "spans": [
+                  "94% of Vanguard's recent capital deployments",
+                  "all-male founding teams",
+                  "gender pay gap",
+                  "12%"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What investment pilot was launched to channel EU-aligned capital specifically to women-led businesses?",
+              "answer": "InvestEU Alignment Pilot",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What was the funding envelope of the investment pilot for women-led startups in the renewable energy sector?",
+              "answer": "€50 million",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What pay transparency mechanism was introduced as a binding commitment to disclose wage data across the firm?",
+              "answer": "Binding Pay Transparency Protocol",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What pension credit mechanism was created to compensate workers for career interruptions caused by caregiving?",
+              "answer": "Returner's Pension Credit",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What share of the firm's recent capital deployments had gone exclusively to all-male founding teams before the parity initiative?",
+              "answer": "94% of Vanguard's recent capital deployments",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            }
+          ],
+          "content": "In the mahogany-paneled offices of Vanguard Ventures, the annual investment review revealed a stark disparity. Despite a surplus of female STEM graduates in the region, 94% of Vanguard’s recent capital deployments had gone to all-male founding teams. Internally, the data was equally skewed: female associates were exiting the firm at double the rate of their male counterparts, often citing a lack of support for caring responsibilities.\nAmira presented the findings to Lukas during a quarterly briefing. \"We are missing out on innovation, Lukas. We know that firms with gender-diverse portfolios show higher sustainability ratings, yet our current screening process is structurally biased toward traditional networks,\" she argued. Stefan backed her up with data, noting that the gender pay gap within the firm’s middle management had widened to 12% due to \"discretionary\" bonuses that favored those without career breaks.\nRecognizing the financial and regulatory risk, Elena proposed a comprehensive overhaul. \"To thrive in a gender-equal economy, we must align with the **EU Gender Equality Strategy 2020-2025**. This isn't just about optics; it’s about economic independence and structural reform.\"\nThe team implemented three concrete measures. First, Elena introduced a \"Binding Pay Transparency Protocol.\" All salary bands and bonus criteria were codified and shared internally, eliminating the \"negotiation gap\" that disadvantaged women. Second, Lukas authorized the \"InvestEU Alignment Pilot,\" a dedicated fund of €50 million specifically for women-led startups in the renewable sector. Finally, to address the \"care gap,\" the firm went beyond the minimum standards of the Work-Life Balance Directive by implementing a \"Returner’s Pension Credit.\" This policy provided employer-paid pension contributions for employees on parental leave, ensuring their future financial security wasn't penalized by unpaid care work.\nDuring a board meeting six months later, Lukas noted the shift. \"By formalizing these criteria, we've removed the guesswork that led to bias.\" Amira added, \"Our new pipeline of women-led startups has already yielded two high-growth prospects that our competitors overlooked.\""
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Parity Portfolio",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "spans": {
+            "groups": [
+              {
+                "label": "Pay Gap & Portfolio Outcomes",
+                "spans": [
+                  "3%",
+                  "internal gender pay gap",
+                  "30% of their new portfolio",
+                  "women-led ventures"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "To what level did the firm's internal gender pay gap fall following the Binding Pay Transparency Protocol?",
+              "answer": "3%",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What proportion of the firm's new investment portfolio was directed toward women-led ventures after the parity initiative?",
+              "answer": "30% of their new portfolio",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What type of ventures received the redirected capital as a result of the InvestEU Alignment Pilot?",
+              "answer": "women-led ventures",
+              "type": "Factoid",
+              "tag": "equal_economy"
+            }
+          ],
+          "content": "The outcome was measurable and significant. By the following year, the internal gender pay gap at Vanguard Ventures dropped to 3%, and women-led ventures comprised 30% of their new portfolio. The firm was officially recognized for its contribution to closing the gender employment and finance gaps, proving that intentional policy changes could drive both equity and profit in line with the **EU Gender Equality Strategy 2020-2025**."
+        }
+      ]
+    },
+    {
+      "source_file": "legends_leading_chunked.md",
+      "chunks": [
+        {
+          "chunk_number": 1,
+          "title": "The Boardroom Turn",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 2,
+          "title": "The Boardroom Turn",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "A regional public transport authority in **Dublin, Ireland**, responsible for bus, tram, and procurement decisions across the metropolitan area. The organization has a formal executive board, a senior management team, and close coordination with the city council on service planning and public investment."
+        },
+        {
+          "chunk_number": 3,
+          "title": "The Boardroom Turn",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "* **Rosa O’Connell** – Governance and compliance director who oversees board appointments and internal policy.\n* **Samir El-Amin** – Operations chief with influence over senior recruitment and promotion.\n* **Niamh Byrne** – Policy analyst who tracks representation data and prepares leadership reports.\n* **Tariq Mensah** – Chair of the nominations committee responsible for selecting board candidates."
+        },
+        {
+          "chunk_number": 4,
+          "title": "The Boardroom Turn",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Board Recruitment Reforms",
+                "spans": [
+                  "gender-balanced longlist",
+                  "leadership mapping system",
+                  "board-readiness programme"
+                ]
+              },
+              {
+                "label": "Bias & Pipeline Barriers",
+                "spans": [
+                  "unconscious bias",
+                  "succession planning",
+                  "informal referral system"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025",
+                  "committee work",
+                  "budget responsibility"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What candidate shortlisting requirement was introduced to ensure gender balance in board recruitment processes?",
+              "answer": "gender-balanced longlist",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What internal tool was deployed to track the pipeline of women suitable for senior board-level positions?",
+              "answer": "leadership mapping system",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What development programme was introduced to equip women with the skills and exposure needed for board roles?",
+              "answer": "board-readiness programme",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What informal recruitment practice was identified as systematically disadvantaging women in favour of known candidates?",
+              "answer": "informal referral system",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What cognitive bias among decision-makers was addressed through targeted workshops to improve board recruitment outcomes?",
+              "answer": "unconscious bias",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            }
+          ],
+          "content": "When Rosa O’Connell reviewed the authority’s annual governance file, one pattern stood out immediately: the executive board had remained overwhelmingly male for years, even though women made up nearly half of the workforce and more than half of graduate hires. The situation was worse in the talent pipeline. Women were present in middle management, but they were disappearing before the final stage of board consideration.\nRosa brought the findings to Tariq Mensah and Samir El-Amin in a meeting focused on succession planning. “We cannot keep saying the best candidate will naturally emerge,” she said, placing the board composition chart on the table. “The pattern is not neutral. It is reproducing itself.”\nTariq frowned. “The board says it only appoints the strongest profiles. That is the process.”\nNiamh Byrne, who had prepared the data pack, answered carefully. “The process may be formal, but the outcome is not balanced. In the last six appointments, every shortlisted candidate was male. That suggests the search and nomination stages are too narrow.”\nSamir nodded slowly. “We have good women managers, but they are often overlooked for high-visibility roles. Some were never asked to apply.”\nThe team agreed that compliance with the EU Gender Equality Strategy 2020-2025 required more than general statements about fairness. They needed a concrete correction mechanism.\nFirst, Rosa revised the board recruitment procedure. Every vacancy would now require a gender-balanced longlist and a final shortlist with at least one woman and one man for each seat. External recruiters were instructed to broaden their searches beyond the usual professional networks.\nSecond, Niamh created a leadership mapping system that identified women in mid-level and senior roles with the experience needed for governance positions. The system tracked committee work, budget responsibility, public speaking experience, and cross-functional leadership so that promising candidates were visible before board vacancies opened.\nThird, Samir launched a board-readiness programme for internal candidates. It included mentoring from current directors, mock interview sessions, and sessions on public governance, risk oversight, and transport finance. “We are not lowering standards,” he told the management team. “We are widening access to the standards.”"
+        },
+        {
+          "chunk_number": 5,
+          "title": "The Boardroom Turn",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Board Representation Outcomes",
+                "spans": [
+                  "22% to 50%",
+                  "women's representation on the board",
+                  "women chaired two of the four key committees"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What was the change in women's representation on the board following the gender-balanced recruitment reforms?",
+              "answer": "22% to 50%",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What governance responsibility did women achieve in the board's key committees following the representation reforms?",
+              "answer": "women chaired two of the four key committees",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            }
+          ],
+          "content": "To make the process transparent, Tariq introduced a quarterly report to the board showing the gender balance of applicants, shortlisted candidates, appointments, and committee chairs. He also required nomination panel members to complete training on unconscious bias and succession planning.\nAt the next appointments cycle, the changes were clear. The longlist for two vacant board seats was evenly balanced, the shortlist included three women and three men, and both appointed directors were women with strong operational and financial backgrounds. Within eight months, women’s representation on the board rose from 22% to 50%, and women chaired two of the four key committees for the first time.\nAt the final review, Rosa said, “This was never about symbolic inclusion. It was about changing how power is distributed.”\nTariq replied, “And now the decision-making table looks more like the city it serves.”\nThe authority documented the reform as a permanent governance standard, explicitly aligning its actions with the **EU Gender Equality Strategy 2020-2025** and its aim of achieving balanced participation in leadership throughout society."
+        },
+        {
+          "chunk_number": 6,
+          "title": "The Horizon of Shared Leadership",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 7,
+          "title": "The Horizon of Shared Leadership",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "This legend takes place at **Baltic Civic Forum**, a non‑profit public‑policy institute based in **Riga, Latvia**. The organisation conducts research, hosts civic dialogues and advises municipalities on democratic participation and governance."
+        },
+        {
+          "chunk_number": 8,
+          "title": "The Horizon of Shared Leadership",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "- **Ilze Krūmiņa** — Director of Programmes; committed to strengthening democratic inclusion across the Baltic region.  \n- **Mateo Rinaldi** — Senior Governance Analyst; specialises in leadership pipelines and organisational reform.  \n- **Daria Kovács** — Community Engagement Officer; coordinates youth and minority‑participation initiatives.  \n- **Sven Jākobsons** — Board Chair; long‑time advocate for transparent governance.  \n- **Noura El‑Sayed** — Policy Fellow; early‑career researcher whose experience reveals structural barriers."
+        },
+        {
+          "chunk_number": 9,
+          "title": "The Horizon of Shared Leadership",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Leadership Representation Gap",
+                "spans": [
+                  "62% of junior and mid-level staff",
+                  "18% of leadership roles"
+                ]
+              },
+              {
+                "label": "Structural Reform Measures",
+                "spans": [
+                  "leadership-development pathways",
+                  "transparent appointment procedures",
+                  "40% minimum target",
+                  "public accountability dashboard"
+                ]
+              },
+              {
+                "label": "Policy Grounding",
+                "spans": [
+                  "Directive on improving the gender balance on corporate boards",
+                  "EU Platform of Diversity Charters",
+                  "2024 European Parliament elections",
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What share of junior and mid-level staff were women before the leadership representation reform was initiated?",
+              "answer": "62% of junior and mid-level staff",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What proportion of leadership roles were held by women at the start of the reform process, despite their majority at lower levels?",
+              "answer": "18% of leadership roles",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What minimum gender representation quota was formally adopted as part of the organisation's structural leadership reforms?",
+              "answer": "40% minimum target",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What transparency instrument was introduced to maintain public accountability on gender leadership targets?",
+              "answer": "public accountability dashboard",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Which EU directive on corporate board gender balance informed the organisation's structural reform measures?",
+              "answer": "Directive on improving the gender balance on corporate boards",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Which EU diversity monitoring platform served as a benchmark for the organisation's reporting on gender leadership progress?",
+              "answer": "EU Platform of Diversity Charters",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            }
+          ],
+          "content": "When Noura joined the Baltic Civic Forum as a Policy Fellow, she quickly noticed something troubling: although the organisation prided itself on inclusive research, its own leadership team was overwhelmingly male. During a routine strategy meeting, she raised the issue gently. “Our work promotes equal participation,” she said, “but our leadership doesn’t reflect that principle.”\nIlze paused, recognising the truth in Noura’s words. “You’re right,” she replied. “We need to examine our own structures if we want to model the society we advocate for.”\nMateo began by conducting a gender‑balance audit of all decision‑making bodies—board, senior management, advisory panels and project steering groups. The results were stark: women made up **62%** of junior and mid‑level staff but only **18%** of leadership roles. The pattern mirrored the broader challenges highlighted in the **EU Gender Equality Strategy 2020‑2025**, particularly the persistent under‑representation of women in decision‑making positions.\nSven convened an extraordinary board meeting. “If we want to lead credibly,” he said, “we must align with EU efforts, including the proposed **Directive on improving the gender balance on corporate boards**. Let’s treat it as a benchmark for ourselves.”\nThe Forum launched a comprehensive reform plan:\n- **Leadership‑development pathways** for women, including mentoring, sponsorship and targeted training.  \n- **Transparent appointment procedures** for board and management roles, with gender‑balanced shortlists required for every selection process.  \n- A **40% minimum target** for women among non‑executive board members, mirroring the Directive’s objective.  \n- A partnership with the **EU Platform of Diversity Charters** to exchange good practices and monitor progress.  \n- A new **public accountability dashboard**, updated quarterly, showing gender representation at all organisational levels.\nDaria proposed expanding the initiative beyond the organisation. “Let’s support municipalities preparing for the next electoral cycle,” she suggested. “We can help them promote women’s participation as voters and candidates, just as the Commission encourages for the **2024 European Parliament elections**.”\nThe team developed workshops for local councils on unconscious bias, inclusive recruitment and gender‑balanced candidate lists. Noura co‑designed a toolkit for political parties seeking EU funding, helping them transparently report gender balance among their members."
+        },
+        {
+          "chunk_number": 10,
+          "title": "The Horizon of Shared Leadership",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Leadership Representation Outcomes",
+                "spans": [
+                  "18% to 42%",
+                  "30% increase",
+                  "women applying for local-council candidate training programmes"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What was the increase in women's representation in leadership roles after the structural reforms were implemented?",
+              "answer": "18% to 42%",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "By what percentage did the number of women applying for local-council candidate training programmes grow?",
+              "answer": "30% increase",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            }
+          ],
+          "content": "During a staff town hall, Ilze addressed the organisation with conviction. “Leadership must reflect society. Diverse decision‑making isn’t symbolic—it improves policy outcomes. We are committing to structural change.”\nSix months later, the results were measurable.  \n- Women’s representation on the board rose from **18% to 42%**.  \n- Three women advanced into senior management through the new leadership pipeline.  \n- Municipal partners reported a **30% increase** in women applying for local‑council candidate training programmes.  \n- The Forum’s accountability dashboard became a reference model for other NGOs in the region.\nNoura, once hesitant to speak up, now led a regional working group on gender‑balanced governance. “I didn’t expect my comment to spark all this,” she reflected. “But leadership grows when structures allow it.”\nBaltic Civic Forum concluded that its reforms—strengthening gender balance in leadership, increasing transparency and supporting women’s political participation—constituted concrete, demonstrable compliance with the **EU Gender Equality Strategy 2020‑2025**, helping build a society where leadership is truly shared."
+        },
+        {
+          "chunk_number": 11,
+          "title": "The Parity Path",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 12,
+          "title": "The Parity Path",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "\"Lux-Logistics\" is a major semi-public maritime transport and logistics conglomerate headquartered in **Antwerp, Belgium**. As one of the largest employers in the port region, the organization bridges the gap between private commercial shipping and public infrastructure management, operating across several North Sea trade routes."
+        },
+        {
+          "chunk_number": 13,
+          "title": "The Parity Path",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "* **Arne** – The long-standing CEO. Having led the company for two decades, he is the primary architect of the current executive culture.\n* **Noa** – The newly appointed Head of Strategy. A specialist in organizational transformation with a mandate to modernize corporate governance.\n* **Kiran** – A Senior Operations Manager. A high-performing leader within the technical division who has often been overlooked for board-level promotions.\n* **Clara** – A representative from the National Ministry of Infrastructure. She oversees the compliance of semi-public bodies with regional and European governance standards."
+        },
+        {
+          "chunk_number": 14,
+          "title": "The Parity Path",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Board Appointment Protocol",
+                "spans": [
+                  "Transparent Appointment Protocol",
+                  "40% of candidates for non-executive board positions",
+                  "Leadership Parity Framework"
+                ]
+              },
+              {
+                "label": "Leadership Pipeline",
+                "spans": [
+                  "Leadership Development Programme",
+                  "50% gender balance at all management levels",
+                  "glass ceiling"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025",
+                  "informal referral system"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What recruitment protocol was adopted to ensure women constituted a minimum share of candidates for non-executive board positions?",
+              "answer": "Transparent Appointment Protocol",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What minimum share of candidates for non-executive board positions were required to be women under the new protocol?",
+              "answer": "40% of candidates for non-executive board positions",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What comprehensive framework aligned all board and management gender equality commitments across the organisation?",
+              "answer": "Leadership Parity Framework",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What management-wide gender balance target was set as part of the overarching parity framework?",
+              "answer": "50% gender balance at all management levels",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What metaphorical barrier to women's advancement in leadership was explicitly identified in the firm's equality review?",
+              "answer": "glass ceiling",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            }
+          ],
+          "content": "In the high-ceilinged boardroom of Lux-Logistics, the walls were lined with portraits of previous directors—all men. During a strategic review, Clara presented a report that highlighted a \"stagnation gap.\" While the company’s administrative staff was 60% female, the executive board remained 90% male. \"The recruitment pattern for successors is self-replicating,\" Clara observed. \"To maintain our public contracts, we must demonstrate alignment with the **EU Gender Equality Strategy 2020-2025**, particularly regarding gender balance in decision-making.\"\nArne sighed, looking at the recent retirement notices. \"We simply promote based on tenure, and the senior pool is historically male. How do we change that without compromising merit?\"\nNoa stepped forward, unfolding a plan. \"It’s not about compromising merit; it’s about expanding the talent pool. We’ve had a 'glass ceiling' at the middle-management layer for a decade. Kiran, for instance, has managed our largest port terminal for five years with record efficiency but has never been invited to a board-level committee.\"\n\"I’ve seen three vacancies open at the director level in the last two years,\" Kiran noted during the discussion. \"Each time, the selection committee utilized an informal 'referral' system that naturally favored the existing network. If I don't see a path to the top, other talented managers won't either.\"\nTo address this, Noa and Arne designed the \"Leadership Parity Framework.\" First, they implemented a \"Transparent Appointment Protocol\" that mandated a minimum of 40% of candidates for non-executive board positions be from the under-represented sex, mirroring the EU's directive for corporate boards. Second, they launched a \"Leadership Development Programme\" specifically for managers like Kiran, providing them with mentorship from existing board members and exposure to international shipping summits. Finally, they established a quantitative target: achieving 50% gender balance at all management levels, including executive roles, by the end of 2026.\n\"We need to stop waiting for balance to happen and start engineering it,\" Noa told the staff during a town hall meeting."
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Parity Path",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "spans": {
+            "groups": [
+              {
+                "label": "Board Parity Outcomes",
+                "spans": [
+                  "42% of its board members were women",
+                  "Executive Director of International Operations"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What share of board members were women after the Transparent Appointment Protocol was fully implemented?",
+              "answer": "42% of its board members were women",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "What senior leadership role was filled by a woman as a direct result of the Leadership Parity Framework?",
+              "answer": "Executive Director of International Operations",
+              "type": "Factoid",
+              "tag": "leadership_participation"
+            }
+          ],
+          "content": "The measures yielded swift results. Within eighteen months, two non-executive board vacancies were filled by highly qualified women from the maritime legal and tech sectors. Kiran was promoted to Executive Director of International Operations, becoming the first person from a technical background to bridge the gender gap in the firm's leadership history. By 2026, Lux-Logistics reported that 42% of its board members were women. This shift was officially cited in their annual report as a successful implementation of the **EU Gender Equality Strategy 2020-2025**, proving that inclusive leadership directly contributed to the company’s most innovative fiscal year on record."
+        }
+      ]
+    },
+    {
+      "source_file": "legends_mainstreaming_intersectional_chunked.md",
+      "chunks": [
+        {
+          "chunk_number": 1,
+          "title": "Designing for All",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 2,
+          "title": "Designing for All",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "A municipal urban planning department in Rotterdam, responsible for implementing local climate adaptation policies under national and EU frameworks. The department leads projects related to flood resilience, public infrastructure, and sustainable housing as part of the broader green transition."
+        },
+        {
+          "chunk_number": 3,
+          "title": "Designing for All",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "* **Jules van Dijk** – Head of climate adaptation projects overseeing infrastructure planning\n* **Amara Okoye** – Social inclusion officer specializing in intersectional policy analysis\n* **Lotte Visser** – Urban data analyst responsible for demographic and environmental datasets\n* **Milan Petrović** – Community liaison coordinating engagement with vulnerable groups"
+        },
+        {
+          "chunk_number": 4,
+          "title": "Designing for All",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Intersectional Vulnerable Groups",
+                "spans": [
+                  "elderly women living alone",
+                  "migrant families",
+                  "residents with disabilities",
+                  "single mothers",
+                  "caregiving responsibilities"
+                ]
+              },
+              {
+                "label": "Gender Mainstreaming Tools",
+                "spans": [
+                  "Gender Impact Assessment Toolkit",
+                  "gender mainstreaming",
+                  "gender-disaggregated data"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025",
+                  "evacuation delays",
+                  "emergency transport"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What assessment tool was applied to identify the gender-differentiated impacts of urban planning decisions?",
+              "answer": "Gender Impact Assessment Toolkit",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What data collection method was adopted to identify which population groups were most at risk from urban safety gaps?",
+              "answer": "gender-disaggregated data",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Which five intersectional groups were found to be most disadvantaged by failures in the city's emergency transport design?",
+              "answer": "elderly women living alone, migrant families, residents with disabilities, single mothers, caregiving responsibilities",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What systematic urban planning issue did the gender-disaggregated data reveal as disproportionately affecting vulnerable groups?",
+              "answer": "evacuation delays",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ],
+          "content": "The turning point came during the early design phase of a large-scale flood resilience project in Rotterdam’s southern districts. Jules van Dijk presented the technical blueprint: elevated walkways, redesigned drainage systems, and new green buffer zones.\n“It’s efficient and within budget,” Jules concluded.\nBut Amara Okoye hesitated. “Efficient for whom?” she asked. “We’ve looked at flood risk, but not at how different groups experience the space.”\nLotte Visser supported her concern with data. “Our demographic overlay shows that this district has a high proportion of elderly women living alone, migrant families, and residents with disabilities. Yet our current model assumes uniform mobility and access.”\nMilan Petrović added, “From community meetings, we know that some women avoid certain underpasses during heavy rain because they feel unsafe. Others can’t access temporary shelters due to caregiving responsibilities.”\nThe team realized that their project—though technically sound—lacked a gender and intersectional perspective. To align with the EU Gender Equality Strategy 2020-2025, they decided to redesign their approach using gender mainstreaming principles.\nFirst, Amara led the development of a **Gender Impact Assessment Toolkit** tailored to urban climate projects. This required every design component to be evaluated against criteria such as safety, accessibility, caregiving impact, and economic vulnerability. The toolkit explicitly included intersectional variables like age, disability, and migrant status.\nSecond, Lotte restructured the department’s data systems. Instead of aggregated population figures, all datasets used for planning were disaggregated by gender, age, and socio-economic indicators. This allowed the team to identify that elderly women were disproportionately affected by evacuation delays and that single mothers had limited access to emergency transport.\nThird, Milan expanded the consultation process. Rather than general public forums, he organized targeted focus groups: migrant women, caregivers, and residents with disabilities. These sessions were held at accessible locations and times, with translation services and childcare provided.\nDuring one session, a participant remarked, “We don’t just need dry paths—we need places where we feel safe walking, even at night.”"
+        },
+        {
+          "chunk_number": 5,
+          "title": "Designing for All",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Urban Safety Outcomes",
+                "spans": [
+                  "40% increase in perceived safety among women residents",
+                  "25% reduction in evacuation time"
+                ]
+              },
+              {
+                "label": "Accessibility Measures",
+                "spans": [
+                  "wheelchair accessible",
+                  "mandatory gender mainstreaming checkpoint",
+                  "decentralized shelter points"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What measurable improvement in perceived security was recorded among women residents following the urban redesign?",
+              "answer": "40% increase in perceived safety among women residents",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What quantitative improvement in emergency response was achieved after the inclusive transport system was implemented?",
+              "answer": "25% reduction in evacuation time",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What infrastructure standard was applied to bus boarding points to ensure accessibility for residents with mobility limitations?",
+              "answer": "wheelchair accessible",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What procedural requirement was embedded in the city's planning workflow to ensure all future projects consider gender impacts?",
+              "answer": "mandatory gender mainstreaming checkpoint",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What type of emergency infrastructure was distributed across the city to ensure equitable access to refuge during crises?",
+              "answer": "decentralized shelter points",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ],
+          "content": "This feedback led to concrete design changes. The team redesigned walkways to include better lighting and visibility, ensured all elevated paths were wheelchair accessible, and integrated small, decentralized shelter points within residential clusters to reduce travel distance during emergencies.\nAdditionally, the department introduced a **mandatory gender mainstreaming checkpoint** in all future project approvals. No նախագ could proceed without documented analysis of gender and intersectional impacts.\nWithin a year, the revised project showed measurable improvements. Post-implementation surveys indicated a 40% increase in perceived safety among women residents, and emergency response simulations showed a 25% reduction in evacuation time for elderly and mobility-impaired individuals.\nAt the final review, Jules reflected, “We thought we were building infrastructure. In reality, we were shaping access—and we hadn’t accounted for everyone.”\nAmara concluded, “Now we are. This is what gender mainstreaming looks like in practice.”\nThe department formally integrated these procedures into its planning framework, explicitly aligning its work with the **EU Gender Equality Strategy 2020-2025**, ensuring that climate adaptation policies deliver equitable outcomes for all members of society."
+        },
+        {
+          "chunk_number": 6,
+          "title": "Weaving Equality Into Every Policy",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 7,
+          "title": "Weaving Equality Into Every Policy",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "This legend takes place at **Danube Futures Institute**, a cross‑disciplinary research centre in **Bratislava, Slovakia**, focused on climate adaptation, digital innovation and public‑health policy. The institute collaborates closely with EU agencies and national ministries to pilot inclusive policy approaches."
+        },
+        {
+          "chunk_number": 8,
+          "title": "Weaving Equality Into Every Policy",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "- **Katarína Havelková** — Director of Strategic Policy Integration; leads cross‑sectoral initiatives.  \n- **Milan Petrescu** — Climate Adaptation Specialist; analyses social impacts of environmental policies.  \n- **Zahra Al‑Khatib** — Digital Inclusion Researcher; focuses on gender gaps in digital skills and access.  \n- **Elodie Marchand** — Public Health Analyst; examines gender‑specific health risks.  \n- **Sofia Dimitrova** — Community Liaison Officer; brings intersectional perspectives from migrant, Roma and disability communities."
+        },
+        {
+          "chunk_number": 9,
+          "title": "Weaving Equality Into Every Policy",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Mainstreaming Governance Structures",
+                "spans": [
+                  "Equality Integration Task Group",
+                  "Task Force for Equality"
+                ]
+              },
+              {
+                "label": "Cross-Sector Policy Instruments",
+                "spans": [
+                  "Digital Education Action Plan",
+                  "Women in Digital",
+                  "EU Beating Cancer Plan",
+                  "EU Drugs Agenda 2021-2025"
+                ]
+              },
+              {
+                "label": "Intersectional Groups & Methods",
+                "spans": [
+                  "Roma girl with a disability",
+                  "migrant woman",
+                  "intersectionality",
+                  "EIGE methodologies"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025",
+                  "gender-differentiated impact assessments"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What internal governance body was established to coordinate gender mainstreaming across all of the organisation's policy departments?",
+              "answer": "Equality Integration Task Group",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Which Commission-level body served as the institutional model for the organisation's gender mainstreaming task group?",
+              "answer": "Task Force for Equality",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Which EU health programme was targeted for gender mainstreaming to address cancer-related health inequalities?",
+              "answer": "EU Beating Cancer Plan",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Which EU drug policy framework (2021-2025) was identified as requiring gender mainstreaming in the organisation's action plan?",
+              "answer": "EU Drugs Agenda 2021-2025",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Whose methodologies were applied to assess intersectional policy impacts across the organisation's reform plan?",
+              "answer": "EIGE methodologies",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What composite identity is used in the legend to illustrate the overlapping disadvantages that an intersectional approach must address?",
+              "answer": "Roma girl with a disability",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ],
+          "content": "The Danube Futures Institute had long prided itself on evidence‑based policy research, but during a quarterly review, Katarína noticed a recurring flaw: each department produced strong analyses, yet none systematically integrated a **gender perspective**. “We’re missing the bigger picture,” she said during a staff meeting. “The **EU Gender Equality Strategy 2020‑2025** makes it clear—gender mainstreaming must be embedded in every policy area, especially in the green and digital transitions.”\nTo address this, she proposed creating an internal **Equality Integration Task Group**, mirroring the Commission’s **Task Force for Equality**. Milan, Zahra, Elodie and Sofia volunteered immediately.\nTheir first task was to review three major projects: a climate‑adaptation plan for rural municipalities, a digital‑skills programme for secondary schools and a health‑screening initiative for low‑income communities.\nMilan began. “Our climate‑adaptation plan assumes equal mobility and access to resources,” he explained. “But women in rural areas rely more on public transport and face higher energy‑poverty risks. We need gender‑differentiated impact assessments.”\nZahra added, “And in our digital‑skills programme, we’re not addressing the fact that girls outperform boys in digital literacy but remain underrepresented in ICT pathways. We should align with the **Digital Education Action Plan** and the ‘Women in Digital’ commitments.”\nElodie highlighted gaps in the health initiative. “We’re not accounting for gender‑specific cancer risks or the findings expected from the **EU Beating Cancer Plan**. And substance‑abuse patterns differ for women and girls, which the **EU Drugs Agenda 2021–2025** emphasises.”\nSofia listened carefully before speaking. “And none of these programmes consider intersectionality. A Roma girl with a disability faces different barriers than a migrant woman or a single father. Our policies must reflect these layered realities.”\nThe team set to work, developing a comprehensive mainstreaming framework:\n- **Mandatory gender‑impact assessments** for all institute projects, using indicators aligned with EIGE methodologies.  \n- **Intersectional data collection**, disaggregated by gender, age, disability, migrant status and socio‑economic background.  \n- **Consultation panels** with women from diverse communities to inform climate, digital and health policies.  \n- **Revised digital‑skills curricula** encouraging girls’ participation in ICT and AI pathways.  \n- **Climate‑adaptation guidelines** addressing women’s mobility patterns, energy‑poverty risks and caregiving responsibilities."
+        },
+        {
+          "chunk_number": 10,
+          "title": "Weaving Equality Into Every Policy",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Cross-Policy Outcomes",
+                "spans": [
+                  "gender-responsive transport planning",
+                  "38%",
+                  "girls' enrolment in the digital-skills pilot",
+                  "27%",
+                  "health-screening participation among migrant women"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What type of urban mobility improvement was achieved through the intersectional gender mainstreaming approach?",
+              "answer": "gender-responsive transport planning",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "By what percentage did girls' enrolment in the digital-skills pilot increase following the gender-mainstreamed education reforms?",
+              "answer": "38%",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "By what percentage did health-screening participation among migrant women increase after intersectional health policies were adopted?",
+              "answer": "27%",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ],
+          "content": "- **Health‑policy briefs** integrating gender‑specific cancer risks and substance‑abuse patterns.  \nDuring a workshop with regional policymakers, Katarína presented the new framework. “Gender mainstreaming isn’t an add‑on,” she said. “It ensures our policies work for everyone. And intersectionality helps us understand who is being left behind.”\nThree months later, the institute conducted its first evaluation. The results were significant:  \n- Climate‑adaptation recommendations now included **gender‑responsive transport planning**, adopted by two municipalities.  \n- Girls’ enrolment in the digital‑skills pilot increased by **38%**.  \n- Health‑screening participation among migrant women rose by **27%** after targeted outreach.  \n- Policymakers praised the intersectional analysis as “transformative” for understanding community needs.\nSofia reflected on the progress during the final review meeting. “For the first time, people feel seen in our work,” she said. “That’s what mainstreaming is about—designing policies that recognise real lives.”\nThe Danube Futures Institute concluded that embedding gender and intersectional perspectives across climate, digital and health initiatives represented concrete, measurable alignment with the **EU Gender Equality Strategy 2020‑2025**, ensuring that future policies would be fairer, more inclusive and more effective for all."
+        },
+        {
+          "chunk_number": 11,
+          "title": "The Intersection of Transit",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 12,
+          "title": "The Intersection of Transit",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "\"EcoPath Urban Planning\" is a semi-public consultancy firm based in **Vienna, Austria**. The organization specializes in designing sustainable municipal infrastructure and public transport networks for medium-to-large European cities, focusing on the intersection of the European Green Deal and urban mobility."
+        },
+        {
+          "chunk_number": 13,
+          "title": "The Intersection of Transit",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "* **Sasha** – Urban Mobility Lead. A non-binary architect focused on \"gender-sensitive\" urban design and transit accessibility.\n* **Mateo** – Environmental Impact Analyst. Responsible for ensuring that green initiatives, like the reduction of car lanes, don't disproportionately affect vulnerable groups.\n* **Zahra** – Community Liaison Officer. A migrant rights advocate who ensures that the needs of diverse, marginalized populations are represented in technical planning.\n* **Helga** – Senior Budget Director. Oversees the \"Equality Task Force\" within the firm to ensure gender mainstreaming in all project financing."
+        },
+        {
+          "chunk_number": 14,
+          "title": "The Intersection of Transit",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Green Deal Gender Mainstreaming",
+                "spans": [
+                  "European Green Deal",
+                  "Building Renovation Wave",
+                  "Task Force for Equality",
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              },
+              {
+                "label": "Inclusive Transit Design Measures",
+                "spans": [
+                  "low-floor bus boarding",
+                  "subsidized transit passes",
+                  "cooling centers",
+                  "green spaces"
+                ]
+              },
+              {
+                "label": "Intersectional Mobility Concepts",
+                "spans": [
+                  "intersectional lens",
+                  "energy poverty",
+                  "trip-chaining",
+                  "transport poverty"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "Which EU flagship sustainability programme was identified as requiring an intersectional gender lens in its transport-related implementation?",
+              "answer": "European Green Deal",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Which EU renovation programme was cited as an example where gender mainstreaming had been insufficiently integrated?",
+              "answer": "Building Renovation Wave",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What transit infrastructure improvement was prioritised to ensure accessible boarding for all users including those with mobility limitations?",
+              "answer": "low-floor bus boarding",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What financial measure was introduced to make public transit affordable for low-income women and migrants?",
+              "answer": "subsidized transit passes",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What concept describes the pattern of multiple short care-related trips that shapes women's distinct transit needs?",
+              "answer": "trip-chaining",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What type of energy-related hardship does the legend identify as disproportionately affecting women in the context of the green transition?",
+              "answer": "energy poverty",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ],
+          "content": "EcoPath was tasked with redesigning a major transit corridor in Vienna to align with the city’s carbon-neutral goals. Mateo’s initial data focused on carbon emission reductions through the removal of street parking. However, Sasha noticed a significant gap in the data: the plan primarily benefited \"9-to-5\" commuters—mostly men—who traveled from the suburbs to the city center, while ignoring the complex, multi-stop travel patterns of local caregivers.\n\"If we only prioritize high-speed bike lanes for long-distance commuters, we are ignoring the 65% of local transit users who are women,\" Sasha explained during a project review. \"Many of these users are also migrants or elderly residents who rely on mid-day bus frequency for 'trip-chaining'—dropping children at school, going to work, and visiting clinics.\"\nZahra interjected, \"We have to look at this through an intersectional lens. A woman with a disability or a migrant mother in energy poverty faces a completely different set of barriers than a professional cyclist. If we reduce bus stops to increase speed, we are effectively cutting off their access to the city.\"\nHelga checked the project’s compliance checklist. \"The **EU Gender Equality Strategy 2020-2025** is clear: we must integrate a gender perspective into the European Green Deal initiatives. Our 'Building Renovation Wave' and transit policies must maximize potential for everyone, in all their diversity.\"\nUnder the guidance of their internal Task Force for Equality, the team implemented specific, concrete measures. They redesigned the transit corridor to include \"low-floor\" bus boarding for strollers and wheelchairs, increased street lighting at every intersection to improve safety for night-shift workers, and adjusted the pricing model to offer subsidized transit passes for low-income households. Mateo also reworked the \"Climate Adaptation\" metrics to ensure that cooling centers and green spaces were placed in high-density areas where women and children in smaller, energy-poor apartments resided.\n\"This is what gender mainstreaming looks like,\" Zahra said during the final community presentation. \"We aren't just building a green corridor; we are building an inclusive one.\""
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Intersection of Transit",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "spans": {
+            "groups": [
+              {
+                "label": "Inclusive Transit Outcomes",
+                "spans": [
+                  "20% increase in transit usage among the local migrant population",
+                  "transport poverty"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025",
+                  "intersectional perspective"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What measurable change in public transit usage was recorded among the local migrant population following the inclusive redesign?",
+              "answer": "20% increase in transit usage among the local migrant population",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What structural form of mobility exclusion did the redesigned transit system address by subsidising access for low-income residents?",
+              "answer": "transport poverty",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "What analytical lens was applied throughout the transit redesign to ensure no group was systematically excluded from policy benefits?",
+              "answer": "intersectional perspective",
+              "type": "Factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ],
+          "content": "The project resulted in a 20% increase in transit usage among the local migrant population and a measurable decrease in \"transport poverty\" within the district. By applying an intersectional perspective, EcoPath proved that environmental sustainability is inseparable from social equity, directly fulfilling the mandate of the **EU Gender Equality Strategy 2020-2025** to redistribute resources in a fair and gender-equal way."
+        }
+      ]
+    },
+    {
+      "source_file": "legends_funding_implementation_chunked.md",
+      "chunks": [
+        {
+          "chunk_number": 1,
+          "title": "Funding Equality Forward",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 2,
+          "title": "Funding Equality Forward",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "A regional development agency in Bratislava, responsible for managing and allocating EU structural funds, including the European Social Fund Plus and the European Regional Development Fund. The agency coordinates with national ministries, municipalities, and civil society organizations to implement projects supporting economic development and social inclusion."
+        },
+        {
+          "chunk_number": 3,
+          "title": "Funding Equality Forward",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "* **Katarína Holubová** – Programme director overseeing EU fund allocation and compliance\n* **Andrei Popescu** – Financial analyst responsible for evaluating project proposals\n* **Zuzana Kováčiková** – Civil society coordinator liaising with NGOs and grassroots organizations\n* **Leila Hassan** – Policy advisor specializing in gender equality and inclusion frameworks"
+        },
+        {
+          "chunk_number": 4,
+          "title": "Funding Equality Forward",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "Funding Eligibility Requirements",
+                "spans": [
+                  "mandatory gender equality criterion",
+                  "gender impact assessment",
+                  "gender-disaggregated targets",
+                  "Gender Equality Plan template"
+                ]
+              },
+              {
+                "label": "Budget Tracking Tools",
+                "spans": [
+                  "gender budgeting tracking system",
+                  "gender relevance score"
+                ]
+              },
+              {
+                "label": "Funding Instruments Referenced",
+                "spans": [
+                  "Horizon Europe",
+                  "Citizens, Equality, Rights and Values Programme",
+                  "Multi-Annual Financial Framework"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "capacity-building initiative",
+                  "migrant women",
+                  "rural areas"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What mandatory requirement was introduced to ensure all EU funding applicants demonstrated a commitment to gender equality?",
+              "answer": "mandatory gender equality criterion",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What impact analysis tool was required from applicants to assess the gender-differentiated outcomes of funded projects?",
+              "answer": "gender impact assessment",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What document must funding applicants submit to demonstrate an institutional commitment to gender equality planning?",
+              "answer": "Gender Equality Plan template",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What monitoring tool was developed to track the proportion of EU funds allocated to gender-equality-relevant activities?",
+              "answer": "gender budgeting tracking system",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What indicator was assigned to each funded project to measure its relevance to gender equality objectives?",
+              "answer": "gender relevance score",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Which EU multi-year financial plan provided the overarching budgetary framework for the gender-mainstreaming reform described in the legend?",
+              "answer": "Multi-Annual Financial Framework",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            }
+          ],
+          "content": "The challenge became evident during a mid-term review of funded projects under the current Multi-Annual Financial Framework. Katarína Holubová noticed a recurring issue: although significant resources were allocated to employment and infrastructure projects, very few explicitly addressed gender equality objectives.\n“We are funding growth,” Katarína said during a strategy meeting, “but we’re not systematically funding equality. That’s a compliance gap.”\nLeila Hassan agreed. “Under the EU Gender Equality Strategy 2020-2025, we are expected to integrate a gender dimension across all funding instruments—not treat it as optional.”\nAndrei added a financial perspective. “Most proposals don’t include gender-disaggregated indicators. We can’t measure impact if it’s not built into the design.”\nZuzana, who worked closely with NGOs, pointed out another issue. “Smaller organizations, especially those working with vulnerable women, often lack the capacity to apply for EU funding. They’re effectively excluded.”\nThe team decided to overhaul their funding framework to ensure full alignment with EU requirements and unlock the potential of gender-responsive investment.\nFirst, Katarína introduced a **mandatory gender equality criterion** in all funding calls. Every project proposal had to include a gender impact assessment, gender-disaggregated targets, and a description of how it would contribute to reducing inequalities. Proposals that failed to meet these criteria were deemed ineligible.\nSecond, Leila developed a standardized **Gender Equality Plan template** for applicants, particularly for those applying under research and innovation streams aligned with Horizon Europe. This template guided organizations in setting measurable objectives, such as increasing women’s participation in training programs or leadership roles.\nThird, Andrei implemented a **gender budgeting tracking system**. Each funded project was assigned a “gender relevance score,” allowing the agency to quantify how much of its total budget contributed to gender equality objectives. Quarterly reports were generated to monitor compliance and inform future allocations.\nTo address access barriers, Zuzana launched a **capacity-building initiative** for civil society organizations. This included workshops on EU funding applications, one-on-one mentoring, and simplified application procedures for smaller grants under the Citizens, Equality, Rights and Values Programme. Special outreach was conducted to organizations supporting migrant women and women in rural areas."
+        },
+        {
+          "chunk_number": 5,
+          "title": "Funding Equality Forward",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "Gender Funding Outcomes",
+                "spans": [
+                  "12% to 68%",
+                  "€45 million",
+                  "50% increase",
+                  "women-led organizations in funding programs"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025",
+                  "Common Provisions Regulation"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What was the change in the share of EU funds meeting the mandatory gender equality criterion after the reforms were introduced?",
+              "answer": "12% to 68%",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What was the total value of EU funds unlocked for gender-equality-eligible projects following the budget tracking reform?",
+              "answer": "€45 million",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "By what amount did the participation of women-led organisations in EU funding programmes increase?",
+              "answer": "50% increase",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Which EU regulatory framework governing structural fund allocation was cited as a key enabling condition for the reforms?",
+              "answer": "Common Provisions Regulation",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            }
+          ],
+          "content": "During one workshop, a participant from a rural NGO remarked, “This is the first time we feel the system is designed for us to succeed.”\nThe agency also aligned its procedures with the Common Provisions Regulation by verifying that all funded projects operated within a national gender equality strategic framework and respected the Charter of Fundamental Rights.\nWithin a year, the impact was measurable. The proportion of funded projects with explicit gender equality objectives rose from 12% to 68%. Over €45 million was allocated to initiatives supporting women’s employment, entrepreneurship, and access to services. Participation of women-led organizations in funding programs increased by 50%.\nAt the annual review, Katarína concluded, “We’ve moved from passive compliance to active investment in equality.”\nLeila added, “This is what gender mainstreaming in funding looks like—measurable, inclusive, and structural.”\nThe agency’s model was recognized at the national level as a benchmark for integrating gender equality into EU funding mechanisms, fully aligned with the **EU Gender Equality Strategy 2020-2025**."
+        },
+        {
+          "chunk_number": 6,
+          "title": "Investing in Equality",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 7,
+          "title": "Investing in Equality",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "This legend takes place at **Adriatic Innovation Hub**, a public–private research and training centre located in **Split, Croatia**. The Hub supports regional development projects in blue‑economy sectors, digital innovation and social inclusion, working closely with municipalities, NGOs and EU funding programmes."
+        },
+        {
+          "chunk_number": 8,
+          "title": "Investing in Equality",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "- **Mira Radić** — Director of EU Programmes; oversees funding applications and compliance with EU enabling conditions.  \n- **Leonard Vuković** — Blue‑Economy Project Lead; develops training and entrepreneurship initiatives in maritime sectors.  \n- **Hana Suleiman** — Social Inclusion Coordinator; works with migrant and asylum‑seeking women.  \n- **Petra Novak** — Financial Analyst; monitors gender‑related expenditure across EU‑funded projects.  \n- **Elena Rossi** — Young Marine Engineer; aspiring entrepreneur seeking support to launch a women‑led coastal‑technology start‑up."
+        },
+        {
+          "chunk_number": 9,
+          "title": "Investing in Equality",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "EU Structural Funds Used",
+                "spans": [
+                  "European Maritime and Fisheries Fund (EMFF)",
+                  "European Social Fund Plus (ESF+)",
+                  "Common Agricultural Policy (CAP)",
+                  "Asylum and Migration Fund"
+                ]
+              },
+              {
+                "label": "Rights, Innovation & Values Funding",
+                "spans": [
+                  "Citizens, Equality, Rights and Values (CERV)",
+                  "Horizon Europe"
+                ]
+              },
+              {
+                "label": "Enabling Conditions",
+                "spans": [
+                  "national gender-equality strategic framework",
+                  "Charter of Fundamental Rights",
+                  "Common Provisions Regulation"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "socially responsible public-procurement clause",
+                  "childcare support",
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "Which four EU structural and sectoral funds were mobilised to support women in coastal, agricultural and migrant communities?",
+              "answer": "European Maritime and Fisheries Fund (EMFF), European Social Fund Plus (ESF+), Common Agricultural Policy (CAP), Asylum and Migration Fund",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Which EU values and rights programme funded civil society initiatives on gender equality in the legend?",
+              "answer": "Citizens, Equality, Rights and Values (CERV)",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What national-level strategic document is required as a precondition for Member States to access EU structural funds for gender equality?",
+              "answer": "national gender-equality strategic framework",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Which EU foundational rights instrument serves as a binding enabling condition for the allocation of structural funds?",
+              "answer": "Charter of Fundamental Rights",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What procurement instrument was embedded in public contracts to ensure gender equality was factored into supplier selection?",
+              "answer": "socially responsible public-procurement clause",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            }
+          ],
+          "content": "When Elena approached the Adriatic Innovation Hub with her idea for a women‑led coastal‑monitoring technology start‑up, Mira immediately recognised an opportunity. “This aligns perfectly with the EU’s funding priorities,” she told the team. “The **EU Gender Equality Strategy 2020–2025** emphasises using the Multi‑Annual Financial Framework to advance gender equality. Let’s make this a flagship example.”\nBut before applying for support under the **European Maritime and Fisheries Fund (EMFF)** call dedicated to women in the blue economy, Mira needed to verify whether Croatia’s national authorities had fulfilled the **enabling conditions** required by the Common Provisions Regulation. After a review, Petra confirmed: “The national gender‑equality strategic framework is in place, and the Charter of Fundamental Rights enabling condition is fulfilled. We’re eligible.”\nLeonard proposed expanding the project beyond entrepreneurship. “Why don’t we integrate training for women and girls in coastal engineering? It would address gender segregation in this sector and strengthen Elena’s future workforce.”\nMeanwhile, Hana highlighted another funding opportunity. “The **Asylum and Migration Fund** encourages Member States to support migrant women’s integration. We could create a parallel programme offering technical apprenticeships for women with asylum backgrounds. It would strengthen both social inclusion and labour‑market participation.”\nThe team designed a comprehensive, multi‑fund initiative:\n- An **EMFF‑funded accelerator** supporting women‑led blue‑economy start‑ups, including Elena’s.  \n- A **European Social Fund Plus (ESF+) training pathway** for women entering marine engineering, with childcare support to improve work‑life balance.  \n- A **Citizens, Equality, Rights and Values (CERV)** project to combat gender‑based violence in coastal communities and support vulnerable women in maritime workplaces.  \n- A **Horizon Europe** research component requiring a gender‑equality plan and funding intersectional research on women’s participation in marine technology.  \n- A **Common Agricultural Policy (CAP)** rural‑services grant to improve transport links for women in remote coastal villages attending training.  \n- A **socially responsible public‑procurement clause** ensuring gender‑equality criteria in all Hub‑managed tenders.\nDuring a project‑design workshop, Mira addressed the team. “Funding isn’t just about resources. It’s about shaping systems. If we integrate gender equality into every financial instrument, we can transform entire sectors.”"
+        },
+        {
+          "chunk_number": 10,
+          "title": "Investing in Equality",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "Budget Monitoring Mechanisms",
+                "spans": [
+                  "gender-related expenditure",
+                  "2021-2027 MFF",
+                  "European Court of Auditors"
+                ]
+              },
+              {
+                "label": "Participation Outcomes",
+                "spans": [
+                  "32 women",
+                  "marine-engineering training",
+                  "12 migrant women",
+                  "apprenticeships"
+                ]
+              },
+              {
+                "label": "Procurement Outcomes",
+                "spans": [
+                  "60%",
+                  "gender-responsive tenders",
+                  "Erasmus+"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "Which EU audit institution was tasked with monitoring gender-related expenditure across the 2021-2027 MFF?",
+              "answer": "European Court of Auditors",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "How many women completed marine-engineering training as a direct outcome of the Investing in Equality initiative?",
+              "answer": "32 women",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "How many migrant women secured apprenticeships through the programme's targeted outreach?",
+              "answer": "12 migrant women",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What percentage of tenders issued became gender-responsive following the adoption of the socially responsible procurement clause?",
+              "answer": "60%",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Which EU education and mobility programme supported the gender-responsive apprenticeship scheme in the legend?",
+              "answer": "Erasmus+",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            }
+          ],
+          "content": "Petra developed a new internal tool to **track gender‑related expenditure**, anticipating the Commission’s push to measure gender‑equality spending in the 2021–2027 MFF. “This will help us demonstrate impact,” she explained. “And it prepares us for the findings of the European Court of Auditors’ audit on gender mainstreaming in the EU budget.”\nHana coordinated with local NGOs to ensure migrant women could access apprenticeships safely, including trauma‑informed support for those who had experienced gender‑based violence. Leonard partnered with universities to ensure the training modules aligned with Erasmus+ Inclusion and Diversity guidance.\nSix months later, the results were impressive:  \n- Elena’s start‑up secured EMFF funding and hired its first three employees — all women.  \n- Thirty‑two women completed ESF+‑funded marine‑engineering training, with **40%** coming from rural areas.  \n- Twelve migrant women began apprenticeships through the Asylum and Migration Fund component.  \n- The Hub’s procurement reform increased the number of gender‑responsive tenders by **60%**.  \n- Petra’s expenditure‑tracking tool was adopted by two neighbouring regions.\nAt the annual regional forum, Elena spoke to policymakers and community leaders. “This project didn’t just fund my idea,” she said. “It funded a pathway for women — Croatian, migrant, rural, young — to shape the future of the blue economy.”\nThe Adriatic Innovation Hub concluded that its integrated, multi‑fund approach—leveraging EU instruments to support entrepreneurship, inclusion, research and systemic change—represented concrete, measurable alignment with the **EU Gender Equality Strategy 2020‑2025**, demonstrating how funding can drive real progress toward a gender‑equal Europe."
+        },
+        {
+          "chunk_number": 11,
+          "title": "The Blue Horizon Initiative",
+          "subtitle": null,
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": null
+        },
+        {
+          "chunk_number": 12,
+          "title": "The Blue Horizon Initiative",
+          "subtitle": "Setting",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "\"Aegean Aqua-Tech\" is a marine research and commercial fishing cooperative based in **Heraklion, Greece**. Operating within the Mediterranean \"blue economy,\" the organization manages sustainable aquaculture sites and small-scale fishing fleets, balancing traditional maritime practices with modern environmental technology."
+        },
+        {
+          "chunk_number": 13,
+          "title": "The Blue Horizon Initiative",
+          "subtitle": "Characters",
+          "classification": "unknown",
+          "spans": {
+            "groups": []
+          },
+          "qa_pairs": [],
+          "content": "* **Thalassa** – A marine biologist and lead researcher. She has spent years developing sustainable fish-feed alternatives but lacks the capital to scale her innovations.\n* **Nikos** – The Cooperative President. A third-generation fisherman who handles the administrative links between the local fleet and national authorities.\n* **Elara** – A Financial Consultant. An expert in EU budgetary instruments who specializes in securing Multi-Annual Financial Framework (MFF) funding for regional development.\n* **Dimitris** – The Regional Auditor. A public official responsible for ensuring that all state-disbursed funds meet horizontal \"enabling conditions.\""
+        },
+        {
+          "chunk_number": 14,
+          "title": "The Blue Horizon Initiative",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "Funding Instruments Applied",
+                "spans": [
+                  "European Maritime and Fisheries Fund",
+                  "Horizon Europe",
+                  "InvestEU Programme",
+                  "Cohesion Fund"
+                ]
+              },
+              {
+                "label": "Enabling Conditions",
+                "spans": [
+                  "enabling conditions",
+                  "Common Provisions Regulation",
+                  "Gender Equality Plan",
+                  "40% of leadership roles in new research projects"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "women in rural coastal areas",
+                  "maritime certifications",
+                  "Multi-Annual Financial Framework"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "Which four EU funding instruments were combined to finance the Blue Horizon Initiative for women in coastal communities?",
+              "answer": "European Maritime and Fisheries Fund, Horizon Europe, InvestEU Programme, Cohesion Fund",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What gender leadership target was set as an enabling condition for research projects funded under the Blue Horizon Initiative?",
+              "answer": "40% of leadership roles in new research projects",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What document must research consortia submit to access Horizon Europe funding under the Blue Horizon Initiative?",
+              "answer": "Gender Equality Plan",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Which geographic community of women was specifically targeted by the Blue Horizon Initiative to improve maritime sector participation?",
+              "answer": "women in rural coastal areas",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What type of professional qualification did the Blue Horizon Initiative help women in coastal areas obtain?",
+              "answer": "maritime certifications",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            }
+          ],
+          "content": "At the Heraklion port offices, Nikos and Thalassa reviewed the cooperative’s expansion plans. Thalassa had designed a proprietary vertical kelp-farming system that could revitalize the local \"blue economy,\" but the cooperative’s existing budget was depleted. \"The technology is ready, Nikos,\" Thalassa said, \"but we are being told our loan application is stalled because our governance structure hasn't updated its gender equality protocols.\"\nNikos looked frustrated. \"We are fishermen, Thalassa. What does a 'national gender equality strategic framework' have to do with kelp?\"\nElara, who had been reviewing the new requirements for the **European Maritime and Fisheries Fund**, stepped in. \"It has everything to do with it now, Nikos. To access the 2021-2027 MFF funds, Dimitris and his office require us to meet 'enabling conditions' rooted in the **EU Gender Equality Strategy 2020-2025**. If the cooperative doesn't have a concrete plan to promote women’s entrepreneurship and participation in decision-making, the funding remains locked.\"\nDimitris confirmed this during a formal audit meeting the following week. \"We cannot verify expenditure for the new aquaculture site unless Aegean Aqua-Tech demonstrates socially responsible public procurement and a clear gender impact assessment. The EU budget is now designed to measure how resource allocation contributes to equality objectives.\"\nTo secure the funding, the team designed the \"Blue Horizon Initiative.\" First, Elara drafted a \"Gender Equality Plan\" for the cooperative, a new requirement under **Horizon Europe**, which mandated that 40% of leadership roles in new research projects be held by women. Second, they applied for a dedicated call for women in the \"blue economy\" through the **European Maritime and Fisheries Fund**, specifically to fund Thalassa’s kelp-farming startup as a female-led technology venture. Finally, they implemented a tracking system to measure the gender-disaggregated impact of their training programs, ensuring that young women in rural coastal areas received equal access to technical maritime certifications.\n\"By restructuring our procurement to favor gender-balanced suppliers,\" Elara explained during a staff workshop, \"we aren't just ticking a box; we are accessing a more stable financial framework.\""
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Blue Horizon Initiative",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "spans": {
+            "groups": [
+              {
+                "label": "Investment & Participation Outcomes",
+                "spans": [
+                  "€1.2 million",
+                  "InvestEU Programme",
+                  "Cohesion Fund",
+                  "30% increase in female participation in maritime decision-making"
+                ]
+              },
+              {
+                "label": "Individual",
+                "spans": [
+                  "EU Gender Equality Strategy 2020-2025"
+                ]
+              }
+            ]
+          },
+          "qa_pairs": [
+            {
+              "question": "What was the total investment mobilised through the InvestEU Programme and Cohesion Fund for the Blue Horizon Initiative?",
+              "answer": "€1.2 million",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "What quantitative shift in female participation in maritime decision-making resulted from the Blue Horizon Initiative?",
+              "answer": "30% increase in female participation in maritime decision-making",
+              "type": "Factoid",
+              "tag": "funding_global_action"
+            }
+          ],
+          "content": "The outcome was a total investment of €1.2 million, facilitated by the **InvestEU Programme** and the regional **Cohesion Fund**. Within two years, Thalassa’s startup became the region’s largest employer of female scientists, and the cooperative reported a 30% increase in female participation in maritime decision-making. This measurable progress was cited in the Greek national report as a successful alignment with the **EU Gender Equality Strategy 2020-2025**, proving that targeted funding is the most effective engine for structural change."
+        }
+      ]
+    }
+  ]
+}
