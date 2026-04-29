@@ -1,0 +1,1313 @@
+{
+  "source": "EU Gender Equality Strategy 2020-2025",
+  "qa_type": "Descriptive, non-factoid",
+  "chunks_with_qa": 25,
+  "skipped_unknown_chunks": 5,
+  "total_qa_pairs": 184,
+  "chunks": [
+    {
+      "chunk_number": 5,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": null,
+      "classification": "violence_stereotypes",
+      "qa_pairs": [
+        {
+          "question": "What contexts does the passage cover when describing where everyone should be safe?",
+          "answer": "The passage extends the requirement of safety to homes, close relationships, workplaces, public spaces, and the online environment. It thereby treats safety as a single condition that must hold across both private and public domains, including the digital one.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How does the passage describe the freedom that women and men, girls and boys should enjoy?",
+          "answer": "According to the passage, individuals in all their diversity should be free to express their ideas and emotions and to pursue their chosen educational and professional paths. Freedom is therefore framed both expressively and vocationally rather than narrowly.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Why does the introduction emphasise 'all their diversity' when referring to women and men, girls and boys?",
+          "answer": "By using the phrase 'all their diversity', the passage signals that the freedoms it describes apply to everyone within those broad categories without exception. It thus stresses that the chapter's protections are not limited to a homogeneous group.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What role do stereotypical gender norms play in the passage's vision?",
+          "answer": "Stereotypical gender norms are presented as constraints that limit individuals' ability to pursue their chosen educational and professional paths. Removing those constraints is therefore framed as a precondition for the freedom the chapter envisages.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How does the passage relate online environments to other settings when articulating its safety vision?",
+          "answer": "The passage places online safety alongside homes, close relationships, workplaces, and public spaces, treating the digital environment as one further domain where safety must be guaranteed. It is therefore not isolated as a separate or secondary concern.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How are safety and free expression connected in the introductory passage?",
+          "answer": "The passage first establishes universal safety across personal, public, and online contexts, and then frames freedom to express ideas, emotions, and life choices as something that proceeds from that safety. The two are presented as complementary preconditions for pursuing one's chosen path.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 6,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "qa_pairs": [
+        {
+          "question": "How does the passage define gender-based violence?",
+          "answer": "Gender-based violence is defined as violence directed against a woman because she is a woman, or violence that affects women disproportionately. The passage describes it as deeply rooted in gender inequality and as one of society's biggest challenges.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Why does the passage characterise gender-based violence as under-reported and overlooked?",
+          "answer": "It states that gender-based violence in all its forms remains under-reported and overlooked both inside and outside the EU, which the text links to its deep roots in gender inequality. This framing implies that structural factors keep many incidents hidden from view.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Describe the EU's overall approach to gender-based violence as set out in the passage.",
+          "answer": "The EU commits to do all it can to prevent and combat gender-based violence, support and protect victims of such crimes, and hold perpetrators accountable for their behaviour. The approach therefore combines prevention, victim protection, and accountability rather than addressing any single dimension.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What role is attributed to the Istanbul Convention in the EU's strategy?",
+          "answer": "The Istanbul Convention is presented as the benchmark for international standards on preventing and combating violence against women and domestic violence. The EU signed it in 2017, and concluding the EU's accession is described as a key priority for the Commission.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Explain the purpose of the European Parliament's 2019 request for an opinion from the European Court of Justice.",
+          "answer": "The Parliament requested the opinion in order to accelerate the conclusion of the EU's accession to the Istanbul Convention. It is presented as a procedural step intended to move the accession process forward when progress had stalled.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What contingency does the Commission envisage if EU accession to the Istanbul Convention remains blocked?",
+          "answer": "The Commission intends to propose measures in 2021, within the limits of EU competence, designed to achieve the same objectives as the Istanbul Convention. This presents a fallback route to the same substantive aims via EU legislation.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Explain how the concept of 'Eurocrimes' is connected to combating gender-based violence in the passage.",
+          "answer": "Under Article 83(1) TFEU, certain serious cross-border crimes — known as Eurocrimes — can be subject to harmonisation at EU level. The Commission intends to present an initiative extending this list to specific forms of gender-based violence, thereby enabling EU-wide criminal law alignment in this area.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How does the Commission plan to act on forms of violence already covered by existing Eurocrimes?",
+          "answer": "For violence already apprehended by existing Eurocrimes under Article 83(1) TFEU, the Commission will propose additional measures to prevent and combat them. The text identifies sexual harassment, abuse of women, and female genital mutilation as falling within this category.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What overall picture of the prevalence of violence against women in the EU emerges from the figures cited in the passage?",
+          "answer": "The figures cited — 33% of women having experienced physical and/or sexual violence, 22% violence by an intimate partner, and 55% sexual harassment — together portray gender-based violence as widespread rather than exceptional. The passage uses them to underscore the scale of the problem the strategy addresses.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How do EU accession to the Istanbul Convention, the 2021 measures, and the Eurocrimes initiative relate to each other?",
+          "answer": "Accession is presented as the preferred route, while the planned 2021 measures and the Eurocrimes initiative serve as complementary or fallback instruments within EU competence. Together they form a layered strategy aimed at securing the Convention's objectives even if accession itself is delayed.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 7,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "qa_pairs": [
+        {
+          "question": "How does the passage characterise practices such as female genital mutilation, forced abortion, and forced marriage?",
+          "answer": "These practices are characterised as forms of gender-based violence and as serious violations of women's and children's rights, both within the EU and around the world. They are thereby placed within the same overarching category as other violent acts the strategy targets.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Explain the purpose of the planned Recommendation on the prevention of harmful practices.",
+          "answer": "The Recommendation is intended to set out effective pre-emptive measures and to acknowledge the importance of education in preventing harmful practices. It will also address strengthening of public services, prevention and support measures, capacity-building of professionals, and victim-centred access to justice.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What is the role of the planned Victims' Rights Strategy described in the passage?",
+          "answer": "The Victims' Rights Strategy, to be presented in 2020, will address the specific needs of victims of gender-based violence, including domestic violence. It will build on the existing Victims' Rights Directive rather than replace it.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Why does the passage single out women with a health problem or disability for specific measures?",
+          "answer": "The passage notes that such women are more likely to experience various forms of violence, including abuse, forced sterilisation, and forced abortion. Targeted measures, including capacity-building of professionals and awareness-raising on rights and access to justice, are therefore planned to respond to that elevated risk.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Describe the multi-disciplinary approach to violence prevention outlined in the passage.",
+          "answer": "Effective prevention is presented as requiring coordinated action across the criminal justice system, victim support services, perpetrator programmes, and social and health services. Education of boys and girls from an early age and the development of non-violent relationships are also presented as essential ingredients.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How is the prevention of gender-based violence linked to the prevention of radicalisation in the passage?",
+          "answer": "The passage states that addressing violence against women and ideologies undermining women's rights could contribute to preventing radicalisation leading to violent extremism and terrorism. The two agendas are therefore framed as mutually reinforcing rather than separate.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Explain the function of the planned EU network on the prevention of gender-based violence and domestic violence.",
+          "answer": "The network will bring together Member States and stakeholders to exchange good practice on preventing such violence. The Commission will also provide funding for training, capacity-building, and support services within this framework.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Why does the passage place central importance on prevention focused on men, boys, and masculinities?",
+          "answer": "Because the passage frames violence against women as deeply rooted in gender inequality, it identifies men, boys, and ideas of masculinity as a key site for prevention work. Acting on these is therefore presented as essential rather than peripheral to ending violence.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How does the passage approach violence and harassment in the workplace?",
+          "answer": "It states that the Commission will continue to encourage Member States to ratify the relevant ILO Convention on combating violence and harassment in the world of work. Workplace violence is thus addressed both through international labour standards and through the broader prevention agenda.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 8,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "qa_pairs": [
+        {
+          "question": "Explain the relationship between the ILO Convention and existing EU rules in the workplace context.",
+          "answer": "The Commission encourages ratification of the ILO Convention on violence and harassment in the world of work and, in parallel, calls for implementation of existing EU rules protecting workers from sexual harassment together with awareness-raising about them. The two instruments are presented as complementary tools tackling the same problem.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Describe the legal framework the Commission, as an employer, intends to adopt against workplace harassment.",
+          "answer": "As an employer, the Commission will adopt a new comprehensive legal framework on harassment in the workplace, combining preventive and reactive measures. This is presented as the Commission leading by example within its own administration.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How does the passage characterise the impact of online violence on women?",
+          "answer": "The passage describes online violence as pervasive and as having specific, vicious consequences, including being a barrier to women's participation in public life. Bullying, harassment, and abuse on social media are said to have far-reaching effects on women's and girls' daily lives.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Explain the intended role of the Digital Services Act in protecting women online.",
+          "answer": "The Digital Services Act will clarify online platforms' responsibilities for user-disseminated content and what is expected of them in addressing illegal activities online while protecting fundamental rights. It is presented as the main legislative lever for tackling online violence against women.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Why does the passage propose measures going beyond strictly illegal content?",
+          "answer": "It argues that users also need to be able to counter harmful and abusive content that is not always considered illegal but can still have devastating effects. The Commission therefore plans to facilitate the development of a new framework for cooperation between internet platforms in addition to its illegality-based measures.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How does the passage describe the gender pattern of trafficking in human beings?",
+          "answer": "Women and girls are described as forming the vast majority of victims of trafficking in human beings, both in and outside the EU, and as being mostly trafficked for the purposes of sexual exploitation. The passage thus frames trafficking primarily as a gendered crime.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Explain the strategic stance taken on impunity in trafficking cases.",
+          "answer": "Countering impunity of users, exploiters, and profit-makers is presented as a priority of the EU's response to trafficking. This shifts focus from victims alone to those generating and benefiting from demand.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How does the passage connect the EU's anti-trafficking response to the Security Union framework?",
+          "answer": "It situates a new EU strategy on the eradication of trafficking in human beings, and an EU strategy on a more effective fight against child sexual abuse, as part of the Security Union. Trafficking is thereby framed as both a gender-equality concern and an internal-security concern.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Why does the passage insist that the concerns of women and girls be at the centre of trafficking policy?",
+          "answer": "Because women and girls form the vast majority of victims of trafficking and are mostly trafficked for sexual exploitation, the passage argues their concerns must be at the centre of policy development. Centring victims is presented as a condition for effective and comprehensive policy.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 9,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Ending gender-based violence",
+      "classification": "violence_stereotypes",
+      "qa_pairs": [
+        {
+          "question": "Why does the passage stress the need for comprehensive, updated, and comparable data on gender-based violence?",
+          "answer": "It argues that effective policies on combating gender-based violence depend on such data. Without it, the EU cannot accurately monitor the phenomenon or assess the impact of its measures.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How should data on gender-based violence be disaggregated according to the passage?",
+          "answer": "Data should be disaggregated by intersectional aspects and indicators such as age, disability status, migrant status, and rural-urban residence. This level of detail is presented as necessary to obtain a complete picture of gender-based violence.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Explain the rationale for collecting intersectional data on gender-based violence.",
+          "answer": "Because women's experiences of violence vary with age, disability, migration status, and place of residence, only disaggregated data can capture the full range of situations. The passage therefore presents intersectional data as essential to designing accurate and inclusive responses.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What is the role of the planned EU-wide survey coordinated by Eurostat?",
+          "answer": "The survey is intended to provide data on the prevalence and dynamics of violence against women and other forms of interpersonal violence. Its results, scheduled for 2023, will support evidence-based policymaking across the EU.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How does the passage frame the relationship between data collection and policy effectiveness?",
+          "answer": "It treats data collection as a precondition for effective policy: comprehensive, updated, comparable, and disaggregated data are presented as what allows accurate diagnosis of gender-based violence. The EU-wide Eurostat survey is positioned as the concrete instrument delivering that evidence base.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 10,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Challenging gender stereotypes",
+      "classification": "violence_stereotypes",
+      "qa_pairs": [
+        {
+          "question": "Explain why the passage identifies gender stereotypes as a root cause of gender inequality.",
+          "answer": "Gender stereotypes are presented as fixed normative expectations about women, men, girls, and boys that limit their aspirations, choices, and freedom. They affect all areas of society and contribute strongly to the gender pay gap, which is why they need to be dismantled.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How can gender stereotypes interact with other forms of stereotyping according to the passage?",
+          "answer": "The passage states that gender stereotypes are often combined with stereotypes based on race or ethnic origin, religion or belief, disability, age, or sexual orientation. This combination can reinforce the negative impacts of each stereotype rather than simply adding them up.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Why is the inclusion of women in AI development considered strategically important?",
+          "answer": "Artificial Intelligence is described as an area of strategic importance and a key driver of economic progress. The passage therefore argues that women must be part of AI's development as researchers, programmers, and users so the field reflects their perspectives.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Explain how AI risks intensifying gender inequalities, according to the passage.",
+          "answer": "Algorithms and machine-learning systems that are not transparent and robust enough may repeat, amplify, or contribute to gender biases that programmers may not be aware of, or that result from specific data selection. AI thus risks reproducing existing inequalities at scale rather than correcting them.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What is the role of the Commission White Paper on AI within the gender-equality agenda?",
+          "answer": "The White Paper on AI sets out the European approach grounded in EU values and fundamental rights, including non-discrimination and gender equality. It thereby anchors AI development in a normative framework that is meant to counteract algorithmic bias.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Explain how Horizon Europe is positioned in relation to gender bias in AI.",
+          "answer": "The passage presents Horizon Europe — the next framework programme for research and innovation — as a vehicle for developing insights and solutions that address potential gender biases in AI. It is also linked to debunking gender stereotypes across social, economic, and cultural domains and supporting unbiased evidence-based policies.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Why are media and cultural sectors highlighted as central to challenging stereotypes?",
+          "answer": "These sectors are described as having considerable influence in shaping people's beliefs, values, and perceptions of reality. They are therefore identified as key channels for changing attitudes and challenging gender stereotypes.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Describe the planned gender equality strategy in the audio-visual industry.",
+          "answer": "Within the next MEDIA sub-programme, the Commission will present a gender equality strategy for the audio-visual industry. It will include financial support, structured dialogue, mentoring, and training for women film-makers, producers, and screenwriters.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Explain the design of the planned EU-wide communication campaign against gender stereotypes.",
+          "answer": "The campaign will tackle all spheres of life through an intersectional approach, with a particular focus on engaging young people. It will be carried out in collaboration with the Member States rather than by the Commission alone.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How are stereotypes about gender roles linked to economic outcomes in the passage?",
+          "answer": "The passage states that gender stereotypes strongly contribute to the gender pay gap. Through expectations and undervaluation of certain work, they translate normative beliefs into measurable economic disadvantage.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 11,
+      "title": "1. Being free from violence and stereotypes",
+      "subtitle": "Challenging gender stereotypes",
+      "classification": "violence_stereotypes",
+      "qa_pairs": [
+        {
+          "question": "Explain the responsibility the Commission attributes to the Council on the Istanbul Convention.",
+          "answer": "The Commission calls on the Council to conclude the EU's accession to the Istanbul Convention and to ensure swift EU ratification. This positions the Council as the institution that must unblock and finalise accession at EU level.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "What ratification actions does the Commission ask Member States to take?",
+          "answer": "Member States are asked to ratify and implement both the Istanbul Convention and the ILO Convention on combating violence and harassment in the world of work. Ratification at national level is therefore presented as a complement to the EU-level steps requested of the Council.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Describe the implementation responsibilities placed on Member States by the calls in this passage.",
+          "answer": "Member States are expected to implement the Victims' Rights Directive, the Child Sexual Abuse Directive, and other relevant EU law protecting victims of gender-based violence. They are also expected to systematically collect and report data on gender-based violence.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "How do the calls treat the role of civil society and public services?",
+          "answer": "Member States are asked to support civil society and public services in preventing and combating gender-based violence and gender stereotyping. EU funding under the 'citizens, equality, rights and values' programme (2021-2027) is identified as a tool for this support.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Why is data collection included alongside legislative ratification in the calls to Member States?",
+          "answer": "Because preventing and combating gender-based violence requires both legal protection and an evidence base, the Commission pairs ratification of conventions and implementation of directives with systematic collection and reporting of data. The two streams together support effective policy.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        },
+        {
+          "question": "Explain how the funding mentioned in the calls connects to the broader strategy.",
+          "answer": "The 'citizens, equality, rights and values' programme (2021-2027) is identified as available EU funding that Member States can draw on to support civil society and public services. Funding is thus framed as an enabling instrument for delivering the other commitments listed in the calls.",
+          "type": "Descriptive, non-factoid",
+          "tag": "violence_stereotypes"
+        }
+      ]
+    },
+    {
+      "chunk_number": 12,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": null,
+      "classification": "equal_economy",
+      "qa_pairs": [
+        {
+          "question": "How does the passage describe the foundation on which a prosperous and social Europe rests?",
+          "answer": "The passage states that a prosperous and social Europe depends on everyone, framing economic and social progress as inseparable from collective participation. It then outlines the equal opportunities and economic independence that women and men in all their diversity should enjoy.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain the principle of equal pay for work of equal value as articulated in this introduction.",
+          "answer": "The introduction asserts that women and men should be paid equally for work of equal value, treating the principle as part of broader economic independence. It is presented as a baseline condition rather than as an aspiration.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What dimensions of economic life does the passage identify as essential to a gender-equal economy?",
+          "answer": "It identifies opportunities to thrive, economic independence, equal pay for work of equal value, equal access to finance, and fair pensions. Together these form a multi-dimensional vision of economic equality rather than a single metric.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How does the passage describe the sharing of caring and financial responsibilities?",
+          "answer": "It states that women and men should equally share caring and financial responsibilities, framing these duties as joint rather than gendered. The introduction therefore links household-level division of labour to broader economic equality.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain how access to finance is framed in the introductory passage.",
+          "answer": "Access to finance is presented as one of the conditions for women and men to thrive economically and to be independent. By placing it alongside equal pay and fair pensions, the passage treats it as a core component of economic equality.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 13,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing gender gaps in the labour market",
+      "classification": "equal_economy",
+      "qa_pairs": [
+        {
+          "question": "Explain the broader economic case made for increasing women's labour market participation.",
+          "answer": "The passage argues that increasing women's participation has a strong, positive impact on the economy, especially given a shrinking workforce and skills shortages. It also empowers women to shape their lives, play a role in public life, and be economically independent.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What does the passage say about why some women remain structurally underrepresented in the labour market?",
+          "answer": "It links structural underrepresentation to the intersection of gender with additional conditions of vulnerability or marginalisation. Examples given include belonging to an ethnic or religious minority and having a migrant background.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How does the Work-Life-Balance Directive contribute to closing gender gaps in the labour market?",
+          "answer": "The Directive introduces minimum standards for family leave and flexible working arrangements for workers and promotes equal sharing of caring responsibilities between parents. It thereby targets one of the structural causes of unequal labour-market outcomes.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain the role attributed to the Commission in the implementation of the Work-Life-Balance Directive.",
+          "answer": "The Commission will ensure that Member States correctly transpose and implement the Directive so that men and women can equally thrive personally and professionally. It also calls on Member States to go beyond the minimum standards when reviewing their policies.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Why does the passage encourage Member States to ensure quality solutions reach less populated areas?",
+          "answer": "Because access to childcare and other support is essential for work-life balance, the passage urges Member States to ensure that quality solutions also reach less populated areas in Europe. Geographical access is thus treated as a dimension of effective implementation.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Describe the role of the European Semester in monitoring gender equality challenges.",
+          "answer": "The European Semester continues to monitor gender equality challenges in Member States, particularly in their labour market, social inclusion, and education dimensions. Through the Social Scoreboard it also tracks the relevant principles of the European Pillar of Social Rights.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How does the Semester connect gender equality monitoring to the Sustainable Development Goals?",
+          "answer": "From the 2019-2020 cycle, Semester country reports contribute to monitoring of the SDGs, including gender equality (SDG 5). They also examine how economic and employment policies can help deliver on these goals.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain how the Commission addresses flexible working arrangements within its own administration.",
+          "answer": "Within its own administration, the Commission will promote and monitor an equal use of flexible working arrangements by all employees. This is presented as the Commission applying internally the same principles it expects Member States to implement.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 14,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing gender gaps in the labour market",
+      "classification": "equal_economy",
+      "qa_pairs": [
+        {
+          "question": "Explain how the structural reform support programme contributes to gender equality.",
+          "answer": "The programme can support Member States in mainstreaming gender into public administration, state budgeting, and financial management. It can also contribute to national structural reforms aimed at closing the gender employment gap and addressing the higher proportion of women in poverty, particularly in older age.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Why does the passage warn against tax and social protection systems perpetuating structural gender inequalities?",
+          "answer": "Such systems can entrench traditional gender roles in work and private life, locking in inequality rather than correcting it. The Commission therefore plans guidance for Member States on how national tax and benefits systems can affect financial incentives or disincentives for second earners.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Describe the gender pattern in venture capital and private equity decision-making reported in the passage.",
+          "answer": "Globally, only one in ten decision-makers at venture capital and private equity firms are female, even though private funds identified as operating with a gender focus have 72% female partners. All-male founding teams receive almost 92% of all capital invested in Europe.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How does the passage frame women's role as investors and entrepreneurs?",
+          "answer": "Empowering women in the labour market is presented as also meaning giving them the possibility to thrive as investors and entrepreneurs. The passage thereby extends labour-market policy beyond employment into capital allocation and business creation.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain the role of the European Innovation Council pilot mentioned in the passage.",
+          "answer": "Under Horizon Europe, the European Innovation Council will develop targeted measures to promote women's participation in innovation. This includes a pilot in 2020 to promote women-led start-ups and innovative small and medium-sized enterprises.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How does the InvestEU programme connect to gender equality according to the passage?",
+          "answer": "Through InvestEU, the Commission will promote the presence of women in decision-making positions in private equity and venture capital funds and support funds investing with gender-diversified portfolios. The programme is thereby leveraged to mobilise private and public investment for sustainable, inclusive, and innovative growth.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Why does the passage link women's entrepreneurship to broader EU growth objectives?",
+          "answer": "It frames support for women-led start-ups, gender-diversified portfolios, and women's investment access as contributions to more sustainable, inclusive, and innovative growth in Europe. Gender balance in entrepreneurship is thus presented as an economic-growth instrument as well as an equality measure.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Describe how cohesion policy fits into the agenda of empowering women in the labour market.",
+          "answer": "EU cohesion policy is described as supporting women's entrepreneurship, their (re)integration into the labour market, and gender equality in specific, traditionally male sectors. It therefore acts as a horizontal funding instrument across multiple labour-market interventions.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 15,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Achieving equal participation across different sectors of the economy",
+      "classification": "equal_economy",
+      "qa_pairs": [
+        {
+          "question": "Why does the passage describe women's labour-market position as paradoxical?",
+          "answer": "Despite there being more women university graduates in Europe than men graduates, women remain underrepresented in higher-paid professions. More women than men also work in low-paid jobs and sectors and in lower positions, producing a gap between educational attainment and economic outcomes.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What contributing factors does the passage identify for the gender gap in the digital sector?",
+          "answer": "It points to discriminatory social norms and stereotypes about women's and men's skills, and to the undervaluation of women's work. These factors operate alongside the broader patterns of low representation in ICT studies and STEM graduates.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain the importance of the digital transition for the gender-equality agenda.",
+          "answer": "The digital transition is described as transforming the economy and labour market, with around 90% of jobs already requiring basic digital skills. Persistent gender gaps in ICT studies, STEM graduates, and AI programming therefore translate directly into unequal access to future work.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Describe the paradox between digital literacy and ICT participation noted in the passage.",
+          "answer": "Girls outperform boys in digital literacy, yet women only represent 17% of people in ICT studies and careers and 36% of STEM graduates. The passage frames this as a paradox to be addressed through the Digital Education Action Plan and the 'Women in Digital' commitment.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain the role of the Digital Education Action Plan in addressing the gender digital gap.",
+          "answer": "The updated Digital Education Action Plan, together with the Ministerial declaration on 'Women in Digital', is positioned as the main instrument for addressing the gap between girls' digital literacy and women's participation in ICT and STEM. The 'Women in Digital' scoreboard will be used more systematically to track progress.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How does the Updated Skills Agenda for Europe contribute to addressing gender segregation?",
+          "answer": "It will help address horizontal segregation, stereotyping, and gender gaps in education and training. It thereby targets one of the structural drivers of unequal participation across economic sectors.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain the purpose of the Council recommendation on vocational education and training.",
+          "answer": "The recommendation will support improving gender balance in traditionally male- or female-dominated professions and address gender stereotypes. Vocational education is therefore positioned as a lever for breaking horizontal segregation.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Describe the role of the reinforced Youth Guarantee in this context.",
+          "answer": "The reinforced Youth Guarantee will specifically address women not in education, employment, or training, in order to ensure equal opportunities. It thus extends the agenda from those already in the labour market to those at risk of being excluded from it.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How is gender equality positioned within the European Education Area and the strategic framework for sport?",
+          "answer": "Gender equality will be put forward as one of the key elements of the forthcoming communication on the European Education Area. The renewed strategic framework for gender equality in sport will promote women's and girls' participation in sport and physical activity, as well as gender balance in leadership of sport organisations.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 16,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Addressing the gender pay and pension gap",
+      "classification": "equal_economy",
+      "qa_pairs": [
+        {
+          "question": "Why does the passage stress that the principle of equal pay has been enshrined in the Treaties since 1957?",
+          "answer": "It does so to underline that legal recourse against pay discrimination has long existed, while pointing out that women still earn on average less than men. The contrast highlights the persistence of the gap despite decades of legal protection.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain the link between the gender employment and pay gaps and the gender pension gap.",
+          "answer": "Accumulated lifetime gender employment and pay gaps result in an even wider pension gap, leaving older women more at risk of poverty than men. The pension gap is thus framed as a downstream consequence of cumulative working-life inequalities.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What root causes does the passage identify for the gender pay gap?",
+          "answer": "It identifies women's lower participation in the labour market, invisible and unpaid work, higher use of part-time work and career breaks, and vertical and horizontal segregation based on gender stereotypes and discrimination. The passage frames eliminating the gap as requiring all these causes to be addressed together.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Why does the passage argue that pay transparency is necessary to detect discrimination?",
+          "answer": "It explains that without transparency many women do not know or cannot prove that they are being underpaid. Transparency is therefore presented as the precondition for detecting gaps and demonstrating discrimination.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Describe the binding measures on pay transparency planned by the Commission.",
+          "answer": "The Commission will table binding measures on pay transparency by the end of 2020. These will strengthen employees' rights to obtain more information about pay levels, while potentially adding administrative burden for employers.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain why social partners and national administrations are central to the design of the pay transparency initiative.",
+          "answer": "Because the initiative must balance employees' rights to information with administrative costs to employers, the Commission considers it of utmost importance to consult and listen to social partners and national administrations. Their input is presented as essential to finding the right balance.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Describe the consultation process launched alongside the strategy.",
+          "answer": "Together with the adoption of the strategy, the Commission is launching a wide-ranging and inclusive consultation process with the public, the Member States, and the social partners. The Commission also undertook a thorough evaluation of the existing framework on equal pay for equal work or work of equal value before launching it.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How does the Commission plan to re-engage social partners on gender equality at work?",
+          "answer": "It will re-launch the discussion with social partners on improving gender equality in the world of work, including within their own structures, and encourage them to intensify efforts in addressing employment and pay gaps. Social partners are therefore framed as both targets and agents of change.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 17,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Addressing the gender pay and pension gap",
+      "classification": "equal_economy",
+      "qa_pairs": [
+        {
+          "question": "Explain why women are particularly exposed to the gender pension gap.",
+          "answer": "Reduced earnings, higher concentration in part-time work, and career gaps linked to caring responsibilities contribute substantially to the gender pension gap. These factors accumulate over a working life and translate directly into lower pension entitlements.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "What is the purpose of the 2021 Pension Adequacy Report referenced in the passage?",
+          "answer": "The Commission, together with the Council's Social Protection Committee, will use it to assess how risks and resources are shared in pension systems between women and men. The report is therefore framed as a diagnostic instrument for guiding subsequent policy.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Describe the proposed approach to pension credits for care-related career breaks.",
+          "answer": "The Commission will explore with Member States and stakeholders the provision of pension credits for care-related career breaks within occupational pension schemes. This is presented as an instrument to protect pension rights and encourage equal sharing of care responsibilities.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Why is encouraging equal sharing of care responsibilities relevant to closing the pension gap?",
+          "answer": "Because career breaks for care reduce pension entitlements, equal sharing of care between women and men would lessen the long-term penalty currently borne mostly by women. Pension-credit provisions are therefore aligned with redistributing care.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain the role attributed to the High-level group on pensions in the Commission's planned action.",
+          "answer": "The High-level group on pensions has recommended providing pension credits for care-related career breaks in occupational pension schemes. The Commission's planned exploration of this measure with Member States and stakeholders builds explicitly on that recommendation.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How does the passage frame the relationship between paid work patterns and pension outcomes for women?",
+          "answer": "It treats pension outcomes as the cumulative product of working-life patterns: lower earnings, more part-time work, and care-related career breaks combine over decades to widen the pension gap. The pension gap is thus presented less as a stand-alone problem than as the endpoint of earlier inequalities.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 18,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing the gender care gap",
+      "classification": "equal_economy",
+      "qa_pairs": [
+        {
+          "question": "Explain why managing caring responsibilities is described as a particular challenge for women.",
+          "answer": "Women often align their decisions about whether and how to work with their caring responsibilities and with how those duties are shared with a partner. This is described as especially challenging for single parents — most of whom are women — and for people in remote rural areas where support solutions are often lacking.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Why does the passage describe unpaid work as a significant share of economic activity?",
+          "answer": "It frames unpaid work as a disproportionately heavy burden carried by women that nonetheless constitutes a significant share of economic activity. The framing makes the case that the care economy must be visible in policymaking even though it is not formally remunerated.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Describe the relationship between formal care services and gender inequality in the labour market.",
+          "answer": "Insufficient access to quality and affordable formal care services is identified as one of the key drivers of gender inequality in the labour market. Investing in care services is therefore presented as a way to support women's paid work and professional development.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How does investment in care services serve a dual purpose according to the passage?",
+          "answer": "Such investment supports women's participation in paid work and their professional development, while also creating employment opportunities for both women and men. Care services are therefore treated simultaneously as a gender-equality instrument and as a job-creation instrument.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain the function of the Barcelona targets and the planned revision.",
+          "answer": "The Barcelona targets set provision goals for early childhood education and care arrangements, which are mostly met but with significant variation between Member States. The Commission will propose to revise them to ensure further upwards convergence among Member States.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Describe the purpose of the Commission's 2021 proposal for a Child Guarantee.",
+          "answer": "The Child Guarantee will focus on the most significant barriers preventing children from accessing services necessary for their wellbeing and personal development. Its goal is to break the poverty cycle and reduce inequalities.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How does the EU support Member States' improvement of quality care services according to the passage?",
+          "answer": "The Commission will continue to support work on improving the availability and affordability of quality care services for children and other dependants. Investments will draw on the European Social Fund Plus, the European Regional Development Fund, the InvestEU programme, and the European Agricultural Fund for Rural Development.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain the rationale behind the planned Green Paper on Ageing.",
+          "answer": "The Green Paper on Ageing will launch a consultation process focused on long-term care, pensions, and active ageing. It thereby extends the care debate beyond childcare to the longer-term dimensions of ageing and dependency.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 19,
+      "title": "2. Thriving in a gender-equal economy",
+      "subtitle": "Closing the gender care gap",
+      "classification": "equal_economy",
+      "qa_pairs": [
+        {
+          "question": "Describe the implementation responsibilities placed on Member States in this passage.",
+          "answer": "Member States are asked to transpose the Work-Life Balance Directive and to properly implement EU gender equality and labour law. This positions national-level legal compliance as the foundation for the chapter's broader objectives.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How does the passage tie Member State action to existing Council conclusions?",
+          "answer": "Member States are asked to follow up on the Council conclusions of June 2019 entitled 'Closing the Gender Pay Gap: Key Policies and Measures'. Existing political agreements at Council level are thereby treated as commitments still requiring delivery.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Explain the investment expectations directed at Member States in this passage.",
+          "answer": "The Commission calls on Member States to ensure adequate investments in early childhood education, care services, and long-term care services, including from available EU funding. Investment is framed as a precondition for the wider work-life balance agenda.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "How is the 'Women in Digital' commitment included among Member State responsibilities?",
+          "answer": "Member States are asked to implement the Ministerial declaration of commitment on 'Women in Digital'. This brings digital inclusion into the same set of binding national actions as labour-law transposition and care investments.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        },
+        {
+          "question": "Why does the passage bundle work-life balance, pay-gap, care, and digital actions in a single set of calls?",
+          "answer": "Because each of these areas — labour law, the pay gap, care investment, and digital inclusion — is presented as feeding into a gender-equal economy, the Commission addresses them jointly to Member States. The bundling reflects the chapter's view that these dimensions cannot be advanced separately.",
+          "type": "Descriptive, non-factoid",
+          "tag": "equal_economy"
+        }
+      ]
+    },
+    {
+      "chunk_number": 20,
+      "title": "3. Leading equally throughout society",
+      "subtitle": null,
+      "classification": "leadership_participation",
+      "qa_pairs": [
+        {
+          "question": "How does the passage frame leadership across companies, communities, and countries?",
+          "answer": "The passage states that companies, communities, and countries should be led by both women and men in all their diversity. Leadership is therefore presented as a shared rather than gendered function across these different levels of organisation.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Explain the principle articulated about the relationship between gender and career choice.",
+          "answer": "The passage asserts that whether a person is a woman or a man should not influence the career they pursue. Gender is thereby explicitly disconnected from career trajectory as a normative claim.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Why does the introduction emphasise diversity within women and men leaders?",
+          "answer": "By specifying 'in all their diversity', the introduction signals that leadership representation is not just a binary balance between women and men but should also reflect the full range of identities within those groups. It thus aligns the leadership chapter with the strategy's intersectional approach.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "How does this introductory framing prepare the discussion of corporate boards and politics that follows?",
+          "answer": "By establishing as a normative baseline that leadership should be shared between women and men in all their diversity, the introduction frames subsequent discussion of underrepresentation in companies and politics as a deviation from that baseline. It therefore positions corrective measures as restoring rather than imposing balance.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Explain how leadership is treated as a cross-domain question in the introduction.",
+          "answer": "By naming companies, communities, and countries together, the passage indicates that leadership balance applies in private-sector, civic, and political settings alike. This signals that the chapter will treat leadership as a single horizontal issue across these domains.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        }
+      ]
+    },
+    {
+      "chunk_number": 21,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation",
+      "qa_pairs": [
+        {
+          "question": "Why does the passage argue that having both women and men represented is crucial for successful leadership?",
+          "answer": "It states that inclusive and diverse leadership is needed to solve the complex challenges decision-makers face today and is essential for bringing forward new ideas and innovative approaches that better serve EU society. Inclusive leadership is therefore framed as a functional requirement rather than just a fairness issue.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Explain the link the passage draws between participation, democracy, and policy-making.",
+          "answer": "Allowing citizens from all backgrounds to meaningfully participate is described as a necessary precondition for a well-functioning democracy and as leading to more effective policy-making. Diversity in leadership is therefore tied directly to the quality of democratic outcomes.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "How does the passage explain the persistence of male dominance in top positions?",
+          "answer": "It argues that when top positions are held exclusively by men for a long time, this shapes the recruitment pattern for successors, sometimes only due to unconscious bias. Persistence of imbalance is thus presented as partly a self-reinforcing mechanism.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Describe the economic and governance case for diverse leadership made in the passage.",
+          "answer": "A broad range of talents and skills is presented as contributing to better decision-making and corporate governance, and as driving economic growth. Diverse leadership is thus framed as benefiting both internal organisational performance and wider economic outcomes.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Explain the purpose of the proposed Directive on improving the gender balance on corporate boards.",
+          "answer": "The Commission will push for adoption of the 2012 proposal, which sets the aim of a minimum of 40% of non-executive members of the under-represented sex on company boards. The Directive is presented as the main instrument for breaking the corporate 'glass ceiling'.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Why does the Commission accompany the Directive proposal with exchange of good practices?",
+          "answer": "Alongside the legislative push, the Commission will facilitate the exchange of good practices on gender balance in executive boards and managerial positions, drawing on national and regional projects from governments, civil society, and the private sector. The two streams together combine binding rules with peer learning.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Describe the role of the EU Platform of Diversity Charters in this passage.",
+          "answer": "The Platform of Diversity Charters will serve as a venue for exchange between actors working on gender balance in leadership. The Commission will also continue cooperating with EU-wide projects such as the European Gender Diversity Index.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "How does the passage characterise women's current representation in EU corporate decision-making?",
+          "answer": "It acknowledges some progress in recent years but notes that women's under-representation in decision-making positions in Europe's businesses and industry persists. The Directive proposal and exchange of good practices are presented as responses to this persistence.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        }
+      ]
+    },
+    {
+      "chunk_number": 22,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation",
+      "qa_pairs": [
+        {
+          "question": "Explain the rationale for treating equal opportunity in participation as essential for democracy.",
+          "answer": "The passage argues that equal opportunity in participation is essential for representative democracy at all levels — European, national, regional, and local. Democratic representativeness is therefore tied directly to enabling the participation of all groups.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Describe how the Commission plans to support women's participation in the 2024 European Parliament elections.",
+          "answer": "The Commission will work in collaboration with the European Parliament, national parliaments, Member States, and civil society to promote the participation of women as voters and candidates. Funding and the promotion of best practices are identified as concrete instruments.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "How are European political parties asking for EU funding addressed in the passage?",
+          "answer": "Such parties are encouraged to be transparent about the gender balance of their political party members. Transparency is therefore introduced as a soft accompaniment to the funding relationship.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Explain the significance of the Commission's commitment to gender parity in the College of Commissioners.",
+          "answer": "Thanks to the call by President von der Leyen, the Commission has reached the highest number to date of women Commissioners. The passage frames this as the Commission leading by example on gender balance in leadership.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Describe the Commission's internal gender-balance target for management.",
+          "answer": "The Commission aims to reach gender balance of 50% at all levels of its management by the end of 2024. Supporting measures will include quantitative targets for female appointments and leadership development programmes.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "How does the Commission address gender balance in EU agencies?",
+          "answer": "The Commission will increase efforts towards reaching a larger share of female managers in EU agencies. It will also ensure gender-balanced representation among speakers and panellists in the conferences it organises.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "What support does the Commission offer Member States in increasing women in decision-making?",
+          "answer": "The Commission will support Member States in developing and implementing more effective strategies to increase women in decision-making positions, including through the Mutual Learning Programme in Gender Equality. It will also disseminate data and analysis of trends in cooperation with the European Institute for Gender Equality.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Explain the role of EIGE in monitoring representation of women and men in decision-making.",
+          "answer": "In cooperation with EIGE, the Commission will disseminate data and analysis of trends on the representation of women and men in decision-making positions. EIGE thus provides the evidence base supporting Member States' strategies.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Describe the calls addressed to the European Parliament and the Council on the corporate-boards Directive.",
+          "answer": "The Commission calls on the European Parliament and the Council to adopt the proposal for a Directive on improving the gender balance on corporate boards. They are also asked to adopt measures improving gender balance at all levels of their own management and in leadership positions.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        }
+      ]
+    },
+    {
+      "chunk_number": 23,
+      "title": "3. Leading equally throughout society",
+      "subtitle": "Achieving gender balance in decision-making and politics",
+      "classification": "leadership_participation",
+      "qa_pairs": [
+        {
+          "question": "Describe the legislative responsibility placed on Member States in this passage.",
+          "answer": "Once the Directive on improving the gender balance on corporate boards is adopted, Member States are asked to transpose and implement it. National implementation is therefore framed as the next step after adoption at EU level.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Explain the second responsibility addressed to Member States regarding politics and policy-making.",
+          "answer": "Member States are also asked to develop and implement strategies to increase the number of women in decision-making positions in politics and policy-making. The call thus extends from corporate boards into the political and policy sphere.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "How do these two calls together cover both private and public-sector leadership?",
+          "answer": "By pairing transposition of the corporate-boards Directive with strategies for politics and policy-making, the calls span both the private-sector and the public-sector dimensions of decision-making. Together they reflect the chapter's wider claim that leadership balance is needed across companies, communities, and countries.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Why does the passage place transposition and political-strategy responsibilities on Member States rather than on EU institutions alone?",
+          "answer": "Because corporate-board rules require national implementation and political-leadership cultures are shaped at national level, both calls are addressed to Member States. The EU institutions provide the legislative framework, but the implementing capacity rests primarily at national level.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        },
+        {
+          "question": "Explain how the strategies referred to in this passage are intended to operate.",
+          "answer": "The calls ask Member States to develop and implement strategies aimed at increasing women in decision-making in politics and policy-making. These are framed as active national programmes rather than as one-off measures.",
+          "type": "Descriptive, non-factoid",
+          "tag": "leadership_participation"
+        }
+      ]
+    },
+    {
+      "chunk_number": 24,
+      "title": "4. Gender mainstreaming and an intersectional perspective in EU policies",
+      "subtitle": null,
+      "classification": "mainstreaming_intersectionality",
+      "qa_pairs": [
+        {
+          "question": "Explain why the core challenges facing the EU are described as having a gender dimension.",
+          "answer": "The passage states that the green and digital transitions and demographic change all have a gender dimension. Their gender-related impacts make the inclusion of a gender perspective in all EU policies essential to achieving gender equality.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "How is gender mainstreaming defined in operational terms in this passage?",
+          "answer": "Gender mainstreaming is described as ensuring that policies and programmes maximise the potential of all — women and men, girls and boys, in all their diversity. The aim is to redistribute power, influence, and resources in a fair and gender-equal way, tackling inequality and creating opportunity.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Describe the role of the first Commissioner for Equality in supporting gender mainstreaming.",
+          "answer": "The Commission will integrate a gender perspective in all major Commission initiatives during the current mandate, facilitated by the appointment of the first Commissioner for Equality as a stand-alone portfolio. This institutional choice signals that mainstreaming is to be politically led at the highest level.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Explain the function of the Task Force for Equality.",
+          "answer": "The Task Force is composed of representatives of all Commission services and of the European External Action Service. It will ensure the implementation of equality mainstreaming, including gender equality, at operational and technical level across the Commission.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "How can policies under the European Green Deal differ in their impact on women and men?",
+          "answer": "Policies such as the Building Renovation Wave or the EU Strategy on Climate Adaptation can affect women differently from men. The passage notes for example that women face fewer possibilities as climate refugees and that more women experience energy poverty.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Describe the gendered dimensions of the clean transition and emission-free transport identified in the passage.",
+          "answer": "It states that more women are in energy poverty and that more women use public transport, which means clean-transition and emission-free-transport policies have differentiated effects. Addressing the gender dimension is therefore presented as key to leveraging the full potential of these policies.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Why is digitisation singled out as crucial for women's role in shaping the future?",
+          "answer": "Digitisation is described as fundamentally changing lives and the lives of children. The passage argues that it is crucial that women help build that future and that many more girls than currently acquire IT skills, so they can shape the digital world of tomorrow.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Explain the relationship between mainstreaming and targeted gender-equality measures suggested by this passage.",
+          "answer": "By integrating a gender perspective into major initiatives — climate, digital, demographic — the passage positions mainstreaming as the cross-cutting layer that complements targeted measures elsewhere in the strategy. Mainstreaming is thus framed as the mechanism through which the strategy reaches policy areas not formally about gender.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        }
+      ]
+    },
+    {
+      "chunk_number": 25,
+      "title": "4. Gender mainstreaming and an intersectional perspective in EU policies",
+      "subtitle": null,
+      "classification": "mainstreaming_intersectionality",
+      "qa_pairs": [
+        {
+          "question": "How does the passage approach gender-specific health risks?",
+          "answer": "It notes that women and men experience gender-specific health risks and announces that a gender dimension will be integrated into the EU Beating Cancer Plan, to be launched in 2020. Regular exchanges of good practices between Member States and stakeholders on gender aspects of health, including sexual and reproductive health and rights, will also be facilitated.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Describe the role of the EU Drugs Agenda 2021-2025 in the gender-equality framework.",
+          "answer": "The EU Drugs Agenda 2021-2025, to be adopted in 2020, will address gender-specific challenges faced by women and girls in substance abuse. Drug policy is thus framed as a domain where mainstreaming requires explicit attention to women's experiences.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Explain the meaning of intersectionality as used in this passage.",
+          "answer": "The passage describes intersectionality as the way gender intersects with other grounds of discrimination. It illustrates this with the example of a migrant woman with a disability, who may face discrimination on three or more grounds.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Why does the passage argue that EU law should respond to specific needs of different groups of women?",
+          "answer": "Because women are a heterogeneous group facing different combinations of personal characteristics and forms of discrimination, EU law, policies, and their implementation should respond to those specific needs and circumstances. A uniform response is implicitly framed as insufficient.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "How are EU strategic frameworks on disability, LGBTI+, Roma inclusion, and children's rights related to the Gender Equality Strategy?",
+          "answer": "The forthcoming Action Plan on Integration and Inclusion and the EU strategic frameworks on disability, LGBTI+, Roma inclusion, and children's rights will be linked to the Gender Equality Strategy and to each other. The passage thereby builds in a cross-strategy coherence rather than treating each as standalone.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Explain how the intersectional perspective is positioned relative to gender equality policies in this passage.",
+          "answer": "The passage states that the intersectional perspective will always inform gender equality policies. Intersectionality is thus framed not as an optional add-on but as a continuous orientation across the policy area.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        },
+        {
+          "question": "Describe the relationship between health, drugs, and intersectionality as set out in the passage.",
+          "answer": "Both the EU Beating Cancer Plan and the EU Drugs Agenda are presented as policy areas where gender-specific risks and challenges must be explicitly addressed. The intersectional perspective then layers further onto these by recognising that women's experiences within health and substance use also vary by other characteristics.",
+          "type": "Descriptive, non-factoid",
+          "tag": "mainstreaming_intersectionality"
+        }
+      ]
+    },
+    {
+      "chunk_number": 26,
+      "title": "5. Funding actions to make progress in gender equality in the EU",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "qa_pairs": [
+        {
+          "question": "Explain how the Multi-Annual Financial Framework integrates a gender dimension.",
+          "answer": "The Commission's MFF proposals ensure the integration of a gender dimension throughout the financial framework and across various EU funding and budgetary guarantee instruments. These include the European Social Fund Plus, the European Regional Development Fund, Creative Europe, the European Maritime and Fisheries Fund, the Cohesion Fund, and the InvestEU Programme.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Describe the main areas of action that EU funding is intended to support under this framework.",
+          "answer": "Funding will support actions to promote women's labour-market participation and work-life balance, invest in care facilities, support female entrepreneurship, combat gender segregation in certain professions, and address imbalanced representation of girls and boys in education and training. It thereby covers the whole spectrum of the chapter on the gender-equal economy.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Explain the function of the 'enabling conditions' under the proposed Common Provisions Regulation.",
+          "answer": "Under the proposed Common Provisions Regulation, a Member State must have a national gender equality strategic framework in place as a precondition for using funds dedicated to improving gender balance in the labour market, work-life balance, or childcare infrastructure. The enabling condition therefore links access to EU funding with prior national-level strategy.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "How does the horizontal enabling condition on the Charter of Fundamental Rights relate to gender equality?",
+          "answer": "The horizontal enabling condition on effective implementation of the Charter of Fundamental Rights includes gender equality as one of its key principles. It applies to all investments under the regulation, generalising the principle beyond gender-specific funding lines.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Describe the role of the Citizens, Equality, Rights and Values Programme in this funding architecture.",
+          "answer": "The programme provides dedicated funding for projects benefiting civil society organisations and public institutions that implement specific actions, including preventing and combating gender-based violence. It thereby targets the implementation capacity outside national administrations.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Why is particular attention paid to women in the asylum and migration area?",
+          "answer": "The passage states that particular attention needs to be paid to women and girls in the asylum and migration area. Through the Asylum and Migration Fund, the Commission will encourage Member States to target actions that meet the specific needs of women in the asylum procedure and that support their integration.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Explain how the Asylum and Migration Fund supports the protection of vulnerable groups.",
+          "answer": "The fund will enable the stepping up of protection of vulnerable groups, including women victims of gender-based violence in asylum and migration contexts. It thus links migration policy with the strategy's broader anti-violence agenda.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Describe the gender-equality measures planned under Horizon Europe.",
+          "answer": "In research and innovation, the Commission will introduce new measures to strengthen gender equality in Horizon Europe, including the possibility to require a gender equality plan from applicants and an initiative to increase the number of women-led technology start-ups. Funding for gender and intersectional research will also be made available.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        }
+      ]
+    },
+    {
+      "chunk_number": 27,
+      "title": "5. Funding actions to make progress in gender equality in the EU",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "qa_pairs": [
+        {
+          "question": "How does the Common Agricultural Policy contribute to gender equality in this passage?",
+          "answer": "There will be funding opportunities under the CAP to increase women's entrepreneurship knowledge and participation in decision-making and to invest in basic services in rural areas. The CAP is therefore positioned as a channel for women's empowerment in rural contexts.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Explain the rationale for a dedicated 'blue economy' call for women under the European Maritime and Fisheries Fund.",
+          "answer": "The new dedicated call is planned as part of the next European Maritime and Fisheries Fund for 2021-2027 with the explicit aim of empowering women in the blue economy. This targets a sector where the gender-equality angle requires its own funding line rather than relying on horizontal instruments.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Describe the role of an Inclusion and Diversity Strategy for the future Erasmus+ programme.",
+          "answer": "The strategy will provide guidance on how the programme can help address gender inequalities in all education and training, youth, and sport sectors. It thus extends the gender-equality agenda across the full scope of Erasmus+ activities.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "How is socially responsible public procurement linked to gender equality?",
+          "answer": "The Commission's guidance on socially responsible public procurement is described as fighting discrimination and promoting gender equality in public tenders. Public procurement is therefore framed as a lever to advance equality through purchasing decisions.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Explain the Commission's intention regarding measurement of expenditure related to gender equality.",
+          "answer": "In line with calls from Member States and the European Parliament, the Commission will look at the gender impact of its activities and at how to measure expenditure related to gender equality at programme level in the 2021-2027 MFF. This is positioned as improving budget-process transparency on gender.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "How will the European Court of Auditors' audit feed into this process?",
+          "answer": "The recently launched audit by the European Court of Auditors on gender mainstreaming in the EU budget will contribute to the work on measuring gender-related expenditure. External audit findings are thus incorporated into the Commission's own budget-design improvements.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Why does the passage describe these measures as improving gender mainstreaming in the Commission's budget process?",
+          "answer": "Because measuring gender impact and gender-related expenditure feeds directly back into policy design and resource allocation, the passage describes these steps as further increasing the contribution made by budget choices to gender-equality objectives. Budget mainstreaming is thus presented as the link between policy intent and financial reality.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        }
+      ]
+    },
+    {
+      "chunk_number": 28,
+      "title": "6. Addressing gender equality and women's empowerment across the world",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "qa_pairs": [
+        {
+          "question": "Why does the passage describe gender inequality as a global problem requiring coherent EU action?",
+          "answer": "It frames gender equality and women's empowerment as a core objective of EU external action and stresses that the EU's internal and external action must be coherent and mutually reinforce each other. Coherence is therefore presented as essential to credibility and effectiveness.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Describe the channels through which the EU promotes gender equality externally.",
+          "answer": "The EU promotes gender equality and women's empowerment in international partnerships, political and human rights dialogues with third countries, EU trade policy, and its neighbourhood and enlargement policies, including accession negotiations and the Stabilisation and Association Process. Gender-related actions are also included in the EU's responses in fragile, conflict, and emergency situations.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Explain the focus of the Gender Action Plan II (GAP II) for external relations.",
+          "answer": "The action plan on gender equality and women's empowerment in external relations (2016-2020), known as GAP II, focuses on ending violence against women and girls, promoting women's economic and social empowerment, and ensuring the fulfilment of their human, political, and civil rights. It thereby spans protection, empowerment, and rights together.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "How is GAP III positioned in relation to the Gender Equality Strategy?",
+          "answer": "GAP III, to be launched in 2020, will adopt a comprehensive approach and be coherent with the priorities of the Gender Equality Strategy by integrating its relevant elements into the EU's external action. It therefore acts as the external counterpart of the Strategy's internal agenda.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Describe the role of the Spotlight Initiative.",
+          "answer": "The Spotlight Initiative is a joint EU-UN global programme with an overall EU allocation of EUR 500 million to eliminate all forms of violence against women and girls. It represents one of the largest concrete commitments under the EU's external gender-equality work.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Explain the purpose of the #WithHer campaign.",
+          "answer": "The EU is launching a #WithHer campaign in 2020, designed to challenge harmful gender norms and stereotypes that perpetuate violence against women worldwide. The campaign therefore complements legal and funding instruments with a focus on attitudes.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "How does the EU Action Plan on Human Rights and Democracy fit into the picture set out in this passage?",
+          "answer": "The EU will adopt the EU Action Plan on Human Rights and Democracy (2020-2024) in 2020. The plan is presented alongside GAP III, the Spotlight Initiative, and the Strategic Approach on Women, Peace and Security as part of a coordinated suite of external instruments.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Describe the role of the EU Strategic Approach and Action Plan on Women, Peace and Security 2019-2024.",
+          "answer": "The EU will continue to implement this Strategic Approach and Action Plan as part of its work on women's human rights, sexual and reproductive health and rights, and the response to gender-based violence in fragile, conflict, and emergency situations. It is positioned as a continuing rather than new instrument.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        }
+      ]
+    },
+    {
+      "chunk_number": 29,
+      "title": "6. Addressing gender equality and women's empowerment across the world",
+      "subtitle": null,
+      "classification": "funding_global_action",
+      "qa_pairs": [
+        {
+          "question": "Explain how trade policy is used to promote gender equality.",
+          "answer": "The Commission will continue to actively promote gender equality through trade policy, including by engaging on the issue at the World Trade Organisation. It will also continue to gather gender-disaggregated data, ensure trade-related aspects of gender are addressed in trade agreements, and consider gender impact in trade initiatives.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Describe the role of the External Investment Plan in supporting women.",
+          "answer": "In partner countries, the EU will use the External Investment Plan to promote women's entrepreneurship and labour-market participation. The plan is thereby positioned as a financing channel through which gender-equality objectives are pursued internationally.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Explain the purpose of the Women's Financial Inclusion Facility.",
+          "answer": "The Women's Financial Inclusion Facility aims to leverage EUR 100 million for women's access to finance. Improving access to capital is thus framed as a concrete enabler of women's economic participation in partner countries.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "How is the EU Strategy with Africa connected to the gender-equality agenda?",
+          "answer": "The EU Strategy with Africa, to be presented in 2020, will also focus on gender equality and women's empowerment. Gender equality is therefore embedded as one of the strategy's substantive priorities rather than as a side concern.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Explain how gender mainstreaming is applied in the EU's external budget process.",
+          "answer": "In the EU's external policies, gender mainstreaming is used in the budget process through the commitment that 85% of all new programmes contribute to gender equality and women's empowerment. The mainstreaming principle is thus translated into a quantitative budgetary target.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "How does the budget commitment of 85% function as a mainstreaming instrument?",
+          "answer": "By requiring that 85% of all new external programmes contribute to gender equality and women's empowerment, the EU embeds gender objectives in the design phase of programmes rather than treating them as add-ons. The commitment thus operationalises gender mainstreaming through portfolio-level conditions.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        },
+        {
+          "question": "Describe the relationship between trade-related gender data and trade agreements as presented in the passage.",
+          "answer": "Gender-disaggregated data is gathered to ensure that trade-related aspects of gender are adequately addressed in trade agreements and to consider gender impact in trade initiatives. Data is therefore positioned as the input that allows gender concerns to enter trade-policy substance.",
+          "type": "Descriptive, non-factoid",
+          "tag": "funding_global_action"
+        }
+      ]
+    }
+  ]
+}

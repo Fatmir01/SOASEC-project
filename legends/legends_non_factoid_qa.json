@@ -1,0 +1,1477 @@
+{
+  "source": "EU Gender Equality Strategy 2020-2025 — legends",
+  "qa_type": "Descriptive, non-factoid",
+  "total_qa_pairs": 199,
+  "skipped_unknown_chunks": 45,
+  "sources": [
+    {
+      "pillar": "violence_stereotypes",
+      "source_file": "legends_violence_stereotypes_chunked.md",
+      "chunks_with_qa": 6,
+      "chunks": [
+        {
+          "chunk_number": 4,
+          "title": "Breaking the Silence Protocol",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "qa_pairs": [
+            {
+              "question": "How did Avery Nowak first notice the gap in identifying gender-based violence cases?",
+              "answer": "While leading a routine internal audit, Avery noticed that cases with clear indicators of domestic or gender-based violence were rarely flagged as such in the system. Despite EU directives and national guidelines, reporting in the hospital remained sporadic and fragmented.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Explain why frontline emergency staff were under-reporting suspected gender-based violence according to Marta.",
+              "answer": "Marta explained that the emergency room operates under heavy pressure, making it hard to ask sensitive questions without proper training. She also noted that some staff feared saying the wrong thing, which discouraged them from raising the topic with patients.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Why did Elif consider the existing referral practice insufficient for victims?",
+              "answer": "Elif observed that even when cases were identified, referrals to psychological support remained inconsistent. As a result, victims often left the hospital without knowing their rights or the services available to them.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Describe the design of the mandatory training programme introduced by Avery.",
+              "answer": "The programme targeted all frontline staff and focused on early identification of gender-based violence, trauma-informed communication, and legal obligations under the Victims' Rights Directive. It included role-playing scenarios and was co-developed with local NGOs specialised in domestic violence.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Explain how Jonas's upgrade to the digital reporting system supported staff workflows.",
+              "answer": "Jonas integrated a confidential 'GBV alert' feature into patient records that allowed staff to flag suspected cases with a single click. The system then automatically notified the on-call psychologist and generated a checklist for documentation, referral, and patient consent.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "How was the 'Safe Pathway' designed to ensure victims received structured support?",
+              "answer": "Elif's Safe Pathway combined a private consultation room with immediate psychological assessment and a standardised information packet on legal rights, shelters, and support hotlines. Its design ensured that no identified victim left the hospital without being offered structured support.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Why did Avery couple the new protocol with monthly audits and anonymised statistics?",
+              "answer": "Avery introduced monthly audits and internally published anonymised statistics to reinforce accountability for the protocol. Departments were encouraged to share best practices and staff could provide feedback anonymously, making the reform self-correcting over time.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "How are the three measures (training, digital reporting, Safe Pathway) intended to function together?",
+              "answer": "Training equips staff to identify cases, the digital system captures and routes those identifications consistently, and the Safe Pathway ensures every identified victim receives structured support. The three layers therefore close the original gap between presence of violence and formal recognition with follow-up.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            }
+          ]
+        },
+        {
+          "chunk_number": 5,
+          "title": "Breaking the Silence Protocol",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "qa_pairs": [
+            {
+              "question": "What overall transformation in case identification did the hospital achieve in three months?",
+              "answer": "Within three months of implementation, reported cases of gender-based violence rose from 9% to 37% of suspected incidents. Referral rates to psychological services rose by 60%, and patient feedback indicated significant improvements in perceived safety and support.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Explain the cultural change Marta described after the new protocol was rolled out.",
+              "answer": "Marta acknowledged that the protocol initially felt like extra work, but it had since become part of how staff care for patients. She framed the new approach as treating not just injuries but also the underlying cause.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "How does Avery characterise the relationship between the protocol and the EU Gender Equality Strategy 2020-2025?",
+              "answer": "Avery describes the protocol as embodying what the Strategy calls for: effective prevention, victim-centred support, and coordinated action. The reform is presented as turning a previous blind spot into a new institutional standard.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Why did the hospital network choose to formally document the protocol as a best-practice model?",
+              "answer": "By documenting the protocol formally, the network positioned it as a transferable model contributing to national efforts aligned with the broader EU framework. The aim was to allow other institutions to replicate the gains in detection and victim support.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Describe the link the passage draws between detection rates and the experience of patients.",
+              "answer": "The rise in formal recording from 9% to 37% is paired with patient feedback showing improved perceived safety and support. The passage thus presents better detection not as an administrative metric but as a tangible improvement in how victims experience the hospital.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Explain how the protocol's outcome supports its initial diagnosis of the problem.",
+              "answer": "The original diagnosis was that low formal recording rates meant victims were not receiving structured support. The four-fold increase in recorded cases plus the 60% rise in psychological referrals confirm that fixing detection translated directly into more victims accessing services.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            }
+          ]
+        },
+        {
+          "chunk_number": 9,
+          "title": "The Code of Neutrality",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "qa_pairs": [
+            {
+              "question": "What problematic pattern did Sam discover in the OptiHire algorithm during the preliminary audit?",
+              "answer": "Sam found that the algorithm consistently ranked male candidates higher for leadership positions, even when female candidates possessed superior certifications. The cause was that OptiHire had been trained on twenty years of historical data dominated by stereotypical gender norms in the tech industry.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Explain Mika's argument about why the model's behaviour conflicted with the EU Gender Equality Strategy 2020-2025.",
+              "answer": "Mika argued that the model was replicating historical biases by treating leadership as a masculine trait simply because of the data it had been fed. She framed this as directly contradicting the Strategy's mandate to dismantle gender stereotypes in AI development.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Describe the disagreement between Jari and Sam over modifying the training data.",
+              "answer": "Jari worried that altering the data manually amounted to 'cooking the results' and undermining objectivity. Sam countered that the change was a question of accuracy: the AI was wrongly inferring that women were less qualified in 2026 because fewer had held such roles in 2005.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "How did Elizaveta frame the firm's commercial responsibility regarding the biased product?",
+              "answer": "Elizaveta argued that Apex Dynamics could not sell a product that reinforced the glass ceiling. Compliance with the EU Gender Equality Strategy 2020-2025 was therefore presented as both an ethical duty and a precondition for a defensible commercial offering.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Explain the purpose of the deep-cleansing of training sets carried out by Sam and Jari.",
+              "answer": "The deep-cleansing aimed to remove gendered language and proxies — such as specific hobby groups or sports — that the AI was using to infer a candidate's gender. The objective was to strip out the stereotypical markers that drove the biased ranking.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Describe the function of the Bias-Detection Wrapper in the new pipeline.",
+              "answer": "The wrapper monitors screening batches and flags any case where the success rate of one gender deviates by more than 5% from the other. It thereby provides a continuous, automated check rather than relying on one-off audits.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Why did Mika add programmer workshops to the technical fixes?",
+              "answer": "Mika introduced workshops so that programmers could identify their own unconscious biases during the data selection process. Pairing technical de-biasing with awareness training was meant to address the human source of the problem alongside the algorithmic one.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "How does Jari's closing remark capture the shift in the team's approach?",
+              "answer": "Jari acknowledged that the new framework does not just hide the gender variable but ignores the stereotypical markers the team had not realised were present. His remark captures the move from surface neutrality to a deeper recognition of how stereotypes had been embedded in the system.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            }
+          ]
+        },
+        {
+          "chunk_number": 10,
+          "title": "The Code of Neutrality",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "qa_pairs": [
+            {
+              "question": "How did the transparency report quantify OptiHire's improvement after the protocol was applied?",
+              "answer": "The transparency report showed that OptiHire had increased the selection rate of qualified women for senior engineering roles by 28% by the end of the fiscal year. The figure was cited as evidence that the de-biasing measures translated into tangible hiring outcomes.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Why was Apex Dynamics highlighted by the Estonian Ministry of Economic Affairs?",
+              "answer": "The Ministry highlighted the firm as a model for ethical AI after seeing the measurable improvement in selection of qualified women. Recognition therefore came in response to documented results rather than stated intentions.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "How does the passage link the firm's technical reforms to the EU Gender Equality Strategy 2020-2025?",
+              "answer": "The passage argues that by actively challenging gender stereotypes embedded in technical infrastructure, Apex Dynamics aligned its operations with the Strategy. The product reform is thus presented as a concrete way of ensuring professional paths are not constrained by fixed gender norms.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Why does the passage describe the change as evidence that 'professional paths were no longer constrained by fixed norms'?",
+              "answer": "Because OptiHire had been replicating outdated norms in its rankings, removing those biases means hiring decisions for senior roles are now driven by qualifications rather than historical gender patterns. The 28% rise in women selected for senior engineering positions is presented as concrete proof of that shift.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            }
+          ]
+        },
+        {
+          "chunk_number": 14,
+          "title": "Breaking the Silence",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "qa_pairs": [
+            {
+              "question": "Describe the situation Amina faced after joining NordicTech Public Services.",
+              "answer": "Within her first month, Amina began receiving anonymous messages on the company's internal communication platform, including comments on her appearance, insinuations about her competence as a woman in tech, and eventually explicit threats. After initially trying to ignore them, she approached Elín visibly shaken to report that she did not feel safe.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "How did Sofia reframe the situation when Amina described the messages to the team?",
+              "answer": "Sofia recognised the situation as a form of online gender-based violence, a phenomenon highlighted in the EU Gender Equality Strategy 2020-2025. Her insistence that 'online violence is violence' anchored the team's response in the same gravity as physical or verbal harassment.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "What gap in NordicTech's existing policies did the team identify?",
+              "answer": "Although NordicTech had general anti-harassment policies, it lacked specific measures addressing digital abuse. The team treated this as a structural blind spot given that online violence is described as an increasingly pervasive threat.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Explain the role Ravi's forensic review played in the team's response.",
+              "answer": "Ravi reviewed the platform's logs and identified patterns suggesting the perpetrator was using a VPN but still leaving metadata traces. His investigative work eventually led to identifying the source as a contractor misusing remote access privileges.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Describe the emergency protocol drafted by Elín and Jonas.",
+              "answer": "Their protocol introduced immediate reporting channels, temporary access restrictions for suspected accounts, and guaranteed anonymity for victims. The design therefore combined fast response with protection of the people coming forward.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "How was the redesigned communication platform meant to prevent future abuse?",
+              "answer": "Jonas's team redesigned the platform to include automated flagging of abusive content, with input from gender-equality experts. This shifted prevention from purely human reporting to a system capable of detecting harmful patterns in the messages themselves.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Explain the rationale for partnering with a local NGO specialised in digital safety for women and girls.",
+              "answer": "The partnership offered confidential counselling and legal guidance to those affected by digital abuse. It thereby brought specialised external expertise into a workplace setting that had previously lacked targeted support.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Why did the team add an explicit clause on gender-based violence to the code of conduct?",
+              "answer": "By inserting a clause prohibiting all forms of gender-based violence, including harmful online practices, the team aligned the organisation's formal rules with the substantive risk it had just uncovered. The clause makes the new standard binding on every employee rather than dependent on case-by-case management.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            }
+          ]
+        },
+        {
+          "chunk_number": 15,
+          "title": "Breaking the Silence",
+          "subtitle": "The Story",
+          "classification": "violence_stereotypes",
+          "qa_pairs": [
+            {
+              "question": "What measurable improvements were recorded by the end of the year at NordicTech?",
+              "answer": "An internal audit showed a 40% increase in staff reporting feeling safe online and a complete adoption of the new anti-violence protocols across all departments. Harassment incidents that had previously gone unreported dropped to zero.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Explain how Amina's role evolved after the reforms were implemented.",
+              "answer": "Once central to identifying the hidden problem, Amina later thrived in her role and volunteered to co-lead a workshop on safe online communication. Her trajectory illustrates the move from being targeted to actively shaping the workplace's safety culture.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "How did NordicTech contribute beyond its own organisation to the wider EU response?",
+              "answer": "NordicTech documented the entire process and shared it with the emerging EU network on the prevention of gender-based violence and domestic violence. Its experience thereby fed into the Union-level exchange of good practices.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Why did the organisation introduce intersectional data collection alongside the new protocols?",
+              "answer": "Intersectional data collection was added to monitor risks and outcomes in a way that captures variation across different groups of staff. The aim was to ensure that future policies remained evidence-based and responsive to who is actually being affected.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            },
+            {
+              "question": "Explain how the leadership characterised the year's progress at the close of the legend.",
+              "answer": "The leadership acknowledged that the progress was not an endpoint but part of an ongoing commitment. The reforms were framed as concrete compliance with the EU Gender Equality Strategy 2020-2025 and as a continuing rather than completed effort.",
+              "type": "Descriptive, non-factoid",
+              "tag": "violence_stereotypes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pillar": "equal_economy",
+      "source_file": "legends_gender_equal_economy_chunked.md",
+      "chunks_with_qa": 6,
+      "chunks": [
+        {
+          "chunk_number": 4,
+          "title": "Equal Time, Equal Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "qa_pairs": [
+            {
+              "question": "What pattern in retention and promotion did Lucía Ferrer uncover during the workforce review?",
+              "answer": "Lucía found that despite strong recruitment of women graduates, retention rates for women dropped sharply after three years. Promotion data showed that only 18% of leadership roles were held by women, even though they represented nearly 40% of entry-level hires.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Explain how Lucía interpreted the timing of women's exits from the firm.",
+              "answer": "Lucía argued that the firm was not losing talent randomly but losing women at the point where work-life balance becomes critical, especially after starting families. The exits were therefore framed as a structural rather than individual phenomenon.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Describe Noor's contribution to reframing the discussion beyond flexibility.",
+              "answer": "Noor said the issue was not just flexibility but predictability and support, citing how a failed childcare arrangement had forced her to take unpaid leave and stalled her career progression. Her testimony moved the team from generic policy talk toward the specific friction points women face in practice.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Explain the design and intent of the new flexible working framework.",
+              "answer": "The framework gave employees across all departments, including field engineers, access to adaptable schedules, remote planning days, and compressed workweeks. Crucially, it mandated equal eligibility for all genders, encouraging men to take parental leave and flexible arrangements without stigma.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Describe how the company addressed childcare in concrete terms.",
+              "answer": "The firm partnered with local providers to secure subsidised childcare slots for employees, including in nearby rural areas where project sites were located. Emergency childcare vouchers were also introduced for unexpected situations such as the one Noor had experienced.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "How was the 'return-to-career pathway' designed to work in practice?",
+              "answer": "Employees returning from parental leave received a phased reintegration plan with reduced workloads for the first three months, mentorship pairing, and guaranteed eligibility for promotion reviews within six months. The structure aimed to prevent leave from translating into stalled progression.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Explain the role of the 'Shared Responsibility' campaign in the broader reform.",
+              "answer": "The campaign featured male employees who had taken parental leave, with Mateo himself taking four weeks after the birth of his second child. By making senior men visible role-models for shared care, it targeted the cultural barriers that the new policies alone could not address.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "How does Mateo's quote tie the policy reform to the firm's working culture?",
+              "answer": "Mateo argued that 'if we expect balance, we all have to model it', framing the reform as more than a policy and as a shift in how the firm worked. His statement positions personal example as essential to making the policy stick.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            }
+          ]
+        },
+        {
+          "chunk_number": 5,
+          "title": "Equal Time, Equal Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "qa_pairs": [
+            {
+              "question": "Why did the company begin tracking flexible-arrangement and parental-leave usage by gender?",
+              "answer": "Tracking and quarterly publication were introduced to ensure transparency and accountability for the new policies. Public reporting therefore creates pressure for the policies to be used in practice rather than merely existing on paper.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Describe the most striking quantitative improvements achieved within the first year.",
+              "answer": "Retention rates for women after three years rose by 25%, the share of men taking parental leave climbed from 8% to 41%, and women's representation in leadership roles increased from 18% to 30%. Employee satisfaction surveys also showed a 35% increase in perceived work-life balance.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Explain the link between men's higher use of parental leave and the firm's gender-equality goals.",
+              "answer": "By moving from 8% to 41% of men taking parental leave, the firm shifted some of the care burden away from women. This change is presented as a key driver of the simultaneous improvement in women's retention and promotion rates.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "How does Noor's concluding reflection capture the personal effect of the reforms?",
+              "answer": "Noor said she did not have to choose between her career and her family, and that this changed everything. Her remark frames the reform's success not just as statistical improvement but as the removal of a forced trade-off.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Why was the firm's approach later cited as a regional best practice?",
+              "answer": "Lucía concluded in the annual report that implementing concrete measures under the EU Gender Equality Strategy 2020-2025 had closed internal gaps and strengthened the workforce overall. The recognition rests on the combined evidence of higher retention, better gender balance in leadership, and improved satisfaction.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            }
+          ]
+        },
+        {
+          "chunk_number": 9,
+          "title": "Balancing the Scales of Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "qa_pairs": [
+            {
+              "question": "How did Marisa become aware of the work-life balance problem facing Rosa?",
+              "answer": "Marisa noticed that Rosa was frequently absent from afternoon training sessions and asked her why. Rosa hesitated before admitting that the only childcare available in her village closed at 14:00, leaving her unable to be in two places at once.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Explain how Hugo connected Rosa's situation to the EU framework.",
+              "answer": "Hugo identified the problem as exactly what the EU Gender Equality Strategy 2020-2025 highlights: women's labour-market participation is limited when work-life balance is not supported. He argued the cooperative needed to align with the Work-Life-Balance Directive and go beyond its minimum standards.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Describe what the internal assessment of working patterns revealed.",
+              "answer": "The team found that several women in administrative roles were also working reduced hours due to care responsibilities, limiting their chances of promotion. Meanwhile men rarely requested flexible arrangements even when eligible, exposing a gendered usage pattern.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Why does Tomasz argue that flexibility should be normalised for everyone?",
+              "answer": "Tomasz argued that if only women use flexible arrangements, the imbalance continues. Normalising use across genders is therefore presented as essential to making flexibility a real equaliser rather than another mechanism that disadvantages women.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Describe the components of the multi-layered plan adopted by the cooperative.",
+              "answer": "The plan combined flexible scheduling for all staff, a childcare partnership with a local cooperative subsidised through cohesion-policy funds, a transparent pay-mapping exercise, and a training-rotation model allowing remote or morning slots. A pilot programme led by Leila also supported women-led green-energy micro-enterprises with InvestEU-aligned funding.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Explain the purpose of the transparent pay-mapping exercise.",
+              "answer": "The exercise was meant to identify potential gender pay gaps within the cooperative, with results shared openly across the organisation. Transparency is therefore used as the diagnostic step before any pay correction.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "How did Leila's pilot programme connect labour-market reform to entrepreneurship?",
+              "answer": "Leila's pilot used InvestEU-aligned funding streams to support women-led green-energy micro-enterprises. By linking labour reform inside the cooperative with women-led business creation outside it, the cooperative widened its impact across the wider rural economy.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "How does Marisa's framing relate equal participation to the cooperative's economics?",
+              "answer": "Marisa told staff that equal participation is not just a principle but an economic necessity, given that the cooperative needs every talent it has. Equality is thereby presented as part of the operational case for the firm rather than as an external add-on.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            }
+          ]
+        },
+        {
+          "chunk_number": 10,
+          "title": "Balancing the Scales of Opportunity",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "qa_pairs": [
+            {
+              "question": "Explain how Hugo addressed the issue of disincentives for second earners.",
+              "answer": "Hugo launched an internal campaign explaining how national tax and benefit systems can create disincentives for second earners. The campaign was meant to help employees understand their rights and options under the new framework.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Describe Tomasz's contribution to shifting the cultural pattern.",
+              "answer": "Tomasz volunteered to take afternoon training slots so that colleagues with care duties could rotate into morning sessions. His move helped men begin to request flexible hours to share childcare, gradually reducing the stigma around doing so.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "What did the first monitoring cycle aligned with the European Semester reveal?",
+              "answer": "Women's participation in technical training rose by 45%, and the gender pay gap — previously hidden by lack of transparency — was reduced by 12% after adjustments. Two women-led solar-maintenance micro-enterprises were also launched with Leila's support, and staff satisfaction with work-life balance rose across all genders.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Why is the gender pay gap described as 'previously hidden due to lack of transparency'?",
+              "answer": "Before the pay-mapping exercise, the gap had not been visible to staff or management. The 12% gap was identified only once pay levels were systematically compared and shared, making transparency the precondition for the subsequent adjustments.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "How does Rosa's reflection at the annual assembly capture the philosophy of the reform?",
+              "answer": "Rosa said she had not needed special treatment but the same chance to thrive. Her remark positions the reforms as removing structural obstacles rather than as preferential measures.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Why does the cooperative present its reforms as compliance with the EU Gender Equality Strategy 2020-2025?",
+              "answer": "The leadership reaffirmed that strengthening work-life balance, improving pay transparency, and promoting women's entrepreneurship together constitute concrete and measurable compliance with the Strategy. The reforms are framed as helping build a truly gender-equal economy rather than as one-off internal changes.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Explain how the cooperative shared its experience beyond its own organisation.",
+              "answer": "Alentejo GreenWorks documented its reforms and shared them with regional authorities as a model for closing gender employment gaps in rural areas. The documentation thereby converts the internal experience into a transferable template for similar settings.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            }
+          ]
+        },
+        {
+          "chunk_number": 14,
+          "title": "The Parity Portfolio",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "qa_pairs": [
+            {
+              "question": "Describe the disparities revealed by Vanguard Ventures' annual investment review.",
+              "answer": "The review found that 94% of recent capital deployments had gone to all-male founding teams, despite a surplus of female STEM graduates in the region. Internally, female associates were exiting the firm at double the rate of male counterparts, often citing lack of support for caring responsibilities.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Explain Amira's argument about the cost of the firm's existing screening process.",
+              "answer": "Amira argued that the firm was missing out on innovation, since gender-diverse portfolios are associated with higher sustainability ratings. She characterised the screening process as structurally biased toward traditional networks rather than as neutral.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Why had the gender pay gap in middle management widened to 12% according to Stefan?",
+              "answer": "Stefan identified discretionary bonuses as the driver, since they favoured those without career breaks. The mechanism therefore translated time taken for caring responsibilities into a measurable salary penalty.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "How does Elena frame the firm's response in regulatory and economic terms?",
+              "answer": "Elena argued that thriving in a gender-equal economy requires aligning with the EU Gender Equality Strategy 2020-2025. She insisted the change was not about optics but about economic independence and structural reform.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Explain the function of the 'Binding Pay Transparency Protocol' introduced by Elena.",
+              "answer": "The protocol codified all salary bands and bonus criteria and shared them internally. Its purpose was to eliminate the negotiation gap that had disadvantaged women, by removing discretion as a vehicle for unequal outcomes.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Describe the design and rationale of the InvestEU Alignment Pilot.",
+              "answer": "Lukas authorised a dedicated €50 million fund specifically for women-led startups in the renewable sector. By ring-fencing capital for women-led ventures, the firm directly addressed the under-allocation revealed in the annual review.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "How does the 'Returner's Pension Credit' go beyond minimum legal standards?",
+              "answer": "The policy provides employer-paid pension contributions for employees on parental leave, ensuring that future financial security is not penalised by unpaid care work. The text explicitly presents this as going beyond the minimum standards of the Work-Life Balance Directive.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Explain Lukas's claim that the new criteria 'removed the guesswork'.",
+              "answer": "Lukas argued that by formalising criteria for pay and selection, the firm removed the discretionary judgements that had previously produced biased outcomes. Amira added that the new pipeline of women-led startups already included two high-growth prospects competitors had overlooked.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            }
+          ]
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Parity Portfolio",
+          "subtitle": "The Story",
+          "classification": "equal_economy",
+          "qa_pairs": [
+            {
+              "question": "Describe the change in Vanguard Ventures' internal pay gap one year after the reforms.",
+              "answer": "The internal gender pay gap dropped from 12% to 3% within a year of the reforms. The fall is presented as the direct consequence of the binding pay transparency protocol replacing discretionary practices.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "How did the composition of the firm's investment portfolio change after the InvestEU pilot?",
+              "answer": "Women-led ventures came to comprise 30% of Vanguard Ventures' new portfolio. The figure is paired with the pay-gap reduction as evidence that intentional policy changes affect both internal and external outcomes.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "Why does the passage describe Vanguard Ventures' reforms as proving 'equity and profit' can move together?",
+              "answer": "The firm's pay-gap reduction and 30% women-led share of new investments are explicitly framed as showing that intentional policy changes can drive both equity and profit. Alignment with the EU Gender Equality Strategy 2020-2025 is thus presented as financially compatible rather than as a trade-off.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            },
+            {
+              "question": "How is the firm's recognition by external bodies linked to its internal reforms?",
+              "answer": "Vanguard Ventures was officially recognised for its contribution to closing the gender employment and finance gaps. The recognition rests on the documented improvements both inside the firm — pay parity — and outside it through the rebalanced investment portfolio.",
+              "type": "Descriptive, non-factoid",
+              "tag": "equal_economy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pillar": "leadership_participation",
+      "source_file": "legends_leading_chunked.md",
+      "chunks_with_qa": 6,
+      "chunks": [
+        {
+          "chunk_number": 4,
+          "title": "The Boardroom Turn",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "qa_pairs": [
+            {
+              "question": "How did Rosa O'Connell first identify the leadership-balance problem in the authority?",
+              "answer": "While reviewing the annual governance file, Rosa noticed that the executive board had remained overwhelmingly male for years even though women made up nearly half of the workforce and more than half of graduate hires. She also observed that women in middle management were disappearing before the final stage of board consideration.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Explain Rosa's argument against waiting for 'the best candidate to naturally emerge'.",
+              "answer": "Rosa argued that the existing pattern was not neutral but reproducing itself. She placed the board composition chart on the table to show that passive selection had produced the same outcome year after year.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Describe Niamh's specific data-based critique of the recruitment process.",
+              "answer": "Niamh noted that in the last six appointments every shortlisted candidate had been male. She used this to argue that the search and nomination stages were too narrow, even if the formal process appeared rigorous.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "How did Samir's contribution complement the data Niamh presented?",
+              "answer": "Samir acknowledged that the authority had good women managers who were often overlooked for high-visibility roles, with some never even invited to apply. His remark connected the statistical pattern Niamh described to the informal mechanisms producing it.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Explain the design of the revised board recruitment procedure.",
+              "answer": "Every vacancy now requires a gender-balanced longlist and a final shortlist with at least one woman and one man for each seat. External recruiters were also instructed to broaden their searches beyond the usual professional networks.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Describe the function of the leadership mapping system created by Niamh.",
+              "answer": "Niamh's system identifies women in mid-level and senior roles with the experience needed for governance positions. It tracks committee work, budget responsibility, public-speaking experience, and cross-functional leadership so promising candidates are visible before vacancies open.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Explain Samir's framing of the board-readiness programme as 'widening access to the standards'.",
+              "answer": "Samir launched a programme combining mentoring from current directors with mock interviews and sessions on public governance, risk oversight, and transport finance. He told the management team that the programme was not lowering standards but widening access to them.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "How do the three measures together address both visibility and capability problems?",
+              "answer": "The revised recruitment procedure forces shortlists to be balanced, the leadership mapping system makes qualified women visible in advance, and the board-readiness programme equips them with governance-specific skills. Together they address the chain from invisibility to under-preparation that had been hiding qualified women.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            }
+          ]
+        },
+        {
+          "chunk_number": 5,
+          "title": "The Boardroom Turn",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "qa_pairs": [
+            {
+              "question": "Explain the purpose of Tariq's quarterly transparency report.",
+              "answer": "Tariq introduced a quarterly report showing the gender balance of applicants, shortlisted candidates, appointments, and committee chairs. The report makes the recruitment pattern visible at every stage rather than only at the final outcome.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Why did Tariq pair the transparency report with mandatory training for nomination panels?",
+              "answer": "Nomination panel members were also required to complete training on unconscious bias and succession planning. By combining transparency with bias training, Tariq targeted both the visible pattern and the human judgements producing it.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Describe the immediate impact of the new procedure on the next appointments cycle.",
+              "answer": "The longlist for two vacant board seats was evenly balanced, and the shortlist included three women and three men. Both directors ultimately appointed were women with strong operational and financial backgrounds.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "How did women's representation on the board evolve after the reforms?",
+              "answer": "Women's representation on the board rose from 22% to 50% within eight months, and women came to chair two of the four key committees for the first time. The shift therefore reached both the headline numbers and the distribution of influence.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Explain Rosa's framing of the reform's deeper purpose.",
+              "answer": "Rosa stated that the reform was never about symbolic inclusion but about changing how power is distributed. Tariq added that the decision-making table now looks more like the city the authority serves.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Why was the reform documented as a 'permanent governance standard' rather than a one-off intervention?",
+              "answer": "By formalising the procedure as a standard, the authority embedded the changes into ongoing governance rather than treating them as a temporary correction. The documentation explicitly aligns the practice with the EU Gender Equality Strategy 2020-2025's aim of balanced participation in leadership.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            }
+          ]
+        },
+        {
+          "chunk_number": 9,
+          "title": "The Horizon of Shared Leadership",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "qa_pairs": [
+            {
+              "question": "How did Noura's observation initiate the reform at the Baltic Civic Forum?",
+              "answer": "Noura raised in a routine meeting that although the organisation prided itself on inclusive research, its own leadership team was overwhelmingly male. Her remark prompted Ilze to acknowledge that the Forum needed to examine its own structures to model the society it advocated for.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Describe the gender-balance audit conducted by Mateo.",
+              "answer": "Mateo audited all decision-making bodies — the board, senior management, advisory panels and project steering groups. He found that women made up 62% of junior and mid-level staff but only 18% of leadership roles.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "How did Sven connect the Forum's situation to the EU Gender Equality Strategy 2020-2025?",
+              "answer": "Sven framed the proposed Directive on improving the gender balance on corporate boards as a benchmark the Forum should adopt for itself. Aligning with EU efforts was presented as a precondition for credible leadership in the field.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Explain the structure and intent of the leadership-development pathways introduced by the Forum.",
+              "answer": "The pathways combined mentoring, sponsorship, and targeted training for women within the organisation. They were designed to build a pipeline that could feed the new gender-balanced shortlists rather than relying on existing networks.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Describe the role of the 40% target adopted by the Forum.",
+              "answer": "The Forum set a 40% minimum target for women among non-executive board members, mirroring the Directive's objective. This ties an internal numerical commitment directly to the EU benchmark Sven had cited.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Why did the Forum partner with the EU Platform of Diversity Charters?",
+              "answer": "The partnership was chosen so the Forum could exchange good practices with peers and monitor progress. It thereby avoided treating the reform as an isolated effort and embedded it in a wider learning network.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Explain Daria's proposal to extend the initiative to municipalities.",
+              "answer": "Daria suggested supporting municipalities preparing for the next electoral cycle by promoting women's participation as voters and candidates. Her proposal explicitly mirrored the Commission's encouragement for the 2024 European Parliament elections.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Describe the toolkit Noura helped design for political parties.",
+              "answer": "Noura co-designed a toolkit for political parties seeking EU funding that helps them transparently report gender balance among their members. The toolkit thereby converts the EU's transparency expectation into an actionable instrument.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            }
+          ]
+        },
+        {
+          "chunk_number": 10,
+          "title": "The Horizon of Shared Leadership",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "qa_pairs": [
+            {
+              "question": "How does Ilze's town-hall framing position diverse decision-making?",
+              "answer": "Ilze argued that leadership must reflect society, and that diverse decision-making is not symbolic but improves policy outcomes. She framed the Forum's commitment as structural change rather than rhetorical alignment.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Describe the change in the board's gender composition six months after the reforms.",
+              "answer": "Women's representation on the board rose from 18% to 42% in six months. The increase brought the Forum close to the 40% target it had adopted, mirroring the EU Directive's objective.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Explain the role of the leadership pipeline in the senior-management changes that followed.",
+              "answer": "Three women advanced into senior management through the new leadership pipeline. The pipeline therefore translated investment in mentoring and sponsorship into concrete promotions in the period after the reform.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "How did the reforms extend their impact into the political domain?",
+              "answer": "Municipal partners reported a 30% increase in women applying for local-council candidate training programmes. The wider effect therefore reached beyond the Forum's own staffing into the local democratic processes the reform aimed to support.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Why did the Forum's accountability dashboard become a reference for other NGOs?",
+              "answer": "The dashboard, updated quarterly, displayed gender representation at all organisational levels and made progress publicly visible. Its combination of transparency and discipline made it easy for other NGOs in the region to adopt as a model.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Describe Noura's reflection on her own role in the change.",
+              "answer": "Noura acknowledged she had not expected her initial comment to spark all the subsequent reforms. She came to lead a regional working group on gender-balanced governance, which she described as showing that 'leadership grows when structures allow it'.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            }
+          ]
+        },
+        {
+          "chunk_number": 14,
+          "title": "The Parity Path",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "qa_pairs": [
+            {
+              "question": "Describe the 'stagnation gap' Clara identified at Lux-Logistics.",
+              "answer": "Clara reported that while the company's administrative staff was 60% female, the executive board remained 90% male. She characterised the recruitment pattern for successors as self-replicating, perpetuating imbalance through internal habit rather than active choice.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Explain Arne's initial framing of the obstacle to change.",
+              "answer": "Arne argued that promotions were based on tenure and that the senior pool was historically male, asking how this could be changed without compromising merit. His framing presented the imbalance as a function of objective seniority rather than of selection bias.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "How does Noa reframe Arne's concern about merit?",
+              "answer": "Noa argued that the issue was not about compromising merit but about expanding the talent pool. She pointed to a long-standing 'glass ceiling' at the middle-management layer, citing Kiran's record without ever being invited to a board-level committee.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Describe Kiran's account of how board vacancies had been filled at Lux-Logistics.",
+              "answer": "Kiran noted that three director-level vacancies had opened in the previous two years, and each time the selection committee had used an informal referral system that favoured the existing network. He warned that without a visible path to the top, other talented managers would also disengage.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Explain the design of the Transparent Appointment Protocol.",
+              "answer": "The protocol mandates that at least 40% of candidates for non-executive board positions come from the under-represented sex, mirroring the EU's directive for corporate boards. By embedding the percentage at the candidate-pool stage, it acts before final selection rather than after.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Describe the structure of the Leadership Development Programme.",
+              "answer": "The programme targeted managers like Kiran, providing mentorship from existing board members and exposure to international shipping summits. It was designed to give qualified internal candidates the visibility and networks the previous referral system had withheld from them.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Explain the rationale for the 50% gender-balance target by 2026.",
+              "answer": "The team set a quantitative target of 50% gender balance at all management levels, including executive roles, by the end of 2026. The target makes the reform measurable across the full management hierarchy rather than only at the board.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "How does Noa's town-hall remark capture the reform's underlying logic?",
+              "answer": "Noa told staff that the company needed to stop waiting for balance to happen and start engineering it. The remark frames the new framework as deliberate intervention rather than as a passive expectation of change.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            }
+          ]
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Parity Path",
+          "subtitle": "The Story",
+          "classification": "leadership_participation",
+          "qa_pairs": [
+            {
+              "question": "Describe the early appointments that resulted from the new framework.",
+              "answer": "Within eighteen months, two non-executive board vacancies were filled by highly qualified women from the maritime legal and tech sectors. The appointments demonstrated that the expanded talent pool yielded concrete senior hires rather than only candidate-list improvements.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Explain the significance of Kiran's promotion within the firm's leadership history.",
+              "answer": "Kiran was promoted to Executive Director of International Operations and became the first person from a technical background to bridge the gender gap in the firm's leadership history. The promotion thereby links the diversification of leadership to the inclusion of operational expertise.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "How does the firm's annual report tie the leadership reform to broader outcomes?",
+              "answer": "The 2026 annual report cited the achievement of 42% women on the board as a successful implementation of the EU Gender Equality Strategy 2020-2025. It also linked inclusive leadership directly to the company's most innovative fiscal year on record.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            },
+            {
+              "question": "Why does the legend conclude that engineered balance and innovation reinforce each other?",
+              "answer": "By presenting board-level rebalancing alongside the firm's most innovative fiscal year on record, the legend frames inclusive leadership as a driver of innovation rather than as a competing objective. Engineered balance and commercial performance are thus shown as compatible at Lux-Logistics.",
+              "type": "Descriptive, non-factoid",
+              "tag": "leadership_participation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pillar": "mainstreaming_intersectionality",
+      "source_file": "legends_mainstreaming_intersectional_chunked.md",
+      "chunks_with_qa": 6,
+      "chunks": [
+        {
+          "chunk_number": 4,
+          "title": "Designing for All",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "qa_pairs": [
+            {
+              "question": "Describe the original technical blueprint Jules van Dijk presented for the flood resilience project.",
+              "answer": "The blueprint focused on elevated walkways, redesigned drainage systems, and new green buffer zones. Jules described it as efficient and within budget, framing the project initially in purely engineering terms.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "How did Amara challenge the framing of efficiency proposed by Jules?",
+              "answer": "Amara asked 'efficient for whom?', arguing that the team had analysed flood risk but not how different groups experience the space. Her question shifted the discussion from a single optimisation criterion to differentiated impacts on residents.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain how Lotte's data analysis reinforced Amara's concern.",
+              "answer": "Lotte showed that the demographic overlay revealed a high proportion of elderly women living alone, migrant families, and residents with disabilities in the district. The current design model assumed uniform mobility and access, which her data demonstrated was unjustified.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Describe the safety and caregiving issues Milan brought from community meetings.",
+              "answer": "Milan reported that some women avoided certain underpasses during heavy rain because they felt unsafe. He also noted that others could not reach temporary shelters because of caregiving responsibilities they could not leave.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain the structure and purpose of Amara's Gender Impact Assessment Toolkit.",
+              "answer": "The toolkit requires every design component to be evaluated against criteria such as safety, accessibility, caregiving impact, and economic vulnerability. It explicitly includes intersectional variables like age, disability, and migrant status, making the assessment systematic rather than ad-hoc.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "How did Lotte's restructured data systems change what the planning team could see?",
+              "answer": "By switching from aggregated population figures to data disaggregated by gender, age, and socio-economic indicators, the team could identify that elderly women were disproportionately affected by evacuation delays and that single mothers had limited access to emergency transport. Granularity therefore exposed previously invisible inequalities.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Describe the redesigned consultation process led by Milan.",
+              "answer": "Milan replaced general public forums with targeted focus groups for migrant women, caregivers, and residents with disabilities. The sessions were held at accessible locations and times, with translation services and childcare provided so participation was actually possible.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Why did the participant's remark about 'feeling safe walking, even at night' matter for the design?",
+              "answer": "The participant's remark moved the conversation from drainage and dryness toward perceived safety in everyday use. It signalled that effective infrastructure had to integrate experiential safety alongside the engineering performance the team had originally optimised for.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ]
+        },
+        {
+          "chunk_number": 5,
+          "title": "Designing for All",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "qa_pairs": [
+            {
+              "question": "Describe the concrete design changes that resulted from the participant feedback.",
+              "answer": "The team redesigned walkways with better lighting and visibility, ensured all elevated paths were wheelchair accessible, and integrated small decentralised shelter points within residential clusters to reduce travel distance during emergencies. The changes therefore translated each strand of feedback — safety, accessibility, caregiving — into a specific design feature.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain the function of the mandatory gender mainstreaming checkpoint introduced afterwards.",
+              "answer": "The department introduced a checkpoint that required documented analysis of gender and intersectional impacts before any future project could proceed. This shifts mainstreaming from a one-off improvement on this project into a permanent procedural requirement.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Describe the measurable improvements observed within a year of the redesign.",
+              "answer": "Post-implementation surveys indicated a 40% increase in perceived safety among women residents. Emergency response simulations showed a 25% reduction in evacuation time for elderly and mobility-impaired individuals.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "How does Jules's reflection capture the change in how the team understood the project?",
+              "answer": "Jules acknowledged that what they thought they were building was infrastructure but in reality they were shaping access and had not accounted for everyone. His remark captures the team's shift from an engineering frame to an accessibility frame.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Why does the department describe its new procedure as embodying gender mainstreaming 'in practice'?",
+              "answer": "Amara concluded that the project showed what gender mainstreaming looks like in practice — combining toolkit, disaggregated data, targeted consultation, and design changes. The phrase contrasts with mainstreaming as an abstract policy aspiration.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain how the department formalised its approach for future projects.",
+              "answer": "The department formally integrated the new procedures into its planning framework and explicitly aligned the work with the EU Gender Equality Strategy 2020-2025. This ensures climate adaptation policies deliver equitable outcomes for all members of society rather than only well-resourced ones.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ]
+        },
+        {
+          "chunk_number": 9,
+          "title": "Weaving Equality Into Every Policy",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "qa_pairs": [
+            {
+              "question": "How did Katarína identify the recurring flaw across the institute's research?",
+              "answer": "During a quarterly review Katarína observed that each department produced strong analyses but none systematically integrated a gender perspective. She framed this as missing the bigger picture and as inconsistent with the EU Gender Equality Strategy 2020-2025's mandate to embed gender mainstreaming in every policy area.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Describe the function of the Equality Integration Task Group within the institute.",
+              "answer": "Katarína proposed an internal Task Group mirroring the Commission's Task Force for Equality. Milan, Zahra, Elodie and Sofia volunteered to staff it, giving the group cross-disciplinary coverage of climate, digital, health, and intersectional perspectives.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain Milan's critique of the climate-adaptation plan.",
+              "answer": "Milan argued that the existing plan assumed equal mobility and access to resources but ignored that women in rural areas rely more on public transport and face higher energy-poverty risks. He therefore called for gender-differentiated impact assessments built into the plan.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Describe Zahra's concern about the digital-skills programme.",
+              "answer": "Zahra noted that the programme was not addressing the fact that girls outperform boys in digital literacy yet remain underrepresented in ICT pathways. She advocated alignment with the Digital Education Action Plan and the 'Women in Digital' commitments to bridge this paradox.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "How did Elodie identify gaps in the institute's health initiative?",
+              "answer": "Elodie pointed out that the initiative was not accounting for gender-specific cancer risks expected from the EU Beating Cancer Plan, nor for the differing substance-abuse patterns of women and girls highlighted in the EU Drugs Agenda 2021-2025. Her critique tied internal practice to upcoming EU instruments.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain Sofia's contribution about intersectionality.",
+              "answer": "Sofia argued that none of the three programmes considered intersectionality, illustrating with the case that a Roma girl with a disability faces different barriers from a migrant woman or a single father. She insisted that the institute's policies must reflect these layered realities to be effective.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Describe the design of the comprehensive mainstreaming framework adopted by the team.",
+              "answer": "The framework combined mandatory gender-impact assessments aligned with EIGE methodologies, intersectional data collection, and consultation panels with women from diverse communities. It also revised the digital-skills curriculum, adapted climate-adaptation guidelines, and produced gender-aware health-policy briefs.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "How does the framework move from broad principle to operational practice?",
+              "answer": "It pairs assessments and disaggregated data with sector-specific revisions in digital, climate, and health policy. The combination of method and content means the mainstreaming framework reaches the design of every individual project rather than remaining a horizontal commitment.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ]
+        },
+        {
+          "chunk_number": 10,
+          "title": "Weaving Equality Into Every Policy",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "qa_pairs": [
+            {
+              "question": "Describe the addition to health-policy work that completes the framework.",
+              "answer": "Health-policy briefs now integrate gender-specific cancer risks and substance-abuse patterns. This places gender-disaggregated knowledge at the centre of how the institute communicates health policy to its partners.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain Katarína's framing of mainstreaming and intersectionality during the workshop.",
+              "answer": "Katarína argued that gender mainstreaming is not an add-on but ensures policies work for everyone. She added that intersectionality helps the team understand who is being left behind, anchoring both concepts in concrete policy effectiveness.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Describe the climate-adaptation outcome reported in the first evaluation.",
+              "answer": "Climate-adaptation recommendations now included gender-responsive transport planning, which was adopted by two municipalities. The evaluation thereby links the framework's analytical changes to concrete uptake by external authorities.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "How did the digital-skills pilot perform after the curriculum revision?",
+              "answer": "Girls' enrolment in the digital-skills pilot increased by 38%. The figure is presented as evidence that adapting the curriculum to the gender-literacy paradox produced tangible behavioural change.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain the impact of the targeted outreach in the health screening initiative.",
+              "answer": "Health-screening participation among migrant women rose by 27% after targeted outreach. The result shows the value of intersectional design for reaching groups that would otherwise be missed by uniform programmes.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "How does Sofia's reflection capture the meaning of the reforms?",
+              "answer": "Sofia said that for the first time people felt seen in the institute's work and that this is what mainstreaming is about — designing policies that recognise real lives. Her reflection ties the technical reform back to the human experience the framework was designed to address.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ]
+        },
+        {
+          "chunk_number": 14,
+          "title": "The Intersection of Transit",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "qa_pairs": [
+            {
+              "question": "Describe the disconnect Sasha identified between Mateo's data and actual transit users.",
+              "answer": "Mateo's initial data focused on carbon emission reductions through removing street parking, primarily benefiting '9-to-5' commuters who travelled from the suburbs to the city centre. Sasha pointed out that this ignored the complex multi-stop travel patterns of local caregivers.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain Sasha's argument about who bears the cost of prioritising high-speed bike lanes.",
+              "answer": "Sasha noted that focusing on long-distance commuters ignored the 65% of local transit users who are women, many of whom are migrants or elderly residents. These users rely on mid-day bus frequency for 'trip-chaining' — dropping children at school, going to work, and visiting clinics.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Describe Zahra's intersectional reframing of the transit problem.",
+              "answer": "Zahra argued that a woman with a disability or a migrant mother in energy poverty faces a completely different set of barriers from a professional cyclist. She warned that reducing bus stops to increase speed would effectively cut these residents off from the city.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "How does Helga link the project to the EU framework?",
+              "answer": "Helga consulted the project's compliance checklist and stated that the EU Gender Equality Strategy 2020-2025 requires integrating a gender perspective into European Green Deal initiatives. Both transit and Building Renovation Wave policies must therefore maximise potential for everyone in all their diversity.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain the changes the team made to the transit corridor itself.",
+              "answer": "The redesigned corridor includes 'low-floor' bus boarding for strollers and wheelchairs and increased street lighting at every intersection to improve safety for night-shift workers. These changes embed accessibility and safety into the corridor's physical infrastructure.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Describe how the pricing model was adjusted to address economic exclusion.",
+              "answer": "EcoPath adjusted the pricing model to offer subsidised transit passes for low-income households. This responds to Zahra's concern about migrant mothers in energy poverty and prevents environmental policy from imposing additional cost on already marginalised groups.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain Mateo's revision to the climate-adaptation metrics.",
+              "answer": "Mateo reworked the climate-adaptation metrics to ensure that cooling centres and green spaces would be placed in high-density areas where women and children in smaller, energy-poor apartments resided. Climate response thereby becomes targeted to the people most exposed to its absence.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "How does Zahra's closing remark frame the project's identity?",
+              "answer": "Zahra said the team was not just building a green corridor but an inclusive one. Her remark captures the legend's central claim that environmental and equity objectives are pursued together rather than weighed against each other.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ]
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Intersection of Transit",
+          "subtitle": "The Story",
+          "classification": "mainstreaming_intersectionality",
+          "qa_pairs": [
+            {
+              "question": "Describe the measurable shift in transit use after EcoPath's redesign.",
+              "answer": "The project resulted in a 20% increase in transit usage among the local migrant population. The figure provides direct evidence that intersectional design choices changed who used the corridor in practice.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "Explain the change in 'transport poverty' attributed to the project.",
+              "answer": "There was a measurable decrease in transport poverty within the district. The result links the subsidised pricing and stop placement decisions to the lived economic experience of low-income residents.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            },
+            {
+              "question": "How does the legend conclude on the relationship between sustainability and equity?",
+              "answer": "By applying an intersectional perspective, EcoPath proved that environmental sustainability is inseparable from social equity. The conclusion frames the project as a direct fulfilment of the Strategy's mandate to redistribute resources fairly and gender-equally.",
+              "type": "Descriptive, non-factoid",
+              "tag": "mainstreaming_intersectionality"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pillar": "funding_global_action",
+      "source_file": "legends_funding_implementation_chunked.md",
+      "chunks_with_qa": 6,
+      "chunks": [
+        {
+          "chunk_number": 4,
+          "title": "Funding Equality Forward",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "qa_pairs": [
+            {
+              "question": "How did Katarína identify the compliance gap during the mid-term review?",
+              "answer": "Reviewing funded projects under the current Multi-Annual Financial Framework, Katarína noticed that significant resources were allocated to employment and infrastructure projects but very few explicitly addressed gender equality objectives. She framed this as a compliance gap rather than a gap in good intentions.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain how Leila linked Katarína's observation to the EU framework.",
+              "answer": "Leila argued that under the EU Gender Equality Strategy 2020-2025 the agency was expected to integrate a gender dimension across all funding instruments rather than treat it as optional. Her remark anchored the internal critique in a binding external commitment.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe Andrei's financial-perspective contribution to the diagnosis.",
+              "answer": "Andrei pointed out that most proposals did not include gender-disaggregated indicators, meaning impact could not be measured if it was not built into the project design. His contribution shifted the issue from policy intent to measurement infrastructure.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain the access barrier Zuzana identified for civil society organisations.",
+              "answer": "Zuzana noted that smaller organisations, especially those working with vulnerable women, often lacked the capacity to apply for EU funding. They were therefore effectively excluded from the system the agency administered.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe the design of Katarína's mandatory gender equality criterion.",
+              "answer": "Every project proposal had to include a gender impact assessment, gender-disaggregated targets, and a description of how it would contribute to reducing inequalities. Proposals that failed to meet these criteria were deemed ineligible, making compliance a precondition rather than a recommendation.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain the role of the Gender Equality Plan template developed by Leila.",
+              "answer": "Leila produced a standardised template, particularly for applicants under research and innovation streams aligned with Horizon Europe. The template guided organisations in setting measurable objectives such as increasing women's participation in training programmes or leadership roles.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe the gender budgeting tracking system implemented by Andrei.",
+              "answer": "Andrei assigned each funded project a 'gender relevance score' so the agency could quantify how much of its budget contributed to gender-equality objectives. Quarterly reports were generated to monitor compliance and inform future allocations.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain the design of Zuzana's capacity-building initiative.",
+              "answer": "Zuzana launched workshops on EU funding applications, one-on-one mentoring, and simplified procedures for smaller grants under the Citizens, Equality, Rights and Values Programme. Special outreach went to organisations supporting migrant women and women in rural areas, directly tackling the access barrier she had identified.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            }
+          ]
+        },
+        {
+          "chunk_number": 5,
+          "title": "Funding Equality Forward",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "qa_pairs": [
+            {
+              "question": "Why is the rural NGO participant's remark significant for the agency's reform?",
+              "answer": "The participant said it was the first time they felt the system was designed for them to succeed. The remark provides a user-side validation that the simplified procedures and outreach actually changed access in practice.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe how the agency aligned its procedures with the Common Provisions Regulation.",
+              "answer": "The agency verified that all funded projects operated within a national gender equality strategic framework and respected the Charter of Fundamental Rights. The check thus implements the regulation's enabling conditions at project level.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain the headline change in the gender-equality profile of funded projects within a year.",
+              "answer": "The proportion of funded projects with explicit gender-equality objectives rose from 12% to 68%. Over €45 million was allocated to initiatives supporting women's employment, entrepreneurship, and access to services.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "How did participation of women-led organisations evolve under the new framework?",
+              "answer": "Participation of women-led organisations in funding programmes increased by 50%. The figure provides external evidence that the capacity-building and simplified procedures broadened the applicant pool.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe Katarína's framing of the shift in the agency's posture.",
+              "answer": "Katarína concluded that the agency had moved from passive compliance to active investment in equality. Her phrase contrasts ticking boxes with steering resources toward equality objectives.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain how Leila characterises the resulting model of gender mainstreaming in funding.",
+              "answer": "Leila described it as measurable, inclusive, and structural. The three adjectives capture the tracking system, the access reforms, and the procedural integration that together make gender mainstreaming operational.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            }
+          ]
+        },
+        {
+          "chunk_number": 9,
+          "title": "Investing in Equality",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "qa_pairs": [
+            {
+              "question": "Why did Mira immediately see Elena's start-up idea as aligned with EU priorities?",
+              "answer": "Mira saw the women-led coastal-monitoring start-up as aligning with the EU Gender Equality Strategy 2020-2025's emphasis on using the Multi-Annual Financial Framework to advance gender equality. She therefore positioned it as a flagship example for the Hub's funding work.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe the role Petra played in confirming eligibility before applying for support.",
+              "answer": "Petra reviewed the enabling conditions required by the Common Provisions Regulation. She confirmed that Croatia's national gender-equality strategic framework was in place and the Charter of Fundamental Rights enabling condition was fulfilled, making the Hub eligible for the EMFF call.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain Leonard's proposal to extend the project beyond entrepreneurship.",
+              "answer": "Leonard suggested integrating training for women and girls in coastal engineering. He argued this would address gender segregation in the sector and strengthen Elena's future workforce.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe Hana's parallel funding proposal under the Asylum and Migration Fund.",
+              "answer": "Hana proposed a parallel programme offering technical apprenticeships for women with asylum backgrounds. She framed this as strengthening both social inclusion and labour-market participation in line with the Fund's priorities.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain the rationale for combining EMFF, ESF+, CERV, Horizon Europe, CAP and procurement instruments in a single initiative.",
+              "answer": "Each instrument addresses a distinct dimension — start-up acceleration, training with childcare, anti-violence work, gender-aware research, rural transport links, and gender criteria in tenders. Combining them allows the project to act on entrepreneurship, inclusion, research, and systemic change simultaneously rather than in isolation.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe the Horizon Europe research component of the initiative.",
+              "answer": "The Horizon Europe component requires a gender-equality plan from the applicant and funds intersectional research on women's participation in marine technology. It thereby ties scientific funding to both procedural and substantive gender objectives.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain the function of the socially responsible public-procurement clause adopted by the Hub.",
+              "answer": "The clause ensures that gender-equality criteria are applied in all Hub-managed tenders. Procurement is thus enlisted as an instrument of the wider agenda rather than treated as administratively neutral.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "How does Mira's workshop framing capture the philosophy behind the multi-fund design?",
+              "answer": "Mira told the team that funding is not just about resources but about shaping systems. By integrating gender equality into every financial instrument, she argued the Hub could transform entire sectors rather than producing isolated project outputs.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            }
+          ]
+        },
+        {
+          "chunk_number": 10,
+          "title": "Investing in Equality",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "qa_pairs": [
+            {
+              "question": "Describe the purpose of Petra's new internal expenditure-tracking tool.",
+              "answer": "Petra developed a tool to track gender-related expenditure, anticipating the Commission's push to measure gender-equality spending in the 2021-2027 MFF. She also positioned it to prepare the Hub for findings of the European Court of Auditors' audit on gender mainstreaming in the EU budget.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain how Hana ensured safe access to apprenticeships for migrant women.",
+              "answer": "Hana coordinated with local NGOs to provide trauma-informed support for migrant women, including those who had experienced gender-based violence. This integrated safety into participation rather than treating it as a separate concern.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe Leonard's coordination with universities on training content.",
+              "answer": "Leonard partnered with universities to ensure that the training modules aligned with Erasmus+ Inclusion and Diversity guidance. The choice connects the Hub's project to existing EU education-policy standards.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Summarise the most striking outcomes recorded six months into the initiative.",
+              "answer": "Elena's start-up secured EMFF funding and hired its first three employees, all women. Thirty-two women completed ESF+-funded marine-engineering training, with 40% coming from rural areas, and twelve migrant women began apprenticeships through the Asylum and Migration Fund component.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "How did the Hub's procurement reform contribute to the broader pattern of change?",
+              "answer": "The procurement reform increased the number of gender-responsive tenders by 60%. Together with Petra's tracking tool — adopted by two neighbouring regions — this shows the institutional, not just project-level, reach of the initiative.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain the meaning of Elena's remark that the project funded 'a pathway' rather than just 'an idea'.",
+              "answer": "Elena argued that the project funded a pathway for women — Croatian, migrant, rural, young — to shape the future of the blue economy. Her remark frames funding as enabling structural participation across overlapping groups rather than as supporting one venture.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Why does the Hub describe its approach as concrete alignment with the EU Gender Equality Strategy 2020-2025?",
+              "answer": "The Hub argues that its integrated, multi-fund approach — spanning entrepreneurship, inclusion, research and systemic change — represents concrete and measurable alignment with the Strategy. The combination of measured outputs across funding streams is what supports that claim.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            }
+          ]
+        },
+        {
+          "chunk_number": 14,
+          "title": "The Blue Horizon Initiative",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "qa_pairs": [
+            {
+              "question": "Why was Aegean Aqua-Tech's loan application stalled despite Thalassa's ready technology?",
+              "answer": "Although Thalassa's vertical kelp-farming system was ready, the cooperative's loan application had stalled because its governance structure had not updated its gender-equality protocols. Funding access depended on more than the technical merit of the project.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain Elara's response to Nikos's confusion about the link between gender equality and kelp farming.",
+              "answer": "Elara told Nikos that to access the 2021-2027 MFF funds the cooperative needed to meet enabling conditions rooted in the EU Gender Equality Strategy 2020-2025. Without a concrete plan to promote women's entrepreneurship and participation in decision-making, the funding would remain locked.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe Dimitris's audit-stage requirement for verifying the new aquaculture site.",
+              "answer": "Dimitris insisted that expenditure for the new aquaculture site could not be verified unless Aegean Aqua-Tech demonstrated socially responsible public procurement and a clear gender impact assessment. The EU budget, he explained, is now designed to measure how resource allocation contributes to equality objectives.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain the purpose and design of the Gender Equality Plan drafted by Elara.",
+              "answer": "Elara drafted a Gender Equality Plan for the cooperative — a new requirement under Horizon Europe — that mandated 40% of leadership roles in new research projects be held by women. The plan therefore turned an external regulatory expectation into an internal governance commitment.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe the role of the dedicated EMFF call in funding Thalassa's start-up.",
+              "answer": "The team applied for a dedicated call for women in the blue economy through the European Maritime and Fisheries Fund, specifically to fund Thalassa's kelp-farming start-up as a female-led technology venture. This linked the start-up's profile directly to a funding line designed for it.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain the function of the gender-disaggregated impact tracking system in the cooperative's training programmes.",
+              "answer": "The tracking system measured the impact of training programmes by gender to ensure that young women in rural coastal areas received equal access to technical maritime certifications. Tracking thus became the mechanism for guaranteeing the equality the funding required.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "How does Elara reframe the procurement restructuring as a financial gain?",
+              "answer": "Elara explained that restructuring procurement to favour gender-balanced suppliers was not just a box-ticking exercise. By doing so, the cooperative gained access to a more stable financial framework, turning compliance into financial advantage.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Describe the overall logic of the 'Blue Horizon Initiative' designed by the team.",
+              "answer": "The initiative bundled the Gender Equality Plan, the women-in-blue-economy EMFF application, and the gender-disaggregated tracking system into a single response to funding gatekeepers. Its logic was to convert each enabling condition the audit had raised into a concrete operational measure.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            }
+          ]
+        },
+        {
+          "chunk_number": 15,
+          "title": "The Blue Horizon Initiative",
+          "subtitle": "The Story",
+          "classification": "funding_global_action",
+          "qa_pairs": [
+            {
+              "question": "Describe the financial result delivered by the Blue Horizon Initiative.",
+              "answer": "The initiative produced a total investment of €1.2 million, facilitated by the InvestEU Programme and the regional Cohesion Fund. The figure shows that meeting the enabling conditions unlocked rather than merely permitted significant funding.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Explain how Thalassa's start-up changed the regional employment profile.",
+              "answer": "Within two years Thalassa's start-up became the region's largest employer of female scientists. The legend therefore links a single funded venture to a measurable shift in regional gender employment patterns.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "How did decision-making within the cooperative evolve after the reforms?",
+              "answer": "The cooperative reported a 30% increase in female participation in maritime decision-making. Together with the new Gender Equality Plan, this shows the reform reaching governance and not only research staffing.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            },
+            {
+              "question": "Why does the Greek national report cite the cooperative's experience?",
+              "answer": "The progress was cited in the Greek national report as a successful alignment with the EU Gender Equality Strategy 2020-2025. The report uses it to argue that targeted funding is the most effective engine for structural change rather than a peripheral intervention.",
+              "type": "Descriptive, non-factoid",
+              "tag": "funding_global_action"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

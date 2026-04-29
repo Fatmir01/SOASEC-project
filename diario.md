@@ -1,3 +1,43 @@
+### 29/04/2026
+
+python document_preprocessing/json2jsonl.py "./legends/legends_qa.json" "./legends/legends_qa.jsonl" --shuffle --seed 42
+
+
+
+Wrote 327 examples to legends\legends_qa.jsonl
+  Skipped 45 'unknown' chunks
+  Skipped 0 chunks without Q&A pairs
+
+Per tag (classification):
+  equal_economy                       64
+  funding_global_action               68
+  leadership_participation            62
+  mainstreaming_intersectionality     66
+  violence_stereotypes                67
+
+Per type:
+  Descriptive, non-factoid  199
+  Factoid                   128
+
+
+
+
+Wrote 293 examples to documents\gender-equality-strategy-2020-2025_qa.jsonl
+  Skipped 5 'unknown' chunks
+  Skipped 0 chunks without Q&A pairs
+
+Per tag (classification):
+  equal_economy                       90
+  funding_global_action               50
+  leadership_participation            40
+  mainstreaming_intersectionality     27
+  violence_stereotypes                86
+
+Per type:
+  Descriptive, non-factoid  184
+  Factoid                   109
+
+
 ### 27/04/2026
 
 **Passage classification prompt**
