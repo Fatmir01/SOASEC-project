@@ -433,196 +433,725 @@ retrieval, eliciting detailed answers that explain relationships, describe
 processes, define concepts, or discuss implications within the passage. The
 generated responses typically span 1-4 sentences.
 
+
+#### wHY AN EXAMPLE LIKE THIS ONE IS ALRIGHT
+
+
+{"messages": [{"role": "system", "content": "You are an expert assistant on the EU Gender Equality Strategy 2020-2025. Answer questions about the strategy's policy objectives, instruments, and concrete examples of compliance accurately and concisely, grounded in the Strategy's text and its illustrative legends."}, {"role": "user", "content": "How does the passage describe the foundation on which a prosperous and social Europe rests?"}, {"role": "assistant", "content": "The passage states that a prosperous and social Europe depends on everyone, framing economic and social progress as inseparable from collective participation. It then outlines the equal opportunities and economic independence that women and men in all their diversity should enjoy."}]}
+
+
+Great question — and the answer matters a lot for what your fine-tuned model actually learns. The short version: **for your project, the example as it stands is the right design**. Adding the passage would change what you're training the model to do in a way that breaks your experimental setup.
+
+Here's the reasoning, then a caveat.
+
+##### What each format teaches
+
+**Closed-book (your current format)** — the model sees only the question and must produce the answer from its parameters. Fine-tuning on this format pushes the model to **internalize** the Strategy's content and the legends' compliance behaviors. The knowledge ends up baked into the weights.
+
+**Open-book (passage included as context)** — the model sees question + passage and must extract or paraphrase the answer from the passage. Fine-tuning on this format teaches the model to be **a better reader**, but it teaches very little about the Strategy itself. At inference time, if you don't supply a passage, the model has no idea how to answer. It hasn't memorized anything — it has learned a copying skill.
+
+##### Why closed-book fits your specific challenge
+
+Sargsyan and Damiani's hypothesis — the one your benchmark is built to test — is that **legends embed regulation knowledge into the model itself**, as an alternative to retrieval-style approaches. Their whole proposal is about *baking ethics into the weights*, not about teaching better reading comprehension. If you train open-book, you're testing a different hypothesis: "does context-augmented prompting help with gender-equality questions?" — interesting, but not what point 10 of the challenge is asking you to demonstrate.
+
+There's also a downstream consequence. Your GenderEqGLUE benchmark in section 6 evaluates the three models without supplying the source passage in the prompt (with the natural exception of GE-QA, which is a reading-comprehension task by definition). If you fine-tune open-book, the tuned models will perform worse than the base on GE-CLS, GE-NLI, and GE-STANCE because they've never been asked to answer without a passage in front of them. You'd be sabotaging your own experiment.
+
+And the symmetry argument: the regulation-tuned model sees regulation Q&A pairs as `{question → fact}`, while the legends-tuned model sees legend Q&A pairs as `{question → narrative compliance}`. Both formats are closed-book and parallel. If you added passages, the regulation-tuned model would see the actual Strategy text every time, which is essentially showing it the answer key alongside the answer. The legends model would see fictional scenarios alongside the answers. The comparison stops being about *kind of training material* and becomes about *kind of context window* — a totally different dimension.
+
+##### The legitimate caveat
+
+If your factoid Q&A include very short, span-extractive answers (e.g. "40%", "2026", "Istanbul Convention"), some of those questions will be genuinely ambiguous without the passage. "What is the target percentage for non-executive directors?" — the answer is 40% in the Women on Boards Directive context, but a model with no context might reasonably say something else if multiple percentages exist in the Strategy. For these cases, two clean options:
+
+1. **Make the question self-disambiguating**. Rewrite "What is the target percentage?" → "What is the target percentage set by the Women on Boards Directive for non-executive directors of the under-represented sex?". The disambiguation lives in the question, not in an attached passage. This keeps closed-book training intact.
+
+2. **Drop a small fraction of irreducibly ambiguous factoid items** during the conversion to JSONL. Better a slightly smaller dataset than a noisy one.
+
+Looking at your existing non-factoid pairs — like the example you posted — they're already self-contained. The question references "the passage" linguistically but is really asking about a concept ("the foundation on which a prosperous and social Europe rests"), and the gold answer is a substantive paragraph. That works well closed-book. The "passage" in the question is a stylistic hangover from how you generated the data — a model fine-tuned on enough of these will read it as roughly equivalent to "in this domain" or "in the Strategy". Worth tightening if you do another pass on the data, but not a blocker.
+
+##### One small data-cleaning suggestion
+
+Across both your datasets, search for `"the passage"`, `"this passage"`, `"according to the passage"` in the questions and consider rephrasing. After fine-tuning, when a real user asks "What does the EU say about pay transparency?", you don't want the model trained to expect the phrase "passage" as a cue. Light find-and-replace before the JSONL build is a 10-minute job that pays off in cleaner inference behavior.
+
+So: keep the closed-book format, tighten the questions to be self-disambiguating, and proceed. Your current example is fundamentally the right shape.
+
+
+
+
 ## 5. Fine-tuning
 
+> Note: implementation of the sixth and seventh points of the challenge.
+
+The Q&A pairs produced by the previous stage of the pipeline live inside
+two structured JSON files: one derived from the regulation text and one
+derived from the legends. Each pair is annotated with its source chunk,
+its pillar classification, and its question type (factoid or
+descriptive non-factoid). To use these pairs for fine-tuning on the
+FineTuneDB platform, the data must be reformatted into the platform's
+JSONL chat schema and split into two parallel datasets — one per
+training corpus — of comparable size, as required by point (7) of the
+challenge.
+
+### 5.1 JSON to JSONL Conversion
+
+FineTuneDB expects each training example as a single JSONL line in chat
+format, with three message turns: a system prompt that anchors the
+model in the gender-equality domain, a user turn carrying the question,
+and an assistant turn carrying the gold answer. The conversion is
+performed by a dedicated script (`document_preprocessing/json2jsonl.py`)
+that walks the input JSON, filters out chunks classified as `unknown`
+together with chunks that contain no Q&A pairs, and emits one JSONL
+line per Q&A pair.
+
+The system prompt is identical across all examples and across both
+datasets, so that the only variable between the two fine-tuned models
+is the **content** of the user/assistant pairs they are trained on:
+
+```text
+You are an expert assistant on the EU Gender Equality Strategy 2020-2025.
+Answer questions about the strategy's policy objectives, instruments, and
+concrete examples of compliance accurately and concisely, grounded in the
+Strategy's text and its illustrative legends.
+```
+
+Each line of the resulting JSONL therefore has the following structure:
+
+```json
+{
+  "messages": [
+    {"role": "system",    "content": "<system prompt above>"},
+    {"role": "user",      "content": "<question>"},
+    {"role": "assistant", "content": "<answer>"}
+  ]
+}
+```
+**Workflow Overview**:
+
+> Input: the two JSON files produced by section 4 — one for the
+> regulation, one for the legends.
+
+> Process: execution of `document_preprocessing/json2jsonl.py` once per
+> source.
+
+> Output: two FineTuneDB-compatible JSONL files —
+> `documents/gender-equality-strategy-2020-2025_qa.jsonl` and `legends/legends_qa.jsonl`.
 
 
 
-## 6. GenderEqGLUE: adaptation of GLUE to gender equality
+## 6. GenderEqGLUE: a GLUE Adaptation for Gender Equality
+
+> Note: implementation of the ninth point of the challenge.
+
+The GLUE benchmark (Wang et al., 2018) was designed as a general-purpose
+diagnostic for natural language understanding, but its tasks are
+domain-agnostic and do not capture the specific competencies required to
+reason about gender-equality regulation. Following the precedent set by
+LexGLUE (Chalkidis et al., 2022) for the legal domain, we propose
+**GenderEqGLUE**, a benchmark composed of five tasks that jointly
+evaluate a language model's ability to operate on the EU gender-equality
+regulatory landscape.
+
+The benchmark is designed to compare three models on identical conditions:
+the open pretrained LLM, its version fine-tuned on legends, and its
+version fine-tuned on regulation text — implementing point (10) of the
+challenge.
+
+### 6.1 Conceptual backbone
+
+The five tasks are not chosen ad hoc: they are anchored to the principles
+that recur across the EU's gender-equality acquis. We surveyed three
+documents to extract these principles: the **Gender Equality Strategy
+2020-2025** (the regulation used to fine-tune our models), the
+**Roadmap for Women's Rights** (2025), and the **Gender Equality Strategy
+2026-2030**.
+
+The Roadmap articulates eight long-term principles: (1) freedom from
+gender-based violence, (2) the highest standards of health, (3) equal
+pay and economic empowerment, (4) work-life balance and care, (5) equal
+employment opportunities and adequate working conditions, (6) quality and
+inclusive education, (7) political participation and equal
+representation, and (8) institutional mechanisms that deliver on women's
+rights. The 2026-2030 Strategy preserves these and explicitly addresses
+new threats — cyberviolence, anti-gender narratives, and AI-driven
+discrimination — while keeping the intersectional approach and the
+combination of mainstreaming with targeted action.
+
+From these three iterations we identify eight stable cross-cutting
+principles that constitute the conceptual backbone of GenderEqGLUE:
+freedom from violence (including online), economic empowerment, leadership
+and representation, stereotypes and bias (including AI bias), work-life
+balance and care, intersectionality and mainstreaming, health, and
+inclusive education. Each task in the benchmark covers one or more of
+these principles.
+
+### 6.2 Benchmark overview
+
+GenderEqGLUE comprises five tasks. The first three — GE-CLS, GE-NLI and
+GE-QA — operate on a common textual base extracted from EU documents
+not seen during fine-tuning. The remaining two — GE-WSC and GE-STANCE —
+rely on external consolidated datasets, since they require text types
+that institutional EU documents do not naturally provide.
+
+| Task       | Description                          | GLUE analogue   | Source                          | Metric                       |
+|------------|--------------------------------------|-----------------|---------------------------------|------------------------------|
+| GE-CLS     | Pillar Classification                | SST-2           | Common EU base                  | Macro-F1                     |
+| GE-NLI     | Compliance Entailment                | MNLI / RTE      | Common EU base + legends        | Accuracy                     |
+| GE-QA      | Regulation Reading Comprehension     | SQuAD / BoolQ   | Common EU base                  | F1 / Exact Match             |
+| GE-WSC     | Stereotype-Aware Coreference         | WSC / Winogender| WinoBias (open source)          | Accuracy + Gender Parity     |
+| GE-STANCE  | Gender Equality Stance Detection     | SST-2           | CIVICS + curated examples       | Macro-F1                     |
+
+The aggregate **GenderEqGLUE Score** is the unweighted arithmetic mean of
+the five task metrics, mirroring the original GLUE score.
+
+### 6.3 Common Evaluation Base
+
+For the three domain tasks (GE-CLS, GE-NLI, GE-QA) we constructed a
+single **Common Evaluation Base (CEB)** rather than gathering separate
+sources per task. A shared base ensures that performance differences
+across tasks reflect task properties rather than source variability,
+keeps the benchmark replicable, and aligns with the LexGLUE methodology.
+
+The CEB is extracted from four EU documents that are thematically
+contiguous to the Strategy 2020-2025 but **not present in the training
+data of any of the three models under evaluation**:
+
+1. Roadmap for Women's Rights (2025)
+2. Gender Action Plan III (GAP III) 2021-2025
+3. Council Conclusions on Closing the Gender Pay Gap (June 2019)
+4. Directive (EU) 2022/2381 on improving the gender balance among
+   directors of listed companies (Women on Boards Directive)
+
+#### 6.3.1 Document preprocessing
+
+The four documents are processed through the same pipeline used for the
+regulation text in section 2: PDF-to-Markdown conversion via Marker,
+regex-based Markdown cleaning to remove footnote markers, page artifacts
+and inline references, and word-count constrained segmentation with
+`max_words = 350`.
+
+The output of this phase is located in the folder `./benchmark/`, specifically
+in the 3 subfolders `./benchmark/original/`, `./benchmark/cleaned/`, `./benchmark/chunked/`.
 
 
-Prima di tutto, ho cercato i principi comuni delle ultime strategie EU. Il quadro è chiaro: c'è una continuità strutturale forte ma con un'evoluzione progressiva.
+#### 6.3.2 Pillar annotation
 
-### Parte 1 — Principi comuni dalle strategie EU sulla gender equality
+The pool is annotated independently by two annotators using the six-class
+taxonomy defined in section 4.1:
+`violence_stereotypes`, `equal_economy`, `leadership_participation`,
+`mainstreaming_intersectionality`, `funding_global_action`, `unknown`.
 
-Ho consultato tre documenti chiave: la **Gender Equality Strategy 2020-2025** (quella che state usando), la **Roadmap for Women's Rights del 2025**, e la nuova **Gender Equality Strategy 2026-2030** appena pubblicata.
+Inter-annotator agreement is measured with **Cohen's kappa**.
+Disagreements are resolved through a consensus discussion involving a
+third annotator when needed. The kappa score and the disagreement-resolution
+log are reported in the benchmark documentation as required by accepted
+practice for human-annotated NLP benchmarks.
 
-La Roadmap del 2025 è particolarmente importante perché articola otto principi che guideranno l'azione EU di lungo periodo: (1) freedom from gender-based violence; (2) the highest standards of health; (3) equal pay and economic empowerment; (4) work-life balance and care; (5) equal employment opportunities and adequate working conditions; (6) quality and inclusive education; (7) political participation and equal representation; (8) institutional mechanisms that deliver on women's rights.
+The target annotated pool size is approximately 250-350 passages, with at
+least 30 passages per pillar.
 
-La nuova Strategia 2026-2030 amplia lo scope della precedente coprendo tutti i principi della Roadmap, e affronta nuove minacce come la cyberviolenza di genere, le narrative anti-gender e i rischi legati all'AI, che colpiscono particolarmente le donne. Mantiene l'approccio intersezionale e combina gender mainstreaming con azioni mirate.
+OUTPUT:
+  - `./benchmark/ceb_pool.json`
 
-**Principi trasversali stabili** (presenti in tutte e tre le iterazioni):
 
-1. **Freedom from violence** — fisica, sessuale, psicologica, e ora anche online (cyberviolence, deepfakes)
-2. **Economic empowerment** — pay gap, pension gap, accesso al lavoro
-3. **Leadership e rappresentanza** — board aziendali, politica, decision-making
-4. **Stereotipi e bias** — inclusi i bias nell'AI (presente fin dal 2020 ma rafforzato nel 2026)
-5. **Work-life balance e care** — divisione equa delle responsabilità di cura
-6. **Intersezionalità e mainstreaming** — principi orizzontali, non un pillar isolato
-7. **Health** — nuovo focus dedicato nel 2026-2030 (assente nel 2020-2025 come pillar)
-8. **Educazione inclusiva** — dimensione abilitante presente in entrambe
 
-**Cosa è cambiato dal 2020 al 2026:**
-- AI bias passa da "rischio emergente" a "minaccia concreta" con cyberviolence e deepfakes
-- "Engaging men and boys" diventa esplicito (non solo destinatari ma agenti del cambiamento)
-- Anti-backsliding diventa centrale (proteggere conquiste contro narrative anti-gender)
-- Health emerge come pillar autonomo
+#### 6.3.3 Disjoint partitioning
 
----
+To prevent cross-task contamination — a passage used as a GE-CLS test
+item must not reappear as a GE-QA context — the annotated pool is
+partitioned into three disjoint subsets through a stratified random
+split with `seed=42`:
 
-## Parte 2 — GenderEqGLUE: proposta di benchmark
+- `CEB-CLS` → input pool for GE-CLS  (72 passages)
+- `CEB-QA`  → input pool for GE-QA   (72 passages)
+- `CEB-NLI` → input pool for GE-NLI  (73 passages)
 
-Ispirandomi alla struttura di GLUE/SuperGLUE, all'esempio dell'Appendix B del professore, e adattando LexGLUE come modello (perché ha già fatto un lavoro analogo nel dominio legale), propongo **5 task** che coprono i principi comuni estratti sopra e che si possono valutare con i tre modelli del vostro esperimento (base, tuned-legends, tuned-regulation).
+The split ratio is approximately 1/3 each. Stratification on the
+pillar label preserves the per-pillar distribution across the three
+subsets, ensuring that no pillar is over- or under-represented in
+any single task. The split is implemented as a two-step
+`StratifiedShuffleSplit` (sklearn) with the seed fixed and the
+indices saved alongside the partitioned files for replicability.
 
-### Overview dei task
+Per-pillar distribution after the split:
 
-| Task | Descrizione | Tipo GLUE | Sorgente dati | Metrica |
-|---|---|---|---|---|
-| GE-CLS | Pillar Classification | SST-2 / multi-class | QA dataset (vostro) | Macro-F1 |
-| GE-NLI | Compliance Entailment | MNLI / RTE | Legends + Regulation (vostro) | Accuracy |
-| GE-QA | Regulation Reading Comprehension | SQuAD / BoolQ | QA dataset (vostro) | F1 / EM |
-| GE-WSC | Stereotype-Aware Coreference | WSC / WinoBias | WinoBias (open source) | Accuracy + Gender Parity |
-| GE-STANCE | Gender Equality Stance | SST-2 / sentiment | CIVICS + curated (open) | Macro-F1 |
+| Pillar                            | Pool | CLS | QA | NLI |
+|-----------------------------------|-----:|----:|---:|----:|
+| `violence_stereotypes`            |   72 |  24 | 24 |  24 |
+| `leadership_participation`        |   45 |  15 | 15 |  15 |
+| `funding_global_action`           |   21 |   7 |  7 |   7 |
+| `equal_economy`                   |   18 |   6 |  6 |   6 |
+| `mainstreaming_intersectionality` |   11 |   4 |  3 |   4 |
+| `unknown`                         |   50 |  16 | 17 |  17 |
+| **Total**                         |  217 |  72 | 72 |  73 |
 
-Score finale: media aritmetica dei 5 task (come GLUE).
+OUTPUT:
+- `./benchmark/task_pool/ceb_cls.json`
+- `./benchmark/task_pool/ceb_nli.json`
+- `./benchmark/task_pool/ceb_qa.json`
 
----
 
-### Task 1 — GE-CLS (Pillar Classification)
+### 6.4 Task 1 — GE-CLS (Pillar Classification)
 
-**Obiettivo**: dato un passaggio di testo, classificarlo nel pillar di gender equality di appartenenza.
+**Objective.** Given a textual passage, classify it into one of the five
+EU gender-equality pillars or as `unknown`.
 
-**Formato**: classificazione multi-classe a 6 etichette, allineate ai vostri 5 thematic clusters + unknown:
-- `violence_stereotypes`, `equal_economy`, `leadership_participation`, `mainstreaming_intersectionality`, `funding_global_action`, `unknown`
+**Format.** Single-input multi-class classification across six labels:
+`violence_stereotypes`, `equal_economy`, `leadership_participation`,
+`mainstreaming_intersectionality`, `funding_global_action`, `unknown`.
 
-**Esempio**:
-> Input: "The company introduced binding pay transparency measures and conducted a salary audit across all departments."
-> Label: `equal_economy`
+**Example:**
+> Input: "The directive sets a minimum of 40% of non-executive members of
+> the under-represented sex on listed company boards by 2026."
+> Label: `leadership_participation`
 
-**Dato**: usate i passaggi che avete già classificato nella sezione 4.1 della pipeline. Split 80/10/10 (train/dev/test).
+**Data.** The task uses `CEB-CLS` (72 passages) directly. No additional
+construction is required: each passage already carries its consensus
+pillar label from section 6.3.2.
 
-**Mappa GLUE**: SST-2 (single-sentence classification).
+Predictions are parsed with a deterministic regular expression. A
+response that does not match the expected format is recorded as a
+`PARSE_FAIL` and counted as a misclassification (no retries). The
+parse-failure rate is reported as a separate diagnostic.
 
-**Perché conta**: testa se il modello ha appreso la struttura tematica della regolazione. Il modello base dovrebbe avere accuracy bassa, i due tuned dovrebbero migliorare significativamente.
+To bound the introduced
+noise, all model interactions follow a fixed prompt template stored
+verbatim in `./benchmark/task_pool/ge_cls/ge_cls_system_prompt.txt`, the prompt is pasted
+unmodified into each session
 
----
+**GLUE analogue.** SST-2 (single-sentence classification, generalised
+to multi-class).
 
-### Task 2 — GE-NLI (Compliance Entailment)
+**Metric.** Macro-F1 across the six classes. Per-class F1 and the
+inter-model confusion matrix are reported as diagnostics. Per-class
+F1 on classes with fewer than 30 test items
+(`equal_economy`, `mainstreaming_intersectionality`,
+`funding_global_action`) is flagged as low-confidence.
 
-**Obiettivo**: dato uno scenario (premessa) e una clausola di compliance (ipotesi), determinare se lo scenario entails / contraddice / è neutrale rispetto alla clausola.
+**Why it matters.** GE-CLS measures whether the model has internalised
+the *thematic structure* of the regulation. The base model is expected
+to score low; the two fine-tuned models are expected to improve, with
+tuned-regulation likely leading on this task because the regulation
+text explicitly mirrors the pillar structure.
 
-**Formato**: classificazione a 3 classi (entailment, contradiction, neutral).
+OUTPUT:
+- `./benchmark/task_pool/ge_cls/ge_cls_system_prompt.txt`
 
-**Esempio**:
-> Premise: "TechCorp introduced mentorship programs for women, conducted salary audits, and achieved 45% female representation in leadership."
-> Hypothesis: "TechCorp complies with the Women on Boards Directive target of 40% non-executive directors."
+
+
+
+### 6.5 Task 2 — GE-NLI (Compliance Entailment)
+
+**Objective.** Given a scenario describing organisational behaviour
+(premise) and a regulatory clause (hypothesis), determine whether the
+scenario *entails*, *contradicts*, or is *neutral with respect to* the
+clause.
+
+**Format.** Three-class classification: `entailment`, `contradiction`,
+`neutral`.
+
+**Example:**
+> Premise: "TechCorp introduced a mentorship programme for women,
+> conducted a salary audit, and reached 45% female representation among
+> non-executive directors."
+> Hypothesis: "TechCorp meets the Women on Boards Directive target of
+> 40% non-executive directors of the under-represented sex."
 > Label: `entailment`
 
-**Dato**: lo costruite voi accoppiando passaggi delle legends (scenari positivi → entailment) con clausole della regulation, e generando contraddizioni con perturbazioni (es. "TechCorp achieved only 15% female representation"). Con 3 LLM × 5 legends = 15 legends, potete generare ~150-300 coppie con augmentation.
+**Data construction.** GE-NLI premises and hypotheses are produced by
+combining `CEB-NLI` with the legends pool, with the following constraints
+to prevent leakage:
 
-**Mappa GLUE**: MNLI/RTE.
+- Hypotheses are short regulatory clauses extracted from `CEB-NLI`
+  passages — never from the Strategy 2020-2025 used in training.
+- Premises describing compliant scenarios are drawn from a held-out
+  partition of the legends pool: one legend per pillar (5 legends total)
+  is excluded from the fine-tuning JSONL of section 5 and reserved for
+  GE-NLI premise construction.
+- `contradiction` examples are produced by perturbing compliant premises
+  along quantitatively measurable dimensions (e.g. "45% female
+  representation" → "15% female representation").
+- `neutral` examples are produced by pairing compliant premises with
+  hypotheses about pillars not addressed in the premise.
 
-**Perché conta**: è il task **più importante** per il vostro esperimento. Misura direttamente la capacità del modello di riconoscere compliance — esattamente quello che le legends dovrebbero insegnare. È qui che ci si aspetta il vantaggio più netto del modello tuned-on-legends rispetto al tuned-on-regulation.
+The construction yields approximately 150-300 (premise, hypothesis,
+label) triples, balanced across the three classes.
 
----
+**GLUE analogue.** MNLI / RTE.
 
-### Task 3 — GE-QA (Regulation Reading Comprehension)
+**Metric.** Accuracy.
 
-**Obiettivo**: dato un passaggio della regulation e una domanda, estrarre la risposta corretta o rispondere sì/no.
+**Why it matters.** GE-NLI is the **central task** of the benchmark with
+respect to the Sargsyan and Damiani (2025) hypothesis. It directly
+measures the ability to recognise *compliance* — the competence that
+legends are designed to teach. If legends embed regulatory understanding
+better than raw regulatory text, the gap between tuned-legends and
+tuned-regulation should be most visible here.
 
-**Formato**: due sottotask:
-- **GE-QA-Factoid**: span extraction (stile SQuAD)
-- **GE-QA-Bool**: yes/no questions (stile BoolQ)
+### 6.6 Task 3 — GE-QA (Regulation Reading Comprehension)
 
-**Esempio Factoid**:
-> Context: "The Women on Boards Directive sets a minimum of 40% of non-executive members of the under-represented sex on company boards by 2026."
-> Question: "What is the target percentage for non-executive directors of the under-represented sex?"
+**Objective.** Given an EU regulatory passage and a question, produce a
+correct answer derived from the passage.
+
+**Format.** Two sub-tasks:
+
+- **GE-QA-Factoid** — extractive span-based answers (SQuAD-style).
+- **GE-QA-Bool**    — yes/no answers (BoolQ-style).
+
+**Example (Factoid):**
+> Context: "The directive sets a minimum of 40% of non-executive members
+> of the under-represented sex on listed company boards by 2026."
+> Question: "What is the target percentage for non-executive directors of
+> the under-represented sex?"
 > Answer: "40%"
 
-**Esempio Bool**:
-> Context: [passaggio sulla Istanbul Convention]
+**Example (Bool):**
+> Context: [passage on EU accession to the Istanbul Convention from CEB-QA]
 > Question: "Has the EU concluded its accession to the Istanbul Convention?"
 > Answer: `no`
 
-**Dato**: i factoid Q&A che state già generando nel punto 4.3.1 della vostra pipeline. Per le boolean questions, generate prompts ad hoc dal regulation text.
+**Data construction.** Q&A pairs are generated from `CEB-QA` passages
+following the same two-stage span-extraction and Q&A generation pipeline
+described in section 4.3.1, with two important differences:
 
-**Mappa GLUE**: QNLI/BoolQ + SQuAD-style.
+- The source pool is `CEB-QA`, not the Strategy 2020-2025.
+- A new generation step produces yes/no questions framed against the
+  passage content for the GE-QA-Bool sub-task.
 
-**Perché conta**: testa la conoscenza fattuale del regolamento. Ci si aspetta che il modello tuned-on-regulation domini questo task, mentre il tuned-on-legends dovrebbe fare peggio (perché le legends sono fittizie).
+The output is approximately 150-250 factoid and 100-150 boolean items.
 
----
+**GLUE analogue.** SQuAD (factoid) + BoolQ (boolean).
 
-### Task 4 — GE-WSC (Stereotype-Aware Coreference)
+**Metric.** F1 and Exact Match for GE-QA-Factoid; accuracy for GE-QA-Bool.
+The two sub-task metrics are averaged into a single GE-QA score.
 
-**Obiettivo**: risolvere coreferenze pronominali in contesti professionali senza affidarsi a stereotipi di genere.
+**Why it matters.** GE-QA tests *factual recall* anchored in regulatory
+text. The tuned-regulation model is expected to dominate this task: it
+has been trained on regulatory prose of identical register and structure.
+The tuned-legends model is expected to underperform here, since legends
+contain fictional facts rather than regulatory ones — providing a useful
+contrast to GE-NLI.
 
-**Formato**: classificazione binaria su quale antecedente lega il pronome.
+### 6.7 Task 4 — GE-WSC (Stereotype-Aware Coreference)
 
-**Esempio**:
-> Sentence: "The CEO promoted the assistant because she was impressed by her work."
-> Question: Who is "she"? → CEO / assistant
+**Objective.** Resolve pronominal coreference in professional contexts
+without relying on gender stereotypes.
+
+**Format.** Binary classification: which of two candidate antecedents the
+pronoun refers to.
+
+**Example:**
+> Sentence: "The CEO promoted the assistant because she was impressed by
+> her work."
+> Question: To whom does *she* refer?
 > Label: `CEO`
 
-**Dato**: usate **WinoBias** direttamente da HuggingFace (`uclanlp/wino_bias`) con i 4 subset (type1_pro, type1_anti, type2_pro, type2_anti). Dataset open source, già pronto.
+**Data.** We use **WinoBias** (Zhao et al., 2018) directly from the
+HuggingFace Hub (`uclanlp/wino_bias`), with all four subsets:
+`type1_pro`, `type1_anti`, `type2_pro`, `type2_anti`. No construction is
+performed by us — this is the standard bias-evaluation dataset in the
+literature, kept *as-is* to remain comparable with the broader fairness
+research in NLP.
 
-**Metrica speciale**: oltre all'accuracy, calcolate la **Gender Parity Score** = differenza di accuracy tra i subset pro-stereotipo e anti-stereotipo. Un modello veramente fair dovrebbe avere parity score vicino a 0.
+**GLUE analogue.** WSC / Winogender (the SuperGLUE diagnostic dataset).
 
-**Mappa GLUE**: WSC / Winogender (era già il dataset diagnostico di SuperGLUE).
+**Metric.** Two metrics are reported:
 
-**Perché conta**: è il task di "bias detection" che chiede l'Appendix B. Non lo costruite voi — usate uno standard riconosciuto della letteratura. Coerente con il principio "Freedom from stereotypes" (pillar 1 del 2020-2025) e con il focus AI-bias del 2026-2030.
+- **Accuracy** averaged across the four subsets.
+- **Gender Parity Score** = | accuracy(pro-stereotype) −
+  accuracy(anti-stereotype) | . A model that is genuinely fair has a
+  parity score close to zero.
 
----
+**Why it matters.** GE-WSC is the bias-detection task explicitly
+requested by Appendix B. It maps onto the *Freedom from stereotypes*
+pillar of the 2020-2025 Strategy and onto the AI-bias focus of the
+2026-2030 Strategy. Because the bias originates in the pretraining
+distribution rather than in the fine-tuning corpus, we do **not** expect
+either fine-tuned model to outperform the base on this task — and the
+result, whatever it is, is informative.
 
-### Task 5 — GE-STANCE (Gender Equality Stance Detection)
+### 6.8 Task 5 — GE-STANCE (Gender Equality Stance Detection)
 
-**Obiettivo**: data un'affermazione, determinare se la posizione espressa è a favore, neutrale, o contraria alla gender equality.
+**Objective.** Given a statement, determine whether the position it
+expresses is *supportive*, *neutral*, or *against* gender equality.
 
-**Formato**: classificazione a 3 classi (supportive, neutral, against).
+**Format.** Three-class classification: `supportive`, `neutral`, `against`.
 
-**Esempio** (dall'Appendix B):
+**Example:**
 > Statement: "Gender equality is essential for a fair society."
 > Label: `supportive`
-> 
+>
 > Statement: "Women are not as good at coding as men."
 > Label: `against`
 
-**Dato**: combinazione di:
-- **CIVICS** (`llm-values/CIVICS` su HF) — già contiene label `gender inclusivity`, `anti-discrimination`
-- Test set curato manualmente di 100-200 esempi (perturbazioni controllate da regulation text e legends)
+**Data.** GE-STANCE combines two sources:
 
-**Mappa GLUE**: SST-2 (single-sentence classification, 3-way).
+- **CIVICS** (`llm-values/CIVICS` on HuggingFace), filtered on the
+  `gender inclusivity` and `anti-discrimination` labels.
+- A curated test set of 100-200 statements written by the team. EU
+  documents are by construction supportive of gender equality, so the
+  `against` and `neutral` classes cannot be extracted from CEB. Curated
+  examples include realistic anti-gender or sceptical positions phrased
+  neutrally enough that the task remains non-trivial. Each curated item
+  is double-labelled internally; only items with annotator agreement
+  enter the test set.
 
-**Perché conta**: corrisponde direttamente all'esempio "Stance Classification" dell'Appendix B. Misura se il modello ha internalizzato i valori di gender equality oltre la mera memorizzazione di fatti.
+**GLUE analogue.** SST-2 generalised to three classes.
 
----
+**Metric.** Macro-F1 across the three classes.
 
-### Diagnostic set — opzionale ma raccomandato
+**Why it matters.** GE-STANCE addresses the second illustrative task of
+Appendix B. It tests whether the model has internalised the *values*
+underlying the regulation, not just its facts. Because legends embody
+positive normative behaviour, the tuned-legends model is expected to
+match or exceed the tuned-regulation model on this task — providing a
+second piece of evidence, alongside GE-NLI, for the central hypothesis
+of Sargsyan and Damiani (2025).
 
-Sull'esempio di SuperGLUE che mantiene un diagnostic set Winogender, aggiungete un **GE-Diag** non incluso nello score finale ma riportato a parte:
-- 50 esempi di "minimal pairs" generati dalle vostre legends, dove cambiate solo il genere dei personaggi (Alex/Alessandra fa la stessa azione → output deve essere identico)
-- Misura la **stability score**: % di predizioni invarianti al gender swap
+### 6.9 Diagnostic set — GE-Diag (reported separately)
 
-Questo è coerente con il punto 11 della challenge (explainability analysis) e con la metodologia di GECOBench.
+Inspired by SuperGLUE's separately-reported Winogender diagnostic, we
+construct **GE-Diag**, a small set of *minimal pairs* not included in
+the aggregate GenderEqGLUE Score but reported alongside it.
 
----
+**Construction.** Approximately 50 pairs are drawn from the legends pool.
+For each item, we produce two versions of the same passage in which only
+the gender of the protagonist is swapped (e.g. *Alex* ↔ *Alessandra*),
+keeping all factual content identical. The pair is presented to the
+model as a downstream task (e.g. a GE-CLS classification or a
+GE-STANCE judgement).
 
-## Implementazione pratica
+**Metric.** **Stability score** = percentage of pairs for which the
+model returns identical predictions. A genuinely gender-invariant model
+has a stability score of 100%.
 
-Per il **punto 9 della challenge**, presentate il benchmark in questo ordine logico nel paper:
+**Why it matters.** GE-Diag complements the explainability analysis of
+point (11) of the challenge by providing a quantitative measure of
+gender-swap invariance, in line with the methodology of GECOBench
+(Lacombe et al., 2024).
 
-1. **Motivazione**: GLUE è generale, LexGLUE adatta al dominio legale, manca un'adapatazione gender equality → contributo originale
-2. **Principi guida**: gli 8 principi della Roadmap come backbone tematico
-3. **5 task**: tabella overview + descrizione di ognuno
-4. **Allineamento con la Strategy**: ogni task copre uno o più principi
-5. **Metrica aggregata**: media GLUE-style
+### 6.10 Aggregate score and reporting
 
-Per il **punto 10**, eseguite ciascuno dei 3 modelli su tutti i 5 task. Predizione probabile:
-- **GE-CLS**: tuned-regulation > tuned-legends > base
-- **GE-NLI**: tuned-legends > tuned-regulation > base ← *qui sta il punto del paper Sargsyan/Damiani*
-- **GE-QA**: tuned-regulation >> tuned-legends > base
-- **GE-WSC**: i tre modelli simili (è bias intrinseco del pretraining)
-- **GE-STANCE**: tuned-legends ≥ tuned-regulation > base
+For each of the three models — base, tuned-legends, tuned-regulation —
+we report:
 
-Se questa predizione si verifica, validate empiricamente la tesi del paper: le **legends insegnano la compliance meglio del testo legale grezzo**, anche se quest'ultimo insegna meglio i fatti specifici.
+- The five per-task metrics (Macro-F1, Accuracy, F1/EM, Accuracy+Parity,
+  Macro-F1).
+- The **GenderEqGLUE Score**, computed as the unweighted arithmetic mean
+  of the five task scores. For GE-WSC the score component is the
+  accuracy; the parity score is reported separately as a diagnostic.
+- The **GE-Diag stability score**.
 
-Una considerazione finale sulla **dimensione**: GLUE originale ha task da 2.5k a 393k esempi. Per il vostro progetto puntate a 200-500 esempi per task in test (più piccolo ma sufficiente per un benchmark accademico, in linea con CB di SuperGLUE che ha ~250 esempi).
+To distinguish meaningful differences from noise on test sets in the
+200-500 example range, we report **bootstrap 95% confidence intervals**
+for each task metric and apply **McNemar's test** to per-example
+predictions when comparing pairs of models. A difference smaller than
+the confidence interval is reported as not significant.
+
+### 6.11 Summary of data flows
+
+```
+Common Evaluation Base (CEB)
+├── CEB-CLS  ──► GE-CLS
+├── CEB-QA   ──► GE-QA  (Factoid + Bool)
+└── CEB-NLI  ──► GE-NLI  (hypotheses)
+                 ▲
+                 │
+Held-out legends (1 per pillar, never used for fine-tuning)
+                 │
+                 └──► GE-NLI  (premises)
+
+External datasets
+├── WinoBias    ──► GE-WSC
+└── CIVICS + curated  ──► GE-STANCE
+
+Diagnostic
+└── Legends gender-swap pairs  ──► GE-Diag
+```
+
+OUTPUT:
+- benchmark/genderegglue/
+  - ge_cls.jsonl
+  - ge_nli.jsonl
+  - ge_qa_factoid.jsonl
+  - ge_qa_bool.jsonl
+  - ge_wsc.jsonl
+  - ge_stance.jsonl
+  - ge_diag.jsonl
+  - results/{model_name}.json   (one per evaluated model)
+  - results/aggregate.csv
+
+
+
+
+
+## 7. Limitations
+
+This section documents the methodological compromises adopted during the
+construction of the GenderEqGLUE benchmark and discusses their implications
+for the validity of the experimental results. Stating these limitations
+explicitly is essential to a fair interpretation of the benchmark scores
+and is consistent with the practice of *Datasheets for Datasets*
+(Gebru et al., 2021) for human-curated NLP resources.
+
+### 7.1 Inter-annotator agreement and the Cohen's kappa
+
+The CEB pool annotation procedure described in section 6.3.2 was originally
+designed around the standard NLP practice of double-blind annotation with
+inter-annotator agreement measured via **Cohen's kappa** (κ). This metric
+quantifies the proportion of agreement between two annotators corrected for
+the agreement that would be expected by chance, and is the canonical
+measure of reliability for human-annotated datasets in benchmarks such as
+GLUE, SuperGLUE, and LexGLUE.
+
+For the present work, we deliberately chose **not to compute κ** and to
+replace the formal IAA procedure with a single-annotator pipeline
+complemented by a stratified spot-check. The reasons are pragmatic:
+
+1. **Project scope.** The CEB is an *internal evaluation instrument*
+   for the experimental comparison between base, tuned-legends and
+   tuned-regulation models, not a public, redistributable benchmark
+   intended for community-wide reuse. The marginal scientific value of
+   a formal IAA score is therefore lower than for a dataset released
+   as a primary contribution.
+
+2. **Resource constraints.** A correct double-blind annotation of
+   the full pool (now 217 passages) across six classes requires
+   (i) a calibrated codebook with worked examples, (ii) a pilot phase
+   of at least 50 passages to align two annotators, (iii) independent
+   annotation of the remaining pool, (iv) a disagreement-resolution
+   log and a third-annotator tie-breaker. The combined effort is on
+   the order of multiple person-days. Within the time budget of a
+   challenge submission, this would displace work on the central
+   experimental questions (model fine-tuning, benchmark evaluation,
+   and the interpretive analysis of the Sargsyan and Damiani (2025)
+   hypothesis).
+
+3. **The hypothesis under test.** The benchmark is designed to discriminate
+   between three models on five tasks. The discriminative power of the
+   benchmark depends primarily on label *informativeness*, not on
+   independently-verified label *agreement*. If labels are produced by
+   a documented and replicable procedure, they remain a valid measurement
+   instrument even without κ — albeit with a wider implicit confidence
+   interval on the per-task scores.
+
+### 7.2 Procedure adopted in lieu of formal IAA
+
+Pillar labels for the CEB pool were assigned through the LLM-based
+classifier described in section 4.1, applied to each preprocessed passage
+following the system and user prompts documented in the project diary
+(entry of 27/04/2026). The label assignment is therefore deterministic
+with respect to the prompt and the model used, and the procedure is
+fully replicable from the published artifacts.
+
+To provide a *qualitative* check on label quality, a stratified sample
+of approximately 60 passages (10 per class) was manually inspected by
+the authors. This inspection produced no formal κ score and is not
+reported as a reliability metric, but informed the iterative refinement
+of the classifier prompt and the identification of recurrent error
+patterns. These error patterns are summarised in section 8 (Discussion)
+where they are discussed alongside the per-task results.
+
+### 7.3 Implications for downstream evaluation
+
+The absence of a formal κ has three concrete implications for the
+interpretation of GenderEqGLUE scores:
+
+- **Per-pillar F1 scores in GE-CLS** should be read as upper bounds on
+  the true discriminative ability of the models, since the gold labels
+  themselves carry an unmeasured noise component. A model achieving 80%
+  F1 on `equal_economy` may in fact be agreeing with an LLM-derived
+  label rather than a ground-truth human consensus.
+
+- **Cross-task comparisons** within a single model (e.g. base on GE-CLS
+  vs base on GE-NLI) remain valid, as all tasks share the same labelling
+  procedure and the same noise level applies uniformly across them.
+
+- **Cross-model comparisons** on the same task (base vs tuned-legends vs
+  tuned-regulation) likewise remain valid, since all three are evaluated
+  against the same labels. The relative ranking of the three models is
+  therefore the most robust outcome of the benchmark, while their
+  absolute scores are subject to the limitations above.
+
+### 7.4 Class imbalance and document-pillar coupling
+
+A second limitation, partly orthogonal to the IAA question, concerns
+the distribution of pillar labels across the five CEB source documents.
+The pool was assembled to be thematically contiguous with the Strategy
+2020-2025 and to consist of documents not present in the training data
+of the three evaluation models. The resulting pool contains 217 passages
+distributed as follows:
+
+| Pillar                            | Passages | % of pool | Status            |
+|-----------------------------------|---------:|----------:|-------------------|
+| `violence_stereotypes`            | 72       | 33.2%     | above target      |
+| `leadership_participation`        | 45       | 20.7%     | above target      |
+| `funding_global_action`           | 21       |  9.7%     | below target (30) |
+| `equal_economy`                   | 18       |  8.3%     | below target (30) |
+| `mainstreaming_intersectionality` | 11       |  5.1%     | below target (30) |
+| `unknown`                         | 50       | 23.0%     | n/a               |
+
+Each substantive pillar is dominated by one source document because the
+underlying legal instruments are themselves topic-specialised:
+
+- `violence_stereotypes` is supplied almost entirely by the Council of
+  Europe Istanbul Convention (68 of 72 passages), which is exclusively
+  dedicated to gender-based and domestic violence.
+- `leadership_participation` is supplied by Directive (EU) 2022/2381
+  on women on company boards (41 of 45 passages).
+- `equal_economy` is dominated by the Council Conclusions on Closing
+  the Gender Pay Gap (12 of 18 passages).
+- `funding_global_action` and `mainstreaming_intersectionality` come
+  primarily from the Gender Action Plan III (GAP III) and the Roadmap
+  for Women's Rights respectively.
+
+This document-pillar coupling has two implications. First, three of the
+five substantive pillars remain below the target of 30 passages per class
+specified in section 6.3.2; per-class F1 on these three pillars must be
+interpreted with caution and is flagged as low-confidence in the results
+tables. Second, a model that learns to exploit document-level cues
+(stylistic register, citation patterns, document-specific vocabulary)
+could obtain inflated F1 on the dominated pillars without genuinely
+learning the underlying pillar semantics. This risk is partly mitigated
+by the fact that all three evaluation models are pretrained general-purpose
+LLMs rather than document-specific classifiers, but it remains a
+confounding factor that complicates the attribution of performance
+differences to the legends-vs-regulation fine-tuning intervention.
+
+Two corrective options were considered: (i) augmenting the pool with
+additional source documents thematically aligned with the underrepresented
+pillars, and (ii) accepting the imbalance and reporting *macro-F1*
+rather than micro-F1 in GE-CLS so that minority classes are not
+swamped by the dominant class. We adopted option (ii) and made the
+choice of macro-F1 explicit in section 6.4. Per-class F1 is reported
+as a diagnostic alongside the aggregate, and per-class scores on
+classes with fewer than 30 test items are flagged as low-confidence
+in the results tables.
+
+The Istanbul Convention was added to the pool at a late stage of
+construction precisely to bring `violence_stereotypes` above the target
+threshold; an analogous targeted extension for `equal_economy`,
+`mainstreaming_intersectionality` and `funding_global_action` is
+discussed in section 7.5 as future work but was not feasible within
+the time budget of the current submission.
+
+### 7.5 Future work
+
+A full double-blind annotation of the CEB pool with two human annotators
+and Cohen's κ is the natural next step for a publishable version of
+GenderEqGLUE. A complementary improvement would be to extend the source
+pool with one or two additional documents covering the three pillars
+that remain below threshold:
+
+- `equal_economy`: the EU Pay Transparency Directive (EU) 2023/970 is
+  the most natural candidate, as it post-dates the Strategy 2020-2025
+  and is exclusively focused on equal pay enforcement.
+- `mainstreaming_intersectionality`: the EU Care Strategy (2022) and
+  the Anti-racism Action Plan 2020-2025 each provide intersectional
+  framing that would complement the small share already extracted
+  from the Roadmap and GAP III.
+- `funding_global_action`: a second iteration of GAP III monitoring
+  reports, or the EU Global Strategy follow-up documents, would
+  bring this pillar comfortably above the 30-passage threshold.
+
+These extensions would also rebalance the document-pillar coupling
+described in section 7.4 and reduce the residual risk of document-level
+cue exploitation by the evaluation models.

@@ -1,5 +1,7 @@
 import re
 import bisect
+import os
+import glob
 
 def split_content_by_words(content_lines: list[str], max_words: int) -> list[list[str]]:
     parts = []
@@ -150,14 +152,45 @@ def chunk_markdown_with_line_numbers(markdown_text: str, max_words: int ) -> str
 
     return "\n".join(chunks)
 
-# Example usage with word limit = 100
+# main for chunking one file
+# if __name__ == "__main__":
+#     with open("./documents/gender-equality-strategy-2020-2025_cleaned.md", "r", encoding="utf-8") as f:
+#         markdown_text = f.read()
+
+#     chunked_markdown = chunk_markdown_with_line_numbers(markdown_text, max_words=350)
+
+#     with open("./documents/gender-equality-strategy-2020-2025_chunked.md", "w", encoding="utf-8") as f:
+#         f.write(chunked_markdown)
+
+#     print("Chunking completed. Output saved to chunked_output.md")
+
+# main for chunking all md files in a folder
 if __name__ == "__main__":
-    with open("./documents/gender-equality-strategy-2020-2025_cleaned.md", "r", encoding="utf-8") as f:
-        markdown_text = f.read()
-
-    chunked_markdown = chunk_markdown_with_line_numbers(markdown_text, max_words=350)
-
-    with open("./documents/gender-equality-strategy-2020-2025_chunked.md", "w", encoding="utf-8") as f:
-        f.write(chunked_markdown)
-
-    print("Chunking completed. Output saved to chunked_output.md")
+    ############################################
+    # EDIT THIS PATH
+    ############################################
+    input_dir = "./benchmark/"
+    output_dir = "./benchmark/"
+    ############################################
+ 
+    md_files = sorted(glob.glob(os.path.join(input_dir, "*.md")))
+ 
+    if not md_files:
+        print(f"No .md files found in {input_dir}")
+    else:
+        print(f"Found {len(md_files)} Markdown file(s) in {input_dir}\n")
+ 
+        for md in md_files:
+            with open(md, "r", encoding="utf-8") as f:
+                markdown_text = f.read()
+ 
+            chunked_markdown = chunk_markdown_with_line_numbers(markdown_text, max_words=350)
+ 
+            output_path = md.replace("_cleaned.md", "_chunked.md")
+            # .replace("cleaned", "chunked")
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write(chunked_markdown)
+ 
+            print(f"  {os.path.basename(md)} -> {os.path.basename("./benchmark/chunked/" + output_path)}")
+ 
+        print(f"\nDone! All chunked files saved in {input_dir}/")

@@ -1,0 +1,4 @@
+Classify the following passage.
+
+PASSAGE:
+{TEXT}

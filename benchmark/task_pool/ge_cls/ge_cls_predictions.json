@@ -1,0 +1,1226 @@
+[
+  {
+    "row_idx": 1,
+    "passage_id": "GAP_III__c003",
+    "gold_label": "funding_global_action",
+    "base": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    }
+  },
+  {
+    "row_idx": 2,
+    "passage_id": "GAP_III__c004",
+    "gold_label": "funding_global_action",
+    "base": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    }
+  },
+  {
+    "row_idx": 3,
+    "passage_id": "GAP_III__c008",
+    "gold_label": "funding_global_action",
+    "base": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    }
+  },
+  {
+    "row_idx": 4,
+    "passage_id": "GAP_III__c009",
+    "gold_label": "funding_global_action",
+    "base": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    }
+  },
+  {
+    "row_idx": 5,
+    "passage_id": "GAP_III__c013",
+    "gold_label": "funding_global_action",
+    "base": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    }
+  },
+  {
+    "row_idx": 6,
+    "passage_id": "GAP_III__c016",
+    "gold_label": "funding_global_action",
+    "base": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    }
+  },
+  {
+    "row_idx": 7,
+    "passage_id": "GAP_III__c023",
+    "gold_label": "equal_economy",
+    "base": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    }
+  },
+  {
+    "row_idx": 8,
+    "passage_id": "GAP_III__c032",
+    "gold_label": "funding_global_action",
+    "base": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    }
+  },
+  {
+    "row_idx": 9,
+    "passage_id": "GAP_III__c039",
+    "gold_label": "mainstreaming_intersectionality",
+    "base": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    }
+  },
+  {
+    "row_idx": 10,
+    "passage_id": "Istanbul_Convention_2011__c001",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 11,
+    "passage_id": "Istanbul_Convention_2011__c011",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 12,
+    "passage_id": "Istanbul_Convention_2011__c013",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 13,
+    "passage_id": "Istanbul_Convention_2011__c014",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 14,
+    "passage_id": "Istanbul_Convention_2011__c015",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 15,
+    "passage_id": "Istanbul_Convention_2011__c018",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 16,
+    "passage_id": "Istanbul_Convention_2011__c023",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 17,
+    "passage_id": "Istanbul_Convention_2011__c028",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 18,
+    "passage_id": "Istanbul_Convention_2011__c031",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 19,
+    "passage_id": "Istanbul_Convention_2011__c032",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 20,
+    "passage_id": "Istanbul_Convention_2011__c034",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 21,
+    "passage_id": "Istanbul_Convention_2011__c035",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 22,
+    "passage_id": "Istanbul_Convention_2011__c038",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 23,
+    "passage_id": "Istanbul_Convention_2011__c044",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 24,
+    "passage_id": "Istanbul_Convention_2011__c045",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 25,
+    "passage_id": "Istanbul_Convention_2011__c050",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 26,
+    "passage_id": "Istanbul_Convention_2011__c052",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 27,
+    "passage_id": "Istanbul_Convention_2011__c054",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 28,
+    "passage_id": "Istanbul_Convention_2011__c057",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 29,
+    "passage_id": "Istanbul_Convention_2011__c058",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 30,
+    "passage_id": "Istanbul_Convention_2011__c061",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 31,
+    "passage_id": "Istanbul_Convention_2011__c062",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 32,
+    "passage_id": "Istanbul_Convention_2011__c064",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 33,
+    "passage_id": "Istanbul_Convention_2011__c065",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: violence_stereotypes",
+      "pred": "violence_stereotypes"
+    }
+  },
+  {
+    "row_idx": 34,
+    "passage_id": "Istanbul_Convention_2011__c067",
+    "gold_label": "violence_stereotypes",
+    "base": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    }
+  },
+  {
+    "row_idx": 35,
+    "passage_id": "Istanbul_Convention_2011__c071",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 36,
+    "passage_id": "Istanbul_Convention_2011__c076",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 37,
+    "passage_id": "Istanbul_Convention_2011__c077",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 38,
+    "passage_id": "Istanbul_Convention_2011__c078",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 39,
+    "passage_id": "Istanbul_Convention_2011__c084",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 40,
+    "passage_id": "Istanbul_Convention_2011__c089",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 41,
+    "passage_id": "PayGap_Council_2019__c001",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 42,
+    "passage_id": "PayGap_Council_2019__c002",
+    "gold_label": "equal_economy",
+    "base": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    }
+  },
+  {
+    "row_idx": 43,
+    "passage_id": "PayGap_Council_2019__c004",
+    "gold_label": "equal_economy",
+    "base": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    }
+  },
+  {
+    "row_idx": 44,
+    "passage_id": "PayGap_Council_2019__c006",
+    "gold_label": "equal_economy",
+    "base": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    }
+  },
+  {
+    "row_idx": 45,
+    "passage_id": "PayGap_Council_2019__c009",
+    "gold_label": "equal_economy",
+    "base": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    }
+  },
+  {
+    "row_idx": 46,
+    "passage_id": "PayGap_Council_2019__c020",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 47,
+    "passage_id": "PayGap_Council_2019__c021",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 48,
+    "passage_id": "Roadmap_2025__c002",
+    "gold_label": "mainstreaming_intersectionality",
+    "base": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    }
+  },
+  {
+    "row_idx": 49,
+    "passage_id": "Roadmap_2025__c005",
+    "gold_label": "equal_economy",
+    "base": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: equal_economy",
+      "pred": "equal_economy"
+    }
+  },
+  {
+    "row_idx": 50,
+    "passage_id": "Roadmap_2025__c008",
+    "gold_label": "mainstreaming_intersectionality",
+    "base": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    }
+  },
+  {
+    "row_idx": 51,
+    "passage_id": "Roadmap_2025__c009",
+    "gold_label": "mainstreaming_intersectionality",
+    "base": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    }
+  },
+  {
+    "row_idx": 52,
+    "passage_id": "Roadmap_2025__c011",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: funding_global_action",
+      "pred": "funding_global_action"
+    }
+  },
+  {
+    "row_idx": 53,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c002",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: mainstreaming_intersectionality",
+      "pred": "mainstreaming_intersectionality"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 54,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c006",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 55,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c007",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 56,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c011",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 57,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c012",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 58,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c014",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 59,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c017",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 60,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c020",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 61,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c023",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 62,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c024",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 63,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c025",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 64,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c028",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 65,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c035",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 66,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c036",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 67,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c037",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 68,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c038",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 69,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c039",
+    "gold_label": "leadership_participation",
+    "base": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: leadership_participation",
+      "pred": "leadership_participation"
+    }
+  },
+  {
+    "row_idx": 70,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c040",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 71,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c042",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  },
+  {
+    "row_idx": 72,
+    "passage_id": "WomenOnBoards_Dir_2022_2381__c046",
+    "gold_label": "unknown",
+    "base": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_legends": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    },
+    "tuned_regulation": {
+      "raw": "LABEL: unknown",
+      "pred": "unknown"
+    }
+  }
+]
