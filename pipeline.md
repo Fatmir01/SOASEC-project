@@ -736,8 +736,6 @@ OUTPUT:
 - `./benchmark/task_pool/ge_cls/ge_cls_system_prompt.txt`
 
 
-
-
 ### 6.5 Task 2 — GE-NLI (Compliance Entailment)
 
 **Objective.** Given a scenario describing organisational behaviour
@@ -756,25 +754,6 @@ clause.
 > 40% non-executive directors of the under-represented sex."
 > Label: `entailment`
 
-**Data construction.** GE-NLI premises and hypotheses are produced by
-combining `CEB-NLI` with the legends pool, with the following constraints
-to prevent leakage:
-
-- Hypotheses are short regulatory clauses extracted from `CEB-NLI`
-  passages — never from the Strategy 2020-2025 used in training.
-- Premises describing compliant scenarios are drawn from a held-out
-  partition of the legends pool: one legend per pillar (5 legends total)
-  is excluded from the fine-tuning JSONL of section 5 and reserved for
-  GE-NLI premise construction.
-- `contradiction` examples are produced by perturbing compliant premises
-  along quantitatively measurable dimensions (e.g. "45% female
-  representation" → "15% female representation").
-- `neutral` examples are produced by pairing compliant premises with
-  hypotheses about pillars not addressed in the premise.
-
-The construction yields approximately 150-300 (premise, hypothesis,
-label) triples, balanced across the three classes.
-
 **GLUE analogue.** MNLI / RTE.
 
 **Metric.** Accuracy.
@@ -785,6 +764,329 @@ measures the ability to recognise *compliance* — the competence that
 legends are designed to teach. If legends embed regulatory understanding
 better than raw regulatory text, the gap between tuned-legends and
 tuned-regulation should be most visible here.
+
+#### GE-NLI Pipeline — Compliance Entailment Dataset Construction
+
+GE-NLI builds a three-class NLI dataset (`entailment`, `contradiction`, `neutral`)
+from the 56 labelled passages of `CEB-NLI`. The pipeline has five stages:
+
+*   **Stage 1: Hypothesis extraction** – Creates a mapping of passage IDs to
+    lists of extracted clauses.
+*   **Stage 2: Premise generation** – Creates a compliant premise for each
+    passage ID, forming entailment pairs (premise, hypothesis from the same
+    passage).
+*   **Stage 3: Contradiction perturbation** – Generates contradiction pairs
+    by perturbing the premise (perturbed premise, same hypothesis).
+*   **Stage 4: Neutral cross-pillar pairing** – Creates neutral pairs by
+    matching a premise from Pillar A with a hypothesis from Pillar B.
+*   **Stage 5: Balancing & deduplication** – Outputs the final
+`ge_nli.jsonl` dataset. 
+
+
+**Target size:** 150–168 triples, ~56 per class.
+
+---
+
+#### Input: CEB-NLI composition
+
+| Pillar                          | Passages | Primary documents                           |
+|---------------------------------|----------|---------------------------------------------|
+| `violence_stereotypes`          | 24       | Roadmap_2025, GAP_III, Istanbul_Convention  |
+| `leadership_participation`      | 15       | WomenOnBoards_Dir_2022_2381, GAP_III        |
+| `funding_global_action`         | 7        | GAP_III                                     |
+| `equal_economy`                 | 6        | PayGap_Council_2019                         |
+| `mainstreaming_intersectionality` | 4      | Roadmap_2025, GAP_III                       |
+| `unknown`                       | 17       | *(excluded from all stages)*                |
+
+The 17 `unknown` passages are filtered out before processing.
+
+#### Stage 1 — Hypothesis Extraction
+
+**Goal.** For each of the 56 labelled passages extract exactly **one** short,
+self-contained regulatory clause to serve as the hypothesis.
+
+Keeping exactly one hypothesis per passage keeps the downstream class sizes
+equal without any post-hoc downsampling.
+
+##### Prompt (LLM call per passage)
+
+```
+SYSTEM
+You are a regulatory clause extractor for an NLI dataset on EU gender equality.
+
+USER
+Extract EXACTLY ONE short regulatory clause from the passage below.
+
+Requirements for the clause:
+1. Maximum 30 words, a single declarative sentence.
+2. Express a concrete obligation, measurable target, or binding principle.
+3. Be falsifiable by an organisational scenario (i.e., a scenario can
+   clearly satisfy or violate it).
+4. Be fully self-contained — a reader who has NOT seen the passage must
+   understand it without extra context.
+5. Do NOT copy a full sentence verbatim; rephrase into clean regulatory
+   language.
+
+Pillar: {label}
+Passage:
+{text}
+
+Reply with ONLY a JSON object:
+{"hypothesis": "<the clause>"}
+```
+
+##### Validation rules (post-generation)
+- Length: 8–35 words.
+- Must contain at least one verb in the third-person or imperative mood.
+- Must not contain passage-specific proper nouns (document names, article
+  numbers) that would leak source identity.
+- Manual spot-check: 10 % sample reviewed by a human annotator.
+
+##### Expected output
+
+56 validated `(passage_id, hypothesis)` pairs, one per passage.
+
+---
+
+#### Stage 2 — Premise Generation (Entailment)
+
+**Goal.** For each passage generate one **compliant fictional scenario**
+(the premise). This uses the same LLM-based generation approach as the
+legends pipeline, but produces a shorter, NLI-optimised output (100–150
+words) instead of a full legend narrative.
+
+The (premise, hypothesis) pair drawn from the same passage is assigned
+label **`entailment`**.
+
+##### Prompt (LLM call per passage)
+
+```
+SYSTEM
+You are a compliance scenario writer for an NLI benchmark on EU gender
+equality regulations. Your output will be used as a premise in an
+entailment task.
+
+USER
+Write a SHORT fictional compliance scenario (100–150 words) in which a
+named organisation takes concrete actions that FULLY COMPLY with the
+obligations described in the passage below.
+
+Constraints:
+1. Invent a fictional company or institution (vary sector and country
+   across passages; never reuse the same name).
+2. Include at least ONE measurable outcome tied to the regulatory
+   obligation (e.g., a percentage, a count, a named policy).
+3. Write in third-person past tense.
+4. Do NOT copy sentences from the passage verbatim.
+5. The scenario must be self-contained: a reader unfamiliar with the
+   passage must understand it.
+6. End with a sentence indicating the measurable result achieved.
+
+Pillar: {label}
+Passage:
+{text}
+
+Reply with ONLY the scenario text — no title, no label, no explanation.
+```
+
+##### Diversity constraints
+To prevent stylistic homogeneity across the 56 premises:
+
+- Sector pool (rotate cyclically): tech, finance, healthcare, education,
+  public administration, NGO, manufacturing, media, hospitality, logistics.
+- Country pool (rotate): Italy, Germany, Spain, Poland, Ireland, Sweden,
+  Netherlands, Romania, Portugal, Greece, France, Belgium.
+- Temperature: 0.9 (higher than Stage 1 which uses 0.2).
+
+##### Expected output
+
+56 `(passage_id, pillar, premise)` records.
+
+---
+
+#### Stage 3 — Contradiction Perturbation
+
+**Goal.** Produce one **contradicting premise** per entailment triple by
+perturbing the compliant premise along a single quantitative or factual
+axis. The hypothesis stays unchanged; the new premise clearly violates it.
+
+##### Perturbation catalogue
+
+The LLM is instructed to choose the perturbation type most natural for
+the passage pillar:
+
+| Perturbation type          | Example                                                  | Typical pillar               |
+|----------------------------|----------------------------------------------------------|------------------------------|
+| Numeric inversion          | 45 % female NEDs → 15 % female NEDs                     | `leadership_participation`   |
+| Policy reversal            | "adopted a pay-transparency policy" → "rejected …"      | `equal_economy`              |
+| Threshold undershoot       | pay gap reduced to 3 % → pay gap still at 22 %          | `equal_economy`              |
+| Mechanism removal          | "implemented a shelter referral programme" → "no shelter" | `violence_stereotypes`     |
+| Scope reduction            | "all subsidiaries" → "one pilot subsidiary"              | `mainstreaming_…`            |
+| Deadline miss              | "completed by 2023" → "postponed indefinitely"           | `funding_global_action`      |
+
+##### Prompt (LLM call per entailment triple)
+
+```
+SYSTEM
+You are a perturbation specialist for NLI dataset construction. Your task
+is to produce a version of a compliance scenario that CONTRADICTS a given
+regulatory clause.
+
+USER
+Given the compliance scenario (premise) and the regulatory clause
+(hypothesis) it currently satisfies, write a CONTRADICTING version of
+the premise.
+
+Rules:
+1. Keep the fictional organisation name, sector, country, and overall
+   narrative structure.
+2. Change EXACTLY ONE quantitative or factual element so the scenario
+   clearly violates the hypothesis.
+3. The violation must be unambiguous — a reader must immediately see the
+   contradiction.
+4. Do not introduce new topics or change the pillar of the scenario.
+5. Do not add an explanation of what was changed.
+
+Premise (compliant):
+{premise}
+
+Hypothesis (clause the perturbed premise must contradict):
+{hypothesis}
+
+Reply with ONLY the perturbed scenario text.
+```
+
+##### Validation
+- Automated check: verify that the perturbed premise is NOT semantically
+  equivalent to the original (cosine similarity < 0.85 on a sentence
+  embedding).
+- If similarity ≥ 0.85, retry with `temperature = 1.0` and a stronger
+  instruction ("make the violation more dramatic").
+
+##### Expected output
+
+56 `(perturbed_premise, hypothesis, "contradiction")` triples.
+
+---
+
+#### Stage 4 — Neutral Cross-Pillar Pairing
+
+**Goal.** Produce one `neutral` triple per entailment triple by pairing
+each compliant **premise** (pillar A) with a **hypothesis** from a
+different pillar (pillar B ≠ A). The premise does not address pillar B,
+so neither entailment nor contradiction holds.
+
+##### Algorithm (no LLM required)
+
+```python
+import random, itertools
+
+def make_neutral_triples(entailment_pool, hypothesis_pool, seed=42):
+    """
+    entailment_pool : list of {passage_id, pillar, premise, hypothesis}
+    hypothesis_pool : dict   {pillar → [hypothesis_str, …]}
+    """
+    rng = random.Random(seed)
+    triples = []
+    for item in entailment_pool:
+        pillar_A = item["pillar"]
+        # Candidate pillars: all labeled pillars except the premise's own
+        other_pillars = [p for p in hypothesis_pool if p != pillar_A
+                         and hypothesis_pool[p]]
+        pillar_B = rng.choice(other_pillars)
+        hyp_B = rng.choice(hypothesis_pool[pillar_B])
+        triples.append({
+            "premise":            item["premise"],
+            "hypothesis":         hyp_B,
+            "label":              "neutral",
+            "pillar_premise":     pillar_A,
+            "pillar_hypothesis":  pillar_B,
+            "source_passage_id":  item["passage_id"],
+            "construction_method": "cross_pillar_pairing",
+        })
+    return triples
+```
+
+##### Constraints
+- No (premise, hypothesis) pair from Stage 2 or Stage 3 may appear in
+  the neutral pool (deduplication by `(premise_id, hypothesis_text)`).
+- `mainstreaming_intersectionality` has only 4 passages; its hypotheses
+  are included in `other_pillars` for all non-MI premises but MI premises
+  are paired from the remaining 4 larger pillars.
+
+##### Expected output
+
+56 `neutral` triples.
+
+---
+
+#### Stage 5 — Balancing and Output
+
+##### Class balance check
+
+After Stages 2–4 the pool is:
+
+| Label           | Count |
+|-----------------|-------|
+| `entailment`    | 56    |
+| `contradiction` | 56    |
+| `neutral`       | 56    |
+| **Total**       | **168** |
+
+This is balanced by construction. No downsampling is needed.
+
+##### Pillar distribution check
+
+The per-pillar distribution in the `entailment` set mirrors CEB-NLI:
+
+| Pillar                          | Triples |
+|---------------------------------|---------|
+| `violence_stereotypes`          | 24      |
+| `leadership_participation`      | 15      |
+| `funding_global_action`         | 7       |
+| `equal_economy`                 | 6       |
+| `mainstreaming_intersectionality` | 4     |
+
+The imbalance reflects the source corpus and is reported as a diagnostic
+(not corrected, to preserve ecological validity).
+
+##### Output schema (JSONL)
+
+Each line of `ge_nli.jsonl`:
+
+```json
+{
+  "id":                   "ge_nli_001",
+  "premise":              "FinBelge S.A., a Belgian investment firm, …",
+  "hypothesis":           "Listed companies must ensure that at least 40% …",
+  "label":                "entailment",
+  "pillar_premise":       "leadership_participation",
+  "pillar_hypothesis":    "leadership_participation",
+  "source_passage_id":    "WomenOnBoards_Dir_2022_2381__c004",
+  "construction_method":  "llm_generated_premise"
+}
+```
+
+`construction_method` values:
+- `llm_generated_premise` — entailment triples (Stage 2)
+- `llm_perturbed_premise` — contradiction triples (Stage 3)
+- `cross_pillar_pairing`  — neutral triples (Stage 4)
+
+
+
+#### Deliverable
+
+```
+benchmark/genderegglue/
+└── ge_nli.jsonl          # 168 triples, 56 per class
+```
+
+
+
+
+
+
+
 
 ### 6.6 Task 3 — GE-QA (Regulation Reading Comprehension)
 
