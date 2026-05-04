@@ -1110,16 +1110,6 @@ correct answer derived from the passage.
 > Question: "Has the EU concluded its accession to the Istanbul Convention?"
 > Answer: `no`
 
-**Data construction.** Q&A pairs are generated from `CEB-QA` passages
-following the same two-stage span-extraction and Q&A generation pipeline
-described in section 4.3.1, with two important differences:
-
-- The source pool is `CEB-QA`, not the Strategy 2020-2025.
-- A new generation step produces yes/no questions framed against the
-  passage content for the GE-QA-Bool sub-task.
-
-The output is approximately 150-250 factoid and 100-150 boolean items.
-
 **GLUE analogue.** SQuAD (factoid) + BoolQ (boolean).
 
 **Metric.** F1 and Exact Match for GE-QA-Factoid; accuracy for GE-QA-Bool.
@@ -1131,6 +1121,275 @@ has been trained on regulatory prose of identical register and structure.
 The tuned-legends model is expected to underperform here, since legends
 contain fictional facts rather than regulatory ones — providing a useful
 contrast to GE-NLI.
+
+GE-QA differs from GE-CLS and GE-NLI in one structural respect: it is the
+only **open-book** task in the benchmark. The model receives the source
+passage in the user prompt and must answer with information drawn from
+it. The system prompt is unchanged from §5.1 — keeping the system prompt
+constant across all five tasks and across the three models is the
+experimental control of the benchmark.
+
+#### 6.6.1 Source: CEB-QA
+
+Both sub-tasks draw their passages from the `ceb_qa.json` partition built
+in §6.3.3. No passage from the Strategy 2020-2025 is used. Each item
+carries its consensus pillar label from §6.3.2; this is preserved in the
+output JSONL for per-pillar diagnostics. The target counts follow the
+§6.6 budget: **150-250 factoid items** and **100-150 boolean items**.
+The lower end of the range is acceptable when the manual evaluation
+budget is constrained: 150 + 100 = 250 items × 3 models = 750 inference
+calls, comparable in scale to the GE-NLI evaluation.
+
+#### 6.6.2 Building GE-QA-Factoid
+
+The factoid sub-task reuses the two-stage span extraction and Q&A
+generation pipeline of §4.2 and §4.3.1, with one adaptation: questions
+must be **self-contained**. Although GE-QA is open-book at evaluation
+time, formulations like *"What does the passage say about X?"* are
+weaker signals than fully specified questions like *"What is the minimum
+percentage of non-executive directors of the under-represented sex set
+by the Women on Boards Directive?"*. The clean-up rule from the
+fine-tuning JSONL conversion (find-and-replace on `"the passage"`,
+`"this passage"`, `"according to the passage"`) is applied here too.
+
+**Stage 1 — Span extraction on CEB-QA.** The §4.2 high-recall span
+extractor prompt is run on each `CEB-QA` passage. Output: candidate
+factoid spans per passage. The §4.2 Stage 2 verification + clustering
+is applied unchanged.
+
+**Stage 2 — Factoid Q&A generation.** For each verified span, the
+§4.3.1 factoid prompt is invoked to produce a question whose answer is
+exactly that span, with two added constraints:
+
+- The question must be answerable from the passage alone, without
+  reference to *"the passage"*, *"this text"*, or any meta-linguistic
+  cue.
+- The answer must remain a short span (1-7 words). Spans longer than 7
+  words are dropped from the candidate pool.
+
+A small fraction (≈10%) of the spans yield group-level questions
+(multi-span answers from the §4.3.1 thematic clustering). These are kept
+in the dataset because SQuAD-style F1 handles multi-token answers
+naturally; they are tagged with `answer_type: "group"` for diagnostic
+slicing.
+
+**Stage 3 — Quality control.** A random sample of 30 items (≈20% of the
+target) is reviewed by hand against three criteria: (1) the gold answer
+is verbatim or near-verbatim in the passage, (2) the question is
+unambiguous when read without the passage, (3) no other span in the
+passage would be an equally good answer. Items failing any criterion are
+either repaired or discarded. The review log (item id, decision, reason)
+is committed for transparency.
+
+**Output schema (`ge_qa_factoid.jsonl`).**
+
+```json
+{
+  "id": "ge_qa_f_001",
+  "passage_id": "WomenOnBoards_Dir_2022_2381__c021",
+  "pillar": "leadership_participation",
+  "context": "The directive sets a minimum of 40% of non-executive members of the under-represented sex on listed company boards by 2026...",
+  "question": "What is the minimum percentage of non-executive directors of the under-represented sex set by the Women on Boards Directive?",
+  "answer": "40%",
+  "answer_aliases": ["40 percent", "forty percent"],
+  "answer_type": "single_span"
+}
+```
+
+The `answer_aliases` field is optional and used by the F1 scorer: the
+final F1 for an item is the **maximum** F1 over `answer` and any
+aliases, absorbing trivial paraphrastic variation (`"40%"` vs
+`"40 percent"`) without weakening the metric.
+
+#### 6.6.3 Building GE-QA-Bool
+
+Boolean Q&A is a new generation step, not present in §4.3.1. It produces
+yes/no questions framed against each `CEB-QA` passage, with two
+construction methods balanced 50/50:
+
+**Method A — direct paraphrase (gold = yes).** Take a factual claim
+stated in the passage and rewrite it as a polar question whose surface
+form differs lexically from the passage. Lexical distance prevents the
+task from collapsing into string matching.
+
+> Passage: *"The Commission committed to acceding to the Istanbul
+> Convention by 2025."*
+> Question: *"Did the Commission undertake to accede to the Istanbul
+> Convention by 2025?"*
+> Gold: `yes`
+
+**Method B — perturbed claim (gold = no).** Take a factual claim stated
+in the passage and modify a single quantitative or scope dimension
+(number, date, named entity, modal verb). The perturbed claim is
+clearly contradicted by the passage.
+
+> Passage: *"The directive sets a minimum of 40% of non-executive
+> members of the under-represented sex on listed company boards by
+> 2026."*
+> Question: *"Does the directive set a minimum of 50% of non-executive
+> members of the under-represented sex by 2026?"*
+> Gold: `no`
+
+A third construction method ("the passage doesn't address the claim,
+gold = no") is **explicitly excluded**. That kind of question belongs to
+compliance-recognition (GE-NLI's `neutral` class) and would introduce
+ambiguity between *"no, the passage refutes it"* and *"no, the passage
+is silent on it"*. Restricting Bool to clear yes / clear no preserves
+the semantic clarity of the metric.
+
+**Quality control.** A random sample of 20 items is reviewed against two
+criteria: (1) for gold = yes, the passage clearly supports the claim;
+(2) for gold = no, the passage clearly refutes the claim (not merely
+fails to mention it). Failed items are repaired or discarded.
+
+**Output schema (`ge_qa_bool.jsonl`).**
+
+```json
+{
+  "id": "ge_qa_b_001",
+  "passage_id": "Istanbul_Convention_2011__c044",
+  "pillar": "violence_stereotypes",
+  "context": "...",
+  "question": "Did the Commission undertake to accede to the Istanbul Convention by 2025?",
+  "answer": "yes",
+  "construction_method": "direct_paraphrase"
+}
+```
+
+`construction_method` takes one of `direct_paraphrase` or
+`perturbed_claim` and is used in §6.6.7 for per-method accuracy
+breakdown.
+
+#### 6.6.4 Evaluation prompts
+
+All three models — base, tuned-legends, tuned-regulation — receive the
+same system prompt (the §5.1 prompt) and the task-specific user prompt
+below. Inference is run with `temperature = 0`, `max_tokens = 60` for
+factoid (room for verbose models) and `max_tokens = 5` for bool.
+
+**Factoid user prompt.**
+
+```
+Read the following passage from an EU regulatory document and answer the question.
+
+PASSAGE:
+{context}
+
+QUESTION:
+{question}
+
+Answer with the shortest exact phrase from the passage that answers the question. Do not add explanations.
+```
+
+**Bool user prompt.**
+
+```
+Read the following passage from an EU regulatory document and answer the question.
+
+PASSAGE:
+{context}
+
+QUESTION:
+{question}
+
+Answer with exactly one word: yes or no.
+```
+
+Models that have not been heavily instruction-tuned may add a sentence
+around the answer. This is handled at parsing time (§6.6.5), not by
+changing the prompt.
+
+#### 6.6.5 Output parsing
+
+**Factoid.** The raw model response is normalised before scoring with
+the standard SQuAD normalisation: lowercase, strip Unicode punctuation,
+strip leading articles (`a`, `an`, `the`), collapse whitespace. The same
+normalisation is applied to the gold answer and any aliases.
+
+**Bool.** A regex `\b(yes|no)\b` (case-insensitive) is run on the raw
+response. The first match wins. If no match is found, the prediction is
+recorded as `parse_failed`. As in GE-NLI, two accuracies are reported:
+*all-items* (parse_failed counted as wrong) and *parsed-only*; the
+parse-failure rate is reported as a diagnostic.
+
+#### 6.6.6 Metrics and aggregation
+
+**Factoid.** SQuAD-style **token-level F1** and **Exact Match (EM)**
+computed per item against the normalised gold (with aliases). The
+sub-task scores are the dataset-wide means:
+
+```
+factoid_F1 = mean over items of max(F1(pred, g)) for g in {answer, *answer_aliases}
+factoid_EM = mean over items of max(EM(pred, g)) for g in {answer, *answer_aliases}
+```
+
+**Bool.** Accuracy on the parsed predictions:
+
+```
+bool_accuracy_all     = correct / total                    # parse_failed = wrong
+bool_accuracy_parsed  = correct / parsed                   # diagnostic
+bool_parse_rate       = parsed / total                     # diagnostic
+```
+
+**GE-QA aggregate.**
+
+```
+GE-QA score = (factoid_F1 + bool_accuracy_all) / 2
+```
+
+`factoid_EM` is reported separately as a stricter diagnostic.
+Bootstrap 95% confidence intervals are computed per metric over the test
+set; pairwise model comparisons use McNemar's test on per-item
+correctness, as in §6.10.
+
+#### 6.6.7 Diagnostics and known confounds
+
+Beyond the headline GE-QA score, three breakdown tables are reported:
+
+- **Per-pillar Factoid F1** — six rows (one per pillar), three columns
+  (one per model). Identifies whether a model's gain or loss is
+  concentrated on specific thematic areas.
+- **Per-pillar Bool accuracy** — same structure.
+- **Per-method Bool accuracy** — two rows (`direct_paraphrase`,
+  `perturbed_claim`), three columns. A model that is good at saying
+  *"yes"* to claims supported by the passage but fails to detect
+  perturbations would show high direct_paraphrase accuracy and low
+  perturbed_claim accuracy. This is informative beyond the aggregate.
+
+Two confounds are worth flagging at reporting time:
+
+**Open-book attenuation.** Because the passage is in the prompt, the
+base model has substantial capacity to perform reading comprehension
+even without domain fine-tuning. Differences between the three models
+will be smaller on GE-QA than on the closed-book tasks. A flat result
+across the three models is **not** a failure of the experiment; it is
+consistent with the hypothesis that the gain from fine-tuning
+concentrates on tasks that require internalised knowledge.
+
+**Format mismatch for tuned-legends on Factoid.** The legends
+fine-tuning JSONL teaches the model to produce 1-4 sentence narrative
+answers. On GE-QA-Factoid the gold is a 1-7 word span. The
+legends-tuned model is expected to over-narrate, which depresses EM
+more than F1 (token-level F1 is partially robust to extra tokens, EM is
+not). The gap between `factoid_F1` and `factoid_EM` for tuned-legends
+is itself a diagnostic quantity: if it is large, format mismatch is the
+explanation, not loss of factual knowledge.
+
+#### 6.6.8 Implementation deliverables
+
+```
+benchmark/genderegglue/
+├── ge_qa_factoid.jsonl
+├── ge_qa_bool.jsonl
+├── ge_qa_factoid_qc_log.csv          # Stage 3 review log (factoid)
+└── ge_qa_bool_qc_log.csv             # QC review log (bool)
+
+evaluation/ge_qa/
+├── ge_qa_eval_helper.html            # manual eval UI (factoid + bool tabs)
+├── ge_qa_factoid_responses_template.csv
+├── ge_qa_bool_responses_template.csv
+└── ge_qa_metrics.py                  # SQuAD F1+EM + bool accuracy + bootstrap CI
+```
 
 ### 6.7 Task 4 — GE-WSC (Stereotype-Aware Coreference)
 
