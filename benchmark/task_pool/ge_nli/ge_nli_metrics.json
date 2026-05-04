@@ -1,0 +1,326 @@
+{
+  "task": "GE-NLI",
+  "n_items": 168,
+  "label_distribution_gold": {
+    "entailment": 56,
+    "neutral": 56,
+    "contradiction": 56
+  },
+  "models": {
+    "base": {
+      "n": 168,
+      "accuracy": 0.8988095238095238,
+      "macro_f1": 0.9003424946821174,
+      "per_class": {
+        "entailment": {
+          "precision": 0.9583333333333334,
+          "recall": 0.8214285714285714,
+          "f1": 0.8846153846153847,
+          "support": 56
+        },
+        "contradiction": {
+          "precision": 1.0,
+          "recall": 0.8928571428571429,
+          "f1": 0.9433962264150945,
+          "support": 56
+        },
+        "neutral": {
+          "precision": 0.7857142857142857,
+          "recall": 0.9821428571428571,
+          "f1": 0.873015873015873,
+          "support": 56
+        }
+      },
+      "confusion_matrix": {
+        "entailment": {
+          "entailment": 46,
+          "contradiction": 0,
+          "neutral": 10
+        },
+        "contradiction": {
+          "entailment": 1,
+          "contradiction": 50,
+          "neutral": 5
+        },
+        "neutral": {
+          "entailment": 1,
+          "contradiction": 0,
+          "neutral": 55
+        }
+      },
+      "accuracy_ci": {
+        "point": 0.8988095238095238,
+        "ci_lo": 0.8511904761904762,
+        "ci_hi": 0.9404761904761905
+      },
+      "macro_f1_ci": {
+        "point": 0.9003424946821174,
+        "ci_lo": 0.8529866400881975,
+        "ci_hi": 0.9421768707482993
+      },
+      "label_distribution_predicted": {
+        "entailment": 48,
+        "neutral": 70,
+        "contradiction": 50
+      }
+    },
+    "tuned-legends": {
+      "n": 168,
+      "accuracy": 0.9285714285714286,
+      "macro_f1": 0.9294292876847394,
+      "per_class": {
+        "entailment": {
+          "precision": 0.9615384615384616,
+          "recall": 0.8928571428571429,
+          "f1": 0.9259259259259259,
+          "support": 56
+        },
+        "contradiction": {
+          "precision": 1.0,
+          "recall": 0.9107142857142857,
+          "f1": 0.9532710280373832,
+          "support": 56
+        },
+        "neutral": {
+          "precision": 0.8461538461538461,
+          "recall": 0.9821428571428571,
+          "f1": 0.9090909090909091,
+          "support": 56
+        }
+      },
+      "confusion_matrix": {
+        "entailment": {
+          "entailment": 50,
+          "contradiction": 0,
+          "neutral": 6
+        },
+        "contradiction": {
+          "entailment": 1,
+          "contradiction": 51,
+          "neutral": 4
+        },
+        "neutral": {
+          "entailment": 1,
+          "contradiction": 0,
+          "neutral": 55
+        }
+      },
+      "accuracy_ci": {
+        "point": 0.9285714285714286,
+        "ci_lo": 0.8869047619047619,
+        "ci_hi": 0.9642857142857143
+      },
+      "macro_f1_ci": {
+        "point": 0.9294292876847394,
+        "ci_lo": 0.8854103889787589,
+        "ci_hi": 0.9651150323193334
+      },
+      "label_distribution_predicted": {
+        "entailment": 52,
+        "neutral": 65,
+        "contradiction": 51
+      }
+    },
+    "tuned-regulation": {
+      "n": 168,
+      "accuracy": 0.9107142857142857,
+      "macro_f1": 0.9105533513503152,
+      "per_class": {
+        "entailment": {
+          "precision": 0.9565217391304348,
+          "recall": 0.7857142857142857,
+          "f1": 0.8627450980392156,
+          "support": 56
+        },
+        "contradiction": {
+          "precision": 1.0,
+          "recall": 0.9642857142857143,
+          "f1": 0.9818181818181818,
+          "support": 56
+        },
+        "neutral": {
+          "precision": 0.8088235294117647,
+          "recall": 0.9821428571428571,
+          "f1": 0.8870967741935484,
+          "support": 56
+        }
+      },
+      "confusion_matrix": {
+        "entailment": {
+          "entailment": 44,
+          "contradiction": 0,
+          "neutral": 12
+        },
+        "contradiction": {
+          "entailment": 1,
+          "contradiction": 54,
+          "neutral": 1
+        },
+        "neutral": {
+          "entailment": 1,
+          "contradiction": 0,
+          "neutral": 55
+        }
+      },
+      "accuracy_ci": {
+        "point": 0.9107142857142857,
+        "ci_lo": 0.8630952380952381,
+        "ci_hi": 0.9523809523809523
+      },
+      "macro_f1_ci": {
+        "point": 0.9105533513503152,
+        "ci_lo": 0.8648835123498425,
+        "ci_hi": 0.9521587556985787
+      },
+      "label_distribution_predicted": {
+        "entailment": 46,
+        "neutral": 68,
+        "contradiction": 54
+      }
+    }
+  },
+  "per_pillar_premise": {
+    "leadership_participation": {
+      "n": 45,
+      "base": {
+        "accuracy": 0.9333333333333333,
+        "macro_f1": 0.9331349206349207
+      },
+      "tuned-legends": {
+        "accuracy": 0.9333333333333333,
+        "macro_f1": 0.9313769414575866
+      },
+      "tuned-regulation": {
+        "accuracy": 0.9555555555555556,
+        "macro_f1": 0.9555308367321715
+      }
+    },
+    "mainstreaming_intersectionality": {
+      "n": 12,
+      "base": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "tuned-legends": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "tuned-regulation": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      }
+    },
+    "funding_global_action": {
+      "n": 21,
+      "base": {
+        "accuracy": 0.9047619047619048,
+        "macro_f1": 0.907051282051282
+      },
+      "tuned-legends": {
+        "accuracy": 0.9523809523809523,
+        "macro_f1": 0.9521367521367522
+      },
+      "tuned-regulation": {
+        "accuracy": 0.9523809523809523,
+        "macro_f1": 0.9521367521367522
+      }
+    },
+    "violence_stereotypes": {
+      "n": 72,
+      "base": {
+        "accuracy": 0.875,
+        "macro_f1": 0.8766982259398842
+      },
+      "tuned-legends": {
+        "accuracy": 0.9027777777777778,
+        "macro_f1": 0.9034280987311898
+      },
+      "tuned-regulation": {
+        "accuracy": 0.8472222222222222,
+        "macro_f1": 0.8452469827049894
+      }
+    },
+    "equal_economy": {
+      "n": 18,
+      "base": {
+        "accuracy": 0.8333333333333334,
+        "macro_f1": 0.8363636363636364
+      },
+      "tuned-legends": {
+        "accuracy": 0.9444444444444444,
+        "macro_f1": 0.9440559440559441
+      },
+      "tuned-regulation": {
+        "accuracy": 0.9444444444444444,
+        "macro_f1": 0.9440559440559441
+      }
+    }
+  },
+  "per_construction_method": {
+    "llm_generated_premise": {
+      "n": 56,
+      "base": {
+        "accuracy": 0.8214285714285714,
+        "macro_f1": 0.3006535947712418
+      },
+      "tuned-legends": {
+        "accuracy": 0.8928571428571429,
+        "macro_f1": 0.3144654088050315
+      },
+      "tuned-regulation": {
+        "accuracy": 0.7857142857142857,
+        "macro_f1": 0.29333333333333333
+      }
+    },
+    "cross_pillar_pairing": {
+      "n": 56,
+      "base": {
+        "accuracy": 0.9821428571428571,
+        "macro_f1": 0.33033033033033027
+      },
+      "tuned-legends": {
+        "accuracy": 0.9821428571428571,
+        "macro_f1": 0.33033033033033027
+      },
+      "tuned-regulation": {
+        "accuracy": 0.9821428571428571,
+        "macro_f1": 0.33033033033033027
+      }
+    },
+    "llm_perturbed_premise": {
+      "n": 56,
+      "base": {
+        "accuracy": 0.8928571428571429,
+        "macro_f1": 0.3144654088050315
+      },
+      "tuned-legends": {
+        "accuracy": 0.9107142857142857,
+        "macro_f1": 0.3177570093457944
+      },
+      "tuned-regulation": {
+        "accuracy": 0.9642857142857143,
+        "macro_f1": 0.32727272727272727
+      }
+    }
+  },
+  "pairwise_mcnemar": {
+    "base vs tuned-legends": {
+      "b": 2,
+      "c": 7,
+      "n": 9,
+      "p_value": 0.1796875
+    },
+    "base vs tuned-regulation": {
+      "b": 5,
+      "c": 7,
+      "n": 12,
+      "p_value": 0.7744140625
+    },
+    "tuned-legends vs tuned-regulation": {
+      "b": 7,
+      "c": 4,
+      "n": 11,
+      "p_value": 0.548828125
+    }
+  }
+}
