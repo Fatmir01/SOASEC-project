@@ -1,124 +1,125 @@
-id,passage_id,pillar,answer_type,gold_answer,gold_aliases,base_response,tuned_legends_response,tuned_regulation_response
-ge_qa_f_001,Roadmap_2025__c003,mainstreaming_intersectionality,single_span,71 points out of 100,71 points;71/100,,,
-ge_qa_f_002,Roadmap_2025__c003,mainstreaming_intersectionality,single_span,7.9 points,7.9,,,
-ge_qa_f_003,Roadmap_2025__c003,mainstreaming_intersectionality,single_span,2024âˆ’2029,2024-2029;2024 to 2029,,,
-ge_qa_f_004,Roadmap_2025__c010,funding_global_action,single_span,2025,,,,
-ge_qa_f_005,Roadmap_2025__c010,funding_global_action,single_span,145 EU delegations,145,,,
-ge_qa_f_006,Roadmap_2025__c010,funding_global_action,single_span,2028 â€“ 2034,2028-2034;2028 to 2034,,,
-ge_qa_f_007,PayGap_Council_2019__c003,equal_economy,group,"Deeply ingrained social norms, societal structures, cultural patterns and gender stereotypes",,,,
-ge_qa_f_008,PayGap_Council_2019__c010,equal_economy,single_span,"unambiguous, objective and gender-neutral assessment",,,,
-ge_qa_f_009,PayGap_Council_2019__c010,equal_economy,single_span,"maternity, paternity, parental and carers' leaves",,,,
-ge_qa_f_010,PayGap_Council_2019__c011,equal_economy,single_span,at least 90%,90%;90 percent,,,
-ge_qa_f_011,PayGap_Council_2019__c011,equal_economy,single_span,at least 33%,33%;33 percent,,,
-ge_qa_f_012,PayGap_Council_2019__c011,equal_economy,single_span,the European Social Fund,,,,
-ge_qa_f_013,PayGap_Council_2019__c016,unknown,single_span,7 March 2011,,,,
-ge_qa_f_014,PayGap_Council_2019__c016,unknown,single_span,9 March 2015,,,,
-ge_qa_f_015,PayGap_Council_2019__c017,unknown,single_span,"Romania, Finland and Croatia",,,,
-ge_qa_f_016,PayGap_Council_2019__c017,unknown,single_span,Vienna,,,,
-ge_qa_f_017,PayGap_Council_2019__c019,unknown,single_span,14 June 2017,,,,
-ge_qa_f_018,WomenOnBoards_Dir_2022_2381__c001,unknown,single_span,23 November 2022,,,,
-ge_qa_f_019,WomenOnBoards_Dir_2022_2381__c001,unknown,single_span,Article 157(3),,,,
-ge_qa_f_020,WomenOnBoards_Dir_2022_2381__c003,leadership_participation,single_span,Council Recommendation 84/635/EEC,84/635/EEC,,,
-ge_qa_f_021,WomenOnBoards_Dir_2022_2381__c003,leadership_participation,single_span,5 March 2010,,,,
-ge_qa_f_022,WomenOnBoards_Dir_2022_2381__c003,leadership_participation,single_span,5 March 2020,,,,
-ge_qa_f_023,WomenOnBoards_Dir_2022_2381__c009,leadership_participation,single_span,60 %,60%;60 percent;sixty percent,,,
-ge_qa_f_024,WomenOnBoards_Dir_2022_2381__c016,leadership_participation,single_span,49 %,49%;49 percent,,,
-ge_qa_f_025,WomenOnBoards_Dir_2022_2381__c016,leadership_participation,single_span,Article 21,,,,
-ge_qa_f_026,WomenOnBoards_Dir_2022_2381__c019,leadership_participation,single_span,Articles 7 and 8,,,,
-ge_qa_f_027,WomenOnBoards_Dir_2022_2381__c019,leadership_participation,single_span,Regulation (EU) 2016/679,2016/679,,,
-ge_qa_f_028,WomenOnBoards_Dir_2022_2381__c022,leadership_participation,single_span,"effective, proportionate and dissuasive",,,,
-ge_qa_f_029,WomenOnBoards_Dir_2022_2381__c027,leadership_participation,single_span,listed companies,,,,
-ge_qa_f_030,WomenOnBoards_Dir_2022_2381__c027,leadership_participation,single_span,"micro, small and medium-sized enterprises (SMEs)","SMEs;micro, small and medium-sized enterprises",,,
-ge_qa_f_031,WomenOnBoards_Dir_2022_2381__c030,leadership_participation,group,the Member State in which that company has its registered office,,,,
-ge_qa_f_032,WomenOnBoards_Dir_2022_2381__c033,leadership_participation,single_span,comparative assessment,,,,
-ge_qa_f_033,WomenOnBoards_Dir_2022_2381__c033,leadership_participation,single_span,"clear, neutrally formulated and unambiguous",,,,
-ge_qa_f_034,WomenOnBoards_Dir_2022_2381__c034,leadership_participation,single_span,Article 6(2),,,,
-ge_qa_f_035,WomenOnBoards_Dir_2022_2381__c041,leadership_participation,single_span,28 December 2024,,,,
-ge_qa_f_036,WomenOnBoards_Dir_2022_2381__c047,leadership_participation,single_span,31 December 2038,,,,
-ge_qa_f_037,WomenOnBoards_Dir_2022_2381__c047,leadership_participation,single_span,the twentieth day,twentieth day;20th day,,,
-ge_qa_f_038,WomenOnBoards_Dir_2022_2381__c048,leadership_participation,single_span,Strasbourg,,,,
-ge_qa_f_039,WomenOnBoards_Dir_2022_2381__c048,leadership_participation,single_span,R. METSOLA,Metsola;R. Metsola,,,
-ge_qa_f_040,WomenOnBoards_Dir_2022_2381__c048,leadership_participation,single_span,the Member States,Member States,,,
-ge_qa_f_041,GAP_III__c006,funding_global_action,single_span,three principles,,,,
-ge_qa_f_042,GAP_III__c006,funding_global_action,single_span,EU LGBTIQ equality strategy,LGBTIQ equality strategy,,,
-ge_qa_f_043,GAP_III__c006,funding_global_action,single_span,2021-2030,2021â€“2030;2021 to 2030,,,
-ge_qa_f_044,GAP_III__c007,funding_global_action,single_span,Faith for Rights,,,,
-ge_qa_f_045,GAP_III__c014,funding_global_action,single_span,Africa Continental Free Trade Area (AfCFTA),AfCFTA,,,
-ge_qa_f_046,GAP_III__c014,funding_global_action,single_span,100 Intelligent Cities Challenge Initiative,,,,
-ge_qa_f_047,GAP_III__c014,funding_global_action,single_span,CBSD,,,,
-ge_qa_f_048,GAP_III__c014,funding_global_action,single_span,Sub-Saharan Africa,,,,
-ge_qa_f_049,GAP_III__c021,funding_global_action,single_span,295 000,"295,000;295000",,,
-ge_qa_f_050,GAP_III__c021,funding_global_action,single_span,94%,94 percent,,,
-ge_qa_f_051,GAP_III__c021,funding_global_action,single_span,adolescent girls aged 15-19 years,15-19 years,,,
-ge_qa_f_052,GAP_III__c025,equal_economy,single_span,the introduction of paid paternity leave,,,,
-ge_qa_f_053,GAP_III__c025,equal_economy,single_span,the World Trade Organisation,,,,
-ge_qa_f_054,GAP_III__c026,equal_economy,single_span,2 in 3,,,,
-ge_qa_f_055,GAP_III__c026,equal_economy,single_span,335 million,,,,
-ge_qa_f_056,GAP_III__c026,equal_economy,single_span,30%,30 percent,,,
-ge_qa_f_057,GAP_III__c026,equal_economy,single_span,10-20%,10 to 20 percent;10â€“20%,,,
-ge_qa_f_058,GAP_III__c026,equal_economy,group,from 1% in 2015 to 10% as of 2019,,,,
-ge_qa_f_059,GAP_III__c026,equal_economy,single_span,more than EUR 450 million,,,,
-ge_qa_f_060,GAP_III__c027,equal_economy,single_span,10% of the humanitarian aid budget,10%;10 percent,,,
-ge_qa_f_061,GAP_III__c031,leadership_participation,single_span,the audio-visual sector and the media,,,,
-ge_qa_f_062,GAP_III__c033,funding_global_action,single_span,GAPIII,GAP III,,,
-ge_qa_f_063,GAP_III__c034,funding_global_action,single_span,at least 33%,33%;33 percent,,,
-ge_qa_f_064,GAP_III__c034,funding_global_action,single_span,mandatory training,,,,
-ge_qa_f_065,GAP_III__c036,mainstreaming_intersectionality,single_span,80%,80 percent,,,
-ge_qa_f_066,GAP_III__c036,mainstreaming_intersectionality,single_span,14,fourteen,,,
-ge_qa_f_067,GAP_III__c036,mainstreaming_intersectionality,single_span,43%,43 percent,,,
-ge_qa_f_068,GAP_III__c036,mainstreaming_intersectionality,single_span,15%,15 percent;less than 15%,,,
-ge_qa_f_069,GAP_III__c037,mainstreaming_intersectionality,single_span,"agriculture, fishing and aquaculture and food systems",,,,
-ge_qa_f_070,GAP_III__c041,leadership_participation,single_span,mandatory training,,,,
-ge_qa_f_071,Istanbul_Convention_2011__c002,violence_stereotypes,group,Convenzione del Consiglio d'Europa sulla lotta contro la tratta di esseri umani,,,,
-ge_qa_f_072,Istanbul_Convention_2011__c002,violence_stereotypes,single_span,1979,,,,
-ge_qa_f_073,Istanbul_Convention_2011__c002,violence_stereotypes,single_span,STE nÂ° 5,STE 5,,,
-ge_qa_f_074,Istanbul_Convention_2011__c002,violence_stereotypes,group,il raggiungimento dell'uguaglianza di genere,raggiungimento dell'uguaglianza di genere,,,
-ge_qa_f_075,Istanbul_Convention_2011__c003,violence_stereotypes,group,rapporti di forza storicamente diseguali tra i sessi,,,,
-ge_qa_f_076,Istanbul_Convention_2011__c003,violence_stereotypes,single_span,strutturale,,,,
-ge_qa_f_077,Istanbul_Convention_2011__c006,violence_stereotypes,single_span,meno di 18 anni,18 anni,,,
-ge_qa_f_078,Istanbul_Convention_2011__c006,violence_stereotypes,single_span,"fisica, sessuale, psicologica o economica",,,,
-ge_qa_f_079,Istanbul_Convention_2011__c009,violence_stereotypes,single_span,una prospettiva di genere,,,,
-ge_qa_f_080,Istanbul_Convention_2011__c016,violence_stereotypes,single_span,organizzazioni femminili,,,,
-ge_qa_f_081,Istanbul_Convention_2011__c020,violence_stereotypes,group,"il settore privato, il settore delle tecnologie dell'informazione e della comunicazione e i mass media",,,,
-ge_qa_f_082,Istanbul_Convention_2011__c022,violence_stereotypes,group,servizi di sostegno e le misure legali disponibili,,,,
-ge_qa_f_083,Istanbul_Convention_2011__c025,violence_stereotypes,single_span,i loro bambini,,,,
-ge_qa_f_084,Istanbul_Convention_2011__c026,violence_stereotypes,group,"rifugi adeguati, facilmente accessibili e in numero sufficiente",,,,
-ge_qa_f_085,Istanbul_Convention_2011__c027,violence_stereotypes,group,"24 ore su 24, sette giorni alla settimana",,,,
-ge_qa_f_086,Istanbul_Convention_2011__c027,violence_stereotypes,single_span,a livello nazionale,,,,
-ge_qa_f_087,Istanbul_Convention_2011__c039,violence_stereotypes,single_span,volontariamente,,,,
-ge_qa_f_088,Istanbul_Convention_2011__c040,violence_stereotypes,single_span,un adulto o un bambino,,,,
-ge_qa_f_089,Istanbul_Convention_2011__c042,violence_stereotypes,single_span,Aborto forzato e sterilizzazione forzata,,,,
-ge_qa_f_090,Istanbul_Convention_2011__c043,violence_stereotypes,single_span,"verbale, non verbale o fisico",,,,
-ge_qa_f_091,Istanbul_Convention_2011__c046,violence_stereotypes,single_span,la natura del rapporto,,,,
-ge_qa_f_092,Istanbul_Convention_2011__c047,violence_stereotypes,single_span,"Articoli 36, 37, 38 e 39",,,,
-ge_qa_f_093,Istanbul_Convention_2011__c048,violence_stereotypes,single_span,si concertano,,,,
-ge_qa_f_094,Istanbul_Convention_2011__c051,violence_stereotypes,single_span,condanne definitive,,,,
-ge_qa_f_095,Istanbul_Convention_2011__c053,violence_stereotypes,single_span,senza indugio ingiustificato,,,,
-ge_qa_f_096,Istanbul_Convention_2011__c055,violence_stereotypes,single_span,armi da fuoco,,,,
-ge_qa_f_097,Istanbul_Convention_2011__c059,violence_stereotypes,group,una segnalazione o da una denuncia da parte della vittima,,,,
-ge_qa_f_098,Istanbul_Convention_2011__c060,violence_stereotypes,single_span,"intimidazioni, rappresaglie e ulteriori vittimizzazioni",,,,
-ge_qa_f_099,Istanbul_Convention_2011__c066,violence_stereotypes,single_span,principio di nonrespingimento,nonrespingimento,,,
-ge_qa_f_100,Istanbul_Convention_2011__c068,violence_stereotypes,single_span,"Articoli 36, 37, 38 e 39",,,,
-ge_qa_f_101,Istanbul_Convention_2011__c070,unknown,single_span,STE nÂ° 108,STE 108,,,
-ge_qa_f_102,Istanbul_Convention_2011__c072,unknown,single_span,GREVIO,,,,
-ge_qa_f_103,Istanbul_Convention_2011__c074,unknown,single_span,al Segretario Generale del Consiglio d'Europa,,,,
-ge_qa_f_104,Istanbul_Convention_2011__c075,unknown,single_span,una bozza di rapporto,,,,
-ge_qa_f_105,Istanbul_Convention_2011__c082,unknown,single_span,"negoziato, conciliazione, arbitrato",,,,
-ge_qa_f_106,Istanbul_Convention_2011__c083,unknown,single_span,10 firmatari,dieci firmatari,,,
-ge_qa_f_107,Istanbul_Convention_2011__c083,unknown,single_span,otto Stati membri del Consiglio d'Europa,otto Stati membri,,,
-ge_qa_f_108,Istanbul_Convention_2011__c087,unknown,single_span,un periodo di cinque anni,cinque anni,,,
-ge_qa_f_109,Istanbul_Convention_2011__c087,unknown,single_span,Diciotto mesi,diciotto mesi;18 mesi,,,
-ge_qa_f_110,Roadmap_2025__c003,mainstreaming_intersectionality,single_span,the guiding EU policy framework,,,,
-ge_qa_f_111,Roadmap_2025__c010,funding_global_action,group,"EU Strategic Approach to Women, Peace and Security (WPS)","EU Strategic Approach to Women, Peace and Security;WPS",,,
-ge_qa_f_112,WomenOnBoards_Dir_2022_2381__c003,leadership_participation,single_span,Council Recommendation 96/694/EC,96/694/EC,,,
-ge_qa_f_113,WomenOnBoards_Dir_2022_2381__c016,leadership_participation,single_span,33 %,33%;33 percent,,,
-ge_qa_f_114,WomenOnBoards_Dir_2022_2381__c022,leadership_participation,group,fines or the possibility for a judicial body to annul a decision,,,,
-ge_qa_f_115,WomenOnBoards_Dir_2022_2381__c022,leadership_participation,single_span,SMEs,,,,
-ge_qa_f_116,GAP_III__c006,funding_global_action,group,UN Convention on the Rights of Persons with Disabilities,,,,
-ge_qa_f_117,GAP_III__c025,equal_economy,single_span,EIP,,,,
-ge_qa_f_118,GAP_III__c031,leadership_participation,single_span,youth organisations,,,,
-ge_qa_f_119,Istanbul_Convention_2011__c047,violence_stereotypes,group,immatricolato secondo le loro disposizioni di legge,,,,
-ge_qa_f_120,Istanbul_Convention_2011__c060,violence_stereotypes,group,"intimidazioni, rappresaglie e ulteriori vittimizzazioni",,,,
-ge_qa_f_121,Istanbul_Convention_2011__c060,violence_stereotypes,single_span,tecnologie di comunicazione adeguate,,,,
-ge_qa_f_122,Istanbul_Convention_2011__c068,violence_stereotypes,single_span,la Parte che dispone di tale informazione,,,,
-ge_qa_f_123,Istanbul_Convention_2011__c074,unknown,single_span,un questionario,,,,
+Colonna1;Colonna2;Colonna3;Colonna4;Colonna5;Colonna6;Colonna7;Colonna8;Colonna9
+id;passage_id;pillar;answer_type;gold_answer;gold_aliases;base_response;tuned_legends_response;tuned_regulation_response
+ge_qa_f_001;Roadmap_2025__c003;mainstreaming_intersectionality;single_span;71 points out of 100;"71 points;71/100";71 points out of 100;71 points out of 100;71 points out of 100
+ge_qa_f_002;Roadmap_2025__c003;mainstreaming_intersectionality;single_span;7.9 points;7.9;7.9 points;7.9 points;7.9 points
+ge_qa_f_003;Roadmap_2025__c003;mainstreaming_intersectionality;single_span;2024?2029;"2024-2029;2024 to 2029";2024?2029;2024?2029;2024?2029
+ge_qa_f_004;Roadmap_2025__c010;funding_global_action;single_span;2025;;2025;2025;2025
+ge_qa_f_005;Roadmap_2025__c010;funding_global_action;single_span;145 EU delegations;145;145 EU delegations;145 EU delegations;145 EU delegations
+ge_qa_f_006;Roadmap_2025__c010;funding_global_action;single_span;2028 – 2034;"2028-2034;2028 to 2034";2028 – 2034;2028 – 2034;2028 – 2034
+ge_qa_f_007;PayGap_Council_2019__c003;equal_economy;group;Deeply ingrained social norms, societal structures, cultural patterns and gender stereotypes;;deeply ingrained social norms, societal structures, cultural patterns and gender stereotypes;deeply ingrained social norms, societal structures, cultural patterns and gender stereotypes;deeply ingrained social norms, societal structures, cultural patterns and gender stereotypes
+ge_qa_f_008;PayGap_Council_2019__c010;equal_economy;single_span;unambiguous, objective and gender-neutral assessment;;unambiguous, objective and gender-neutral assessment and on the merits and qualifications of the candidates;unambiguous, objective and gender-neutral assessment;unambiguous, objective and gender-neutral assessment
+ge_qa_f_009;PayGap_Council_2019__c010;equal_economy;single_span;maternity, paternity, parental and carers' leaves;;maternity, paternity, parental and carers' leaves;maternity, paternity, parental and carers' leaves;maternity, paternity, parental and carers' leaves
+ge_qa_f_010;PayGap_Council_2019__c011;equal_economy;single_span;at least 90%;"90%;90 percent";at least 90% of children between 3 years old and the mandatory school age;at least 90% of children between 3 years old and the mandatory school age;at least 90% of children between 3 years old and the mandatory school age
+ge_qa_f_011;PayGap_Council_2019__c011;equal_economy;single_span;at least 33%;"33%;33 percent";at least 33% of children under 3 years of age;33% of children under 3 years of age;33% of children under 3 years of age
+ge_qa_f_012;PayGap_Council_2019__c011;equal_economy;single_span;the European Social Fund;;the European Social Fund;the European Social Fund;the European Social Fund
+ge_qa_f_013;PayGap_Council_2019__c016;unknown;single_span;7 March 2011;;7 March 2011;7 March 2011;7 March 2011
+ge_qa_f_014;PayGap_Council_2019__c016;unknown;single_span;9 March 2015;;9 March 2015;9 March 2015;9 March 2015
+ge_qa_f_015;PayGap_Council_2019__c017;unknown;single_span;Romania, Finland and Croatia;;Romania, Finland and Croatia;Romania, Finland and Croatia;Romania, Finland and Croatia
+ge_qa_f_016;PayGap_Council_2019__c017;unknown;single_span;Vienna;;Vienna;Vienna;Vienna
+ge_qa_f_017;PayGap_Council_2019__c019;unknown;single_span;14 June 2017;;14 June 2017;14 June 2017;14 June 2017
+ge_qa_f_018;WomenOnBoards_Dir_2022_2381__c001;unknown;single_span;23 November 2022;;23 November 2022;23 November 2022;23 November 2022
+ge_qa_f_019;WomenOnBoards_Dir_2022_2381__c001;unknown;single_span;Article 157(3);;Article 157(3);Article 157(3);Article 157(3)
+ge_qa_f_020;WomenOnBoards_Dir_2022_2381__c003;leadership_participation;single_span;Council Recommendation 84/635/EEC;84/635/EEC;Council Recommendation 84/635/EEC;Council Recommendation 84/635/EEC;Council Recommendation 84/635/EEC
+ge_qa_f_021;WomenOnBoards_Dir_2022_2381__c003;leadership_participation;single_span;5 March 2010;;5 March 2010;5 March 2010;5 March 2010
+ge_qa_f_022;WomenOnBoards_Dir_2022_2381__c003;leadership_participation;single_span;5 March 2020;;5 March 2020;5 March 2020;5 March 2020
+ge_qa_f_023;WomenOnBoards_Dir_2022_2381__c009;leadership_participation;single_span;60 %;"60%;60 percent;sixty percent";60 % of university graduates are female.;60 % of university graduates;60%
+ge_qa_f_024;WomenOnBoards_Dir_2022_2381__c016;leadership_participation;single_span;49 %;"49%;49 percent";49%;49%;49%
+ge_qa_f_025;WomenOnBoards_Dir_2022_2381__c016;leadership_participation;single_span;Article 21;;Article 21 of the Charter;Article 21 of the Charter;Article 21
+ge_qa_f_026;WomenOnBoards_Dir_2022_2381__c019;leadership_participation;single_span;Articles 7 and 8;;Articles 7 and 8 of the Charter;Articles 7 and 8 of the Charter;Articles 7 and 8 of the Charter
+ge_qa_f_027;WomenOnBoards_Dir_2022_2381__c019;leadership_participation;single_span;Regulation (EU) 2016/679;2016/679;Regulation (EU) 2016/679;Regulation (EU) 2016/679;Regulation (EU) 2016/679
+ge_qa_f_028;WomenOnBoards_Dir_2022_2381__c022;leadership_participation;single_span;effective, proportionate and dissuasive;;effective, proportionate and dissuasive;effective, proportionate and dissuasive;effective, proportionate and dissuasive
+ge_qa_f_029;WomenOnBoards_Dir_2022_2381__c027;leadership_participation;single_span;listed companies;;listed companies;listed companies;listed companies
+ge_qa_f_030;WomenOnBoards_Dir_2022_2381__c027;leadership_participation;single_span;micro, small and medium-sized enterprises (SMEs);"SMEs;micro, small and medium-sized enterprises";micro, small and medium-sized enterprises (SMEs);micro, small and medium-sized enterprises (SMEs);micro, small and medium-sized enterprises (SMEs)
+ge_qa_f_031;WomenOnBoards_Dir_2022_2381__c030;leadership_participation;group;the Member State in which that company has its registered office;;Member State in which that company has its registered office;Member State in which that company has its registered office;Member State in which that company has its registered office
+ge_qa_f_032;WomenOnBoards_Dir_2022_2381__c033;leadership_participation;single_span;comparative assessment;;comparative assessment of the qualifications;comparative assessment of the qualifications;comparative assessment of the qualifications
+ge_qa_f_033;WomenOnBoards_Dir_2022_2381__c033;leadership_participation;single_span;clear, neutrally formulated and unambiguous;;clear, neutrally formulated and unambiguous;clear, neutrally formulated and unambiguous;clear, neutrally formulated and unambiguous
+ge_qa_f_034;WomenOnBoards_Dir_2022_2381__c034;leadership_participation;single_span;Article 6(2);;Article 6(2);Article 6(2);Article 6(2)
+ge_qa_f_035;WomenOnBoards_Dir_2022_2381__c041;leadership_participation;single_span;28 December 2024;;28 December 2024;28 December 2024;28 December 2024
+ge_qa_f_036;WomenOnBoards_Dir_2022_2381__c047;leadership_participation;single_span;31 December 2038;;31 December 2038;31 December 2038;31 December 2038
+ge_qa_f_037;WomenOnBoards_Dir_2022_2381__c047;leadership_participation;single_span;the twentieth day;"twentieth day;20th day";twentieth day;twentieth day;twentieth day
+ge_qa_f_038;WomenOnBoards_Dir_2022_2381__c048;leadership_participation;single_span;Strasbourg;;Strasbourg;Strasbourg;Strasbourg
+ge_qa_f_039;WomenOnBoards_Dir_2022_2381__c048;leadership_participation;single_span;R. METSOLA;"Metsola;R. Metsola";R. METSOLA;R. METSOLA;R. METSOLA
+ge_qa_f_040;WomenOnBoards_Dir_2022_2381__c048;leadership_participation;single_span;the Member States;Member States;the Member States;the Member States;the Member States
+ge_qa_f_041;GAP_III__c006;funding_global_action;single_span;three principles;;three principles;three principles;three principles
+ge_qa_f_042;GAP_III__c006;funding_global_action;single_span;EU LGBTIQ equality strategy;LGBTIQ equality strategy;EU LGBTIQ equality strategy;EU LGBTIQ equality strategy;EU LGBTIQ equality strategy
+ge_qa_f_043;GAP_III__c006;funding_global_action;single_span;2021-2030;"2021–2030;2021 to 2030";2021-2030;2021-2030;2021-2030
+ge_qa_f_044;GAP_III__c007;funding_global_action;single_span;Faith for Rights;;Faith for Rights;Faith for Rights;Faith for Rights
+ge_qa_f_045;GAP_III__c014;funding_global_action;single_span;Africa Continental Free Trade Area (AfCFTA);AfCFTA;Africa Continental Free Trade Area;Africa Continental Free Trade Area (AfCFTA);Africa Continental Free Trade Area
+ge_qa_f_046;GAP_III__c014;funding_global_action;single_span;100 Intelligent Cities Challenge Initiative;;100 Intelligent Cities Challenge Initiative;100 Intelligent Cities Challenge Initiative;100 Intelligent Cities Challenge Initiative
+ge_qa_f_047;GAP_III__c014;funding_global_action;single_span;CBSD;;CBSD;CBSD;CBSD
+ge_qa_f_048;GAP_III__c014;funding_global_action;single_span;Sub-Saharan Africa;;Sub-Saharan Africa;Sub-Saharan Africa;Sub-Saharan Africa
+ge_qa_f_049;GAP_III__c021;funding_global_action;single_span;295 000;"295,000;295000";295 000;295 000;295 000
+ge_qa_f_050;GAP_III__c021;funding_global_action;single_span;94%;94 percent;94% occur in low-resource settings;94% occur in low-resource settings;94% occur in low-resource settings
+ge_qa_f_051;GAP_III__c021;funding_global_action;single_span;adolescent girls aged 15-19 years;15-19 years;Aged 15-19 years;adolescent girls aged 15-19 years;adolescent girls aged 15-19 years
+ge_qa_f_052;GAP_III__c025;equal_economy;single_span;the introduction of paid paternity leave;;The introduction of paid paternity leave;paid paternity leave;paid paternity leave
+ge_qa_f_053;GAP_III__c025;equal_economy;single_span;the World Trade Organisation;;World Trade Organisation;World Trade Organisation;World Trade Organisation
+ge_qa_f_054;GAP_III__c026;equal_economy;single_span;2 in 3;;2 in 3;2 in 3;2 in 3
+ge_qa_f_055;GAP_III__c026;equal_economy;single_span;335 million;;335 million;335 million;335 million
+ge_qa_f_056;GAP_III__c026;equal_economy;single_span;30%;30 percent;Only around 30% of female students in higher education choose STEM fields of study;around **30%**;around **30%**
+ge_qa_f_057;GAP_III__c026;equal_economy;single_span;10-20%;"10 to 20 percent;10–20%";10-20%;10-20%;10-20%
+ge_qa_f_058;GAP_III__c026;equal_economy;group;from 1% in 2015 to 10% as of 2019;;from 1% in 2015 to 10% as of 2019;from 1% in 2015 to 10% as of 2019;from 1% in 2015 to 10% as of 2019
+ge_qa_f_059;GAP_III__c026;equal_economy;single_span;more than EUR 450 million;;more than EUR 450 million;more than EUR 450 million;more than EUR 450 million
+ge_qa_f_060;GAP_III__c027;equal_economy;single_span;10% of the humanitarian aid budget;"10%;10 percent";10% of the humanitarian aid budget;10% of the humanitarian aid budget;10% of the humanitarian aid budget
+ge_qa_f_061;GAP_III__c031;leadership_participation;single_span;the audio-visual sector and the media;;the audio-visual sector and the media;audio-visual sector;audio-visual sector
+ge_qa_f_062;GAP_III__c033;funding_global_action;single_span;GAPIII;GAP III;WPS agenda;WPS agenda;GAPIII
+ge_qa_f_063;GAP_III__c034;funding_global_action;single_span;at least 33%;"33%;33 percent";at least 33% of women;at least 33% of women;at least 33% of women
+ge_qa_f_064;GAP_III__c034;funding_global_action;single_span;mandatory training;;mandatory training;mandatory training on mainstreaming gender perspectives;mandatory training
+ge_qa_f_065;GAP_III__c036;mainstreaming_intersectionality;single_span;80%;80 percent;80%;80%;80%
+ge_qa_f_066;GAP_III__c036;mainstreaming_intersectionality;single_span;14;fourteen;14 times more likely;14 times more likely;14 times more likely
+ge_qa_f_067;GAP_III__c036;mainstreaming_intersectionality;single_span;43%;43 percent;**43%** of the agricultural labour force;43% of the agricultural labour force in developing countries;**43%** of the agricultural labour force
+ge_qa_f_068;GAP_III__c036;mainstreaming_intersectionality;single_span;15%;"15 percent;less than 15%";**15%** of all agricultural landholders;**15%** of all agricultural landholders;**15%** of all agricultural landholders
+ge_qa_f_069;GAP_III__c037;mainstreaming_intersectionality;single_span;agriculture, fishing and aquaculture and food systems;;agriculture, fishing and aquaculture and food systems;agriculture, fishing and aquaculture and food systems;agriculture, fishing and aquaculture
+ge_qa_f_070;GAP_III__c041;leadership_participation;single_span;mandatory training;;mandatory training on gender equality and on implementing GAP III;mandatory training on gender equality and on implementing GAP III;mandatory training
+ge_qa_f_071;Istanbul_Convention_2011__c002;violence_stereotypes;group;Convenzione del Consiglio d'Europa sulla lotta contro la tratta di esseri umani;;Convenzione del Consiglio d'Europa sulla lotta contro la tratta di esseri umani (STCE n° 197, 2005);Convenzione del Consiglio d'Europa sulla lotta contro la tratta di esseri umani (STCE n° 197, 2005);Convenzione del Consiglio d'Europa sulla lotta contro la tratta di esseri umani (STCE n° 197, 2005)
+ge_qa_f_072;Istanbul_Convention_2011__c002;violence_stereotypes;single_span;1979;;1979;1979;1979
+ge_qa_f_073;Istanbul_Convention_2011__c002;violence_stereotypes;single_span;STE n° 5;STE 5;STE n° 5;STE n° 5;STE n° 5
+ge_qa_f_074;Istanbul_Convention_2011__c002;violence_stereotypes;group;il raggiungimento dell'uguaglianza di genere;raggiungimento dell'uguaglianza di genere;il raggiungimento dell'uguaglianza di genere *de jure* e *de facto*;il raggiungimento dell'uguaglianza di genere *de jure* e *de facto*;uguaglianza di genere *de jure* e *de facto*
+ge_qa_f_075;Istanbul_Convention_2011__c003;violence_stereotypes;group;rapporti di forza storicamente diseguali tra i sessi;;rapporti di forza storicamente diseguali tra i sessi;rapporti di forza storicamente diseguali tra i sessi;rapporti di forza storicamente diseguali tra i sessi
+ge_qa_f_076;Istanbul_Convention_2011__c003;violence_stereotypes;single_span;strutturale;;natura strutturale;natura strutturale;natura strutturale
+ge_qa_f_077;Istanbul_Convention_2011__c006;violence_stereotypes;single_span;meno di 18 anni;18 anni;meno di 18 anni;meno di 18 anni;meno di 18 anni
+ge_qa_f_078;Istanbul_Convention_2011__c006;violence_stereotypes;single_span;fisica, sessuale, psicologica o economica;;fisica, sessuale, psicologica o economica;danni o sofferenze di natura fisica, sessuale, psicologica o economica;natura fisica, sessuale, psicologica o economica
+ge_qa_f_079;Istanbul_Convention_2011__c009;violence_stereotypes;single_span;una prospettiva di genere;;prospettiva di genere;prospettiva di genere;prospettiva di genere
+ge_qa_f_080;Istanbul_Convention_2011__c016;violence_stereotypes;single_span;organizzazioni femminili;;organizzazioni femminili;organizzazioni femminili;organizzazioni femminili
+ge_qa_f_081;Istanbul_Convention_2011__c020;violence_stereotypes;group;il settore privato, il settore delle tecnologie dell'informazione e della comunicazione e i mass media;;settore privato, settore delle tecnologie dell'informazione e della comunicazione, mass media;settore privato, settore delle tecnologie dell'informazione e della comunicazione, mass media;settore privato, settore delle tecnologie dell'informazione e della comunicazione, mass media
+ge_qa_f_082;Istanbul_Convention_2011__c022;violence_stereotypes;group;servizi di sostegno e le misure legali disponibili;;servizi di sostegno e le misure legali;servizi di sostegno e le misure legali;servizi di sostegno e le misure legali
+ge_qa_f_083;Istanbul_Convention_2011__c025;violence_stereotypes;single_span;i loro bambini;;i loro bambini;i loro bambini;i loro bambini
+ge_qa_f_084;Istanbul_Convention_2011__c026;violence_stereotypes;group;rifugi adeguati, facilmente accessibili e in numero sufficiente;;rifugi adeguati;rifugi adeguati, facilmente accessibili e in numero sufficiente;case rifugio
+ge_qa_f_085;Istanbul_Convention_2011__c027;violence_stereotypes;group;24 ore su 24, sette giorni alla settimana;;24 ore su 24, sette giorni alla settimana;24 ore su 24, sette giorni alla settimana;24 ore su 24, sette giorni alla settimana
+ge_qa_f_086;Istanbul_Convention_2011__c027;violence_stereotypes;single_span;a livello nazionale;;a livello nazionale;a livello nazionale;a livello nazionale
+ge_qa_f_087;Istanbul_Convention_2011__c039;violence_stereotypes;single_span;volontariamente;;dato volontariamente, quale libera manifestazione della volontà della persona;dato volontariamente, quale libera manifestazione della volontà della persona;dato volontariamente, quale libera manifestazione della volontà della persona
+ge_qa_f_088;Istanbul_Convention_2011__c040;violence_stereotypes;single_span;un adulto o un bambino;;un adulto o un bambino;un adulto o un bambino;un adulto o un bambino
+ge_qa_f_089;Istanbul_Convention_2011__c042;violence_stereotypes;single_span;Aborto forzato e sterilizzazione forzata;;"aborto su una donna e ""intervento chirurgico che abbia lo scopo e l'effetto di interrompere definitivamente la capacità riproduttiva di una donna""";aborto forzato e sterilizzazione forzata;aborto forzato e sterilizzazione forzata
+ge_qa_f_090;Istanbul_Convention_2011__c043;violence_stereotypes;single_span;verbale, non verbale o fisico;;verbale, non verbale o fisico;comportamento indesiderato, verbale, non verbale o fisico;verbale, non verbale o fisico
+ge_qa_f_091;Istanbul_Convention_2011__c046;violence_stereotypes;single_span;la natura del rapporto;;natura del rapporto tra la vittima e l'autore del reato;natura del rapporto tra la vittima e l'autore del reato;natura del rapporto tra la vittima e l'autore del reato
+ge_qa_f_092;Istanbul_Convention_2011__c047;violence_stereotypes;single_span;Articoli 36, 37, 38 e 39;;Articoli 36, 37, 38 e 39;Articoli 36, 37, 38 e 39;Articoli 36, 37, 38 e 39
+ge_qa_f_093;Istanbul_Convention_2011__c048;violence_stereotypes;single_span;si concertano;;si concertano, se lo ritengono opportuno, per determinare quale sia la giurisdizione più appropriata per procedere penalmente.;le Parti interessate si concertano;si concertano, se lo ritengono opportuno, per determinare quale sia la giurisdizione più appropriata
+ge_qa_f_094;Istanbul_Convention_2011__c051;violence_stereotypes;single_span;condanne definitive;;le condanne definitive pronunciate da un'altra Parte contraente in relazione ai reati previsti in base alla presente Convenzione.;condanne definitive pronunciate da un'altra Parte contraente;condanne definitive
+ge_qa_f_095;Istanbul_Convention_2011__c053;violence_stereotypes;single_span;senza indugio ingiustificato;;senza indugio ingiustificato;senza indugio ingiustificato;senza indugio ingiustificato
+ge_qa_f_096;Istanbul_Convention_2011__c055;violence_stereotypes;single_span;armi da fuoco;;armi da fuoco;armi da fuoco;armi da fuoco
+ge_qa_f_097;Istanbul_Convention_2011__c059;violence_stereotypes;group;una segnalazione o da una denuncia da parte della vittima;;una segnalazione o da una denuncia;segnalazione o da una denuncia da parte della vittima;segnalazione o da una denuncia
+ge_qa_f_098;Istanbul_Convention_2011__c060;violence_stereotypes;single_span;intimidazioni, rappresaglie e ulteriori vittimizzazioni;;intimidazioni, rappresaglie e ulteriori vittimizzazioni;rischio di intimidazioni, rappresaglie e ulteriori vittimizzazioni;intimidazioni, rappresaglie e ulteriori vittimizzazioni
+ge_qa_f_099;Istanbul_Convention_2011__c066;violence_stereotypes;single_span;principio di nonrespingimento;nonrespingimento;principio di nonrespingimento;principio di nonrespingimento;principio di nonrespingimento
+ge_qa_f_100;Istanbul_Convention_2011__c068;violence_stereotypes;single_span;Articoli 36, 37, 38 e 39;;Articoli 36, 37, 38 e 39;Articoli 36, 37, 38 e 39;Articoli 36, 37, 38 e 39
+ge_qa_f_101;Istanbul_Convention_2011__c070;unknown;single_span;STE n° 108;STE 108;STE n° 108;STE n° 108;STE n° 108
+ge_qa_f_102;Istanbul_Convention_2011__c072;unknown;single_span;GREVIO;;GREVIO;GREVIO;GREVIO
+ge_qa_f_103;Istanbul_Convention_2011__c074;unknown;single_span;al Segretario Generale del Consiglio d'Europa;;al Segretario Generale del Consiglio d'Europa;al Segretario Generale del Consiglio d'Europa;al Segretario Generale del Consiglio d'Europa
+ge_qa_f_104;Istanbul_Convention_2011__c075;unknown;single_span;una bozza di rapporto;;una bozza di rapporto;una bozza di rapporto;una bozza di rapporto
+ge_qa_f_105;Istanbul_Convention_2011__c082;unknown;single_span;negoziato, conciliazione, arbitrato;;negoziato, conciliazione, arbitrato;negoziato, conciliazione, arbitrato;negoziato, conciliazione, arbitrato
+ge_qa_f_106;Istanbul_Convention_2011__c083;unknown;single_span;10 firmatari;dieci firmatari;10 firmatari;10 firmatari;10 firmatari
+ge_qa_f_107;Istanbul_Convention_2011__c083;unknown;single_span;otto Stati membri del Consiglio d'Europa;otto Stati membri;almeno otto Stati membri del Consiglio d'Europa;almeno otto Stati membri del Consiglio d'Europa;almeno otto Stati membri del Consiglio d'Europa
+ge_qa_f_108;Istanbul_Convention_2011__c087;unknown;single_span;un periodo di cinque anni;cinque anni;cinque anni;cinque anni;cinque anni
+ge_qa_f_109;Istanbul_Convention_2011__c087;unknown;single_span;Diciotto mesi;"diciotto mesi;18 mesi";diciotto mesi;diciotto mesi;diciotto mesi
+ge_qa_f_110;Roadmap_2025__c003;mainstreaming_intersectionality;single_span;the guiding EU policy framework;;the guiding EU policy framework towards greater gender equality;guiding EU policy framework;guiding EU policy framework towards greater gender equality
+ge_qa_f_111;Roadmap_2025__c010;funding_global_action;group;EU Strategic Approach to Women, Peace and Security (WPS);"EU Strategic Approach to Women, Peace and Security;WPS";the EU Strategic Approach to Women, Peace and Security (WPS);EU Strategic Approach to Women, Peace and Security;EU Strategic Approach to Women, Peace and Security
+ge_qa_f_112;WomenOnBoards_Dir_2022_2381__c003;leadership_participation;single_span;Council Recommendation 96/694/EC;96/694/EC;Council Recommendation 96/694/EC;Council Recommendation 96/694/EC;Council Recommendation 96/694/EC
+ge_qa_f_113;WomenOnBoards_Dir_2022_2381__c016;leadership_participation;single_span;33 %;"33%;33 percent";33%;33%;33%
+ge_qa_f_114;WomenOnBoards_Dir_2022_2381__c022;leadership_participation;group;fines or the possibility for a judicial body to annul a decision;;penalties which are effective, proportionate and dissuasive;effective, proportionate and dissuasive;penalties
+ge_qa_f_115;WomenOnBoards_Dir_2022_2381__c022;leadership_participation;single_span;SMEs;;SMEs;SMEs;SMEs
+ge_qa_f_116;GAP_III__c006;funding_global_action;group;UN Convention on the Rights of Persons with Disabilities;;UN Convention on the Rights of Persons with Disabilities;UN Convention on the Rights of Persons with Disabilities;UN Convention on the Rights of Persons with Disabilities
+ge_qa_f_117;GAP_III__c025;equal_economy;single_span;EIP;;EIP;EIP;EIP
+ge_qa_f_118;GAP_III__c031;leadership_participation;single_span;youth organisations;;youth organisations;youth organisations;youth organisations
+ge_qa_f_119;Istanbul_Convention_2011__c047;violence_stereotypes;group;immatricolato secondo le loro disposizioni di legge;;a bordo di un velivolo immatricolato secondo le loro disposizioni di legge;immatricolato secondo le loro disposizioni di legge;a bordo di un velivolo immatricolato secondo le loro disposizioni di legge
+ge_qa_f_120;Istanbul_Convention_2011__c060;violence_stereotypes;group;intimidazioni, rappresaglie e ulteriori vittimizzazioni;;intimidazioni, rappresaglie e ulteriori vittimizzazioni;intimidazioni, rappresaglie e ulteriori vittimizzazioni;intimidazioni, rappresaglie e ulteriori vittimizzazioni
+ge_qa_f_121;Istanbul_Convention_2011__c060;violence_stereotypes;single_span;tecnologie di comunicazione adeguate;;tecnologie di comunicazione adeguate;tecnologie di comunicazione adeguate;tecnologie di comunicazione adeguate
+ge_qa_f_122;Istanbul_Convention_2011__c068;violence_stereotypes;single_span;la Parte che dispone di tale informazione;;la Parte che dispone di tale informazione;la Parte che dispone di tale informazione;la Parte che dispone di tale informazione
+ge_qa_f_123;Istanbul_Convention_2011__c074;unknown;single_span;un questionario;;questionario;questionario;questionario
