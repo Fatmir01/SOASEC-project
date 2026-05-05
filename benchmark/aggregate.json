@@ -1,0 +1,70 @@
+{
+  "per_task_headline": {
+    "GE-CLS": {
+      "metric": "Macro-F1",
+      "base": 0.8333,
+      "tuned-legends": 0.8393,
+      "tuned-regulation": 0.9284
+    },
+    "GE-NLI": {
+      "metric": "Accuracy",
+      "base": 0.8988,
+      "tuned-legends": 0.9286,
+      "tuned-regulation": 0.9107
+    },
+    "GE-QA": {
+      "metric": "(F1+Bool)/2",
+      "base": 0.9292,
+      "tuned-legends": 0.9376,
+      "tuned-regulation": 0.9437
+    },
+    "GE-WSC": {
+      "metric": "Accuracy",
+      "base": 0.93,
+      "tuned-legends": 0.96,
+      "tuned-regulation": 0.96
+    },
+    "GE-STANCE": {
+      "metric": "Macro-F1",
+      "base": 0.833,
+      "tuned-legends": 0.737,
+      "tuned-regulation": 0.867
+    }
+  },
+  "genderEqGLUE_score": {
+    "base": 0.8849,
+    "tuned-legends": 0.8805,
+    "tuned-regulation": 0.922
+  },
+  "numerical_winner_per_task": {
+    "GE-CLS": "tuned-regulation",
+    "GE-NLI": "tuned-legends",
+    "GE-QA": "tuned-regulation",
+    "GE-WSC": "tuned-legends",
+    "GE-STANCE": "tuned-regulation"
+  },
+  "wins_per_model": {
+    "base": 0,
+    "tuned-legends": 2,
+    "tuned-regulation": 4
+  },
+  "significance_summary": {
+    "GE-CLS": "Not formally tested (no McNemar reported in \u00a76.4 spec for CLS); macro-F1 gap +9 pts tuned-regulation > others",
+    "GE-NLI": {
+      "base vs tuned-legends": "p=0.180 (NS)",
+      "base vs tuned-regulation": "p=0.774 (NS)",
+      "tuned-legends vs tuned-regulation": "p=0.549 (NS)"
+    },
+    "GE-QA": "No formal pairwise test reported in \u00a76.6 audit; gaps small (\u22641.5 pts aggregate)",
+    "GE-WSC": {
+      "base vs tuned-legends": "p=0.375 (NS)",
+      "base vs tuned-regulation": "p=0.250 (NS)",
+      "tuned-legends vs tuned-regulation": "p=1.000 (NS)"
+    },
+    "GE-STANCE": {
+      "base vs tuned-legends": "p=0.064 (borderline)",
+      "base vs tuned-regulation": "p=0.289 (NS)",
+      "tuned-legends vs tuned-regulation": "p=0.0044 (**)"
+    }
+  }
+}
