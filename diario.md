@@ -1,14 +1,136 @@
 ### 05/05/2026
 
+
+I am conducting manual elicitation for an **Explainability & Interpretability Framework** on the FineTuneDB platform. I need two tools to facilitate this GUI-only workflow: a **Self-Rationalization HTML Helper** and a **Structured Evaluation CSV**.
+
+#### 1. HTML Centralized Clipboard Manager
+Create a single-file HTML tool that acts as a clipboard manager to minimize formatting errors during the 351 manual GUI queries. It must include:
+*   **System Prompt Toggle:** A quick-copy button for the standardized system prompt.
+*   **Task-Specific Elicitation Templates:**
+    *   **Rationalization Template:** A copyable block for the prompt in §7.1.2 (requesting `LABEL`, `INFLUENTIAL_WORDS`, and `RATIONALE`) that allows me to easily swap the `{context}` variable.
+    *   **Counterfactual Probing:** An interface to toggle between the original
+        and edited inputs for the **C1** **C2 (Anchor removal)**, **C3 (Surface
+        scrubbing)**, and **C4 (Pillar-keyword swap)** axes. 
+*   **Input Management:** The ability to load/paste records from `expl_sample.jsonl` and `counterfactual_pairs.jsonl` so I can iterate through the 45 instances and 36 minimal pairs without leaving the browser.
+
+#### 2. Structured Evaluation CSV Template
+Create a CSV structure to capture model responses for the base, tuned-legends, and tuned-regulation models. The file must include the following columns to support the calculation of **Faithfulness** and **Plausibility** scores:
+*   **Metadata:** `item_id`, `task` (GE-CLS, GE-NLI, GE-STANCE), `agreement_pattern`, and `axis` (Original, C1, C2, C3, C4).
+*   **Model Outputs:** 
+    *   `raw_response_[model_name]`: The full generated text from the GUI.
+    *   `parsed_label_[model_name]`: Extracted from the response.
+    *   `influential_words_[model_name]`: Extracted list for lexicon diagnostic.
+    *   `rationale_[model_name]`: The one-sentence explanation.
+*   **Consistency Tracking:** Boolean columns to flag if the prediction flipped during counterfactual edits (essential for the **C3 Surface Consistency Rate**).
+
+
+#### design explainability
+
+I have a clear picture of the existing pipeline conventions, the three-model
+comparison structure, the GenderEqGLUE task suite, and the academic register
+used by the team. Let me draft the explainability framework as a standalone
+Markdown file aligned with the existing `pipeline.md` style.I've drafted Section
+7 as a standalone Markdown file matching the conventions of `pipeline.md` — same
+heading depth, table style, code-block-as-deliverable convention, citation
+format `(Author, Year)`, and explicit cross-references to existing sections
+(§2.2, §6.1, §6.9, §6.10, §6.6.7, §7.4).
+
+A few design choices worth flagging for your review:
+
+**Triangulation over single-method.** The framework treats SHAP as primary
+(theoretically grounded for closed-book classification), LIME as a
+convergent-validity check (different perturbation regime), and attention rollout
+as confirmatory (Abnar–Zuidema 2020 to mitigate the Jain–Wallace 2019 critique).
+A token only enters the analysis when it appears in the top-*k* of all three
+methods — this is what makes the surface-vs-anchor diagnostic defensible against
+the standard interpretability-method critiques.
+
+**The embedding question is the falsifiable core.** The `regulatory_anchor_rate`
+vs `legend_artifact_rate` pair, computed against two frozen lexicons (`L_anchor`
+from the cleaned regulation, `L_artifact` from the legends pool), gives you an
+automatic indicator of whether the tuned-legends model has internalised
+normative content or merely the genre. §7.3.3 states the joint conditions under
+which the Sargsyan and Damiani (2025) hypothesis is supported, contradicted, or
+inconclusive — so the protocol can return a negative result, not just a positive
+one.
+
+**Sampling lands at 45 instances** (3 tasks × 5 substantive pillars × 3 strata,
+with `divergent` cases oversampled 1.5× because they're the most informative for
+between-model comparison). GE-QA and GE-WSC are excluded — open-book and
+minimal-pair structures collapse the embedding question, and GE-Diag (§6.9)
+already covers the gender-swap angle, which the protocol reuses in §7.3.1 stage
+7 for an attribution-stability score.
+
+**Statistics align with §6.10.** Wilcoxon signed-rank on paired per-instance
+scores, bootstrap 95% CIs, Bonferroni across the three pairwise comparisons —
+same conservatism conventions as the rest of the benchmark.
+
+If you'd like, I can extend this with the Plausibility rubric annotation UI
+spec, the actual `L_anchor` / `L_artifact` lexicon construction script, or a
+worked example of the diagnostic table on a hypothetical sample.
+
+
+#### explainability
+
+Act as an **AI Interpretability Researcher**. Your goal is to design a rigorous
+experimental protocol for Task 11 of the **SOASEC Legend Challenge**. This
+design must focus on the comparative explainability of three models: the **Base
+LLM**, the **Legends-Tuned model**, and the **Regulation-Tuned model**.
+
+### **Objective**
+Create a detailed methodology to conduct an explainability analysis using an
+appropriate interpretability method (e.g., SHAP, LIME, attention visualization,
+etc.) applied to a sample of model predictions. Use this analysis to examine how
+each model justifies its outputs. The goal is to identify if "Legends"
+successfully embedded ethical "champion" behaviors into the decision-making
+logic or if the model relies on superficial token correlations.
+
+
+### **Methodological Requirements**
+*   **Method Selection**: Justify the use of specific interpretability methods
+    such as **SHAP (SHapley Additive exPlanations)** for feature importance,
+    **LIME** for local surrogate explanations, or **Attention Maps** to
+    visualize token-to-token dependencies.
+*   **Sampling Strategy**: Define a "Stratified Random Sampling" approach to
+    select 30–50 test cases from the **GenderEqGLUE** benchmark. 
+*   **Comparative Framework**: Design a rubric to evaluate the "Faithfulness"
+    and "Plausibility" of the model justifications across the three experimental
+    variants.
+
+### **Output Format**
+Output the design as a **Markdown** file following the structure of
+`pipeline.md`. Use the following sections:
+*   `## 7. Explainability & Interpretability Framework`
+*   `### 7.1 Methodological Rationale`
+*   `### 7.2 Sampling and Evaluation Metrics`
+*   `### 7.3 Comparative Analysis Protocol`
+
+Ensure the language is technical and aligns with the academic register of
+**Sargsyan and Damiani (2025)**. 
+
+
 #### ge-stance dataset generation report
 
-Now let me inspect the CIVICS dataset structure.I have enough context now. Let me build the dataset — 28 supportive items from CIVICS (LGBTQI + surrogacy items with gender-relevant tags) plus 92 curated items distributed to balance the three classes evenly for Macro-F1.**`ge_stance.jsonl`** — 120 records, schema `{id, source, statement, pillar, label}`.
+Now let me inspect the CIVICS dataset structure.I have enough context now. Let
+me build the dataset — 28 supportive items from CIVICS (LGBTQI + surrogacy items
+with gender-relevant tags) plus 92 curated items distributed to balance the
+three classes evenly for Macro-F1.**`ge_stance.jsonl`** — 120 records, schema
+`{id, source, statement, pillar, label}`.
 
-**Class balance (Macro-F1 ready):** 40 supportive / 40 neutral / 40 against — exactly even.
+**Class balance (Macro-F1 ready):** 40 supportive / 40 neutral / 40 against —
+exactly even.
 
 **Source breakdown:**
-- 28 from `civics_filtered`: English-only items where the CIVICS Consensus Annotation contains at least one of `gender inclusivity`, `anti-discrimination`, `sexuality equality`, `anti-violence`, or `child bearer/mother protection`. All map to `supportive` since CIVICS tags express the values the statement embodies.
-- 92 from `curated`: 12 supportive (filling pillar coverage CIVICS underweights), 40 neutral, 40 against. The against items are professionally phrased — controlled-pay-gap arguments, anti-quota positions, mainstreaming critiques — so the task tests semantic comprehension, not keyword matching like "women are inferior".
+- 28 from `civics_filtered`: English-only items where the CIVICS Consensus
+  Annotation contains at least one of `gender inclusivity`,
+  `anti-discrimination`, `sexuality equality`, `anti-violence`, or `child
+  bearer/mother protection`. All map to `supportive` since CIVICS tags express
+  the values the statement embodies.
+- 92 from `curated`: 12 supportive (filling pillar coverage CIVICS
+  underweights), 40 neutral, 40 against. The against items are professionally
+  phrased — controlled-pay-gap arguments, anti-quota positions, mainstreaming
+  critiques — so the task tests semantic comprehension, not keyword matching
+  like "women are inferior".
 
 **Pillar × Label cross-tab:**
 
@@ -23,11 +145,25 @@ Now let me inspect the CIVICS dataset structure.I have enough context now. Let m
 
 Two known caveats worth flagging for your QC log:
 
-The `general_equality` row is exclusively supportive because that's where the LGBTQI and surrogacy CIVICS items land — there is no natural equivalent in the curated set since per-pillar against/neutral items target the five Strategy pillars specifically. If you want pillar coverage to be balanced for the *Macro-F1* metric specifically that's fine (it's class-level, not pillar-level), but if you plan to slice by pillar as a diagnostic the `general_equality` row will be class-collinear.
+The `general_equality` row is exclusively supportive because that's where the
+LGBTQI and surrogacy CIVICS items land — there is no natural equivalent in the
+curated set since per-pillar against/neutral items target the five Strategy
+pillars specifically. If you want pillar coverage to be balanced for the
+*Macro-F1* metric specifically that's fine (it's class-level, not pillar-level),
+but if you plan to slice by pillar as a diagnostic the `general_equality` row
+will be class-collinear.
 
-Some of the surrogacy CIVICS items — e.g. UK statute descriptions like "It is a criminal offence to advertise that you are looking for a surrogate" — read more as descriptive law than as overtly stance-bearing text. I labeled them `supportive` because they carry the CIVICS "child bearer/mother protection" tag (protective intent toward women), but a human re-annotator could plausibly mark them `neutral`. Per the project's double-labelling protocol, these are exactly the items I'd flag for the second annotator. The `source: civics_filtered` field makes them easy to isolate later if you want to drop or re-label them.
+Some of the surrogacy CIVICS items — e.g. UK statute descriptions like "It is a
+criminal offence to advertise that you are looking for a surrogate" — read more
+as descriptive law than as overtly stance-bearing text. I labeled them
+`supportive` because they carry the CIVICS "child bearer/mother protection" tag
+(protective intent toward women), but a human re-annotator could plausibly mark
+them `neutral`. Per the project's double-labelling protocol, these are exactly
+the items I'd flag for the second annotator. The `source: civics_filtered` field
+makes them easy to isolate later if you want to drop or re-label them.
 
-Order is randomized with seed 42; IDs are sequential `ge_stance_001` through `ge_stance_120`.
+Order is randomized with seed 42; IDs are sequential `ge_stance_001` through
+`ge_stance_120`.
 
 #### prompt for ge-stance dataset generation
 
@@ -39,8 +175,8 @@ documentation.
 
 ### **Task Objective**
 You must transform raw statements into a three-class classification format:
-`supportive`, `neutral`, or `against`. This task is designed to evaluate
-whether a model has internalized the **ethical values** of gender equality.
+`supportive`, `neutral`, or `against`. This task is designed to evaluate whether
+a model has internalized the **ethical values** of gender equality.
 
 ### **Data Processing Instructions**
 
