@@ -1,0 +1,597 @@
+{
+  "metadata": {
+    "task": "GE-QA",
+    "pipeline_section": "6.6",
+    "n_factoid_items": 123,
+    "n_bool_items": 134,
+    "models": [
+      "base",
+      "tuned_legends",
+      "tuned_regulation"
+    ],
+    "metrics": {
+      "factoid": "SQuAD-style token-level F1 + Exact Match, normalised (lowercase, strip Unicode punctuation, drop articles, collapse whitespace), max over {answer, *aliases}.",
+      "bool": "Regex \\b(yes|no)\\b case-insensitive on raw response, first match wins. parse_failed counted as wrong (bool_accuracy_all).",
+      "aggregate": "GE-QA score = (factoid_F1 + bool_accuracy_all) / 2"
+    }
+  },
+  "summary": {
+    "base": {
+      "factoid_EM": 0.7154,
+      "factoid_F1": 0.8659,
+      "bool_accuracy_all": 0.9925,
+      "bool_accuracy_parsed": 1.0,
+      "bool_parse_rate": 0.9925,
+      "GE_QA_score": 0.9292
+    },
+    "tuned_legends": {
+      "factoid_EM": 0.7236,
+      "factoid_F1": 0.8827,
+      "bool_accuracy_all": 0.9925,
+      "bool_accuracy_parsed": 1.0,
+      "bool_parse_rate": 0.9925,
+      "GE_QA_score": 0.9376
+    },
+    "tuned_regulation": {
+      "factoid_EM": 0.748,
+      "factoid_F1": 0.8948,
+      "bool_accuracy_all": 0.9925,
+      "bool_accuracy_parsed": 1.0,
+      "bool_parse_rate": 0.9925,
+      "GE_QA_score": 0.9437
+    }
+  },
+  "diagnostics": {
+    "factoid_per_pillar": {
+      "equal_economy": {
+        "base": {
+          "em": 0.75,
+          "f1": 0.8474,
+          "n": 16
+        },
+        "tuned_legends": {
+          "em": 0.75,
+          "f1": 0.8759,
+          "n": 16
+        },
+        "tuned_regulation": {
+          "em": 0.75,
+          "f1": 0.8759,
+          "n": 16
+        }
+      },
+      "funding_global_action": {
+        "base": {
+          "em": 0.7368,
+          "f1": 0.8838,
+          "n": 19
+        },
+        "tuned_legends": {
+          "em": 0.7895,
+          "f1": 0.8728,
+          "n": 19
+        },
+        "tuned_regulation": {
+          "em": 0.8421,
+          "f1": 0.947,
+          "n": 19
+        }
+      },
+      "leadership_participation": {
+        "base": {
+          "em": 0.7857,
+          "f1": 0.884,
+          "n": 28
+        },
+        "tuned_legends": {
+          "em": 0.75,
+          "f1": 0.8762,
+          "n": 28
+        },
+        "tuned_regulation": {
+          "em": 0.8571,
+          "f1": 0.9333,
+          "n": 28
+        }
+      },
+      "mainstreaming_intersectionality": {
+        "base": {
+          "em": 0.5556,
+          "f1": 0.7481,
+          "n": 9
+        },
+        "tuned_legends": {
+          "em": 0.6667,
+          "f1": 0.7728,
+          "n": 9
+        },
+        "tuned_regulation": {
+          "em": 0.4444,
+          "f1": 0.7178,
+          "n": 9
+        }
+      },
+      "unknown": {
+        "base": {
+          "em": 0.8824,
+          "f1": 0.9759,
+          "n": 17
+        },
+        "tuned_legends": {
+          "em": 0.8824,
+          "f1": 0.9759,
+          "n": 17
+        },
+        "tuned_regulation": {
+          "em": 0.8824,
+          "f1": 0.9759,
+          "n": 17
+        }
+      },
+      "violence_stereotypes": {
+        "base": {
+          "em": 0.5882,
+          "f1": 0.826,
+          "n": 34
+        },
+        "tuned_legends": {
+          "em": 0.5882,
+          "f1": 0.8793,
+          "n": 34
+        },
+        "tuned_regulation": {
+          "em": 0.6176,
+          "f1": 0.8491,
+          "n": 34
+        }
+      }
+    },
+    "factoid_per_answer_type": {
+      "single_span": {
+        "base": {
+          "em": 0.7477,
+          "f1": 0.8718,
+          "n": 107
+        },
+        "tuned_legends": {
+          "em": 0.7383,
+          "f1": 0.8815,
+          "n": 107
+        },
+        "tuned_regulation": {
+          "em": 0.785,
+          "f1": 0.9126,
+          "n": 107
+        }
+      },
+      "group": {
+        "base": {
+          "em": 0.5,
+          "f1": 0.8269,
+          "n": 16
+        },
+        "tuned_legends": {
+          "em": 0.625,
+          "f1": 0.8907,
+          "n": 16
+        },
+        "tuned_regulation": {
+          "em": 0.5,
+          "f1": 0.7759,
+          "n": 16
+        }
+      }
+    },
+    "bool_per_pillar": {
+      "equal_economy": {
+        "base": {
+          "accuracy": 1.0,
+          "correct": 12,
+          "n": 12
+        },
+        "tuned_legends": {
+          "accuracy": 1.0,
+          "correct": 12,
+          "n": 12
+        },
+        "tuned_regulation": {
+          "accuracy": 1.0,
+          "correct": 12,
+          "n": 12
+        }
+      },
+      "funding_global_action": {
+        "base": {
+          "accuracy": 1.0,
+          "correct": 14,
+          "n": 14
+        },
+        "tuned_legends": {
+          "accuracy": 1.0,
+          "correct": 14,
+          "n": 14
+        },
+        "tuned_regulation": {
+          "accuracy": 1.0,
+          "correct": 14,
+          "n": 14
+        }
+      },
+      "leadership_participation": {
+        "base": {
+          "accuracy": 1.0,
+          "correct": 28,
+          "n": 28
+        },
+        "tuned_legends": {
+          "accuracy": 1.0,
+          "correct": 28,
+          "n": 28
+        },
+        "tuned_regulation": {
+          "accuracy": 1.0,
+          "correct": 28,
+          "n": 28
+        }
+      },
+      "mainstreaming_intersectionality": {
+        "base": {
+          "accuracy": 1.0,
+          "correct": 6,
+          "n": 6
+        },
+        "tuned_legends": {
+          "accuracy": 1.0,
+          "correct": 6,
+          "n": 6
+        },
+        "tuned_regulation": {
+          "accuracy": 1.0,
+          "correct": 6,
+          "n": 6
+        }
+      },
+      "unknown": {
+        "base": {
+          "accuracy": 0.9615,
+          "correct": 25,
+          "n": 26
+        },
+        "tuned_legends": {
+          "accuracy": 0.9615,
+          "correct": 25,
+          "n": 26
+        },
+        "tuned_regulation": {
+          "accuracy": 0.9615,
+          "correct": 25,
+          "n": 26
+        }
+      },
+      "violence_stereotypes": {
+        "base": {
+          "accuracy": 1.0,
+          "correct": 48,
+          "n": 48
+        },
+        "tuned_legends": {
+          "accuracy": 1.0,
+          "correct": 48,
+          "n": 48
+        },
+        "tuned_regulation": {
+          "accuracy": 1.0,
+          "correct": 48,
+          "n": 48
+        }
+      }
+    },
+    "bool_per_method": {
+      "direct_paraphrase": {
+        "base": {
+          "accuracy": 0.9851,
+          "correct": 66,
+          "n": 67
+        },
+        "tuned_legends": {
+          "accuracy": 0.9851,
+          "correct": 66,
+          "n": 67
+        },
+        "tuned_regulation": {
+          "accuracy": 0.9851,
+          "correct": 66,
+          "n": 67
+        }
+      },
+      "perturbed_claim": {
+        "base": {
+          "accuracy": 1.0,
+          "correct": 67,
+          "n": 67
+        },
+        "tuned_legends": {
+          "accuracy": 1.0,
+          "correct": 67,
+          "n": 67
+        },
+        "tuned_regulation": {
+          "accuracy": 1.0,
+          "correct": 67,
+          "n": 67
+        }
+      }
+    },
+    "bool_parse_diagnostics": {
+      "base": {
+        "parsed": 133,
+        "parse_failed": 1,
+        "total": 134,
+        "parse_failed_items": [
+          {
+            "id": "ge_qa_b_125",
+            "pillar": "unknown",
+            "method": "direct_paraphrase",
+            "raw": "sì",
+            "gold": "yes"
+          }
+        ],
+        "wrong_after_parse": []
+      },
+      "tuned_legends": {
+        "parsed": 133,
+        "parse_failed": 1,
+        "total": 134,
+        "parse_failed_items": [
+          {
+            "id": "ge_qa_b_125",
+            "pillar": "unknown",
+            "method": "direct_paraphrase",
+            "raw": "sì",
+            "gold": "yes"
+          }
+        ],
+        "wrong_after_parse": []
+      },
+      "tuned_regulation": {
+        "parsed": 133,
+        "parse_failed": 1,
+        "total": 134,
+        "parse_failed_items": [
+          {
+            "id": "ge_qa_b_125",
+            "pillar": "unknown",
+            "method": "direct_paraphrase",
+            "raw": "sì",
+            "gold": "yes"
+          }
+        ],
+        "wrong_after_parse": []
+      }
+    }
+  },
+  "forensics": {
+    "factoid_tuned_regulation_vs_base": {
+      "totals": {
+        "better_than_base": 10,
+        "worse_than_base": 8,
+        "tied_with_base": 105
+      },
+      "top_gains": [
+        {
+          "id": "ge_qa_f_062",
+          "pillar": "funding_global_action",
+          "gold": "GAPIII",
+          "base_pred": "WPS agenda",
+          "tuned_regulation_pred": "GAPIII",
+          "base_f1": 0.0,
+          "tuned_regulation_f1": 1.0,
+          "delta_f1": 1.0
+        },
+        {
+          "id": "ge_qa_f_089",
+          "pillar": "violence_stereotypes",
+          "gold": "Aborto forzato e sterilizzazione forzata",
+          "base_pred": "aborto su una donna e \"intervento chirurgico che abbia lo scopo e l'effetto di interrompere definitivamente la capacità riproduttiva di una donna\"",
+          "tuned_regulation_pred": "aborto forzato e sterilizzazione forzata",
+          "base_f1": 0.1481,
+          "tuned_regulation_f1": 1.0,
+          "delta_f1": 0.8519
+        },
+        {
+          "id": "ge_qa_f_094",
+          "pillar": "violence_stereotypes",
+          "gold": "condanne definitive",
+          "base_pred": "le condanne definitive pronunciate da un'altra Parte contraente in relazione ai reati previsti in base alla presente Convenzione.",
+          "tuned_regulation_pred": "condanne definitive",
+          "base_f1": 0.2,
+          "tuned_regulation_f1": 1.0,
+          "delta_f1": 0.8
+        },
+        {
+          "id": "ge_qa_f_023",
+          "pillar": "leadership_participation",
+          "gold": "60 %",
+          "base_pred": "60 % of university graduates are female.",
+          "tuned_regulation_pred": "60%",
+          "base_f1": 0.2857,
+          "tuned_regulation_f1": 1.0,
+          "delta_f1": 0.7143
+        },
+        {
+          "id": "ge_qa_f_070",
+          "pillar": "leadership_participation",
+          "gold": "mandatory training",
+          "base_pred": "mandatory training on gender equality and on implementing GAP III",
+          "tuned_regulation_pred": "mandatory training",
+          "base_f1": 0.3333,
+          "tuned_regulation_f1": 1.0,
+          "delta_f1": 0.6667
+        }
+      ],
+      "top_losses": [
+        {
+          "id": "ge_qa_f_084",
+          "pillar": "violence_stereotypes",
+          "gold": "rifugi adeguati, facilmente accessibili e in numero sufficiente",
+          "base_pred": "rifugi adeguati",
+          "tuned_regulation_pred": "case rifugio",
+          "base_f1": 0.4,
+          "tuned_regulation_f1": 0.0,
+          "delta_f1": -0.4
+        },
+        {
+          "id": "ge_qa_f_074",
+          "pillar": "violence_stereotypes",
+          "gold": "il raggiungimento dell'uguaglianza di genere",
+          "base_pred": "il raggiungimento dell'uguaglianza di genere *de jure* e *de facto*",
+          "tuned_regulation_pred": "uguaglianza di genere *de jure* e *de facto*",
+          "base_f1": 0.6667,
+          "tuned_regulation_f1": 0.3333,
+          "delta_f1": -0.3333
+        },
+        {
+          "id": "ge_qa_f_061",
+          "pillar": "leadership_participation",
+          "gold": "the audio-visual sector and the media",
+          "base_pred": "the audio-visual sector and the media",
+          "tuned_regulation_pred": "audio-visual sector",
+          "base_f1": 1.0,
+          "tuned_regulation_f1": 0.6667,
+          "delta_f1": -0.3333
+        },
+        {
+          "id": "ge_qa_f_069",
+          "pillar": "mainstreaming_intersectionality",
+          "gold": "agriculture, fishing and aquaculture and food systems",
+          "base_pred": "agriculture, fishing and aquaculture and food systems",
+          "tuned_regulation_pred": "agriculture, fishing and aquaculture",
+          "base_f1": 1.0,
+          "tuned_regulation_f1": 0.7273,
+          "delta_f1": -0.2727
+        },
+        {
+          "id": "ge_qa_f_052",
+          "pillar": "equal_economy",
+          "gold": "the introduction of paid paternity leave",
+          "base_pred": "The introduction of paid paternity leave",
+          "tuned_regulation_pred": "paid paternity leave",
+          "base_f1": 1.0,
+          "tuned_regulation_f1": 0.75,
+          "delta_f1": -0.25
+        }
+      ]
+    },
+    "factoid_tuned_legends_vs_base": {
+      "totals": {
+        "better_than_base": 12,
+        "worse_than_base": 8,
+        "tied_with_base": 103
+      },
+      "top_gains": [
+        {
+          "id": "ge_qa_f_089",
+          "pillar": "violence_stereotypes",
+          "gold": "Aborto forzato e sterilizzazione forzata",
+          "base_pred": "aborto su una donna e \"intervento chirurgico che abbia lo scopo e l'effetto di interrompere definitivamente la capacità riproduttiva di una donna\"",
+          "tuned_legends_pred": "aborto forzato e sterilizzazione forzata",
+          "base_f1": 0.1481,
+          "tuned_legends_f1": 1.0,
+          "delta_f1": 0.8519
+        },
+        {
+          "id": "ge_qa_f_084",
+          "pillar": "violence_stereotypes",
+          "gold": "rifugi adeguati, facilmente accessibili e in numero sufficiente",
+          "base_pred": "rifugi adeguati",
+          "tuned_legends_pred": "rifugi adeguati, facilmente accessibili e in numero sufficiente",
+          "base_f1": 0.4,
+          "tuned_legends_f1": 1.0,
+          "delta_f1": 0.6
+        },
+        {
+          "id": "ge_qa_f_056",
+          "pillar": "equal_economy",
+          "gold": "30%",
+          "base_pred": "Only around 30% of female students in higher education choose STEM fields of study",
+          "tuned_legends_pred": "around **30%**",
+          "base_f1": 0.1333,
+          "tuned_legends_f1": 0.6667,
+          "delta_f1": 0.5333
+        },
+        {
+          "id": "ge_qa_f_008",
+          "pillar": "equal_economy",
+          "gold": "unambiguous, objective and gender-neutral assessment",
+          "base_pred": "unambiguous, objective and gender-neutral assessment and on the merits and qualifications of the candidates",
+          "tuned_legends_pred": "unambiguous, objective and gender-neutral assessment",
+          "base_f1": 0.5882,
+          "tuned_legends_f1": 1.0,
+          "delta_f1": 0.4118
+        },
+        {
+          "id": "ge_qa_f_093",
+          "pillar": "violence_stereotypes",
+          "gold": "si concertano",
+          "base_pred": "si concertano, se lo ritengono opportuno, per determinare quale sia la giurisdizione più appropriata per procedere penalmente.",
+          "tuned_legends_pred": "le Parti interessate si concertano",
+          "base_f1": 0.2105,
+          "tuned_legends_f1": 0.5714,
+          "delta_f1": 0.3609
+        }
+      ],
+      "top_losses": [
+        {
+          "id": "ge_qa_f_064",
+          "pillar": "funding_global_action",
+          "gold": "mandatory training",
+          "base_pred": "mandatory training",
+          "tuned_legends_pred": "mandatory training on mainstreaming gender perspectives",
+          "base_f1": 1.0,
+          "tuned_legends_f1": 0.5,
+          "delta_f1": -0.5
+        },
+        {
+          "id": "ge_qa_f_078",
+          "pillar": "violence_stereotypes",
+          "gold": "fisica, sessuale, psicologica o economica",
+          "base_pred": "fisica, sessuale, psicologica o economica",
+          "tuned_legends_pred": "danni o sofferenze di natura fisica, sessuale, psicologica o economica",
+          "base_f1": 1.0,
+          "tuned_legends_f1": 0.6667,
+          "delta_f1": -0.3333
+        },
+        {
+          "id": "ge_qa_f_061",
+          "pillar": "leadership_participation",
+          "gold": "the audio-visual sector and the media",
+          "base_pred": "the audio-visual sector and the media",
+          "tuned_legends_pred": "audio-visual sector",
+          "base_f1": 1.0,
+          "tuned_legends_f1": 0.6667,
+          "delta_f1": -0.3333
+        },
+        {
+          "id": "ge_qa_f_052",
+          "pillar": "equal_economy",
+          "gold": "the introduction of paid paternity leave",
+          "base_pred": "The introduction of paid paternity leave",
+          "tuned_legends_pred": "paid paternity leave",
+          "base_f1": 1.0,
+          "tuned_legends_f1": 0.75,
+          "delta_f1": -0.25
+        },
+        {
+          "id": "ge_qa_f_011",
+          "pillar": "equal_economy",
+          "gold": "at least 33%",
+          "base_pred": "at least 33% of children under 3 years of age",
+          "tuned_legends_pred": "33% of children under 3 years of age",
+          "base_f1": 0.4615,
+          "tuned_legends_f1": 0.2222,
+          "delta_f1": -0.2393
+        }
+      ]
+    }
+  }
+}
