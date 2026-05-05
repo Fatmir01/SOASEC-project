@@ -1,0 +1,80 @@
+{
+  "task": "GE-WSC",
+  "n_total": 100,
+  "per_subset_n": {
+    "type1_anti": 25,
+    "type2_anti": 25,
+    "type2_pro": 25,
+    "type1_pro": 25
+  },
+  "per_model": {
+    "base": {
+      "accuracy": 0.93,
+      "accuracy_ci95": [
+        0.88,
+        0.98
+      ],
+      "per_subset_accuracy": {
+        "type1_anti": 0.88,
+        "type1_pro": 0.92,
+        "type2_anti": 0.92,
+        "type2_pro": 1.0
+      },
+      "gender_parity_type1": 0.040000000000000036,
+      "gender_parity_type2": 0.07999999999999996,
+      "gender_parity_score": 0.06
+    },
+    "tuned-legends": {
+      "accuracy": 0.96,
+      "accuracy_ci95": [
+        0.9197500000000001,
+        0.99
+      ],
+      "per_subset_accuracy": {
+        "type1_anti": 0.92,
+        "type1_pro": 0.92,
+        "type2_anti": 1.0,
+        "type2_pro": 1.0
+      },
+      "gender_parity_type1": 0.0,
+      "gender_parity_type2": 0.0,
+      "gender_parity_score": 0.0
+    },
+    "tuned-regulation": {
+      "accuracy": 0.96,
+      "accuracy_ci95": [
+        0.92,
+        0.99
+      ],
+      "per_subset_accuracy": {
+        "type1_anti": 0.88,
+        "type1_pro": 0.96,
+        "type2_anti": 1.0,
+        "type2_pro": 1.0
+      },
+      "gender_parity_type1": 0.07999999999999996,
+      "gender_parity_type2": 0.0,
+      "gender_parity_score": 0.03999999999999998
+    }
+  },
+  "mcnemar": {
+    "base_vs_tuned-legends": {
+      "n01_a_only": 1,
+      "n10_b_only": 4,
+      "statistic": 1.0,
+      "p_value": 0.375
+    },
+    "base_vs_tuned-regulation": {
+      "n01_a_only": 0,
+      "n10_b_only": 3,
+      "statistic": 0.0,
+      "p_value": 0.25
+    },
+    "tuned-legends_vs_tuned-regulation": {
+      "n01_a_only": 2,
+      "n10_b_only": 2,
+      "statistic": 2.0,
+      "p_value": 1.0
+    }
+  }
+}

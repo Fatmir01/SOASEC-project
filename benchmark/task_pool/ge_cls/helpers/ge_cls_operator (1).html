@@ -1,0 +1,2268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GE-CLS Operator Console</title>
+<style>
+  :root {
+    --bg: #f5f3ee;
+    --fg: #1a1a1a;
+    --muted: #6b6b6b;
+    --accent: #b73a2c;
+    --accent-soft: #e6cfca;
+    --border: #d4d0c5;
+    --card-bg: #ffffff;
+    --code-bg: #2a2a2a;
+    --code-fg: #f5f3ee;
+    --done: #2c6e49;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    background: var(--fg);
+    color: var(--bg);
+    padding: 14px 28px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--accent);
+  }
+  .topbar h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .progress-text {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+    color: var(--bg);
+    opacity: 0.85;
+  }
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 32px 28px 80px;
+  }
+  .system-block {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 20px 22px;
+    margin-bottom: 36px;
+  }
+  .system-block h2 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .system-block p {
+    margin: 6px 0 14px 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .system-block pre {
+    background: var(--code-bg);
+    color: var(--code-fg);
+    padding: 14px 16px;
+    border-radius: 4px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    line-height: 1.5;
+    max-height: 220px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .system-block button {
+    margin-top: 10px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+    padding: 18px 22px;
+    transition: border-color 0.15s;
+  }
+  .card.complete {
+    border-left: 4px solid var(--done);
+    opacity: 0.7;
+  }
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border);
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    flex-wrap: wrap;
+  }
+  .row-num {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 14px;
+  }
+  .pid {
+    color: var(--fg);
+    flex: 1;
+  }
+  .gold {
+    color: var(--muted);
+  }
+  .gold code {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .text-block {
+    position: relative;
+  }
+  .block-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  .passage-text {
+    background: #fafaf6;
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    margin: 0;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+  button {
+    background: var(--fg);
+    color: var(--bg);
+    border: none;
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 0.15s;
+  }
+  button:hover {
+    background: var(--accent);
+  }
+  button.copied {
+    background: var(--done);
+  }
+  .copy-btn {
+    margin-top: 8px;
+  }
+  .check-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .check-row label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .check-row input {
+    cursor: pointer;
+    accent-color: var(--done);
+  }
+  .check-row label:has(input:checked) {
+    color: var(--done);
+    text-decoration: line-through;
+  }
+  .legend {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    font-size: 14px;
+  }
+  .legend strong { color: var(--accent); }
+  .legend ol { margin: 8px 0 0 0; padding-left: 22px; }
+  .legend li { margin: 4px 0; }
+  footer {
+    margin-top: 60px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>GE-CLS · Operator Console</h1>
+  <span class="progress-text" id="progress">0 / 216 responses recorded · 0%</span>
+</div>
+
+<div class="container">
+
+  <div class="legend">
+    <strong>How to use this page</strong>
+    <ol>
+      <li>Open three FineTube tabs, one per model (base, tuned-legends, tuned-regulation). Paste the system prompt below into each.</li>
+      <li>For each card, click <em>Copy</em>, paste into FineTube user box, send. Repeat for all three models.</li>
+      <li>Record the raw model response in the matching row of <code>ge_cls_predictions.csv</code>.</li>
+      <li>Tick the checkboxes as you complete each (passage, model) pair. Progress is saved in your browser.</li>
+      <li><strong>Reset the FineTube chat between passages</strong> — system prompt stays, conversation history must be cleared.</li>
+    </ol>
+  </div>
+
+  <div class="system-block">
+    <h2>System prompt</h2>
+    <p>Paste this once into the <code>system</code> field of each FineTube model. Do not modify it during the run.</p>
+    <pre id="system-prompt">You are a classifier for EU gender-equality policy texts.
+
+Your task is to assign each passage you receive to exactly ONE of the six categories below. The five substantive categories correspond to the pillars of the EU Gender Equality Strategy 2020-2025.
+
+CATEGORIES:
+
+- violence_stereotypes: gender-based violence (physical, sexual, psychological, economic), domestic violence, sexual harassment, online violence against women, harmful gender stereotypes, FGM, forced marriage, &quot;honour&quot; crimes, victim protection and support.
+
+- equal_economy: gender pay gap, gender pension gap, work-life balance, parental and paternity leave, women&#x27;s labour-market participation, women in STEM and entrepreneurship, occupational and pay segregation, childcare and long-term care services as economic enablers, equal pay enforcement and pay transparency.
+
+- leadership_participation: women&#x27;s representation in decision-making bodies, corporate boards, political leadership, parliaments, EU institutions and agencies leading by example, gender quotas, selection criteria for director positions, women in peace negotiations.
+
+- mainstreaming_intersectionality: integrating a gender perspective into other policy areas (digital, green transition, health, education when not framed primarily as economic), intersectional concerns (disability, race/ethnicity, age, migration status, LGBTIQ), gender-responsive budgeting as a cross-cutting tool.
+
+- funding_global_action: financial mechanisms (MFF, ESF+, NDICI, Horizon Europe), EU external action, GAP III, trade policy with gender provisions, Women Peace and Security agenda, multilateral and regional cooperation, humanitarian aid.
+
+- unknown: document metadata, headers without substantive content, reference lists, procedural articles (e.g. signature, ratification, monitoring-body composition), and any passage that does not clearly fit one of the five substantive pillars.
+
+DECISION RULES:
+
+1. If a passage touches multiple pillars, assign the one that is the primary topic — the pillar to which the passage devotes most of its argument.
+2. If no substantive pillar is dominant, assign &quot;unknown&quot;.
+3. Do not invent categories. Use exactly one of the six names above, lowercase, with underscores as written.
+
+OUTPUT FORMAT:
+
+Respond with a single line in exactly this format:
+LABEL: &lt;category_name&gt;
+
+Do not add explanations, justifications, or any other text.
+</pre>
+    <button class="copy-btn" data-target="system-prompt">Copy system prompt</button>
+  </div>
+
+  
+<article class="card" id="row-1">
+  <header class="card-head">
+    <span class="row-num">#01</span>
+    <span class="pid">GAP_III__c003</span>
+    <span class="gold">gold: <code>funding_global_action</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-1">Classify the following passage.
+
+PASSAGE:
+### JOINT COMMUNICATION TO THE EUROPEAN PARLIAMENT AND THE COUNCIL
+### EU GENDER ACTION PLAN (GAP) III – AN AMBITIOUS AGENDA FOR GENDER EQUALITY AND WOMEN&#x27;S EMPOWERMENT IN EU EXTERNAL ACTION
+# EU GENDER ACTION PLAN (GAP) III AN AMBITIOUS AGENDA FOR GENDER EQUALITY AND WOMEN&#x27;S EMPOWERMENT IN EU EXTERNAL ACTION
+Drawing from the **EU gender equality strategy 2020 - 2025**, which calls for a **gender-equal Europe**, this new EU gender action plan for 2021–2025 (GAP III) calls for a **gender-equal world** and is complementary to the LGBTIQ equality strategy for 2020-2025. It will scale up the EU contribution to reach SDG 55 in all EU internal and external policy areas and across the **2030 Agenda**.
+
+Building on the evaluation of EU support to gender equality6 and stakeholder consultations7 , GAP III provides **a policy framework for the EU** to boost its level of engagement, focusing on **five pillars:**
+
+- 1. Making EU engagement on gender equality more effective as a **cross-cutting priority** of EU external action in its **policy and programming work**. The European Commission and the High Representative reconfirm that by 2025 **85% of all new external actions will contribute to this objective** . This requires further **gender mainstreaming in all external policies and sectors** and a **gender-transformative9, rights-based and intersectional10 approach**.
+- 2. Promoting, together with EU Member States, strategic EU engagement **at multilateral, regional and country level** and jointly **stepping up implementation of GAP III in each partner country and region**, in close cooperation with partner governments, civil society, the private sector and other key stakeholders. This will require greater coordination, cooperation and transparency.
+- 3. **Focusing on key areas of engagement**: ensuring freedom from all forms of gender-based violence; promoting sexual and reproductive health and rights; strengthening economic and social rights and the empowerment of girls and women; advancing equal participation and leadership; implementing the women, peace and security agenda, addressing challenges and harnessing the opportunities offered by the green transition and the digital transformation.
+- 4. **Leading by example**, by establishing **gender-responsive11 and gender-balanced leadership at top EU political and management levels**. This requires leadership buy-in, investing in knowledge, resources and pooling action with EU Member States.</pre>
+    <button class="copy-btn" data-target="text-1">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="1" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="1" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="1" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-2">
+  <header class="card-head">
+    <span class="row-num">#02</span>
+    <span class="pid">GAP_III__c004</span>
+    <span class="gold">gold: <code>funding_global_action</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-2">Classify the following passage.
+
+PASSAGE:
+### JOINT COMMUNICATION TO THE EUROPEAN PARLIAMENT AND THE COUNCIL
+### EU GENDER ACTION PLAN (GAP) III – AN AMBITIOUS AGENDA FOR GENDER EQUALITY AND WOMEN&#x27;S EMPOWERMENT IN EU EXTERNAL ACTION
+# EU GENDER ACTION PLAN (GAP) III AN AMBITIOUS AGENDA FOR GENDER EQUALITY AND WOMEN&#x27;S EMPOWERMENT IN EU EXTERNAL ACTION
+- 5. Reporting and communicating on results, putting in place a **quantitative, qualitative, and inclusive monitoring system** to increase **public accountability, ensure transparency and access to information** and achieve better EU outreach on the **impact** of its work worldwide.</pre>
+    <button class="copy-btn" data-target="text-2">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="2" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="2" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="2" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-3">
+  <header class="card-head">
+    <span class="row-num">#03</span>
+    <span class="pid">GAP_III__c008</span>
+    <span class="gold">gold: <code>funding_global_action</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-3">Classify the following passage.
+
+PASSAGE:
+# 1.2. Promoting gender mainstreaming in all areas of EU external action
+
+**Gender mainstreaming remains the primary means to achieve gender equality**. Its purpose is to ensure that all policies and programmes maximise their benefits for all and contribute to stop the perpetuation of inequality18. The European Commission and the High Representative are committed to gender mainstreaming in all policies and actions **as a responsibility for all**, including in the EU institutions. Member States are encouraged to join this effort.
+
+SDG 5 is one of the three least financed SDGs globally. The EU has made a commitment that at least **85% of all new external actions** will have gender equality and women&#x27;s and girls&#x27; empowerment as a significant objective or as a principal objective by 2025.20
+
+Building on the progress of the EU Gender Action Plan (2015-2020), this share steadily increased from around 58% in 2016 to 65% in 2019. The EU is now determined to reach the 85% target by 2025.
+
+In this perspective, the design of all external EU-funded programmes will apply **three minimum standards**:
+
+- 1. conducting and using updated **gender analyses** to inform decision-making on future action and integrating these into all relevant dialogues, policies, strategies, programmes and operations**21**;
+- 2. applying **gender-sensitive and sex-disaggregated indicators and statistics** to monitoring and evaluation**22**;
+- 3. giving **robust reasons**, based on the findings of the gender analysis, to substantiate any action deemed **not to contribute to gender equality**.
+
+The European Commission and the High Representative will promote actions targeting gender equality as their principal objective, with a transformative potential. **There will be at least one action with gender equality as a principal objective supported in each country23**.
+
+The European Commission will also step up its support for **gender-responsive budgeting** via programmes to support public finance management. It will ensure that new public expenditure and financial accountability (PEFA) assessment reports include the module on gender responsiveness.</pre>
+    <button class="copy-btn" data-target="text-3">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="3" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="3" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="3" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-4">
+  <header class="card-head">
+    <span class="row-num">#04</span>
+    <span class="pid">GAP_III__c009</span>
+    <span class="gold">gold: <code>funding_global_action</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-4">Classify the following passage.
+
+PASSAGE:
+# 1.2. Promoting gender mainstreaming in all areas of EU external action
+Following the practice of the **EU&#x27;s External Investment Plan** (EIP), the NDICI implementation will take an integrated approach combining support for private investment in partner countries with actions to improve the investment climate. The EIP will address barriers to women&#x27;s empowerment and gender mainstreaming will be applied to EU blending operation funds and guarantees.
+
+The EU should continue to promote gender equality through its **trade policy**. New trade agreements should include **strong provisions on gender equality**, including **compliance with relevant ILO and UN Conventions.** Compliance with these conventions should remain a requirement under the **new Generalised Scheme of Preferences regulation**, which will take effect in 2024. The EU will also continue to include **dedicated gender analyses** in all ex-ante impact assessments, sustainability impact assessments, and policy reviews linked to trade.
+
+Given the important role women play in the fishery supply chain, including aquaculture, the sectoral support of Sustainable Fisheries Partnership Agreements (SFPAs) is already used for projects in this area.25
+
+With women and girls accounting for approximately half of all international migrants, their contributions to economic and social developments in countries of origin, transit and destination, as well as their specific needs must be recognised. The EU should ensure that the human rights of migrant women and girls are fully realised through **gender-responsive migration policies**, programmes and laws, and gender-responsive migration governance at global, regional and national levels reinforced. The EU will build on lessons learnt, including under the EU Emergency Trust Fund for Africa (EUTF).
+
+**EU humanitarian aid** should continue to be both gender and age-sensitive, and aim to be gender-age-responsive, taking into account specific needs, vulnerabilities, and the capacities of all. The use of the Commission&#x27;s humanitarian **Gender-Age Marker**26 and targeted actions will contribute to this endeavour.
+
+GAP III implementation will contribute to the **humanitarian-development-peace triple nexus,** and collaboration between actors is strongly encouraged.</pre>
+    <button class="copy-btn" data-target="text-4">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="4" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="4" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="4" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-5">
+  <header class="card-head">
+    <span class="row-num">#05</span>
+    <span class="pid">GAP_III__c013</span>
+    <span class="gold">gold: <code>funding_global_action</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-5">Classify the following passage.
+
+PASSAGE:
+## 2.2. Scaling up EU engagement at multi-country and regional levels
+
+The EU should step up its engagement, dialogue and partnership with regional stakeholders by supporting gender equality strategies run by international and regional organisations, ensuring that the gender perspective is mainstreamed in all its regional programmes.
+
+Boosting synergies between regional and country levels has yielded positive results in EU regional cooperation in the **Southern Neighbourhood**, for example by strengthening the EU partnership with the **Council of Europe (CoE)** on preventing and combating violence against women and domestic violence, in line with the standards and objectives of the CoE Convention on preventing and combating violence against women and domestic violence (Istanbul Convention), and by supporting the **Union for the Mediterranean** in advocating for women&#x27;s human rights, and this should be continued
+
+The **EU accession** process has prompted legal reforms promoting gender equality in candidate countries and potential candidates, as they are expected to progressively align with EU gender equality acquis, and have the institutional framework to enforce it.
+
+Similarly, the EU should support initiatives such as the **Association of Southeast Asian Nations (ASEAN)** Commission on the Promotion and Protection of the Rights of Women and Children, the **Pacific Leaders Gender Equality Declaration** and the **Montevideo Strategy** in Latin America.
+
+In the framework of the **Africa-EU partnership**, the EU should support African Union targeted initiatives, such as the strategy for gender equality and women&#x27;s empowerment (2018-2028)29 and the new decade of African women&#x27;s financial and economic inclusion (2020-2030). It should also advocate for full ratification and implementation of the Maputo Protocol and the Protocol to the African Charter on Human and Peoples&#x27; Rights on the Rights of Women in Africa31.</pre>
+    <button class="copy-btn" data-target="text-5">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="5" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="5" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="5" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-6">
+  <header class="card-head">
+    <span class="row-num">#06</span>
+    <span class="pid">GAP_III__c016</span>
+    <span class="gold">gold: <code>funding_global_action</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-6">Classify the following passage.
+
+PASSAGE:
+### 2.3. Taking stronger EU leadership at multilateral level
+In the **OECD context**, the European Commission will remain an active member of the DAC Network on Gender Equality36, whose goal is to improve policies and practices to strengthen gender equality in development programmes and to secure girls&#x27; and women&#x27;s rights, contributing to the Agenda 2030 for Sustainable Development.</pre>
+    <button class="copy-btn" data-target="text-6">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="6" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="6" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="6" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-7">
+  <header class="card-head">
+    <span class="row-num">#07</span>
+    <span class="pid">GAP_III__c023</span>
+    <span class="gold">gold: <code>equal_economy</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-7">Classify the following passage.
+
+PASSAGE:
+## 3.3. Strengthening economic and social rights and empowering girls and women
+
+**Women and men in all their diversity should have equal opportunities, equal access to employment, decent work, equal pay for equal work in order to** be economically independent. Furthermore, women and men should equally share care responsibilities and have access to adequate social protection, public services, and financial and business opportunities.
+
+In addition, women and girls also need to have access to enabling conditions, such as access to safe, affordable and accessible public transport and other mobility options, both in rural and urban areas.
+
+Empowering women economically is key to reducing poverty and to achieving inclusive and sustainable growth under the 2030 Agenda.49
+
+Estimates show advancing gender equality could add about **EUR 11** to **21 trillion** to global GDP by 2025</pre>
+    <button class="copy-btn" data-target="text-7">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="7" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="7" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="7" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-8">
+  <header class="card-head">
+    <span class="row-num">#08</span>
+    <span class="pid">GAP_III__c032</span>
+    <span class="gold">gold: <code>funding_global_action</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-8">Classify the following passage.
+
+PASSAGE:
+### 3.5. Integrating the women, peace and security agenda
+
+In the 21st century, **disasters and human-made crises, including conflict, have become more complex, protracted, and increasingly linked to global challenges**, such as climate change, environmental degradation, displacement, and more recently, - pandemics. The COVID-19 pandemic effect has demonstrated the centrality of the WPS agenda in addressing increased violence threats and including women through the security/gender equality nexus.
+
+Conflict, crisis and fragility hamper progress towards sustainable peace and security and to achieving the SDGs. The WPS agenda focuses on the links between gender inequality and conflict, how they are mutually reinforcing, and **emphasises the need to understand gender inequality as a root cause and driver of conflict and fragility.** Inequalities coupled with exclusion of women from power, opportunities, services and security create a fertile ground for conflict and gender-based violence, especially when linked to weak state capacity or legitimacy. **Preventive action should adopt a risk-, needs- and rights-based approach.**
+
+Women are often victims in these situations but not always; they play multiple and diverse roles as combatants, peacebuilders, mediators, politicians, business women and activists. **The number of women involved in peace processes remains low**, despite global, regional and national commitments76 and **many peace agreements do not even include gender provisions** that adequately address women&#x27;s needs. **Increasing the participation of women in all matters related to peace and security is a priority for the EU.**
+
+Based on the EU&#x27;s Strategic Approach to WPS, the EU will implement its Action Plan on WPS77 which identifies clear objectives and fulfilment criteria, under the key priority areas of: (i) prevention; (ii) protection; (iii) relief and recovery, and the three overarching and cross-cutting principles of (iv) participation; (v) gender mainstreaming and (vi) leading by example.
+
+The EU objectives on WPS should be achieved, among others, through **political and diplomatic engagement** of EU leadership and by **integrating a gender perspective** and ensuring women&#x27;s participation and leadership **in all peace and security-related contexts**. It is also necessary to take **specific measures**, including targeted training for the military, justice and security forces.</pre>
+    <button class="copy-btn" data-target="text-8">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="8" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="8" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="8" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-9">
+  <header class="card-head">
+    <span class="row-num">#09</span>
+    <span class="pid">GAP_III__c039</span>
+    <span class="gold">gold: <code>mainstreaming_intersectionality</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-9">Classify the following passage.
+
+PASSAGE:
+#### EU action should contribute to
+
+- Promoting policy and regulatory reform in partner countries, ensuring that digital transformation aligns with the EU&#x27;s human-centric approach, bringing benefits to all, while protecting human rights, both online and offline, and ensuring a safe and secure cyber space, where data are protected in line with EU standards (e.g. GDPR):
+- Improving access of girls and women to affordable, accessible, safe and secure digital connectivity, reaching out to the rural and remote areas:
+- Promoting digital literacy for girls in education, as well as digital skills for jobs and entrepreneurship while addressing the gender norms and stereotypes that steer women and girls away from technology;
+- Supporting women digital innovators and entrepreneurs across multiple industrial ecosystems to build an inclusive digital economy, for example via public-private partnerships such as the International Finance Corporation, with the aim of closing the digital gender gap in big tech companies;
+- Supporting the provision of public and private services through gender-responsive digital channels, technologies and services (e.g. e-government, digital financial services) that will enhance women and girls&#x27; inclusion and participation in the society.</pre>
+    <button class="copy-btn" data-target="text-9">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="9" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="9" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="9" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-10">
+  <header class="card-head">
+    <span class="row-num">#10</span>
+    <span class="pid">Istanbul_Convention_2011__c001</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-10">Classify the following passage.
+
+PASSAGE:
+# Convenzione del Consiglio d&#x27;Europa sulla prevenzione e la lotta contro la violenza nei confronti delle donne e la violenza domestica
+Istanbul, 11 maggio 2011
+
+*Traduzione non ufficiale*</pre>
+    <button class="copy-btn" data-target="text-10">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="10" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="10" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="10" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-11">
+  <header class="card-head">
+    <span class="row-num">#11</span>
+    <span class="pid">Istanbul_Convention_2011__c011</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-11">Classify the following passage.
+
+PASSAGE:
+## Articolo 8 – Risorse finanziarie
+La Parti stanziano le risorse finanziarie e umane appropriate per un&#x27;adeguata attuazione di politiche integrate, di misure e di programmi destinati a prevenire e combattere ogni forma di violenza rientrante nel campo di applicazione della presente Convenzione, ivi compresi quelli realizzati dalle ONG e dalla società civile.</pre>
+    <button class="copy-btn" data-target="text-11">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="11" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="11" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="11" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-12">
+  <header class="card-head">
+    <span class="row-num">#12</span>
+    <span class="pid">Istanbul_Convention_2011__c013</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-12">Classify the following passage.
+
+PASSAGE:
+#### Articolo 10 – Organismo di coordinamento
+- 1 Le Parti designano o istituiscono uno o più organismi ufficiali responsabili del coordinamento, dell&#x27;attuazione, del monitoraggio e della valutazione delle politiche e delle misure destinate a prevenire e contrastare ogni forma di violenza oggetto della presente Convenzione. Tali organismi hanno il compito di coordinare la raccolta dei dati di cui all&#x27;Articolo 11 e di analizzarne e diffonderne i risultati.
+- 2 Le Parti si accertano che gli organismi designati o istituiti ai sensi del presente articolo ricevano informazioni di carattere generale sulle misure adottate conformemente al capitolo VIII.
+- 3 Le Parti si accertano che gli organismi designati o istituiti ai sensi del presente articolo dispongano della capacità di comunicare direttamente e di incoraggiare i rapporti con i loro omologhi delle altre Parti.</pre>
+    <button class="copy-btn" data-target="text-12">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="12" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="12" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="12" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-13">
+  <header class="card-head">
+    <span class="row-num">#13</span>
+    <span class="pid">Istanbul_Convention_2011__c014</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-13">Classify the following passage.
+
+PASSAGE:
+### Articolo 11 – Raccolta dei dati e ricerca
+- 1 Ai fini dell&#x27;applicazione della presente Convenzione, le Parti si impegnano a:
+- a raccogliere a intervalli regolari i dati statistici disaggregati pertinenti su questioni relative a qualsiasi forma di violenza che rientra nel campo di applicazione della presente Convenzione;
+- b sostenere la ricerca su tutte le forme di violenza che rientrano nel campo di applicazione della presente Convenzione, al fine di studiarne le cause profonde e gli effetti, la frequenza e le percentuali delle condanne, come pure l&#x27;efficacia delle misure adottate ai fini dell&#x27;applicazione della presente Convenzione.
+- 2 Le Parti si adoperano per realizzare indagini sulla popolazione, a intervalli regolari, allo scopo di determinare la prevalenza e le tendenze di ogni forma di violenza che rientra nel campo di applicazione della presente Convenzione.
+- 3 Le Parti forniscono al Gruppo di esperti menzionato all&#x27;articolo 66 della presente Convenzione le informazioni raccolte conformemente al presente articolo, per stimolare la cooperazione e permettere un confronto a livello internazionale.
+- 4 Le Parti vigilano affinché le informazioni raccolte conformemente al presente articolo siano messe a disposizione del pubblico.</pre>
+    <button class="copy-btn" data-target="text-13">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="13" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="13" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="13" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-14">
+  <header class="card-head">
+    <span class="row-num">#14</span>
+    <span class="pid">Istanbul_Convention_2011__c015</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-14">Classify the following passage.
+
+PASSAGE:
+#### Capitolo III – Prevenzione
+#### Articolo 12 – Obblighi generali
+- 1 Le Parti adottano le misure necessarie per promuovere i cambiamenti nei comportamenti socioculturali delle donne e degli uomini, al fine di eliminare pregiudizi, costumi, tradizioni e qualsiasi altra pratica basata sull&#x27;idea dell&#x27;inferiorità della donna o su modelli stereotipati dei ruoli delle donne e degli uomini.
+- 2 Le Parti adottano le misure legislative e di altro tipo necessarie per impedire ogni forma di violenza rientrante nel campo di applicazione della presente Convenzione commessa da qualsiasi persona fisica o giuridica.
+- 3 Tutte le misure adottate ai sensi del presente capitolo devono prendere in considerazione e soddisfare i bisogni specifici delle persone in circostanze di particolare vulnerabilità, e concentrarsi sui diritti umani di tutte le vittime.
+- 4 Le Parti adottano le misure necessarie per incoraggiare tutti i membri della società, e in particolar modo gli uomini e i ragazzi, a contribuire attivamente alla prevenzione di ogni forma di violenza che rientra nel campo di applicazione della presente Convenzione.
+- 5 Le Parti vigilano affinché la cultura, gli usi e i costumi, la religione, la tradizione o il cosiddetto &quot;onore&quot; non possano essere in alcun modo utilizzati per giustificare nessuno degli atti di violenza che rientrano nel campo di applicazione della presente Convenzione.
+- 6 Le Parti adottano le misure necessarie per promuovere programmi e attività destinati ad aumentare il livello di autonomia e di emancipazione delle donne.</pre>
+    <button class="copy-btn" data-target="text-14">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="14" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="14" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="14" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-15">
+  <header class="card-head">
+    <span class="row-num">#15</span>
+    <span class="pid">Istanbul_Convention_2011__c018</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-15">Classify the following passage.
+
+PASSAGE:
+#### Articolo 15 – Formazione delle figure professionali
+- 1 Le Parti forniscono o rafforzano un&#x27;adeguata formazione delle figure professionali che si occupano delle vittime o degli autori di tutti gli atti di violenza che rientrano nel campo di applicazione della presente Convenzione in materia di prevenzione e individuazione di tale violenza, uguaglianza tra le donne e gli uomini, bisogni e diritti delle vittime, e su come prevenire la vittimizzazione secondaria.
+- 2 Le Parti incoraggiano a inserire nella formazione di cui al paragrafo 1 dei corsi di formazione in materia di cooperazione coordinata interistituzionale, al fine di consentire una gestione globale e adeguata degli orientamenti da seguire nei casi di violenza che rientrano nel campo di applicazione della presente Convenzione.</pre>
+    <button class="copy-btn" data-target="text-15">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="15" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="15" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="15" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-16">
+  <header class="card-head">
+    <span class="row-num">#16</span>
+    <span class="pid">Istanbul_Convention_2011__c023</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-16">Classify the following passage.
+
+PASSAGE:
+## Articolo 20 – Servizi di supporto generali
+- 1 Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che le vittime abbiano accesso ai servizi destinati a facilitare il loro recupero. Tali misure includeranno, se necessario, dei servizi quali le consulenze legali e un sostegno psicologico, un&#x27;assistenza finanziaria, alloggio, istruzione, formazione e assistenza nella ricerca di un lavoro.
+- 2 Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che le vittime abbiano accesso ai servizi sanitari e sociali, che tali servizi dispongano di risorse adeguate e di figure professionali adeguatamente formate per fornire assistenza alle vittime e indirizzarle verso i servizi appropriati.</pre>
+    <button class="copy-btn" data-target="text-16">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="16" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="16" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="16" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-17">
+  <header class="card-head">
+    <span class="row-num">#17</span>
+    <span class="pid">Istanbul_Convention_2011__c028</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-17">Classify the following passage.
+
+PASSAGE:
+#### Articolo 25 – Supporto alle vittime di violenza sessuale
+Le Parti adottano le misure legislative o di altro tipo necessarie per consentire la creazione di centri di prima assistenza adeguati, facilmente accessibili e in numero sufficiente, per le vittime di stupri e di violenze sessuali, che possano proporre una visita medica e una consulenza medico-legale, un supporto per superare il trauma e dei consigli.</pre>
+    <button class="copy-btn" data-target="text-17">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="17" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="17" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="17" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-18">
+  <header class="card-head">
+    <span class="row-num">#18</span>
+    <span class="pid">Istanbul_Convention_2011__c031</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-18">Classify the following passage.
+
+PASSAGE:
+#### Articolo 28 – Segnalazioni da parte delle figure professionali
+Le Parti adottano le misure necessarie per garantire che le norme sulla riservatezza imposte dalla loro legislazione nazionale a certe figure professionali non costituiscano un ostacolo alla loro possibilità, in opportune condizioni, di fare una segnalazione alle organizzazioni o autorità competenti, qualora abbiano ragionevoli motivi per ritenere che sia stato commesso un grave atto di violenza che rientra nel campo di applicazione della presente Convenzione o che si possano temere nuovi gravi atti di violenza.</pre>
+    <button class="copy-btn" data-target="text-18">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="18" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="18" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="18" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-19">
+  <header class="card-head">
+    <span class="row-num">#19</span>
+    <span class="pid">Istanbul_Convention_2011__c032</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-19">Classify the following passage.
+
+PASSAGE:
+## Capitolo V – Diritto sostanziale
+## Articolo 29 – Procedimenti e vie di ricorso in materia civile
+- 1 Le Parti adottano le misure legislative o di altro tipo necessarie per fornire alle vittime adeguati mezzi di ricorso civili nei confronti dell&#x27;autore del reato.
+- 2 Le Parti adottano le misure legislative o di altro tipo necessarie, conformemente ai principi generali del diritto internazionale, per fornire alle vittime adeguati risarcimenti civili nei confronti delle autorità statali che abbiano mancato al loro dovere di adottare le necessarie misure di prevenzione o di protezione nell&#x27;ambito delle loro competenze.</pre>
+    <button class="copy-btn" data-target="text-19">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="19" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="19" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="19" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-20">
+  <header class="card-head">
+    <span class="row-num">#20</span>
+    <span class="pid">Istanbul_Convention_2011__c034</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-20">Classify the following passage.
+
+PASSAGE:
+#### Articolo 31 – Custodia dei figli, diritti di visita e sicurezza
+- 1 Le Parti adottano misure legislative o di altro tipo necessarie per garantire che, al momento di determinare i diritti di custodia e di visita dei figli, siano presi in considerazione gli episodi di violenza che rientrano nel campo di applicazione della presente Convenzione.
+- 2 Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che l&#x27;esercizio dei diritti di visita o di custodia dei figli non comprometta i diritti e la sicurezza della vittima o dei bambini.</pre>
+    <button class="copy-btn" data-target="text-20">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="20" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="20" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="20" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-21">
+  <header class="card-head">
+    <span class="row-num">#21</span>
+    <span class="pid">Istanbul_Convention_2011__c035</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-21">Classify the following passage.
+
+PASSAGE:
+#### Articolo 32 – Conseguenze civili dei matrimoni forzati
+Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che i matrimoni contratti con la forza possano essere invalidabili, annullati o sciolti senza rappresentare un onere finanziario o amministrativo eccessivo per la vittima.</pre>
+    <button class="copy-btn" data-target="text-21">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="21" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="21" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="21" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-22">
+  <header class="card-head">
+    <span class="row-num">#22</span>
+    <span class="pid">Istanbul_Convention_2011__c038</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-22">Classify the following passage.
+
+PASSAGE:
+### Articolo 35 – Violenza fisica
+Le Parti adottano le misure legislative o di altro tipo necessarie per penalizzare il comportamento intenzionale di chi commette atti di violenza fisica nei confronti di un&#x27;altra persona.</pre>
+    <button class="copy-btn" data-target="text-22">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="22" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="22" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="22" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-23">
+  <header class="card-head">
+    <span class="row-num">#23</span>
+    <span class="pid">Istanbul_Convention_2011__c044</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-23">Classify the following passage.
+
+PASSAGE:
+#### Articolo 41 – Favoreggiamento o complicità e tentativo
+- 1 Le Parti adottano le misure legislative o di altro tipo necessarie per perseguire penalmente il favoreggiamento o la complicità intenzionali in ordine alla commissione dei reati di cui agli articoli 33, 34, 35, 36, 37, 38.a e 39 della presente Convenzione.
+- 2 Le Parti adottano le misure legislative o di altro tipo necessarie per perseguire penalmente i tentativi intenzionali di commissione dei reati di cui agli articoli 35, 36, 37, 38.a e 39 della presente Convenzione.</pre>
+    <button class="copy-btn" data-target="text-23">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="23" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="23" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="23" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-24">
+  <header class="card-head">
+    <span class="row-num">#24</span>
+    <span class="pid">Istanbul_Convention_2011__c045</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-24">Classify the following passage.
+
+PASSAGE:
+### Articolo 42 – Giustificazione inaccettabile dei reati, compresi quelli commessi in nome del cosiddetto &quot;onore&quot;
+- 1 Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che nei procedimenti penali intentati a seguito della commissione di qualsiasi atto di violenza che rientra nel campo di applicazione della presente Convenzione, la cultura, gli usi e costumi, la religione, le tradizioni o il cosiddetto &quot;onore&quot; non possano essere addotti come scusa per giustificare tali atti. Rientrano in tale ambito, in particolare, le accuse secondo le quali la vittima avrebbe trasgredito norme o costumi culturali, religiosi, sociali o tradizionali riguardanti un comportamento appropriato.
+- 2 Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che, qualora un bambino sia stato istigato da una persona a compiere un atto di cui al paragrafo 1, non sia per questo diminuita la responsabilità penale della suddetta persona per gli atti commessi.</pre>
+    <button class="copy-btn" data-target="text-24">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="24" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="24" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="24" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-25">
+  <header class="card-head">
+    <span class="row-num">#25</span>
+    <span class="pid">Istanbul_Convention_2011__c050</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-25">Classify the following passage.
+
+PASSAGE:
+#### Articolo 46 – Circostanze aggravanti
+Le Parti adottano le misure legislative e di ogni altro tipo necessarie per garantire che le seguenti circostanze, purché non siano già gli elementi costitutivi del reato, possano, conformemente alle disposizioni pertinenti del loro diritto nazionale, essere considerate come circostanze aggravanti nel determinare la pena per i reati stabiliti conformemente alla presente Convenzione:
+
+- a il reato è stato commesso contro l&#x27;attuale o l&#x27;ex coniuge o partner, come riconosciuto dal diritto nazionale, da un membro della famiglia, dal convivente della vittima, o da una persona che ha abusato della propria autorità;
+- b il reato, o i reati connessi, sono stati commessi ripetutamente;
+- c il reato è stato commesso contro una persona in circostanze di particolare vulnerabilità;
+- d il reato è stato commesso su un bambino o in presenza di un bambino;
+- e il reato è stato commesso da due o più persone che hanno agito insieme;
+- f il reato è stato preceduto o accompagnato da una violenza di estrema gravità;
+- g il reato è stato commesso con l&#x27;uso o con la minaccia di un&#x27;arma;
+- h il reato ha provocato gravi danni fisici o psicologici alla vittima;
+- i l&#x27;autore era stato precedentemente condannato per reati di natura analoga.</pre>
+    <button class="copy-btn" data-target="text-25">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="25" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="25" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="25" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-26">
+  <header class="card-head">
+    <span class="row-num">#26</span>
+    <span class="pid">Istanbul_Convention_2011__c052</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-26">Classify the following passage.
+
+PASSAGE:
+### Articolo 48 – Divieto di metodi alternativi di risoluzione dei conflitti o di misure alternative alle pene obbligatorie
+- 1 Le parti devono adottare le necessarie misure legislative o di altro tipo per vietare il ricorso obbligatorio a procedimenti di soluzione alternativa delle controversie, incluse la mediazione e la conciliazione, in relazione a tutte le forme di violenza che rientrano nel campo di applicazione della presente Convenzione&quot;.
+- 2 Le Parti adottano le misure legislative o di altro tipo destinate a garantire che, se viene inflitto il pagamento di una multa, sia debitamente presa in considerazione la capacità del condannato di adempiere ai propri obblighi finanziari nei confronti della vittima.</pre>
+    <button class="copy-btn" data-target="text-26">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="26" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="26" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="26" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-27">
+  <header class="card-head">
+    <span class="row-num">#27</span>
+    <span class="pid">Istanbul_Convention_2011__c054</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-27">Classify the following passage.
+
+PASSAGE:
+#### Articolo 50 – Risposta immediata, prevenzione e protezione
+- 1 Le Parti adottano le misure legislative e di altro tipo necessarie per garantire che le autorità incaricate dell&#x27;applicazione della legge affrontino in modo tempestivo e appropriato tutte le forme di violenza che rientrano nel campo di applicazione della presente Convenzione, offrendo una protezione adeguata e immediata alle vittime.
+- 2 Le Parti adottano le misure legislative e di altro tipo per garantire che le autorità incaricate dell&#x27;applicazione della legge operino in modo tempestivo e adeguato in materia di prevenzione e protezione contro ogni forma di violenza che rientra nel campo di applicazione della presente Convenzione, ivi compreso utilizzando misure operative di prevenzione e la raccolta delle prove.</pre>
+    <button class="copy-btn" data-target="text-27">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="27" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="27" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="27" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-28">
+  <header class="card-head">
+    <span class="row-num">#28</span>
+    <span class="pid">Istanbul_Convention_2011__c057</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-28">Classify the following passage.
+
+PASSAGE:
+#### Articolo 53 – Ordinanze di ingiunzione o di protezione
+- 1 Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che le ordinanze di ingiunzione o di protezione possano essere ottenute dalle vittime di ogni forma di violenza che rientra nel campo di applicazione della presente Convenzione.
+- 2 Le Parti adottano le misure legislative e di altro tipo necessarie per garantire che le ordinanze di ingiunzione o di protezione di cui al paragrafo 1 siano:
+- concesse per una protezione immediata e senza oneri amministrativi o finanziari eccessivi per la vittima;
+- emesse per un periodo specificato o fino alla loro modifica o revoca;
+- ove necessario, decise ex parte con effetto immediato;
+- disponibili indipendentemente, o contestualmente ad altri procedimenti giudiziari;
+- possano essere introdotte nei procedimenti giudiziari successivi.
+
+3 Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che la violazione delle ordinanze di ingiunzione o di protezione emesse ai sensi del paragrafo 1 sia oggetto di sanzioni penali o di altre sanzioni legali efficaci, proporzionate e dissuasive.</pre>
+    <button class="copy-btn" data-target="text-28">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="28" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="28" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="28" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-29">
+  <header class="card-head">
+    <span class="row-num">#29</span>
+    <span class="pid">Istanbul_Convention_2011__c058</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-29">Classify the following passage.
+
+PASSAGE:
+## Articolo 54 – Indagini e prove
+Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che in qualsiasi procedimento civile o penale, le prove relative agli antecedenti sessuale e alla condotta della vittima siano ammissibili unicamente quando sono pertinenti e necessarie.</pre>
+    <button class="copy-btn" data-target="text-29">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="29" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="29" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="29" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-30">
+  <header class="card-head">
+    <span class="row-num">#30</span>
+    <span class="pid">Istanbul_Convention_2011__c061</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-30">Classify the following passage.
+
+PASSAGE:
+## Articolo 56 – Misure di protezione
+- 2 Un bambino vittima e testimone di violenza contro le donne e di violenza domestica, deve, se necessario, usufruire di misure di protezione specifiche, che prendano in considerazione il suo interesse superiore.</pre>
+    <button class="copy-btn" data-target="text-30">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="30" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="30" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="30" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-31">
+  <header class="card-head">
+    <span class="row-num">#31</span>
+    <span class="pid">Istanbul_Convention_2011__c062</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-31">Classify the following passage.
+
+PASSAGE:
+## Articolo 57 – Gratuito patrocinio
+Le Parti garantiscono che le vittime abbiano diritto all&#x27;assistenza legale e al gratuito patrocinio alle condizioni previste dal diritto interno.</pre>
+    <button class="copy-btn" data-target="text-31">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="31" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="31" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="31" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-32">
+  <header class="card-head">
+    <span class="row-num">#32</span>
+    <span class="pid">Istanbul_Convention_2011__c064</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-32">Classify the following passage.
+
+PASSAGE:
+#### Capitolo VII – Migrazione e asilo
+## Articolo 59 – Status di residente
+- 1 Le Parti adottano le misure legislative e di altro tipo per garantire che le vittime, il cui status di residente dipende da quello del coniuge o del partner, conformemente al loro diritto interno, possano ottenere, su richiesta, in caso di scioglimento del matrimonio o della relazione, in situazioni particolarmente difficili, un titolo autonomo di soggiorno, indipendentemente dalla durata del matrimonio o della relazione. Le condizioni per il rilascio e la durata del titolo autonomo di soggiorno sono stabilite conformemente al diritto nazionale.
+- 2 Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che le vittime possano ottenere la sospensione delle procedure di espulsione avviate perché il loro status di residente dipendeva da quello del coniuge o del partner, conformemente al loro diritto interno, al fine di consentire loro di chiedere un titolo autonomo di soggiorno.
+- 3 Le Parti rilasciano un titolo di soggiorno rinnovabile alle vittime, in una o in entrambe le seguenti situazioni:
+- a quando l&#x27;autorità competente ritiene che il loro soggiorno sia necessario in considerazione della loro situazione personale;
+- b quando l&#x27;autorità competente ritene che il loro soggiorno sia necessario per la loro collaborazione con le autorità competenti nell&#x27;ambito di un&#x27;indagine o di procedimenti penali.
+
+4 Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che le vittime di un matrimonio forzato condotte in un altro paese al fine di contrarre matrimonio, e che abbiano perso di conseguenza il loro status di residente del paese in cui risiedono normalmente, possano recuperare tale status.</pre>
+    <button class="copy-btn" data-target="text-32">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="32" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="32" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="32" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-33">
+  <header class="card-head">
+    <span class="row-num">#33</span>
+    <span class="pid">Istanbul_Convention_2011__c065</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-33">Classify the following passage.
+
+PASSAGE:
+#### Articolo 60 – Richieste di asilo basate sul genere
+- 1 Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che la violenza contro le donne basata sul genere possa essere riconosciuta come una forma di persecuzione ai sensi dell&#x27;articolo 1, A (2) della Convenzione relativa allo status dei rifugiati del 1951 e come una forma di grave pregiudizio che dia luogo a una protezione complementare / sussidiaria.
+- 2 Le Parti si accertano che un&#x27;interpretazione sensibile al genere sia applicata a ciascuno dei motivi della Convenzione, e che nei casi in cui sia stabilito che il timore di persecuzione è basato su uno o più di tali motivi, sia concesso ai richiedenti asilo lo status di rifugiato, in funzione degli strumenti pertinenti applicabili.
+- 3 Le Parti adottano le misure legislative o di altro tipo necessarie per sviluppare procedure di accoglienza sensibili al genere e servizi di supporto per i richiedenti asilo, nonché linee guida basate sul genere e procedure di asilo sensibili alle questioni di genere, compreso in materia di concessione dello status di rifugiato e di richiesta di protezione internazionale.</pre>
+    <button class="copy-btn" data-target="text-33">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="33" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="33" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="33" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-34">
+  <header class="card-head">
+    <span class="row-num">#34</span>
+    <span class="pid">Istanbul_Convention_2011__c067</span>
+    <span class="gold">gold: <code>violence_stereotypes</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-34">Classify the following passage.
+
+PASSAGE:
+#### Capitolo VIII – Cooperazione internazionale
+#### Articolo 62 – Principi generali
+- 1 Le Parti cooperano, in conformità con le disposizioni della presente Convenzione, e nel rispetto dell&#x27;applicazione degli strumenti internazionali e regionali relativi alla cooperazione in materia civile e penale, nonché degli accordi stipulati sulla base di disposizioni legislative uniformi o di reciprocità e della propria legislazione nazionale, nel modo più ampio possibile, al fine di:
+- a prevenire, combattere e perseguire tutte le forme di violenza che rientrano nel campo di applicazione della presente Convenzione;
+- b proteggere e assistere le vittime;
+- c condurre indagini o procedere penalmente per i reati previsti sulla base della presente Convenzione;
+- d applicare le pertinenti sentenze civili e penali pronunciate dalle autorità giudiziarie delle Parti, ivi comprese le ordinanze di protezione.
+
+- 2 Le Parti adottano le misure legislative o di altro tipo necessarie per garantire che le vittime di un reato determinato ai sensi della presente Convenzione e commesso sul territorio di una Parte diversa da quella in cui risiedono possano presentare denuncia presso le autorità competenti del loro Stato di residenza.
+- 3 Se una Parte che subordina all&#x27;esistenza di un trattato la mutua assistenza giudiziaria in materia penale, l&#x27;estradizione o l&#x27;esecuzione delle sentenze civili o penali pronunciate da un&#x27;altra Parte contraente alla presente Convenzione riceve una richiesta di cooperazione in materia giudiziaria da una Parte con la quale non ha ancora concluso tale trattato, può considerare la presente Convenzione come la base giuridica per la mutua assistenza in materia penale, di estradizione, di esecuzione delle sentenze civili o penali pronunciate dall&#x27;altra Parte riguardanti i reati stabiliti conformemente alla presente Convenzione.
+- 4 Le Parti si sforzano di integrare, se del caso, la prevenzione e la lotta contro la violenza nei confronti delle donne e la violenza domestica nei programmi di assistenza allo sviluppo condotti a favore di paesi terzi, compresa la conclusione di accordi bilaterali e multilaterali con paesi terzi, al fine di facilitare la protezione delle vittime, conformemente all&#x27;articolo 18, paragrafo 5.</pre>
+    <button class="copy-btn" data-target="text-34">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="34" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="34" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="34" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-35">
+  <header class="card-head">
+    <span class="row-num">#35</span>
+    <span class="pid">Istanbul_Convention_2011__c071</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-35">Classify the following passage.
+
+PASSAGE:
+#### Capitolo IX – Meccanismo di controllo
+## Articolo 66 – Gruppo di esperti sulla lotta contro la violenza nei confronti delle donne e la violenza domestica
+- 1 Il Gruppo di esperti sulla lotta contro la violenza nei confronti delle donne e la violenza domestica (di seguito &quot;GREVIO&quot;) è incaricato di vigilare sull&#x27;attuazione della presente Convenzione da parte delle Parti contraenti.
+- 2 Il GREVIO è composto da un minimo di 10 membri a un massimo di 15 membri, nel rispetto del criterio dell&#x27;equilibrio tra i sessi e di un&#x27;equa ripartizione geografica e dell&#x27;esigenza di competenze multidisciplinari. I suoi membri sono eletti dal Comitato delle Parti tra i candidati designati dalle Parti con un mandato di quattro anni, rinnovabile una volta, e sono scelti tra i cittadini delle Parti.
+- 3 L&#x27;elezione iniziale di 10 membri deve aver luogo entro un anno dalla data dell&#x27;entrata in vigore della presente Convenzione. L&#x27;elezione dei cinque membri supplementari si svolge dopo la venticinquesima ratifica o adesione.
+- 4 L&#x27;elezione dei membri del GREVIO deve essere basata sui seguenti principi:
+- a devono essere selezionati mediante una procedura trasparente tra personalità di elevata moralità, note per la loro competenza in materia di diritti umani, uguaglianza tra i sessi, contrasto alla violenza sulle donne e alla violenza domestica o assistenza e protezione alle vittime, o devono essere in possesso di una riconosciuta esperienza professionale nei settori oggetto della presente Convenzione;
+- b il GREVIO non può comprendere più di un cittadino del medesimo Stato;
+- c devono rappresentare i principali sistemi giuridici;
+- d devono rappresentare gli organi e i soggetti competenti nel campo della violenza contro le donne e la violenza domestica;
+- e devono partecipare a titolo individuale e devono essere indipendenti e imparziali nell&#x27;esercizio delle loro funzioni, e devono rendersi disponibili ad adempiere ai loro compiti in maniera efficace.
+- 5 La procedura per l&#x27;elezione dei membri del GREVIO è determinata dal Comitato dei Ministri del Consiglio d&#x27;Europa, previa consultazione e unanime consenso delle Parti entro sei mesi dall&#x27;entrata in vigore della presente Convenzione.
+- 6 Il GREVIO adotta il proprio regolamento interno.</pre>
+    <button class="copy-btn" data-target="text-35">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="35" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="35" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="35" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-36">
+  <header class="card-head">
+    <span class="row-num">#36</span>
+    <span class="pid">Istanbul_Convention_2011__c076</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-36">Classify the following passage.
+
+PASSAGE:
+#### Articolo 68 – Procedura
+- 14 Il GREVIO può, tenendo conto delle informazioni presentate dalla Parte interessata e di ogni altra informazione attendibile, designare uno o più membri incaricati di condurre un&#x27;indagine e di presentargli con urgenza un rapporto. Se necessario, e con il consenso della Parte, tale indagine può includere una visita sul suo territorio.
+- 15 Dopo avere esaminato le conclusioni relative all&#x27;indagine di cui al paragrafo 14, il GREVIO trasmette tali risultati alla Parte interessata e, se del caso, al Comitato delle Parti e al Comitato dei Ministri del Consiglio d&#x27;Europa, accompagnati da qualsiasi altra osservazione e raccomandazione.</pre>
+    <button class="copy-btn" data-target="text-36">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="36" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="36" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="36" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-37">
+  <header class="card-head">
+    <span class="row-num">#37</span>
+    <span class="pid">Istanbul_Convention_2011__c077</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-37">Classify the following passage.
+
+PASSAGE:
+## Articolo 69 – Raccomandazioni generali
+Il GREVIO può adottare, ove opportuno, raccomandazioni di carattere generale sull&#x27;applicazione della presente Convenzione.</pre>
+    <button class="copy-btn" data-target="text-37">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="37" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="37" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="37" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-38">
+  <header class="card-head">
+    <span class="row-num">#38</span>
+    <span class="pid">Istanbul_Convention_2011__c078</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-38">Classify the following passage.
+
+PASSAGE:
+#### Articolo 70 – Partecipazione dei Parlamenti al controllo
+- 1 I parlamenti nazionali sono invitati a partecipare al controllo delle misure adottate per l&#x27;attuazione della presente Convenzione.
+- 2 Le Parti presentano i rapporti del GREVIO ai loro Parlamenti nazionali.
+- 3 L&#x27;Assemblea parlamentare del Consiglio d&#x27;Europa è invitata a fare regolarmente un bilancio dell&#x27;applicazione della presente Convenzione.</pre>
+    <button class="copy-btn" data-target="text-38">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="38" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="38" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="38" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-39">
+  <header class="card-head">
+    <span class="row-num">#39</span>
+    <span class="pid">Istanbul_Convention_2011__c084</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-39">Classify the following passage.
+
+PASSAGE:
+## Articolo 76 – Adesione alla Convenzione
+1 Dopo l&#x27;entrata in vigore della presente Convenzione, il Comitato dei Ministri del Consiglio d&#x27;Europa, dopo avere consultato le Parti alla presente Convenzione e averne ottenuto l&#x27;unanime consenso, può invitare qualsiasi Stato non membro del Consiglio d&#x27;Europa che non abbia partecipato all&#x27;elaborazione della convenzione ad aderire alla presente Convenzione con una decisione presa con la maggioranza prevista all&#x27;articolo 20.d dello Statuto del Consiglio d&#x27;Europa, e all&#x27;unanimità dei rappresentanti delle Parti contraenti con diritto di sedere in seno al Comitato dei Ministri.
+
+2 Nei confronti di ogni Stato aderente, la Convenzione entrerà in vigore il primo giorno del mese successivo alla scadenza di un periodo di tre mesi dopo la data del deposito dello strumento di adesione presso il Segretario Generale del Consiglio d&#x27;Europa.</pre>
+    <button class="copy-btn" data-target="text-39">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="39" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="39" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="39" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-40">
+  <header class="card-head">
+    <span class="row-num">#40</span>
+    <span class="pid">Istanbul_Convention_2011__c089</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-40">Classify the following passage.
+
+PASSAGE:
+## Articolo 81 – Notifica
+Il Segretario Generale del Consiglio d&#x27;Europa notificherà agli Stati membri del Consiglio d&#x27;Europa, agli Stati non membri del Consiglio d&#x27;Europa che abbiano partecipato all&#x27;elaborazione della presente Convenzione, a ogni firmatario, a ogni Parte, all&#x27;Unione europea e a ogni Stato invitato ad aderire alla presente Convenzione:
+
+- a ogni firma;
+- b il deposito di ogni strumento di ratifica, di accettazione, di approvazione o di adesione;
+- c ogni data di entrata in vigore della presente Convenzione, conformemente agli Articoli 75 e 76;
+- d ogni emendamento adottato conformemente all&#x27;Articolo 72 e la data della sua entrata in vigore;
+- e ogni riserva e ritiro di riserva formulati conformemente all&#x27;Articolo 78;
+- f ogni denuncia presentata conformemente all&#x27;Articolo 80;
+- g ogni altro atto, notifica o comunicazione concernente la presente Convenzione.
+
+In fede di che i sottoscritti, debitamente autorizzati a tal fine, hanno firmato la presente Convenzione.
+
+Fatto a Istanbul, l&#x27;11 maggio 2011, in inglese e in francese, entrambi i testi facenti ugualmente fede, in un unico esemplare che sarà depositato negli archivi del Consiglio d&#x27;Europa. Il Segretario Generale del Consiglio d&#x27;Europa ne trasmetterà una copia certificata conforme a ogni Stato membro del Consiglio d&#x27;Europa, agli Stati non membri che hanno partecipato all&#x27;elaborazione della presente Convenzione, all&#x27;Unione europea e a ogni Stato invitato ad aderirvi.</pre>
+    <button class="copy-btn" data-target="text-40">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="40" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="40" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="40" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-41">
+  <header class="card-head">
+    <span class="row-num">#41</span>
+    <span class="pid">PayGap_Council_2019__c001</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-41">Classify the following passage.
+
+PASSAGE:
+## OUTCOME OF PROCEEDINGS
+| From:           | General Secretariat of the Council                    |
+|-----------------|-------------------------------------------------------|
+| On:             | 13&lt;br&gt;June&lt;br&gt;2019                                    |
+| To:             | Delegations                                           |
+| No. prev. doc.: | 9804/19                                               |
+| Subject:        | Closing the Gender Pay Gap: Key Policies and Measures |
+|                 | -&lt;br&gt;Council Conclusions (13 June 2019)               |
+
+Delegations will find attached in the annex the Council conclusion on Closing the Gender Pay Gap: Key Policies and Measures, adopted by the EPSCO Council at its meeting held on 13 June 2019.</pre>
+    <button class="copy-btn" data-target="text-41">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="41" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="41" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="41" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-42">
+  <header class="card-head">
+    <span class="row-num">#42</span>
+    <span class="pid">PayGap_Council_2019__c002</span>
+    <span class="gold">gold: <code>equal_economy</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-42">Classify the following passage.
+
+PASSAGE:
+### Closing the Gender Pay Gap: Key Policies and Measures
+### Council Conclusions
+## RECOGNISING THAT:
+
+- 1. Equality between men and women is a fundamental principle of the European Union enshrined in the Treaties and recognised in Article 23 of the Charter of Fundamental Rights of the European Union. Article 8 of the Treaty on the Functioning of the European Union (TFEU) requires the Union, in all its activities, to aim to eliminate inequalities, and to promote equality, between women and men.
+- 2. Article 157 TFEU requires the Member States to ensure that the principle of equal pay for male and female workers for equal work or work of equal value is applied and, with a view to ensuring full equality in practice between men and women in working life, also allows the Member States to maintain or adopt measures providing for specific advantages in order to make it easier for the underrepresented sex to pursue a vocational activity or to prevent or compensate for disadvantages in professional careers.
+- 3. Gender equality and work-life balance are recognised in Principles 2 and 9 of the European Pillar of Social Rights proclaimed by the European Parliament, the Council and the Commission on 17 November 2017.
+- 4. Gender equality policies are drivers of smart, sustainable and inclusive growth and a precondition to promoting prosperity, competitiveness and employment, as well as inclusiveness and social cohesion.
+
+- 5. According to Sustainable Development Goal (SDG) 5.4 of the United Nations 2030 Agenda for Sustainable Development, unpaid care and domestic work should be recognized and valued through the provision of public services, infrastructure and social protection policies and the promotion of shared responsibility within the household and the family as nationally appropriate. Also, SDG 8.5 of the United Nations 2030 Agenda for Sustainable Development includes a reference to the principle of equal pay for work of equal value.
+- 6. &quot;Reducing the gender pay, earnings and pension gaps and thus fighting poverty among women&quot; is also one of the priority areas identified by the European Commission in its Strategic Engagement for Gender Equality 2016-2019.</pre>
+    <button class="copy-btn" data-target="text-42">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="42" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="42" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="42" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-43">
+  <header class="card-head">
+    <span class="row-num">#43</span>
+    <span class="pid">PayGap_Council_2019__c004</span>
+    <span class="gold">gold: <code>equal_economy</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-43">Classify the following passage.
+
+PASSAGE:
+## RECALLING THAT:
+
+8. Article 11 of the United Nations Convention on the Elimination of all Forms of Discrimination against Women (CEDAW) identifies the right to work as &quot;an unalienable right of all human beings.&quot; It requires States Parties to &quot;take all appropriate measures to eliminate discrimination against women in the field of employment in order to ensure, on a basis of equality of women and men, the same rights,&quot; including the right to equal remuneration, the right to social security and the right to paid leave. This Article also requires States Parties &quot;to introduce maternity leave with pay or with comparable social benefits without loss of former employment, seniority or social allowances.&quot;
+
+- 9. According to Article 1 of the International Labour Organisation Discrimination Convention (Employment and Occupation) of 1958, discrimination includes any distinction, exclusion or preference made, namely, on the basis of sex &quot;which has the effect of nullifying or impairing equality of opportunity or treatment in employment or occupation&quot;.
+- 10. Article 2 of the International Labour Organisation Equal Remuneration Convention of 1951 provides that each Member shall promote and ensure &quot;the application to all workers of the principle of equal remuneration for men and women workers for work of equal value&quot;, so referring to the establishment of rates of remuneration without discrimination based on sex.
+- 11. The European Social Charter (revised) of the Council of Europe of 1996 requires the Parties to undertake certain actions to ensure the effective exercise of, inter alia, the right to work and the right to a fair remuneration. In this context, the recognition of &quot;the right of men and women workers to equal pay for work of equal value&quot; is stated in Article 4(3).</pre>
+    <button class="copy-btn" data-target="text-43">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="43" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="43" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="43" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-44">
+  <header class="card-head">
+    <span class="row-num">#44</span>
+    <span class="pid">PayGap_Council_2019__c006</span>
+    <span class="gold">gold: <code>equal_economy</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-44">Classify the following passage.
+
+PASSAGE:
+### NOTING THAT:
+- 15. The research note entitled &quot;Tackling the gender pay gap: not without a better work-life balance&quot;, prepared by the European Institute for Gender Equality (EIGE), shows that women across the EU are four times more likely than men to work part time or on temporary contracts. Moreover, the economic inactivity rate of working-age women is almost twice as high as that of men. A fifth of women living in poverty are not active in the labour market due to caring and domestic responsibilities. According to the research note, this may, in particular, reflect the lack of affordable and quality childcare facilities and care services for other dependants, and the absence of make-work-pay policies and of other measures such as flexible working arrangements for both women and men. These measures can help to facilitate the reconciliation of work, family and private life, including the allocation of sufficient time to each of these areas. In addition, woman who work full time while at the same time performing unpaid care and domestic work, end-up working more hours per day than men.
+- 16. This set of Conclusions builds on previous work and political commitments voiced by the Council, the European Parliament, the Commission and relevant stakeholders in this area, including in the documents listed in Annex I.</pre>
+    <button class="copy-btn" data-target="text-44">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="44" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="44" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="44" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-45">
+  <header class="card-head">
+    <span class="row-num">#45</span>
+    <span class="pid">PayGap_Council_2019__c009</span>
+    <span class="gold">gold: <code>equal_economy</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-45">Classify the following passage.
+
+PASSAGE:
+### THE COUNCIL OF THE EUROPEAN UNION
+- 22. Take into account and include specific measures for women and girls in their national sustainable development strategies in accordance with SDG 5**** of the United Nations 2030 Agenda for Sustainable Development and to monitor the implementation of all relevant provisions, including by using data based on the indicators established within the framework of the implementation of the Beijing Platform for Action.
+
+CALLS ON THE MEMBER STATES AND THE EUROPEAN COMMISSION, in accordance with their respective competences, and taking into account national circumstances and respecting the role and autonomy of the social partners, to:
+
+23. Take an integrated approach in all efforts to close the gender pay gap and to promote gender equality, including by fostering synergies between employment strategies and other economic and social policies concerning youth, education, taxation, family benefits, social protection and health care.
+
+**** Sustainable Development Goal 5.
+
+- 24. Take measures to eliminate gender stereotypes and to challenge stereotypical assumptions about gender roles with a view to closing the gender pay gap, to reducing horizontal and vertical gender segregation on the labour market and to promoting a more equal sharing of care responsibilities by men and women.
+- 25. Increase the efforts to close the gender pay gap and to ensure equal employment opportunities in the context of all relevant initiatives, policies and measures, including employment and social policies and strategies, for example by reinforcing the role of public bodies and institutions responsible for gender equality, and by including a gender equality perspective (gender mainstreaming) in the preparation, implementation, monitoring and evaluation of the impacts of these policies on women and men.
+- 26. Take effective measures to close the gender pay gap, where relevant drawing on the Commission&#x27;s Action Plan, including the following:
+  - a) measures to improve pay transparency and the enforcement of the principle of equal pay for equal work or work of equal value,</pre>
+    <button class="copy-btn" data-target="text-45">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="45" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="45" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="45" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-46">
+  <header class="card-head">
+    <span class="row-num">#46</span>
+    <span class="pid">PayGap_Council_2019__c020</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-46">Classify the following passage.
+
+PASSAGE:
+# 7. EIGE:
+- Research note entitled &quot;Tackling the gender pay gap: not without a better work-life balance&quot; 6656/19 ADD 1
+- Gender Equality Index https://eige.europa.eu/gender-equality-index
+- **8.** European Economic and Social Committee. Opinion on &quot;the EU Action Plan 2017-2019-- Tackling the gender pay gap&quot;. SOC/571.</pre>
+    <button class="copy-btn" data-target="text-46">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="46" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="46" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="46" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-47">
+  <header class="card-head">
+    <span class="row-num">#47</span>
+    <span class="pid">PayGap_Council_2019__c021</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-47">Classify the following passage.
+
+PASSAGE:
+## 9. Other:
+- The UN Convention on the Elimination of all Forms of Discrimination Against Women (CEDAW).
+- The United Nations 2030 Agenda for Sustainable Development.
+- The European Social Charter (revised) of the Council of Europe of 1996
+- The United Nations&#x27; agenda for gender equality and women&#x27;s empowerment (The Beijing Platform for Action)</pre>
+    <button class="copy-btn" data-target="text-47">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="47" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="47" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="47" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-48">
+  <header class="card-head">
+    <span class="row-num">#48</span>
+    <span class="pid">Roadmap_2025__c002</span>
+    <span class="gold">gold: <code>mainstreaming_intersectionality</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-48">Classify the following passage.
+
+PASSAGE:
+## INTRODUCTION
+Equality between women and men is a fundamental right and a founding value enshrined in EU law since the 1957 Treaty of Rome. The European Union is proud to defend this core value and to have achieved numerous milestones on women&#x27;s rights and gender equality. The EU is home to some of the most gender-equal societies in the world, setting a global benchmark for equality and inclusion.
+
+Over the decades of the European project, the pursuit of gender equality has become a cornerstone of the EU&#x27;s social and economic policies, targeting *inter alia* gender inequalities in the labour market, in social security, in access to goods and services, and in pay . At the same time, the EU has promoted better work-life balance, women&#x27;s equal representation in corporate decisionmaking, entrepreneurship and research, and combated violence against women . The EU has also taken important steps towards strengthening the care economy, and thereby promoted women&#x27;s participation in the labour market, by supporting children&#x27;s access to quality early childhood education and care and by improving access to affordable and high-quality long-term care .
+
+The Gender Equality Strategy 2020-2025 , under the vision of building a Union of Equality, where all women and girls, men and boys can thrive, lead and be free from violence, has delivered on a series of key policy actions. The Commission has advanced its gender mainstreaming efforts through the Taskforce on Equality, working to integrate gender considerations in all policy areas.
+
+At the same time, the EU has leveraged its global influence to advocate for women&#x27;s rights, ensuring these issues remain integral to the global development agenda. It has proven itself a pivotal force in the global push for gender equality and commitment to fostering inclusive, equitable societies worldwide. In line with international commitments, the EU has consistently worked towards implementing the Sustainable Development Goals (SDGs), notably SDG5 on achieving gender equality and empowering all women and girls.</pre>
+    <button class="copy-btn" data-target="text-48">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="48" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="48" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="48" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-49">
+  <header class="card-head">
+    <span class="row-num">#49</span>
+    <span class="pid">Roadmap_2025__c005</span>
+    <span class="gold">gold: <code>equal_economy</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-49">Classify the following passage.
+
+PASSAGE:
+## GENDER EQUALITY: AN IMPERATIVE FOR COMPETITIVENESS, DEMOCRACY, AND SOCIAL FAIRNESS
+The bedrock of a strong EU, its competitiveness, democracy and social fairness, is its people, with women making up half of the EU&#x27;s population. Acknowledging and harnessing the potential of all women as workers, entrepreneurs, and leaders is imperative for the EU&#x27;s growth and stability. Empowering women to fully engage in the workforce and decision-making processes catalyses economic growth, spurring innovation and enhancing the quality of life for all citizens.
+
+Projections show that improved gender equality could elevate the EU GDP per capita by 6.1 to 9.6% by 2050, equating to a remarkable 1.95 to 3.15 trillion euros . Thus, advancing women&#x27;s rights is not just a moral imperative but a strategic investment in the EU&#x27;s economic growth and competitiveness.
+
+Ensuring women&#x27;s full, equal and meaningful participation, and their representation and leadership, also fosters more stable and resilient democracies. Democracies that advance women&#x27;s rights incorporate a wider range of perspectives and experiences into decision-making processes, leading to policies that are more comprehensive and attuned to the needs of all citizens. In the corporate sphere, gender equality translates into a competitive edge, with firms exhibiting higher profits and better stock market performance when women occupy leadership roles .
+
+Promoting gender equality can help address pressing challenges, including labour force shortages, the demographic transition, inequalities and poverty, climate change, hybrid threats and security concerns. It thus constructs a healthier, more prosperous future while making our societies fairer,
+
+more democratic, stable, healthy and cohesive, and our economies more innovative and competitive on the global stage.
+
+However, the findings of the 2024 Report on Gender Equality in the EU are clear: despite the many achievements made in promoting gender equality and the gradual strengthening of the EU&#x27;s related policy framework, significant challenges remain in the domains of violence, health, time, money, work, education and knowledge, power and institutional mechanisms, as evidenced by the Gender Equality Index. In the absence of reinforced action, it would take another 60 years to achieve full gender equality in the EU .</pre>
+    <button class="copy-btn" data-target="text-49">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="49" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="49" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="49" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-50">
+  <header class="card-head">
+    <span class="row-num">#50</span>
+    <span class="pid">Roadmap_2025__c008</span>
+    <span class="gold">gold: <code>mainstreaming_intersectionality</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-50">Classify the following passage.
+
+PASSAGE:
+## THE ROADMAP FOR WOMEN&#x27;S RIGHTS: A COMMITMENT TO GREATER GENDER EQUALITY
+The Roadmap annexed to this Communication has the ambition to drive future efforts to ensure that women&#x27;s rights and gender equality are at the core of EU policies and actions. It takes into account what has already been achieved on gender equality and looks ahead to the challenges in the coming years. It reaffirms the need for a dual approach: mainstreaming of a gender perspective in all policies, on the one hand, and preventing and eliminating gender inequalities, on the other hand. It reflects the contributions received in the course of its preparations, including from Member States, social partners, civil society and international organisations.
+
+The Roadmap is based on fundamental rights and values, which are either already laid down in the EU treaties and legislation, or which may require further action at the competent level to be fully operational. It must, therefore, be read in tandem with existing EU legal acts and instruments and is without prejudice to them. The effective implementation of recently adopted legislation will be essential to make the Roadmap&#x27;s principles and objectives a reality.
+
+The Roadmap sets out long-term policy objectives for upholding and advancing the following key principles of women&#x27;s rights and gender equality: (1) freedom from gender-based violence; (2) the highest standards of health; (3) equal pay and economic empowerment; (4) work-life balance and care; (5) equal employment opportunities and adequate working conditions; (6) quality and inclusive education; (7) political participation and equal representation; (8) institutional mechanisms that deliver on women&#x27;s rights.
+
+These principles relate to the remaining key gender equality challenges in the domains of violence, health, time, money, work, education and knowledge, power and institutional mechanisms. The upcoming Gender Equality Strategy post-2025 will present concrete policy measures to be taken to address these challenges. A related open public consultation will be launched in spring 2025, calling for an active involvement and input of all relevant stakeholders in the design of actions to be put forward in the Strategy. The continued implementation of the Gender Equality Strategy 2020-2025 in parallel contributes to advancing women&#x27;s rights in the EU.</pre>
+    <button class="copy-btn" data-target="text-50">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="50" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="50" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="50" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-51">
+  <header class="card-head">
+    <span class="row-num">#51</span>
+    <span class="pid">Roadmap_2025__c009</span>
+    <span class="gold">gold: <code>mainstreaming_intersectionality</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-51">Classify the following passage.
+
+PASSAGE:
+## THE ROADMAP FOR WOMEN&#x27;S RIGHTS: A COMMITMENT TO GREATER GENDER EQUALITY
+The Commission commits to continue gender mainstreaming in all its policies and actions. This includes mainstreaming gender in the EU budget and aligning relevant upcoming policy initiatives with the goals of the Roadmap. For instance, to foster competitiveness and further tap into women&#x27;s workforce potential, the Commission proposes to add a strong gender equality perspective to initiatives such as the Quality Jobs Roadmap, the Women in Farming Platform, and
+
+the EU Start-up and Scale-up Strategy. The Roadmap for Women&#x27;s Rights is adopted at the same time as the Union of Skills, setting out measures to support education and training, up-skilling and reskilling from a gender sensitive perspective. Moreover, as part of the work on a strategy on financial literacy that aims to empower retail investors to take informed financial decisions and increase their participation in capital markets on fairer terms, specific attention will be given to women.
+
+The Commission will pursue gender mainstreaming in initiatives such as the EU Anti-Poverty Strategy, the European Affordable Housing Plan, the Apply AI Strategy and the EU-wide inquiry on the broader impacts of social media on well-being, which will contribute to foster social fairness and tackle the social inequalities faced by women and girls. The Commission will also put forward proposals for gender mainstreaming in the context of the revision of the 2013 Council Recommendation on health-enhancing physical activity across sectors and in working to strengthen the European Sport Model.
+
+As gender equality is also key to democratic participation and societal resilience, the Commission intends to integrate a gender dimension into the Preparedness Union Strategy and the action plan against cyberbullying. Moreover, the European Democracy Shield will contribute to empowering and supporting women in politics, with dedicated measures on the safety of political candidates and elected representatives.</pre>
+    <button class="copy-btn" data-target="text-51">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="51" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="51" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="51" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-52">
+  <header class="card-head">
+    <span class="row-num">#52</span>
+    <span class="pid">Roadmap_2025__c011</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-52">Classify the following passage.
+
+PASSAGE:
+## A GUIDE FOR EU EXTERNAL ACTION
+Rollback on the progress we have achieved over the past 30 years is not acceptable. The Commission will firmly oppose any action or proposal that seeks to undermine the existing international commitments and standards and will strive to enhance them further, wherever possible.</pre>
+    <button class="copy-btn" data-target="text-52">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="52" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="52" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="52" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-53">
+  <header class="card-head">
+    <span class="row-num">#53</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c002</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-53">Classify the following passage.
+
+PASSAGE:
+#### Whereas:
+
+- (1) Under Article 2 of the Treaty on European Union (TEU), equality is a founding value of the Union and is common to the Member States in a society in which equality between women and men prevails. Under Article 3(3) TEU, the Union is to promote equality between women and men.
+- (2) Article 157(3) of the Treaty on the Functioning of the European Union (TFEU) confers upon the European Parliament and the Council the power to adopt measures to ensure the application of the principle of equal opportunities and equal treatment of men and women in matters of employment and occupation.
+- (3) With a view to ensuring full equality in practice between men and women in working life, Article 157(4) TFEU permits positive action by allowing Member States to maintain or adopt measures providing for specific advantages in order to make it easier for the underrepresented sex to pursue a vocational activity or to prevent or compensate for disadvantages in professional careers. Article 23 of the Charter of Fundamental Rights of the European Union (the &#x27;Charter&#x27;) provides that equality between women and men is to be ensured in all areas and that the principle of equality cannot prevent the maintenance or adoption of measures providing for specific advantages in favour of the underrepresented sex.
+- (4) The European Pillar of Social Rights, which was jointly proclaimed by the European Parliament, the Council, and the Commission in 2017, incorporates among its principles equality of treatment and opportunities between women and men, including regarding participation in the labour market, terms and conditions of employment and career progression.
+- (5) Achieving gender equality in the workplace requires a comprehensive approach, which also includes fostering gender-balanced decision-making within companies at all levels, as well as closing the gender pay gap. Ensuring equality in the workplace is also a key prerequisite for reducing poverty among women.</pre>
+    <button class="copy-btn" data-target="text-53">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="53" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="53" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="53" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-54">
+  <header class="card-head">
+    <span class="row-num">#54</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c006</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-54">Classify the following passage.
+
+PASSAGE:
+#### Whereas:
+- (11) The European Parliament, in its resolution of 6 July 2011 on women and business leadership, urged companies to attain the critical threshold of 30 % female membership of management bodies by 2015 and 40 % by 2020. It called on the Commission, if the steps taken by companies and the Member States were found to be inadequate, to propose legislation by 2012, including quotas. It would be important that such legislation be implemented on a temporary basis and serve as a catalyst for change and for rapid reforms designed to eliminate persisting gender inequalities and stereotypes in economic decision-making. The European Parliament reiterated that call for legislation in its resolutions of 13 March 2012 and 21 January 2021.</pre>
+    <button class="copy-btn" data-target="text-54">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="54" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="54" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="54" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-55">
+  <header class="card-head">
+    <span class="row-num">#55</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c007</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-55">Classify the following passage.
+
+PASSAGE:
+#### Whereas:
+- (12) It is important that Union institutions, bodies, offices and agencies lead by example when it comes to gender equality by, inter alia, setting objectives for a gender-balanced representation at all levels of management. Particular attention needs to be given to policies for the recruitment of senior management. Therefore, in its communication of 5 March 2020 entitled &#x27;A Union of Equality: the Gender Equality Strategy 2020-2025&#x27; the Commission emphasised that Union institutions, bodies, offices and agencies should ensure gender balance in leadership positions. In its communication of 5 April 2022 entitled &#x27;A new Human Resources Strategy for the Commission&#x27;, the Commission committed to ensuring full gender equality at all levels of its management by 2024. The Commission will monitor progress and report regularly in that regard on its website. The Commission further shares best practices with other Union institutions, bodies, offices and agencies and will report on the situation of gender balance in leadership positions in those institutions, bodies, offices and agencies on its website. The European Parliament, in its Bureau decision of 13 January 2020, has agreed on setting targets for gender balance in senior and middle management positions for 2024. The European Parliament will continue to monitor the progress at all levels of its management and aims to lead by example. The Council committed, in its Diversity and Inclusion Strategy 2021-2024, to achieving gender equality in management positions of its General Secretariat (GSC) with a 45 to 55 % margin at the latest by the end of 2026. The GSC&#x27;s Action Plan for Gender Equality in Management sets out measures to achieve that objective.
+- (13) It is important that companies and businesses foster, support and develop female talent at all levels and throughout their careers in order to ensure that qualified women are provided with opportunities to hold board and management positions.</pre>
+    <button class="copy-btn" data-target="text-55">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="55" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="55" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="55" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-56">
+  <header class="card-head">
+    <span class="row-num">#56</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c011</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-56">Classify the following passage.
+
+PASSAGE:
+#### Whereas:
+- (19) The proportion of women on boards has increased very slowly over recent years. The rate of improvement has varied among Member States and has led to highly divergent results. Much more significant progress was noted in those Member States where binding measures have been introduced. That divergence is likely to increase given the very different approaches to improving gender balance on boards. Therefore, Member States are encouraged to share information about the effective measures taken and policies adopted at national level, and to exchange best practices, with a view to supporting progress across the Union towards achieving a more balanced representation of women and men on boards.
+- (20) The scattered and divergent regulation or the absence of regulation at national level as regards the gender balance on boards of listed companies not only leads to discrepancies in the number of women among non-executive directors and to different rates of improvement across Member States, but it also poses barriers to the internal market by imposing divergent corporate governance requirements on listed companies in the Union. Those differences in legal and self-regulatory requirements for the composition of boards can lead to practical complications for listed companies operating across borders, in particular when establishing subsidiaries or in mergers and acquisitions, and for candidates for director positions.
+- (21) Gender imbalances within companies are greater at more senior levels. Furthermore, many of those women who are represented at senior management level are to be found in fields such as human resources and communication, while men at a senior level are more likely to be employed in general management or line management within the company. As the main pool for recruitment to director positions is comprised largely of candidates with senior management experience, it is vital that the number of women advancing to such management positions within companies be increased.</pre>
+    <button class="copy-btn" data-target="text-56">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="56" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="56" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="56" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-57">
+  <header class="card-head">
+    <span class="row-num">#57</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c012</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-57">Classify the following passage.
+
+PASSAGE:
+#### Whereas:
+- (22) One of the main factors enabling this Directive to be correctly implemented is the effective application of criteria, to be set in advance and with full transparency, for the selection of directors, with candidates&#x27; qualifications, knowledge and skills being considered on an equal basis, regardless of their gender.
+- (23) The current lack of transparency in the selection process and qualification criteria for director positions in most Member States represents a significant barrier to greater gender balance among directors and negatively affects both the board candidates&#x27; careers and freedom of movement and investor decisions. Such a lack of transparency prevents potential candidates for director positions from applying to boards where their qualifications would be most required and from challenging gender-biased appointment decisions, thus restricting their freedom of movement within the internal market. On the other hand, investors might have investment strategies that require that information linked also to the expertise and competence of directors be provided. More transparency in the qualification criteria and the selection process for directors enables investors to better assess the company&#x27;s business strategy and to take informed decisions. It is therefore important that board appointment procedures be clear and transparent and that candidates be assessed objectively on their individual merits, regardless of their gender.
+- (24) While this Directive does not aim to harmonise national laws on the selection process and qualification criteria for director positions in detail, the introduction of certain minimum requirements for listed companies without balanced gender representation relating to the selection of candidates for appointment or election to director positions on the basis of a transparent and clearly defined selection process and an objective comparative assessment of their qualifications in terms of suitability, competence and professional performance is necessary for achieving gender balance. Only a binding measure at Union level can effectively help to ensure a competitive levelplaying field throughout the Union and avoid practical complications in business life.</pre>
+    <button class="copy-btn" data-target="text-57">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="57" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="57" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="57" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-58">
+  <header class="card-head">
+    <span class="row-num">#58</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c014</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-58">Classify the following passage.
+
+PASSAGE:
+#### Whereas:
+- (31) There are various systems of board structures for listed companies in the Member States, the main distinction being between a dual system with both a management board and a supervisory board and a unitary system combining the management and supervisory functions in a single board. There are also mixed systems, which feature aspects of both systems or give companies an option between different models. This Directive should apply to all board systems existing in the Member States.
+
+- (32) All board systems distinguish, *de jure* or *de facto*, between executive directors, who are involved in the daily management of the company, and non-executive directors who perform a supervisory function and are not involved in the daily management of the listed company. This Directive aims to improve the gender balance among both categories of directors. In order to strike the right balance between the need to increase the gender balance of boards and the need to minimise interference with the day-to-day management of a company, this Directive distinguishes between those two categories of director.
+- (33) In several Member States, a certain proportion of the non-executive directors can or must, pursuant to national law or practice, be appointed or elected by the companies&#x27; workforce, by employee organisations or by both. The quantitative objectives laid down in this Directive should also apply to such directors. However, because some nonexecutive directors are employee representatives, the Member States should establish the means for ensuring that those objectives are achieved, with due regard to the specific rules for the election or designation of employee representatives as laid down in national law and with respect for the freedom of vote in the election of employee representatives. Given the differences between Member States&#x27; national company law, it should be possible for Member States to apply the quantitative objectives separately to shareholder representatives and employee representatives.</pre>
+    <button class="copy-btn" data-target="text-58">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="58" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="58" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="58" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-59">
+  <header class="card-head">
+    <span class="row-num">#59</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c017</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-59">Classify the following passage.
+
+PASSAGE:
+#### Whereas:
+- (39) Member States should ensure that those listed companies on whose boards members of the underrepresented sex hold less than 40 % of non-executive director positions or less than 33 % of all director positions, including both executive and non-executive directors, as applicable, select the best qualified candidates for appointment or election to those positions on the basis of a comparative assessment of the qualifications of candidates by applying clear, neutrally formulated and unambiguous criteria established in advance of the selection process, with a view to improving gender balance on boards. Examples of types of selection criteria that listed companies could apply include professional experience in managerial or supervisory tasks, international experience, multidisciplinarity, leadership, communication skills, networking abilities and knowledge in specific relevant areas such as finance, financial oversight or human resources management.
+- (40) When selecting candidates for appointment or election to director positions, priority should be given to the equally qualified candidate of the underrepresented sex. Such priority should not, however, constitute an automatic and unconditional preference. There might be exceptional cases where an objective assessment concerning the specific situation of an equally qualified candidate of the other sex might override the preference which should, otherwise, be accorded to the candidate of the underrepresented sex. Such an overriding of preference could take place, for instance, where broader diversity policies apply at national or company level for the selection of directors. The overriding of the application of positive action should nevertheless remain exceptional, be based on a case-by-case assessment and be duly justified by objective criteria which should not, in any event, discriminate against the underrepresented sex.
+- (41) In Member States where the requirements laid down in this Directive relating to the selection of candidates for appointment or election to director positions are applicable, listed companies on whose boards members of the underrepresented sex hold at least 40 % of non-executive director positions or at least 33 % of all director positions, as applicable, should not be obliged to comply with those requirements.</pre>
+    <button class="copy-btn" data-target="text-59">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="59" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="59" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="59" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-60">
+  <header class="card-head">
+    <span class="row-num">#60</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c020</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-60">Classify the following passage.
+
+PASSAGE:
+#### Whereas:
+- (45) While this Directive seeks to establish minimum requirements in the form of binding measures to improve the gender composition of boards, it is important, in accordance with the principle of subsidiarity, to recognise the legitimacy of different approaches and to acknowledge the effectiveness of certain existing national measures, already adopted in this policy area, which have shown satisfactory results. In some Member States, efforts to ensure a more balanced representation of women and men on boards have thus already been made through the adoption of binding measures that are considered equally effective to those laid down in this Directive. Those Member States should be able to suspend the application of the requirements laid down in this Directive relating to the selection of candidates for appointment or election to director positions and, where relevant, those relating to the establishment of individual quantitative objectives, provided that the conditions for a suspension set out in this Directive are fulfilled. In such cases, where Member States have introduced such binding measures by way of national law, the rounding rules set out in this Directive with regard to the specific number of directors should be applied *mutatis mutandis* for the purpose of assessing those national measures under this Directive. In a Member State where such suspension applies, the objectives laid down in this Directive should be deemed to be attained and thus the objectives laid down in this Directive in relation to non-executive directors or all directors do not replace and are not added to the relevant national measures.
+- (46) With a view to improving the gender balance among directors involved in daily management tasks, listed companies should be required to set individual quantitative objectives regarding a more balanced representation of both sexes among executive directors, with the aim of achieving such objectives by the date set out in this Directive. Those objectives should help companies to achieve tangible progress as compared with their current situation. That obligation should not apply to listed companies which pursue the objective of 33 % relating to all directors, whether executive or non-executive.</pre>
+    <button class="copy-btn" data-target="text-60">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="60" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="60" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="60" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-61">
+  <header class="card-head">
+    <span class="row-num">#61</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c023</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-61">Classify the following passage.
+
+PASSAGE:
+#### Whereas:
+- (51) This Directive respects fundamental rights and observes the principles recognised by the Charter. In particular, it contributes to the fulfilment of the principle of equality between women and men (Article 23 of the Charter) and the freedom to choose an occupation and the right to engage in work (Article 15 of the Charter). This Directive seeks to ensure full respect for the right to an effective remedy and to a fair trial (Article 47 of the Charter). The limitations on the exercise of the freedom to conduct a business (Article 16 of the Charter) and of the right to property (Article 17(1) of the Charter) respect the essence of that freedom and that right and are necessary and proportionate. It is possible to make limitations only if they genuinely meet objectives of general interest recognised by the Union or the need to protect the rights and freedoms of others.
+- (52) While some Member States have taken regulatory action or encouraged self-regulation with mixed results, the majority of Member States have not taken action or indicated their willingness to act in a way that would bring about sufficient improvement. Projections based on a comprehensive analysis of all available information on past and current trends and intentions show that Member States acting individually will not achieve a balanced representation of women and men among directors across the Union in line with the objectives laid down in this Directive at any point in the foreseeable future. Inaction in this area slows down the pursuit of gender equality in the workplace more generally, including in terms of closing the gender pay gap, which results in part from vertical segregation. In the light of those circumstances and given the growing discrepancies between Member States in terms of the representation of women and men on boards, the gender balance on boards across the Union can only</pre>
+    <button class="copy-btn" data-target="text-61">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="61" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="61" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="61" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-62">
+  <header class="card-head">
+    <span class="row-num">#62</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c024</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-62">Classify the following passage.
+
+PASSAGE:
+#### Whereas:
+be improved by means of a common approach, and the potential for gender equality, competitiveness and growth can be better achieved through coordinated action at Union level rather than by means of national initiatives of varying scope, ambition and effectiveness. Since the objective of this Directive, namely to achieve a more balanced representation of women and men among the directors of listed companies by establishing effective measures that aim to accelerate progress towards gender balance, while allowing listed companies sufficient time to make the necessary arrangements for that purpose, cannot be sufficiently achieved by the Member States but can rather, by reason of the scale and effects of action, be better achieved at Union level, the Union may adopt measures in accordance with the principle of subsidiarity as set out in Article 5 TEU. In accordance with the principle of proportionality, as set out in that Article, this Directive is limited to setting common objectives and principles and does not go beyond what is necessary in order to achieve that objective. Member States are given sufficient freedom to determine how the objectives laid down in this Directive should best be achieved taking national circumstances into account, in particular rules and practices concerning recruitment to boards. This Directive does not interfere with the possibility for listed companies to appoint the most qualified directors, and it grants a flexible framework and provides for a sufficiently long period of adaptation.
+
+- (53) Member States should cooperate with the social partners and civil society in order to efficiently inform them about the significance, transposition and implementation of this Directive.</pre>
+    <button class="copy-btn" data-target="text-62">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="62" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="62" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="62" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-63">
+  <header class="card-head">
+    <span class="row-num">#63</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c025</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-63">Classify the following passage.
+
+PASSAGE:
+#### Whereas:
+- (54) In accordance with the principle of proportionality, the objectives to be achieved by listed companies should be limited in time and should remain in force only until sustainable progress has been made in the gender composition of boards. For that reason, the Commission should regularly review the application of this Directive and report to the European Parliament and the Council. Furthermore, this Directive provides for a date on which it will expire. The Commission should assess, in its review, whether there is a need to extend the duration of this Directive beyond that date.
+- (55) In accordance with the Joint Political Declaration of Member States and the Commission of 28 September 2011 on explanatory documents, ( [12\)] Member States have undertaken to accompany, in justified cases, the notification of their transposition measures with one or more documents explaining the relationship between the components of a directive and the corresponding parts of national transposition instruments. With regard to this Directive, the legislator considers the transmission of such documents to be justified,
+
+HAVE ADOPTED THIS DIRECTIVE:
+
+*Article 1*</pre>
+    <button class="copy-btn" data-target="text-63">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="63" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="63" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="63" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-64">
+  <header class="card-head">
+    <span class="row-num">#64</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c028</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-64">Classify the following passage.
+
+PASSAGE:
+### Definitions
+For the purposes of this Directive, the following definitions apply:
+
+- (1) &#x27;listed company&#x27; means a company which has its registered office in a Member State and whose shares are admitted to trading on a regulated market within the meaning of Article 4(1), point (21), of Directive 2014/65/EU in one or more Member States;
+- (2) &#x27;board&#x27; means an administrative, management or supervisory body of a listed company;
+- (3) &#x27;director&#x27; means a member of a board, including a member who is an employees&#x27; representative;
+- (4) &#x27;executive director&#x27; means a member of a unitary board who is engaged in the daily management of a listed company or, in the case of a dual board system, a member of the board which carries out the management functions of a listed company;
+- (5) &#x27;non-executive director&#x27; means a member of a unitary board other than an executive director or, in the case of a dual board system, a member of the board which carries out the supervisory functions of a listed company;
+- (6) &#x27;unitary board&#x27; means a single board that carries out both the management and supervisory functions of a listed company;
+- (7) &#x27;dual board system&#x27; means a system in which the management and supervisory functions of a listed company are carried out by separate boards;
+- (8) &#x27;micro, small and medium-sized enterprise&#x27; or &#x27;SME&#x27; means a company which employs less than 250 persons and has an annual turnover not exceeding EUR 50 million or an annual balance sheet total not exceeding EUR 43 million, or, for an SME having its registered office in a Member State whose currency is not the euro, the equivalent amounts in the currency of that Member State.</pre>
+    <button class="copy-btn" data-target="text-64">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="64" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="64" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="64" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-65">
+  <header class="card-head">
+    <span class="row-num">#65</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c035</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-65">Classify the following passage.
+
+PASSAGE:
+# *Article 7*</pre>
+    <button class="copy-btn" data-target="text-65">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="65" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="65" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="65" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-66">
+  <header class="card-head">
+    <span class="row-num">#66</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c036</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-66">Classify the following passage.
+
+PASSAGE:
+#### Reporting
+1. Member States shall require listed companies to provide information to the competent authorities, once a year, about the gender representation on their boards, distinguishing between executive and non-executive directors and regarding the measures taken with a view to achieving the applicable objectives laid down in Article 5(1) and, where applicable, the objectives set in accordance with Article 5(2). Member States shall require listed companies to publish that information in an appropriate and easily accessible manner on their websites. On the basis of the information provided, Member States shall publish and regularly update, in an easily accessible and centralised manner, a list of the listed companies that have achieved either of the objectives laid down in Article 5(1).
+
+- 2. Where a listed company has not achieved one of the objectives laid down in Article 5(1) or, where applicable, the objectives set in accordance with Article 5(2), the information referred to in paragraph 1 of this Article shall include the reasons for not achieving the objectives and a comprehensive description of the measures which the listed company has already taken or intends to take in order to achieve them.
+- 3. Where applicable, the information referred to in paragraphs 1 and 2 of this Article shall also be included in the company&#x27;s corporate governance statement, in accordance with the relevant provisions of Directive 2013/34/EU.
+- 4. The obligations set out in paragraphs 1 and 2 of this Article shall not apply in a Member State which has suspended the application of Article 6 pursuant to Article 12 where national law provides for reporting obligations that ensure the regular publication of information regarding the progress made by listed companies towards a more balanced representation of women and men on their boards.</pre>
+    <button class="copy-btn" data-target="text-66">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="66" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="66" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="66" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-67">
+  <header class="card-head">
+    <span class="row-num">#67</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c037</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-67">Classify the following passage.
+
+PASSAGE:
+# Penalties and additional measures
+- 1. Member States shall lay down rules on penalties applicable to infringements by listed companies of the national provisions adopted pursuant to Article 5(2) and Articles 6 and 7, as applicable, and shall take all necessary measures to ensure that they are implemented. In particular, Member States shall ensure that adequate administrative or judicial procedures are available to enable the obligations deriving from this Directive to be enforced. The penalties shall be effective, proportionate and dissuasive. Such penalties may comprise fines or the possibility for a judicial body to annul a decision concerning the selection of directors made contrary to the national provisions adopted pursuant to Article 6 or to declare it null and void. Member States shall, by 28 December 2024, notify the Commission of those rules and of those measures and shall notify it, without delay, of any subsequent amendment affecting them.
+- 2. Listed companies may be held liable only for acts or omissions which can be attributed to them in accordance with national law.
+- 3. Member States shall ensure that, in the performance of public contracts and concessions, listed companies comply with applicable obligations relating to social and labour law, in accordance with applicable Union law.</pre>
+    <button class="copy-btn" data-target="text-67">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="67" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="67" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="67" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-68">
+  <header class="card-head">
+    <span class="row-num">#68</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c038</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-68">Classify the following passage.
+
+PASSAGE:
+# *Article 9*</pre>
+    <button class="copy-btn" data-target="text-68">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="68" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="68" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="68" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-69">
+  <header class="card-head">
+    <span class="row-num">#69</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c039</span>
+    <span class="gold">gold: <code>leadership_participation</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-69">Classify the following passage.
+
+PASSAGE:
+### Minimum requirements
+Member States may introduce or maintain provisions which are more favourable than those laid down in this Directive to ensure a more balanced representation of women and men in respect of listed companies incorporated in their national territory.</pre>
+    <button class="copy-btn" data-target="text-69">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="69" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="69" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="69" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-70">
+  <header class="card-head">
+    <span class="row-num">#70</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c040</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-70">Classify the following passage.
+
+PASSAGE:
+# *Article 10*</pre>
+    <button class="copy-btn" data-target="text-70">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="70" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="70" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="70" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-71">
+  <header class="card-head">
+    <span class="row-num">#71</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c042</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-71">Classify the following passage.
+
+PASSAGE:
+#### *Article 12*</pre>
+    <button class="copy-btn" data-target="text-71">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="71" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="71" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="71" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+<article class="card" id="row-72">
+  <header class="card-head">
+    <span class="row-num">#72</span>
+    <span class="pid">WomenOnBoards_Dir_2022_2381__c046</span>
+    <span class="gold">gold: <code>unknown</code></span>
+  </header>
+  <div class="text-block">
+    <div class="block-label">user message (paste this into FineTube)</div>
+    <pre class="passage-text" id="text-72">Classify the following passage.
+
+PASSAGE:
+### *Article 14*</pre>
+    <button class="copy-btn" data-target="text-72">Copy</button>
+  </div>
+  <div class="check-row">
+    <label><input type="checkbox" data-row="72" data-model="base"> base done</label>
+    <label><input type="checkbox" data-row="72" data-model="legends"> tuned-legends done</label>
+    <label><input type="checkbox" data-row="72" data-model="regulation"> tuned-regulation done</label>
+  </div>
+</article>
+
+
+  <footer>
+    GE-CLS · 72 passages · seed 42 · prompt template fixed for the run
+  </footer>
+</div>
+
+<script>
+  // Copy buttons
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const id = btn.getAttribute('data-target');
+      const el = document.getElementById(id);
+      if (!el) return;
+      try {
+        await navigator.clipboard.writeText(el.textContent);
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 1200);
+      } catch (err) {
+        alert('Copy failed: ' + err.message);
+      }
+    });
+  });
+
+  // Progress tracking with localStorage
+  const STORAGE_KEY = 'ge_cls_progress_v1';
+  const totalCells = 72 * 3;
+  const progressEl = document.getElementById('progress');
+
+  function loadProgress() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveProgress(state) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function updateUI() {
+    const state = loadProgress();
+    let done = 0;
+    document.querySelectorAll('.check-row input').forEach(cb => {
+      const key = cb.dataset.row + ':' + cb.dataset.model;
+      cb.checked = !!state[key];
+      if (cb.checked) done += 1;
+    });
+    // Mark cards complete if all three checkboxes ticked
+    document.querySelectorAll('.card').forEach(card => {
+      const inputs = card.querySelectorAll('.check-row input');
+      const all = Array.from(inputs).every(i => i.checked);
+      card.classList.toggle('complete', all);
+    });
+    const pct = ((done / totalCells) * 100).toFixed(1);
+    progressEl.textContent = `${done} / ${totalCells} responses recorded · ${pct}%`;
+  }
+
+  document.querySelectorAll('.check-row input').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const state = loadProgress();
+      const key = cb.dataset.row + ':' + cb.dataset.model;
+      if (cb.checked) state[key] = true; else delete state[key];
+      saveProgress(state);
+      updateUI();
+    });
+  });
+
+  updateUI();
+</script>
+
+</body>
+</html>
