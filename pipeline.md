@@ -1,4 +1,3 @@
-
 # Pipeline LegendsQA
 
 ## 1. Data Acquisition
