@@ -1656,31 +1656,6 @@ benchmark/task_pool/ge_next/
 └── ge_next_generation_prompts.md    # vignette + option generation prompts
 ```
 
-
-
-
-<!-- ### 6.9 Diagnostic set — GE-Diag (reported separately)
-
-Inspired by SuperGLUE's separately-reported Winogender diagnostic, we
-construct **GE-Diag**, a small set of *minimal pairs* not included in
-the aggregate GenderEqGLUE Score but reported alongside it.
-
-**Construction.** Approximately 50 pairs are drawn from the legends pool.
-For each item, we produce two versions of the same passage in which only
-the gender of the protagonist is swapped (e.g. *Alex* ↔ *Alessandra*),
-keeping all factual content identical. The pair is presented to the
-model as a downstream task (e.g. a GE-CLS classification or a
-GE-STANCE judgement).
-
-**Metric.** **Stability score** = percentage of pairs for which the
-model returns identical predictions. A genuinely gender-invariant model
-has a stability score of 100%.
-
-**Why it matters.** GE-Diag complements the explainability analysis of
-point (11) of the challenge by providing a quantitative measure of
-gender-swap invariance, in line with the methodology of GECOBench
-(Lacombe et al., 2024). -->
-
 ### 6.10 Aggregate score and reporting
 
 For each of the three models — base, tuned-legends, tuned-regulation —
@@ -1700,6 +1675,8 @@ predictions when comparing pairs of models. A difference smaller than
 the confidence interval is reported as not significant.
 
 ### 6.11 Summary of data flows
+
+todo: update dataflow based on final benchmark
 
 ```
 Common Evaluation Base (CEB)
