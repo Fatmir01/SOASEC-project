@@ -48,13 +48,16 @@ mirroring the original GLUE score. The headline metric per task is:
 *(Bold marks the per-column maximum; ties in GE-WSC are bolded for
 both `tuned-legends` and `tuned-regulation`.)*
 
-**`tuned-regulation` is the strongest model at the aggregate level**,
-with a GenderEqGLUE Score of 0.937 — a margin of +3.5 points over the
-base and +0.6 points over `tuned-legends`. 
-
-
-The aggregate ranking is **tuned-regulation ≈ tuned-legends > base**, with the
-first two indistinguishable at the headline level (0.937 vs 0.931).
+**`tuned-regulation` is the numerically strongest model at the
+aggregate level**, with a GenderEqGLUE Score of 0.937 — a margin of
++3.5 points over the base but only +0.6 points over `tuned-legends`.
+The aggregate ranking is therefore **`tuned-regulation` ≈
+`tuned-legends` > `base`**, with the first two indistinguishable at
+the headline level (0.937 vs 0.931). This is a substantially closer
+race than the per-task table alone suggests, because the GE-NEXT
+result — discussed in §2 below — adds a near-ceiling 98.7% accuracy
+to `tuned-legends` and lifts its aggregate by a full 2 points relative
+to a benchmark that did not include it.
 
 The wins-per-task tally compresses this picture:
 
@@ -64,85 +67,111 @@ The wins-per-task tally compresses this picture:
 | `tuned-legends` | 3 / 5 | GE-NLI, GE-NEXT, GE-WSC (tied) |
 | `base` | 0 / 5 | — |
 
-`tuned-regulation` wins or ties on every task except GE-NLI;
-`tuned-legends` wins outright only on GE-NLI, the task that §6.5
-designates as the *central* test of the Sargsyan & Damiani (2025)
-hypothesis. The base never tops a column.
-
-
-The results demonstrate a balanced performance across the five evaluated tasks,
-with both fine-tuned models securing three top scores each, including an exact
-tie on the GE-WSC metric. The **tuned-regulation** model claims outright
-victories on GE-CLS and GE-QA. The **tuned-legends** model captures critical
-wins on GE-NEXT and GE-NLI, the two tasks that §6 designates as the central test
-of the Sargsyan & Damiani (2025) hypothesis. The base model never tops a column.
+The two fine-tuned models split the benchmark 3-3 and the base never
+tops a column. `tuned-regulation` wins on the tasks where the
+regulation's own thematic ontology and short-span factual recall are
+directly probed (GE-CLS, GE-QA); `tuned-legends` wins on the tasks
+that §6 of the methodology designates as the central test of the
+Sargsyan & Damiani (2025) hypothesis (GE-NLI on compliance
+recognition, GE-NEXT on compliant-action selection).
 
 ## 2. Statistical significance
 
 The §6.10 protocol applies McNemar's test to per-item correctness on
 each task with binary or multi-class labels and bootstrap 95% CIs to
 the headline metrics. Of the 12 pairwise McNemar comparisons run
-across the four tasks where it is meaningful (GE-CLS does not have a
+across the three tasks where it is meaningful (GE-CLS does not have a
 formal pairwise test in §6.4; GE-QA's audit defers the test to a
-follow-up), **only one reaches α = 0.05**:
+follow-up), **two reach α = 0.05** — and both involve `tuned-legends`
+on GE-NEXT:
 
-| Task       | Comparison                         | p-value | Significant |
-|------------|------------------------------------|--------:|-------------|
-| GE-NLI     | base vs tuned-legends              |   0.180 | no          |
-| GE-NLI     | base vs tuned-regulation           |   0.774 | no          |
-| GE-NLI     | tuned-legends vs tuned-regulation  |   0.549 | no          |
-| GE-WSC     | base vs tuned-legends              |   0.375 | no          |
-| GE-WSC     | base vs tuned-regulation           |   0.250 | no          |
-| GE-WSC     | tuned-legends vs tuned-regulation  |   1.000 | no          |
+| Task     | Comparison                          |  p-value | Significant |
+|----------|-------------------------------------|---------:|-------------|
+| GE-NLI   | base vs tuned-legends               |    0.180 | no          |
+| GE-NLI   | base vs tuned-regulation            |    0.774 | no          |
+| GE-NLI   | tuned-legends vs tuned-regulation   |    0.549 | no          |
+| GE-WSC   | base vs tuned-legends               |    0.375 | no          |
+| GE-WSC   | base vs tuned-regulation            |    0.250 | no          |
+| GE-WSC   | tuned-legends vs tuned-regulation   |    1.000 | no          |
+| GE-NEXT  | base vs tuned-legends               |  **0.0063** | **yes (\*\*)** |
+| GE-NEXT  | base vs tuned-regulation            |    0.250 | no          |
+| GE-NEXT  | tuned-legends vs tuned-regulation   |  **0.0391** | **yes (\*)**   |
 
+**The two statistically significant pairwise gaps in the entire
+benchmark both favour `tuned-legends` on GE-NEXT.** Against the base,
+`tuned-legends` recovers 11 items the base misses and loses only 1
+(p = 0.006). Against `tuned-regulation`, `tuned-legends` recovers 8
+items the regulation-tuned model misses and loses only 1 (p = 0.039).
+The base-vs-regulation comparison on GE-NEXT does not separate the
+two models (p = 0.25), and no comparison on the other three tasks
+clears the bar.
 
-TODO: update table with GE-NEXT
+The error overlap on GE-NEXT is therefore highly asymmetric: the
+items `tuned-legends` answers correctly are very nearly a strict
+superset of the items the other two answer correctly. This is the
+cleanest item-level signature in the entire benchmark of a
+competence that the legends corpus teaches and that the regulation
+corpus does not.
 
-TODO: update the following part of the report
-
-The single statistically significant pairwise gap in the entire
-benchmark is **`tuned-legends` < `tuned-regulation` on GE-STANCE**.
-Every other inter-model gap, including the GE-NLI directional win for
-`tuned-legends` and the GE-CLS dominance of `tuned-regulation`, sits
-inside the noise band of the test set sizes used (n = 100–168 per
-task). The two largest numerical gaps — the +9 macro-F1 gap on GE-CLS
-and the −10 macro-F1 gap on GE-STANCE — are also the ones the human
-reader is most tempted to interpret causally; only the second clears
-the formal bar.
-
-This is a power problem more than a null result. The §7 limitations
-section of the methodology document explicitly acknowledged that test
-sets in the 100–500 range would discriminate between models only when
-effect sizes are large; the 4-point GenderEqGLUE Score gap between
-`tuned-regulation` and the other two is concentrated on GE-CLS and
-GE-STANCE (the two tasks where the gold labels most directly mirror
-the regulation's own ontology) and is suggestive but not formally
-proven on a per-item basis.
+A power caveat still applies elsewhere. The §7 limitations section
+of the methodology document anticipated that test sets in the
+100–500 range would discriminate between models only when effect
+sizes are large; the GE-NLI directional lead of +3 accuracy points
+on n = 168 sits inside the noise band and would require roughly
+3× the test items to clear McNemar reliably. GE-NEXT clears the bar
+on n = 150 because its effect sizes are larger (gaps of 4–7 accuracy
+points combined with very asymmetric discordance counts).
 
 ## 3. Reading the result against the central hypothesis
 
 The Sargsyan & Damiani (2025) hypothesis predicts that legends-based
 fine-tuning produces a model that internalises **regulatory
 compliance** better than a model fine-tuned on the same volume of raw
-regulatory prose. 
+regulatory prose.
 
-§6.5 and §6.8 single out GE-NLI and GE-NEXT as the two tasks expected to provide
-the cleanest test of this prediction. The picture that emerges from the five
-tasks together is more nuanced than a single yes/no.
+§6.5 and §6.8 single out GE-NLI and GE-NEXT as the two tasks expected
+to provide the cleanest test of this prediction. The picture that
+emerges from the five tasks together is now substantially more
+favourable to the hypothesis than the GE-NLI result alone would have
+licensed.
 
 ### 3.1 Where the hypothesis is supported
 
-**GE-NLI supports the hypothesis directionally.** `tuned-legends` is numerically
-the best model on GE-NLI (92.86% accuracy vs 91.07% for `tuned-regulation` and
-89.88% for `base`). The construction-method breakdown in the GE-NLI report
-sharpens this finding: on the **entailment** subset specifically — the items
-that test compliance recognition (compliant scenario + matching regulatory
-clause) — `tuned-legends` reaches 89.3% recall, against 78.6% for
-`tuned-regulation` and 82.1% for `base`. This is the single cleanest qualitative
-confirmation of the hypothesis in the benchmark: on the items closest to the
-construct the hypothesis is *about*, `tuned-legends` is best by a margin of 7–11
-percentage points. The limitation is statistical: McNemar p = 0.18 on n = 168,
-so the directional finding does not clear the conventional bar.
+**GE-NEXT confirms the hypothesis with formal statistical
+significance.** `tuned-legends` reaches 98.67% accuracy against
+94.00% for `tuned-regulation` and 92.00% for `base`, and the
+pairwise McNemar tests against both other models clear α = 0.05
+(p = 0.006 and p = 0.039 respectively). GE-NEXT is the first task
+in the benchmark on which the central prediction of the methodology
+is supported not merely directionally but at the conventional
+significance bar. The §6.8 framing — that GE-NEXT was the most
+direct probe of the *decision pattern* the legends embed, rather
+than of regulatory content per se — receives its strongest
+empirical confirmation here.
+
+A note on mechanism: the per-distractor-type diagnostic of the
+GE-NEXT report is uninformative on this run because the legend
+model produces only 2 wrong picks on the available 100-item subset
+of GE-NEXT, an error denominator too small to characterise. The
+discordance pattern under McNemar — `tuned-legends` recovers items
+the regulation-tuned model misses much more often than the reverse —
+is the load-bearing evidence for the hypothesis on this task.
+
+**GE-NLI supports the hypothesis directionally.** `tuned-legends` is
+numerically the best model on GE-NLI (92.86% accuracy vs 91.07% for
+`tuned-regulation` and 89.88% for `base`). The construction-method
+breakdown in the GE-NLI report sharpens this finding: on the
+**entailment** subset specifically — the items that test compliance
+recognition (compliant scenario + matching regulatory clause) —
+`tuned-legends` reaches 89.3% recall, against 78.6% for
+`tuned-regulation` and 82.1% for `base`. On the items closest to the
+construct the hypothesis is *about*, `tuned-legends` is best by a
+margin of 7–11 percentage points. The limitation is statistical:
+McNemar p = 0.18 on n = 168, so on GE-NLI the directional finding
+does not clear the conventional bar in isolation. Read together with
+GE-NEXT, however, the two compliance-recognition tasks line up
+consistently: same direction, larger effect size on GE-NEXT, formal
+significance there.
 
 **GE-WSC parity supports the hypothesis at the diagnostic level.**
 On the WinoBias gender-parity diagnostic (§6.7), `tuned-legends` is
@@ -167,9 +196,6 @@ register — `tuned-legends` again leads (0.879 vs 0.849 for
 multi-token spans and to lexically diverse text in a way that the
 formal regulatory prose does not.
 
-
-TODO: add section about GE-NEXT task
-
 ### 3.2 Where the hypothesis is not supported
 
 **GE-CLS is dominated by `tuned-regulation`** (macro-F1 0.928 vs
@@ -183,7 +209,6 @@ in a form the classifier head can latch onto. The hypothesis is
 therefore not in tension with this result — GE-CLS was always going
 to be the most favourable task for `tuned-regulation`.
 
-
 **GE-QA aggregate ranks `tuned-regulation` first.** The gap is small
 (0.944 vs 0.938 for `tuned-legends`) and the audit shows that it
 arises mechanically from the dataset's bias toward short single-span
@@ -196,31 +221,36 @@ than about compliance understanding per se.
 
 ### 3.3 Synthesis
 
-The hypothesis holds in its **narrowest formulation** — legends
-support compliance-recognition reasoning, as evidenced on GE-NLI
-entailment items and the GE-WSC parity diagnostic — but does **not**
-generalise to the broader benchmark in the way §6.5 and §6.8 jointly
-predicted. The cleanest finding from running all five tasks together
-is in fact a **qualitative complementarity** between the two
-fine-tuning regimes that no single task captures alone:
+The hypothesis holds in its **central formulation** — legends
+support compliance-recognition and compliance-action reasoning, with
+formal McNemar significance on GE-NEXT and consistent directional
+support on GE-NLI, GE-WSC parity, and GE-QA long-answers — but does
+not generalise to ontology classification or short-span factual
+recall, which favour `tuned-regulation`. The cleanest finding from
+running all five tasks together is a **qualitative complementarity**
+between the two fine-tuning regimes that no single task captures
+alone:
 
 | Reasoning competence                          | Best model         |
 |-----------------------------------------------|--------------------|
 | Recognising compliance (entailment)           | `tuned-legends`    |
+| Selecting the compliant action (GE-NEXT)      | `tuned-legends`    |
 | Detecting violations (contradiction)          | `tuned-regulation` |
 | Classifying into the regulation's ontology    | `tuned-regulation` |
-| Endorsement/stance detection                  | `tuned-regulation` |
 | Gender-parity invariance                      | `tuned-legends`    |
 | Long-form factoid extraction                  | `tuned-legends`    |
 | Short-span factoid extraction                 | `tuned-regulation` |
 
-These are not equally weighted in the headline GenderEqGLUE Score, so
-the score itself ranks `tuned-regulation` first; but the per-task
-breakdown shows that the two fine-tuning corpora train two genuinely
-different competences, and a real-world deployment that cared
-specifically about compliance recognition or fairness invariance
-would have a defensible reason to prefer `tuned-legends` despite its
-lower aggregate score.
+The competence map tilts 4–3 to `tuned-legends`, but the
+two-point lag in the headline GenderEqGLUE Score arises because the
+score equally weights every task — including GE-CLS, on which
+`tuned-regulation` has its largest single-task advantage (+9 macro-F1
+points). A deployment whose risk profile foregrounds compliance
+recognition, compliant-action selection or fairness invariance has a
+defensible reason to prefer `tuned-legends` despite the marginal
+aggregate-score lag; a deployment that prioritises ontology
+recognition or terse factoid extraction would prefer
+`tuned-regulation`.
 
 ## 4. Cross-task pillar effects
 
@@ -229,37 +259,52 @@ across the tasks. The §7.4 imbalance — `violence_stereotypes` and
 `leadership_participation` over-represented, `equal_economy`,
 `mainstreaming_intersectionality` and `funding_global_action`
 under-represented — is inherited by every CEB-derived task (GE-CLS,
-GE-NLI, GE-QA), while the two external-source tasks (GE-WSC,
-GE-STANCE) are pillar-agnostic. This shapes the per-pillar reading.
+GE-NLI, GE-QA), while GE-WSC is pillar-agnostic and GE-NEXT is
+balanced by construction at 30 items per pillar. This shapes the
+per-pillar reading.
 
-| Pillar                              | GE-CLS gain (reg − base) | GE-NLI gain (legends − base) | GE-QA gain (reg − base) |
-|-------------------------------------|-------------------------:|-----------------------------:|------------------------:|
-| `violence_stereotypes`              |                   +0.045 |                       +0.028 |                  +0.023 |
-| `equal_economy`                     |                   +0.167 |                       +0.111 |                  +0.029 |
-| `leadership_participation`          |                   +0.000 |                       +0.000 |                  +0.049 |
-| `mainstreaming_intersectionality`   |                   +0.389 |                       +0.000 |                  +0.025 |
-| `funding_global_action`             |                   +0.000 |                       +0.048 |                  +0.063 |
+| Pillar                              | GE-CLS gain (reg − base) | GE-NLI gain (legends − base) | GE-QA gain (reg − base) | GE-NEXT gain (legends − base) |
+|-------------------------------------|-------------------------:|-----------------------------:|------------------------:|------------------------------:|
+| `violence_stereotypes`              |                   +0.045 |                       +0.028 |                  +0.023 |                        +0.067 |
+| `equal_economy`                     |                   +0.167 |                       +0.111 |                  +0.029 |                        +0.100 |
+| `leadership_participation`          |                   +0.000 |                       +0.000 |                  +0.049 |                        +0.033 |
+| `mainstreaming_intersectionality`   |                   +0.389 |                       +0.000 |                  +0.025 |                        +0.067 |
+| `funding_global_action`             |                   +0.000 |                       +0.048 |                  +0.063 |                        +0.067 |
 
-Two patterns are worth highlighting:
+Three patterns are worth highlighting:
 
-- **The minority pillars are where fine-tuning helps the most.**
-  `mainstreaming_intersectionality` and `equal_economy`, both with
-  pool sizes far below the §6.3.2 target of 30, see the largest
-  per-task gains — most strikingly +39 macro-F1 points on GE-CLS
-  for `tuned-regulation`. This is consistent with the idea that the
-  fine-tuning corpora expose the model to the operational vocabulary
-  of pillars that the base model has limited prior exposure to. The
-  caveat from §7.3 applies: with n ≤ 18 in these buckets, the gains
-  carry wide effective confidence intervals.
+- **The minority pillars are where fine-tuning helps the most on the
+  CEB-derived tasks.** `mainstreaming_intersectionality` and
+  `equal_economy`, both with pool sizes far below the §6.3.2 target
+  of 30, see the largest per-task gains on GE-CLS and GE-NLI — most
+  strikingly +39 macro-F1 points on GE-CLS for `tuned-regulation`.
+  This is consistent with the idea that the fine-tuning corpora
+  expose the model to the operational vocabulary of pillars that the
+  base model has limited prior exposure to. The caveat from §7.3
+  applies: with n ≤ 18 in these buckets, the gains carry wide
+  effective confidence intervals.
 
-- **`violence_stereotypes` is where `tuned-legends` shows its only
-  per-pillar advantage.** On GE-QA factoid F1, `tuned-legends`
-  reaches 0.879 against 0.849 for `tuned-regulation`. As the GE-QA
-  audit notes, this pillar is dominated by Italian-language Istanbul
-  Convention passages that sit outside the EU Strategy's English
-  register; the legends, generated by three different LLMs in §3,
-  expose the model to a wider lexical surface that transfers
-  marginally better to non-English regulatory prose.
+- **GE-NEXT shows the most uniform gain pattern across pillars.**
+  The legends-over-base gain ranges from +3.3 points
+  (`leadership_participation`) to +10.0 points (`equal_economy`),
+  with no pillar showing a regression and the smallest gain still
+  positive. This is consistent with the §6.8 framing of GE-NEXT as a
+  test of a *decision pattern* — the four-beat
+  identify → design → implement → measure arc — that the legends
+  embed across pillars rather than concentrating on any one pillar's
+  vocabulary. By contrast, the CEB-derived tasks show much more
+  heterogeneous per-pillar effects (compare the +39-point GE-CLS
+  gain on `mainstreaming_intersectionality` with the zero gain on
+  `leadership_participation` and `funding_global_action`).
+
+- **`violence_stereotypes` is where `tuned-legends` shows its
+  largest per-pillar advantage on GE-QA.** On factoid F1,
+  `tuned-legends` reaches 0.879 against 0.849 for `tuned-regulation`.
+  As the GE-QA audit notes, this pillar is dominated by
+  Italian-language Istanbul Convention passages that sit outside the
+  EU Strategy's English register; the legends, generated by three
+  different LLMs in §3, expose the model to a wider lexical surface
+  that transfers marginally better to non-English regulatory prose.
 
 The pillar `funding_global_action` shows a recurring cross-task gain
 for `tuned-regulation` on GE-QA but is muted on GE-CLS — the GAP III
@@ -272,22 +317,24 @@ regulation training induces.
 A consolidated summary of the limitations flagged in the individual
 reports, grouped by the source they propagate from:
 
-1. **Test-set sizes are too small for tight statistical conclusions.**
-   GE-CLS (n = 72), GE-NLI (n = 168), GE-QA factoid (n = 123),
-   GE-WSC (n = 100), GE-STANCE (n = 120). The §7.1 decision not to
-   pursue formal Cohen's κ on the CEB pool, combined with these
-   test sizes, means that all per-task macro-F1 values carry an
-   unmeasured noise component (§7.3). The McNemar-significant
-   GE-STANCE result is robust to this — it survives a paired test
-   on the actual per-item correctness pattern — but most other
-   gaps are not.
+1. **Test-set sizes are too small for tight statistical conclusions
+   on most tasks.** GE-CLS (n = 72), GE-NLI (n = 168), GE-QA factoid
+   (n = 123), GE-WSC (n = 100), GE-NEXT (n = 150). The §7.1 decision
+   not to pursue formal Cohen's κ on the CEB pool, combined with
+   these test sizes, means that all per-task macro-F1 values carry
+   an unmeasured noise component (§7.3). The two McNemar-significant
+   gaps on GE-NEXT survive a paired test on the per-item correctness
+   pattern, but most other gaps do not, and the GE-NLI directional
+   finding in particular would need a roughly 3× larger test set to
+   clear α = 0.05 reliably at the observed effect size.
 
 2. **The Sargsyan-Damiani hypothesis is tested on a single
    backbone.** The fine-tuning is run on one open-pretrained LLM
    (per point (6)–(7) of the challenge); whether the legends
-   advantage on GE-NLI scales to other backbones, or whether it
-   becomes more or less significant with a larger fine-tuning
-   corpus, are open questions outside the scope of this benchmark.
+   advantages on GE-NEXT and GE-NLI scale to other backbones, or
+   whether they become more or less significant with a larger
+   fine-tuning corpus, are open questions outside the scope of this
+   benchmark.
 
 3. **The base model is already very capable on some tasks.** On
    GE-WSC the base model scores 93% accuracy, leaving very little
@@ -296,58 +343,94 @@ reports, grouped by the source they propagate from:
    be read as a near-ceiling result, not as evidence against
    either fine-tuning corpus. A harder coreference benchmark (e.g.
    GAP, BUG) would be needed to separate the three models cleanly.
+   The same near-ceiling concern applies to GE-NEXT for
+   `tuned-legends` itself: at 98.67% accuracy, the model has only
+   two items left to recover on the 150-item test set, and any v2
+   extension would need to introduce harder items if further
+   discrimination is required.
 
 4. **GE-Diag was not run.** The minimal-pair gender-swap diagnostic
    described in §6.9 is not part of this aggregate. Should it be
    produced in a follow-up, the §6.10 protocol allows it to be
    reported alongside, but not folded into, the GenderEqGLUE Score.
 
-5. **Pillar imbalance amplifies small-sample volatility.** The five
-   substantive pillars range from 11 to 72 passages in the CEB
-   pool, and the smallest two (`equal_economy`, `mainstreaming_intersectionality`)
-   are where the largest per-pillar swings are reported — including
-   the GE-CLS +39 macro-F1 gain on `mainstreaming_intersectionality`,
-   which rests on n = 4 test items.
+5. **Pillar imbalance amplifies small-sample volatility on CEB
+   tasks.** The five substantive pillars range from 11 to 72
+   passages in the CEB pool, and the smallest two (`equal_economy`,
+   `mainstreaming_intersectionality`) are where the largest
+   per-pillar swings are reported on GE-CLS, GE-NLI and GE-QA —
+   including the GE-CLS +39 macro-F1 gain on
+   `mainstreaming_intersectionality`, which rests on n = 4 test
+   items. GE-NEXT, balanced by construction at 30 items per pillar,
+   does not suffer from this and shows the most uniform per-pillar
+   effect (§4).
+
+6. **The per-distractor-type diagnostic on GE-NEXT is uninformative
+   for the winning model.** `tuned-legends` produces only 2 wrong
+   picks on the 100-item v1 subset for which option-type labels are
+   available, so its error-distribution across the
+   *performative / cost-optimising / orthogonal* axes cannot be
+   characterised reliably. The headline accuracy and the McNemar
+   discordance pattern carry the GE-NEXT result; the §6.8 prediction
+   about *which* failure mode the legends would protect against
+   most strongly cannot be tested on this run.
 
 ## 6. Conclusions
 
-1. **`tuned-regulation` wins the aggregate GenderEqGLUE Score** at
-   0.922, ahead of `base` (0.885) and `tuned-legends` (0.881). The
-   gap is concentrated on GE-CLS and GE-STANCE — the two tasks where
-   the regulation's own ontology and value-stance are directly probed.
+1. **`tuned-regulation` and `tuned-legends` are indistinguishable
+   at the headline aggregate level** (GenderEqGLUE Score 0.937 vs
+   0.931). Both clearly improve over the base (0.902). The two
+   tuned models split the per-task wins 3-3, with
+   `tuned-regulation` winning the tasks closest to the regulation's
+   ontology (GE-CLS, GE-QA short-span) and `tuned-legends` winning
+   the tasks closest to the compliance-recognition construct
+   (GE-NLI, GE-NEXT, GE-WSC tied).
 
-2. **`tuned-legends` does not improve over the base on the
-   aggregate**, but does win directionally on GE-NLI (the central
-   compliance-recognition task) and ties on GE-WSC. Its single
-   statistically significant pairwise gap goes the *wrong* way
-   (loss to `tuned-regulation` on GE-STANCE, p = 0.004).
+2. **The Sargsyan & Damiani (2025) hypothesis is supported by the
+   benchmark.** GE-NEXT — the task §6.8 designates as the most
+   direct probe of the compliance-versus-cost decision pattern —
+   shows `tuned-legends` formally outperforming both the base
+   (p = 0.006) and `tuned-regulation` (p = 0.039). These are the
+   only two McNemar-significant pairwise gaps in the entire
+   benchmark, and both favour the legend hypothesis. The GE-NLI
+   entailment subset, the GE-WSC parity diagnostic, and the GE-QA
+   long-answer subset all corroborate this directionally.
 
-3. **The Sargsyan & Damiani (2025) hypothesis is supported in its
-   narrowest reading and not in its broader formulation.** Legends
-   help with compliance recognition (GE-NLI entailment) and with
-   gender-parity invariance (GE-WSC parity score), but do not
-   generalise to value-stance classification or to recognition of
-   the regulation's own thematic structure. The two fine-tuning
-   regimes appear to teach **complementary** competences — legends
-   handle compliance and fairness, regulation text handles ontology
-   recognition and violation detection — rather than one strictly
-   dominating the other.
+3. **The hypothesis is supported for the compliance-recognition
+   competence, not for ontology recognition.** Legends help with
+   compliance recognition (GE-NLI entailment), compliant-action
+   selection (GE-NEXT), gender-parity invariance (GE-WSC parity)
+   and long-form factoid extraction (GE-QA group items). They do
+   not help with classification into the regulation's own pillar
+   structure (GE-CLS) or with terse single-span extraction (GE-QA
+   single-span). The two fine-tuning regimes appear to teach
+   **complementary** competences — legends handle the
+   *behavioural* recognition of compliant practice, regulation
+   text handles the *propositional* recognition of regulatory
+   content — rather than one strictly dominating the other.
 
 4. **The most actionable scientific finding** from running all five
-   tasks together is the **qualitative complementarity** revealed by
-   the GE-NLI construction-method breakdown (entailment vs
-   contradiction) and the GE-STANCE per-source breakdown
-   (`curated` vs `civics_filtered`). These per-slice findings are
-   not visible in the headline GenderEqGLUE Score and would not have
-   been produced by either task in isolation. They are arguably
-   stronger evidence for the underlying research question than the
-   aggregate ranking.
+   tasks together is the alignment between the GE-NEXT formal
+   significance result, the GE-NLI directional entailment-subset
+   advantage, and the GE-WSC parity diagnostic. These three slices
+   would not have been produced by any single task in isolation;
+   together they form a coherent qualitative argument that the
+   legend corpus embeds a recognisable *decision pattern* — the
+   identify → design → implement → measure arc — that raw
+   regulatory text does not. This decision-pattern interpretation
+   is arguably stronger evidence for the underlying research
+   question than the aggregate ranking, which masks the
+   complementarity between the two tuned regimes.
 
 5. **A larger and more carefully balanced GenderEqGLUE v2** —
    targeting at least 500 items per task, paired item-level
-   annotation by two human raters, and a more challenging coreference
-   benchmark in place of WinoBias — would be needed to convert the
-   directional findings of this run into formally significant ones.
+   annotation by two human raters, a more challenging coreference
+   benchmark in place of WinoBias, and harder GE-NEXT items
+   designed to break the ceiling tuned-legends reaches at 98.67% —
+   would be needed to convert the GE-NLI directional finding into
+   formally significant evidence, to characterise the per-distractor
+   error pattern on GE-NEXT, and to test whether the GE-NEXT result
+   replicates on other backbones.
 
 ## 7. Artifacts
 
@@ -357,7 +440,7 @@ reports, grouped by the source they propagate from:
 | GE-NLI     | `task2_ge_nli_final_report.md`               | `ge_nli_metrics.json`               |
 | GE-QA      | `task3_ge_qa_audit_report.md`                | `ge_qa_results.json`                |
 | GE-WSC     | `task4_ge_wsc_final_report.md`               | `wsc_results.json`                  |
-| GE-NEXT  | `task5_ge_next_final_report.md`            | `next_results.json`               |
+| GE-NEXT    | `task5_ge_next_final_report.md`              | `ge_next_metrics.json`              |
 | **All**    | `genderEqGLUE_final_report.md` (this file)   | `aggregate.json`                    |
 
 The `aggregate.json` artefact contains the headline metric per task
