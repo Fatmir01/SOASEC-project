@@ -219,3 +219,15 @@ Format your output exactly as follows:
    role/function, and the applicable timeframe.
 
 
+
+
+
+
+
+
+
+
+
+# git diff for caveman commit
+
+git diff --staged > diff; git add . ":(exclude)diff"; git diff --staged --stat >> diff
