@@ -2023,6 +2023,103 @@ Log each submission as: `item_id; edit_axis; model; original_response; edited_re
 
 ---
 
+
+
+
+
+
+
+You are an expert NLP researcher and data engineer. I am providing you with the
+project context, the explainability methodology for the "Legend Challenge", and
+the `ge-next` dataset. 
+
+Your task is to generate two specific artifacts to operationalize the
+counterfactual testing protocol described in the methodology.
+
+<context>
+
+# Explainability & Interpretability Methodology
+
+## *GenderEqGLUE · GUI-Only Protocol*
+
+The central question is not whether `tuned-legends` produces *better* outputs...
+The question is *why*: does the legend corpus embed a genuine normative
+inductive bias... or does it merely coat the model's surface behaviour with the
+stylistic register of compliance narratives...
+
+2. Counterfactual Testing Protocol
+
+C1 — Gender swap: All gendered names and pronouns are replaced with the
+opposite-gender equivalent.
+
+C2 — Regulatory anchor removal: Named directives, percentage targets, and
+pillar-defining vocabulary are replaced with neutral paraphrase.
+
+C3 — Legend-stylistic surface scrubbing: Fictional character names,
+direct-speech tags, narrative connectives, and setting cues are replaced with
+formal bureaucratic phrasing.
+
+C4 — Pillar-keyword swap: The key vocabulary identifying one pillar is replaced
+with the key vocabulary of a thematically adjacent pillar.
+
+Execution:
+
+- Set A: 9 discordant items × 4 edit axes (C1-C4) = 36 edited items.
+
+- Set B: 20 concordant items × 2 edit axes (C2, C3) = 40 edited items.
+
+</context>
+
+<task>
+
+Based on the attached `ge-next` file, generate the following three artifacts. If
+the file does not explicitly flag discordant/concordant items, select 9
+representative items for Set A and 20 for Set B to act as the targets.
+
+1. **`counterfactuals.jsonl`**: A JSONL file containing the 76 edited items. 
+
+   Schema per line: `{"item_id": "string", "original_id": "string", "edit_axis":
+   "C1|C2|C3|C4", "original_prompt": "string","edited_prompt": "string"}`
+
+2. **`eval_console.html`**: A standalone HTML file (Vanilla JS, CSS in
+   `<style>`) acting as a GUI utility. It must:
+
+   - Have a file input or textarea to load the `counterfactuals.jsonl`.
+
+   - Render the loaded items one at the time
+
+   - Provide a "Copy Prompt" button to easily paste each it into
+     the 3 model GUIs.
+   - Provide an easy way to save the aswers and generate the CSV. the csv must
+    have the exact columns specified in the methodology: `item_id, edit_axis,
+    model, original_response, edited_response, decision_preserved,
+    justification_quality_change`.
+
+</task>
+
+<constraints>
+
+- Only make changes and generate the code directly requested. Do not add extra
+  features, abstractions, or refactor beyond what was asked.
+
+- Provide the outputs in separate, clearly labeled markdown code blocks.
+
+- Ensure the HTML console is fully self-contained (no external dependencies) and
+  strictly functional.
+
+</constraints>
+
+<input_data>
+
+[PASTE GE-NEXT FILE CONTENTS OR UPLOAD HERE]
+
+</input_data>
+
+
+
+
+
+
 ## 3. Comparative Analysis Framework
 
 The behavioral probe and counterfactual data yield raw response text. The comparative analysis framework converts that text into structured measurements.
