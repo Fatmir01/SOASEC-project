@@ -1,3 +1,8 @@
+## 18/05/2026
+
+fort paper writing we need to include an appendix for all prompts used in the
+project.
+
 
 ### 06/05/2026
 
