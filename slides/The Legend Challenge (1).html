@@ -1,0 +1,2651 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>The Legend Challenge — Defense Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<script src="deck-stage.js"></script>
+<style>
+  :root {
+    /* type scale */
+    --type-display: 84px;
+    --type-title: 56px;
+    --type-subtitle: 38px;
+    --type-body: 28px;
+    --type-small: 24px;
+    --type-tag: 24px;
+    /* padding & gaps */
+    --pad-top: 104px;
+    --pad-bottom: 116px;
+    --pad-x: 112px;
+    --gap-title: 40px;
+    --gap-item: 24px;
+    /* palette */
+    --paper: #F4EFE6;
+    --paper-2: #EDE6D9;
+    --ink: #1B1B22;
+    --ink-2: #3C3C45;
+    --muted: #6F6F78;
+    --hair: #D5CDBE;
+    --rule: #1B1B22;
+    /* model palette */
+    --base: #8E8E97;
+    --base-soft: #BFBFC6;
+    --legends: #117A6E;       /* teal */
+    --legends-soft: #B6DAD4;
+    --legends-tint: #E6F1EE;
+    --regulation: #5C44A8;    /* violet */
+    --regulation-soft: #CBC0E5;
+    --regulation-tint: #ECE7F4;
+    /* artifact palette */
+    --pipeline: #B05B22;      /* amber */
+    --benchmark: #2F569E;     /* blue */
+    --cip: #8C2F3D;           /* rust */
+    /* signal */
+    --good: #2C7A57;
+    --bad: #A4322B;
+  }
+
+  html, body { background: #14140F; }
+  body { margin: 0; font-family: 'IBM Plex Sans', sans-serif; color: var(--ink); }
+
+  deck-stage { background: #0E0E0A; }
+
+  section {
+    background: var(--paper);
+    color: var(--ink);
+    box-sizing: border-box;
+    padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
+    position: relative;
+    overflow: hidden;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  /* shared atoms */
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: var(--type-tag);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0;
+  }
+  .slide-title {
+    font-size: var(--type-title);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 0;
+    max-width: 1500px;
+    text-wrap: balance;
+  }
+  .slide-subtitle {
+    font-size: var(--type-subtitle);
+    font-weight: 400;
+    line-height: 1.18;
+    color: var(--ink-2);
+    margin: 0;
+    max-width: 1500px;
+    text-wrap: pretty;
+  }
+  .body-text {
+    font-size: var(--type-body);
+    line-height: 1.32;
+    color: var(--ink-2);
+    margin: 0;
+  }
+  .small-text {
+    font-size: var(--type-small);
+    line-height: 1.35;
+    color: var(--muted);
+    margin: 0;
+  }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .serif { font-family: 'IBM Plex Serif', serif; }
+
+  .corner-id {
+    position: absolute;
+    top: 48px;
+    left: var(--pad-x);
+    right: var(--pad-x);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .corner-id .left { display: flex; gap: 18px; align-items: baseline; }
+  .corner-id .left b { color: var(--ink); font-weight: 500; }
+  .corner-id .right { color: var(--muted); }
+
+  .footer-rail {
+    position: absolute;
+    bottom: 48px;
+    left: var(--pad-x);
+    right: var(--pad-x);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+  .footer-rail .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--ink);
+    display: inline-block; margin: 0 12px; vertical-align: middle;
+  }
+
+  /* model chips */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: var(--type-tag);
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+    line-height: 1;
+  }
+  .chip .swatch { width: 12px; height: 12px; border-radius: 50%; background: currentColor; }
+  .chip-base { color: var(--base); }
+  .chip-legends { color: var(--legends); }
+  .chip-regulation { color: var(--regulation); }
+
+  /* numbered marker */
+  .marker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: var(--type-small);
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* generic flex helpers */
+  .row { display: flex; }
+  .col { display: flex; flex-direction: column; }
+  .stack-l { display: flex; flex-direction: column; gap: var(--gap-title); }
+  .stack-m { display: flex; flex-direction: column; gap: var(--gap-item); }
+  .stack-s { display: flex; flex-direction: column; gap: 14px; }
+
+  /* tables */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--type-small);
+    color: var(--ink);
+  }
+  .data-table th, .data-table td {
+    padding: 18px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--hair);
+    vertical-align: middle;
+  }
+  .data-table thead th {
+    font-weight: 500;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--ink);
+  }
+  .data-table .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+  .data-table .win { font-weight: 700; color: var(--ink); }
+
+  /* card */
+  .card {
+    background: #FBF8F1;
+    border: 1px solid var(--hair);
+    padding: 32px;
+    border-radius: 4px;
+  }
+
+  /* slide composition presets */
+  section { display: flex; flex-direction: column; }
+  .slide-frame {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-title);
+  }
+
+  /* section divider style */
+  .divider {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* simple bar chart cells */
+  .bar-track { height: 14px; background: var(--paper-2); border-radius: 2px; position: relative; overflow: hidden; }
+  .bar-fill { position: absolute; top: 0; left: 0; bottom: 0; }
+</style>
+</head>
+<body>
+
+<script type="application/json" id="speaker-notes">
+[
+  "",
+  "The starting point: LLMs are being deployed for middle-management work — hiring, procurement, performance review, contract review. All of those domains are regulated. Managers under cost pressure may deploy AI tools that have no intrinsic social-cost considerations. So the model can take a corner-cutting action that conflicts with both corporate values and EU/UN directives. The implication we'll build on: compliance has to be embedded into the model itself, not retrofitted via post-hoc filtering.",
+  "Sargsyan and Damiani, 2025, propose a route — teach compliance via legends. A legend is a synthetic idealised exemplar, a champion profile. The intuition: fine-tune on legends and you teach compliance as a capacity exercised over novel inputs. Fine-tune on regulation text alone and you risk teaching the lexicon — the model learns to recognise the words without applying the principle. That contrast is the question this work is built around.",
+  "The proposal is appealing, but it had three things missing: no empirical test, no measurement instrument, no controlled comparison. General benchmarks like GLUE don't help — they're deliberately domain-agnostic. So the one-sentence research question we work to is: does legend fine-tuning produce a measurably different model from regulation-text fine-tuning, holding everything else constant.",
+  "Our contribution is three artifacts: the pipeline that produces matched legend-vs-regulation corpora; GenderEqGLUE, the five-task benchmark; and CIP, a behavioural-only probing protocol for closed fine-tuning platforms. Those three together let us run the comparison the original proposal couldn't.",
+  "Prior work splits roughly in two directions. Route one: translate regulation into a machine-readable format — X2RL, the Danish digital-ready legislation programme, the U.S. Rules-as-Code pilots. Route two: fine-tune the model on regulation text directly — IBM's Alignment Studio. The authors of Alignment Studio themselves note that the literal-textual character of the training signal is a limitation. That limitation is precisely what the legend route promises to overcome — and that's the gap we test.",
+  "Why don't general benchmarks suffice. GLUE and SuperGLUE were deliberately built to be domain-agnostic. So a high GLUE score is evidence of generic linguistic competence, not regulatory-compliance reasoning. GenderEqGLUE adapts five canonical GLUE/SuperGLUE templates one-to-one and anchors them in held-out passages from the EU Gender Equality Strategy.",
+  "The pipeline has six stages: PDF preprocessing, legends generation, pillar classification, two-stage span extraction, Q&A generation, fine-tuning. Both the legends branch and the regulation branch share every stage except the source content. End-state: 327 legend lines, 293 regulation lines — about a 10% gap that we treat as a corpus-size baseline. Backbone: gpt-4o-2024-08-06.",
+  "On legend generation specifically: we use three different commercial LLMs in April 2026 — GPT-5.4 Pro, Gemini 3 Pro, Microsoft Copilot. Each produces five legends, one per pillar. That gives fifteen legends total. The mixing across generators maximises stylistic diversity so the fine-tuned model doesn't just memorise one author's voice. The fifteen narratives expand to 327 closed-book Q&A pairs.",
+  "On the fine-tuning protocol: every axis except corpus content is held constant. Same backbone, same system prompt verbatim, same JSONL chat format, the same hyperparameters under FineTuneDB Studio's control. The only experimental variable is the corpus content. The cost of that guarantee is closed-platform access — no logits, no gradients — which is what motivates CIP later.",
+  "GenderEqGLUE has five tasks adapted one-to-one from GLUE/SuperGLUE templates. Pillar classification from SST-2. Compliance entailment from MNLI/RTE. Reading comprehension from SQuAD/BoolQ. Stereotype-aware coreference from WSC and Winogender. Compliant-action selection from COPA. The Common Evaluation Base — 217 EU passages — is held out from training entirely. Aggregate is the unweighted mean of the five headline metrics.",
+  "Two tasks are central to the hypothesis, by design. GE-NLI probes whether the model recognises compliance — does this scenario entail this regulatory clause. GE-NEXT probes whether the model selects the compliant action given four candidates. GE-NEXT has a fixed distractor typology: substantive-compliant gold, performative gesture, cost-optimising defer-or-minimise, and orthogonal. GE-NEXT is the direct probe of the compliance-versus-cost arbitrage at the centre of the original conflict.",
+  "On CIP. FineTuneDB Studio is a GUI-only platform. No logits, no gradients, no batched API. Generated text is the only observable. That blocks SHAP, LIME, integrated gradients, attention rollout — all of them. CIP is the protocol the access constraint admits. For each of five pillars we run one base vignette in three variants — original baseline, keyword-stripped, adversarially framed. Binary scoring. 45 evaluations total. A model with structural reasoning maintains its position under B and C. A model relying on lexical mimicry fails under B.",
+  "The headline result. tuned-regulation wins the aggregate at 0.938. tuned-legends is at 0.926. Base is at 0.904. Both fine-tuned models clearly beat base. But the per-task wins split three to three. Base wins nothing. That's the picture you should hold in your head for the rest of the talk.",
+  "Where the wins go is the interesting part. tuned-regulation wins on the tasks that match the regulation's lexical and thematic structure — pillar classification, short-span factoid, and a coreference tie. tuned-legends wins on the two hypothesis-central reasoning tasks — compliance entailment and compliant-action selection — and ties on coreference. The aggregate score conceals this partition; it has to be read alongside the per-task results, not instead of them.",
+  "Look closer at the coreference tie. Both fine-tuned models hit 0.96. But the Gender Parity Score — the absolute gap between pro-stereotype and anti-stereotype accuracy — is zero for tuned-legends, 0.04 for tuned-regulation. tuned-regulation's accuracy gain comes entirely from pro-stereotype items, which widens the gap on Type-1. Same destination, different routes — and only tuned-legends satisfies the fairness criterion the parity diagnostic formalises.",
+  "On the CIP results: aggregates compress almost flat because the backbone is already strong. tuned-legends scores 14 of 15, the other two score 13. The aggregate gap is too small at n=15 to support strong inferential claims, and we say so plainly. What's analytically useful is the qualitative response character — and the failure distribution, which is informative. All three models converge on failing the mainstreaming/intersectionality Variant C — that's likely a property of the frame, not the model.",
+  "The headline finding. Legends and regulation teach complementary compliance competences. tuned-legends is better at recognising compliance, selecting compliant action, and long-form factoid extraction. tuned-regulation is better at detecting violations, classifying into the regulation's ontology, and short-span factoid extraction. So the deployment question is not which is 'better'. It's: what does your deployment fail at, and which regime do we route to.",
+  "Limitations, declared up front. Small test sets — n=72, n=168, n=123, n=100, n=150, n=15. Single backbone. The backbone has a discriminative ceiling that compresses the headroom against which fine-tuning effects can be measured. There's a latent affinity between LLM-generated GE-NEXT vignettes and an LLM evaluator — cross-model comparisons remain valid but absolute GE-NEXT accuracy is indicative. And the underlying data-and-access deficit — small N, single backbone, closed platform — is the single most consequential constraint.",
+  "To conclude. We deliver three artifacts: pipeline, GenderEqGLUE, CIP. Three conclusions: tuned-regulation leads aggregate; both fine-tuned models clearly beat base; the per-task wins split three to three. The hypothesis is supported in its central formulation — legends are strongest on GE-NEXT. The hypothesis does not generalise — legends and regulation teach complementary competences. v2 of the framework is the path forward: at least 500 items per task, harder GE-NEXT items, harder coreference probes, multi-backbone replication.",
+  "Thank you. Open for questions.",
+  "", "", "", "", "", "", "", ""
+]
+</script>
+
+<deck-stage width="1920" height="1080">
+
+<!-- ============================================================ -->
+<!-- SLIDE 1 — TITLE                                              -->
+<!-- ============================================================ -->
+<section data-label="01 Title">
+  <div class="corner-id">
+    <div class="left"><span>UNIMI · DEPT. OF COMPUTER SCIENCE</span></div>
+    <div class="right">DEFENSE · JUNE 2026</div>
+  </div>
+
+  <div style="display:grid; grid-template-columns: 1.55fr 1fr; gap: 80px; flex: 1; min-height: 0; align-items: stretch; padding-top: 40px;">
+    <div style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; flex-direction:column; gap: 36px;">
+        <p class="eyebrow">PAPER · 2026</p>
+        <h1 style="font-size: 96px; font-weight: 500; line-height: 1.02; letter-spacing: -0.02em; margin: 0; max-width: 1100px; text-wrap: balance;">
+          The Legend Challenge
+        </h1>
+        <h2 class="serif" style="font-size: 38px; font-weight: 400; font-style: italic; line-height: 1.2; letter-spacing: -0.01em; margin: 0; color: var(--ink-2); max-width: 1080px;">
+          Embedding Ethical Compliance into LLMs through Champion Narratives in the Gender&nbsp;Equality Domain
+        </h2>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap: 18px;">
+        <div style="height: 1px; background: var(--ink); width: 320px;"></div>
+        <p class="body-text" style="color: var(--ink); font-weight: 500;">
+          Fatmir Bylyshi&nbsp; · &nbsp;El-Khazri Hicham&nbsp; · &nbsp;Ouardi Ilyass
+        </p>
+        <p class="small-text">Equal contribution · Department of Computer Science, University of Milan</p>
+        <p class="mono" style="font-size: 24px; color: var(--muted); margin-top: 12px;">
+          ethical AI &nbsp;·&nbsp; regulatory compliance &nbsp;·&nbsp; gender equality &nbsp;·&nbsp; LLMs &nbsp;·&nbsp; legends &nbsp;·&nbsp; GenderEqGLUE
+        </p>
+      </div>
+    </div>
+
+    <!-- teaser bar chart -->
+    <div style="display:flex; flex-direction:column; justify-content:flex-end; padding-bottom: 20px; position: relative;">
+      <div style="display:flex; align-items:flex-end; gap: 28px; height: 540px;">
+        <div style="display:flex; flex-direction:column; align-items:center; gap: 14px;">
+          <div style="width: 90px; height: 360px; background: var(--base); border-top: 4px solid var(--ink);"></div>
+          <span class="mono small-text" style="color: var(--ink);">base</span>
+          <span class="mono" style="font-size:24px; color: var(--muted);">0.904</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap: 14px;">
+          <div style="width: 90px; height: 460px; background: var(--legends); border-top: 4px solid var(--ink);"></div>
+          <span class="mono small-text" style="color: var(--ink);">legends</span>
+          <span class="mono" style="font-size:24px; color: var(--muted);">0.926</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap: 14px;">
+          <div style="width: 90px; height: 500px; background: var(--regulation); border-top: 4px solid var(--ink);"></div>
+          <span class="mono small-text" style="color: var(--ink);">regulation</span>
+          <span class="mono" style="font-size:24px; color: var(--muted);">0.938</span>
+        </div>
+      </div>
+      <div style="position: absolute; top: 0; right: 0; text-align: right;">
+        <p class="mono" style="font-size:24px; color: var(--muted); margin:0; letter-spacing: 0.1em;">FIG. TEASER</p>
+        <p class="small-text" style="margin: 6px 0 0 0; max-width: 360px; text-align: right;">GenderEqGLUE aggregate · 3 models</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>BYLYSHI · EL-KHAZRI · OUARDI</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>01</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 2 — THE COMPLIANCE PARADOX                             -->
+<!-- ============================================================ -->
+<section data-label="02 Compliance paradox">
+  <div class="corner-id">
+    <div class="left"><b>§1</b><span>Motivation</span></div>
+    <div class="right">02 · 21</div>
+  </div>
+
+  <div class="slide-frame" style="padding-top: 40px;">
+    <div class="stack-s">
+      <p class="eyebrow">The compliance paradox</p>
+      <h1 class="slide-title">Compliance must be embedded into the model — not retrofitted into the filter.</h1>
+    </div>
+
+    <div style="flex: 1; display: grid; grid-template-columns: 1fr 120px 1fr; align-items: stretch; gap: 0; margin-top: 8px;">
+      <!-- Cost optimization -->
+      <div style="border: 1px solid var(--ink); background: #FBF8F1; padding: 44px; display: flex; flex-direction: column; gap: 24px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.14em; color: var(--ink); margin: 0;">PRESSURE&nbsp;01</p>
+        <h3 style="font-size: 44px; font-weight: 500; line-height: 1.1; margin: 0;">Cost&nbsp;optimisation</h3>
+        <p class="body-text" style="font-size: 26px;">
+          Middle-management decisions — hiring, procurement, performance review, contract review — are delegated to LLMs that lack intrinsic social-cost considerations.
+        </p>
+        <div style="margin-top: auto; display: flex; align-items: baseline; gap: 14px;">
+          <span class="mono" style="font-size: 56px; color: var(--ink);">↓</span>
+          <span class="mono small-text">minimise expenditure</span>
+        </div>
+      </div>
+
+      <!-- collision -->
+      <div style="display:flex; flex-direction: column; align-items:center; justify-content:center; gap: 18px;">
+        <div style="width: 1px; flex:1; background: var(--hair);"></div>
+        <div style="border: 1px solid var(--bad); color: var(--bad); padding: 14px 20px; transform: rotate(-3deg); background: var(--paper);">
+          <p class="mono" style="font-size: 24px; margin: 0; letter-spacing: 0.12em;">CONFLICT</p>
+        </div>
+        <div style="width: 1px; flex:1; background: var(--hair);"></div>
+      </div>
+
+      <!-- Compliance -->
+      <div style="border: 1px solid var(--ink); background: #FBF8F1; padding: 44px; display: flex; flex-direction: column; gap: 24px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.14em; color: var(--ink); margin: 0;">PRESSURE&nbsp;02</p>
+        <h3 style="font-size: 44px; font-weight: 500; line-height: 1.1; margin: 0;">Regulatory&nbsp;compliance</h3>
+        <p class="body-text" style="font-size: 26px;">
+          External directives (EU, UN) and corporate-values statements both impose social-cost considerations the optimisation objective does not encode.
+        </p>
+        <div style="margin-top: auto; display: flex; align-items: baseline; gap: 14px;">
+          <span class="mono" style="font-size: 56px; color: var(--ink);">⚖</span>
+          <span class="mono small-text">honour directive</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-text" style="font-size: 28px; color: var(--ink); border-top: 1px solid var(--ink); padding-top: 24px; margin-top: 8px;">
+      Post-hoc filters operate <em>after</em> the optimisation has already chosen the corner-cutting action. The leverage point is the model.
+    </p>
+  </div>
+
+  <div class="footer-rail">
+    <div>§1 · MOTIVATION</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>02</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 3 — SARGSYAN-DAMIANI PROPOSAL                          -->
+<!-- ============================================================ -->
+<section data-label="03 Legends proposal">
+  <div class="corner-id">
+    <div class="left"><b>§1</b><span>Background</span></div>
+    <div class="right">03 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">Sargsyan &amp; Damiani, 2025</p>
+      <h1 class="slide-title">Legends teach compliance as a <em class="serif">capacity</em>, not as a <em class="serif">lookup</em>.</h1>
+    </div>
+
+    <div style="flex: 1; display: grid; grid-template-columns: 360px 1fr; gap: 80px; align-items: center;">
+      <!-- left definition card -->
+      <div class="card" style="padding: 36px; display: flex; flex-direction: column; gap: 18px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.14em; color: var(--muted); margin: 0;">DEFINITION</p>
+        <h3 style="font-size: 38px; font-weight: 500; line-height: 1.1; margin: 0;">A&nbsp;legend</h3>
+        <p class="body-text" style="font-size: 26px;">
+          A synthetic, idealised exemplar — a <em>champion profile</em> whose behaviour incarnates compliance.
+        </p>
+        <p class="small-text" style="font-style: italic;">A story with characters, not a clause list.</p>
+      </div>
+
+      <!-- two-path schematic -->
+      <div style="display: flex; flex-direction: column; gap: 36px;">
+
+        <div style="display: grid; grid-template-columns: 260px 80px 1fr 1.1fr; gap: 28px; align-items: center;">
+          <div style="border: 1px dashed var(--muted); padding: 22px 24px; background: var(--paper-2);">
+            <p class="mono" style="font-size: 24px; letter-spacing: 0.1em; color: var(--muted); margin: 0;">INPUT</p>
+            <p class="body-text" style="font-size: 26px; color: var(--ink);">Regulation text</p>
+          </div>
+          <div style="text-align:center;">
+            <span class="mono" style="font-size: 40px; color: var(--ink);">→</span>
+          </div>
+          <div style="border: 1px solid var(--ink); padding: 22px 24px; background: var(--paper); ">
+            <p class="mono" style="font-size: 24px; letter-spacing: 0.1em; color: var(--muted); margin: 0;">MODEL</p>
+            <p class="body-text" style="font-size: 26px; color: var(--ink);">fine-tuned on clauses</p>
+          </div>
+          <div>
+            <p class="mono" style="font-size: 24px; color: var(--regulation); margin: 0; letter-spacing: 0.08em;">→ LEARNS LEXICON</p>
+            <p class="small-text" style="margin-top: 6px;">recognises terms when present; fragile under rephrasing.</p>
+          </div>
+        </div>
+
+        <div style="height: 1px; background: var(--hair);"></div>
+
+        <div style="display: grid; grid-template-columns: 260px 80px 1fr 1.1fr; gap: 28px; align-items: center;">
+          <div style="border: 1px dashed var(--legends); padding: 22px 24px; background: var(--legends-tint);">
+            <p class="mono" style="font-size: 24px; letter-spacing: 0.1em; color: var(--legends); margin: 0;">INPUT</p>
+            <p class="body-text" style="font-size: 26px; color: var(--ink);">Legend (named characters)</p>
+          </div>
+          <div style="text-align:center;">
+            <span class="mono" style="font-size: 40px; color: var(--ink);">→</span>
+          </div>
+          <div style="border: 1px solid var(--legends); padding: 22px 24px; background: var(--paper);">
+            <p class="mono" style="font-size: 24px; letter-spacing: 0.1em; color: var(--legends); margin: 0;">MODEL</p>
+            <p class="body-text" style="font-size: 26px; color: var(--ink);">fine-tuned on narratives</p>
+          </div>
+          <div>
+            <p class="mono" style="font-size: 24px; color: var(--legends); margin: 0; letter-spacing: 0.08em;">→ LEARNS CAPACITY</p>
+            <p class="small-text" style="margin-top: 6px;">applies principle to novel inputs — <em>the claim</em>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <p class="body-text" style="font-size: 26px; color: var(--muted); border-top: 1px solid var(--hair); padding-top: 22px;">
+      <span class="mono" style="color: var(--ink); margin-right: 12px;">▲</span>
+      The lower path is the claim — and where the empirical gap opens.
+    </p>
+  </div>
+
+  <div class="footer-rail">
+    <div>§1 · BACKGROUND</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>03</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 4 — THE EMPIRICAL GAP                                  -->
+<!-- ============================================================ -->
+<section data-label="04 Empirical gap">
+  <div class="corner-id">
+    <div class="left"><b>§1</b><span>Research gap</span></div>
+    <div class="right">04 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">The empirical gap</p>
+      <h1 class="slide-title">The proposal is appealing — and untested.</h1>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 8px;">
+      <div style="border: 1.5px dashed var(--bad); padding: 36px 30px; min-height: 280px; display:flex; flex-direction:column; gap: 18px; background: var(--paper);">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">MISSING&nbsp;·&nbsp;01</p>
+          <span style="font-size: 30px; color: var(--bad);">✕</span>
+        </div>
+        <h3 style="font-size: 36px; font-weight: 500; line-height: 1.1; margin: 0;">Empirical&nbsp;test</h3>
+        <p class="body-text" style="font-size: 24px;">No model has been fine-tuned on a corpus of legends and evaluated against a counterfactual.</p>
+      </div>
+
+      <div style="border: 1.5px dashed var(--bad); padding: 36px 30px; min-height: 280px; display:flex; flex-direction:column; gap: 18px; background: var(--paper);">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">MISSING&nbsp;·&nbsp;02</p>
+          <span style="font-size: 30px; color: var(--bad);">✕</span>
+        </div>
+        <h3 style="font-size: 36px; font-weight: 500; line-height: 1.1; margin: 0;">Measurement&nbsp;instrument</h3>
+        <p class="body-text" style="font-size: 24px;">GLUE / SuperGLUE are deliberately domain-agnostic — they don't probe regulatory reasoning.</p>
+      </div>
+
+      <div style="border: 1.5px dashed var(--bad); padding: 36px 30px; min-height: 280px; display:flex; flex-direction:column; gap: 18px; background: var(--paper);">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">MISSING&nbsp;·&nbsp;03</p>
+          <span style="font-size: 30px; color: var(--bad);">✕</span>
+        </div>
+        <h3 style="font-size: 36px; font-weight: 500; line-height: 1.1; margin: 0;">Controlled&nbsp;comparison</h3>
+        <p class="body-text" style="font-size: 24px;">No matched legend-vs-regulation corpora exist where everything else is held constant.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: auto;">
+      <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 12px 0;">RESEARCH QUESTION</p>
+      <blockquote class="serif" style="font-size: 44px; font-style: italic; font-weight: 400; line-height: 1.18; margin: 0; padding-left: 32px; border-left: 4px solid var(--ink); max-width: 1640px;">
+        Does legend fine-tuning, in fact, produce a measurably different model from regulation-text fine-tuning — holding everything else constant?
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§1 · RESEARCH GAP</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>04</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 5 — THREE CONTRIBUTIONS                                -->
+<!-- ============================================================ -->
+<section data-label="05 Three contributions">
+  <div class="corner-id">
+    <div class="left"><b>§2</b><span>Contributions</span></div>
+    <div class="right">05 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">Three artifacts</p>
+      <h1 class="slide-title">We deliver the three missing pieces to enable the first controlled test.</h1>
+    </div>
+
+    <div style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 24px;">
+
+      <div style="border-top: 6px solid var(--pipeline); padding: 36px 32px; background: #FBF8F1; display: flex; flex-direction: column; gap: 22px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--pipeline); margin: 0;">ARTIFACT&nbsp;·&nbsp;01</p>
+        <h3 style="font-size: 44px; font-weight: 500; line-height: 1.05; margin: 0;">Pipeline</h3>
+        <p class="body-text" style="font-size: 26px;">
+          A six-stage construction pipeline, adapted from SustainableQA, that produces <em>matched</em> legend-vs-regulation JSONL corpora.
+        </p>
+        <div style="margin-top: auto; border-top: 1px solid var(--hair); padding-top: 18px;">
+          <p class="mono" style="font-size: 24px; color: var(--ink); margin: 0;">327&nbsp;<span style="color: var(--muted);">/</span>&nbsp;293</p>
+          <p class="small-text">legends / regulation lines</p>
+        </div>
+      </div>
+
+      <div style="border-top: 6px solid var(--benchmark); padding: 36px 32px; background: #FBF8F1; display: flex; flex-direction: column; gap: 22px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--benchmark); margin: 0;">ARTIFACT&nbsp;·&nbsp;02</p>
+        <h3 style="font-size: 44px; font-weight: 500; line-height: 1.05; margin: 0;">GenderEqGLUE</h3>
+        <p class="body-text" style="font-size: 26px;">
+          A five-task benchmark adapted <em>one-to-one</em> from GLUE / SuperGLUE for the EU Gender Equality Strategy 2020–2025.
+        </p>
+        <div style="margin-top: auto; border-top: 1px solid var(--hair); padding-top: 18px;">
+          <p class="mono" style="font-size: 24px; color: var(--ink); margin: 0;">5 tasks&nbsp;<span style="color: var(--muted);">·</span>&nbsp;217 CEB</p>
+          <p class="small-text">held-out EU passages</p>
+        </div>
+      </div>
+
+      <div style="border-top: 6px solid var(--cip); padding: 36px 32px; background: #FBF8F1; display: flex; flex-direction: column; gap: 22px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--cip); margin: 0;">ARTIFACT&nbsp;·&nbsp;03</p>
+        <h3 style="font-size: 44px; font-weight: 500; line-height: 1.05; margin: 0;">CIP</h3>
+        <p class="body-text" style="font-size: 26px;">
+          Counterfactual Input Probing — a behavioural-only explainability protocol for closed fine-tuning platforms.
+        </p>
+        <div style="margin-top: auto; border-top: 1px solid var(--hair); padding-top: 18px;">
+          <p class="mono" style="font-size: 24px; color: var(--ink); margin: 0;">5 × 3 × 3</p>
+          <p class="small-text">pillars · variants · models</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="body-text" style="font-size: 26px; color: var(--muted); border-top: 1px solid var(--hair); padding-top: 18px;">
+      The three artifacts run as one experiment: pipeline produces the corpora, GenderEqGLUE evaluates the models, CIP probes the residual behaviour the benchmark can't reach.
+    </p>
+  </div>
+
+  <div class="footer-rail">
+    <div>§2 · CONTRIBUTIONS</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>05</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 6 — RELATED WORK · EMBEDDING ETHICS                    -->
+<!-- ============================================================ -->
+<section data-label="06 Related work — ethics">
+  <div class="corner-id">
+    <div class="left"><b>§3</b><span>Related work</span></div>
+    <div class="right">06 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">Embedding ethics in LLMs</p>
+      <h1 class="slide-title">Two routes have been tried — the legends route has not.</h1>
+    </div>
+
+    <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); margin-top: 8px;">
+
+      <!-- Route 1 -->
+      <div style="padding: 36px 32px; border-right: 1px solid var(--hair); display: flex; flex-direction: column; gap: 18px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.14em; color: var(--muted); margin: 0;">ROUTE&nbsp;·&nbsp;01</p>
+        <h3 style="font-size: 34px; font-weight: 500; line-height: 1.1; margin: 0;">Machine-readable regulation</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px;">
+          <li class="small-text"><span class="mono" style="color: var(--ink);">X2RL semantic format</span><br/>McLaughlin · 2021</li>
+          <li class="small-text"><span class="mono" style="color: var(--ink);">Digital-ready legislation</span><br/>Motzfeldt · 2018 · Denmark</li>
+          <li class="small-text"><span class="mono" style="color: var(--ink);">Rules-as-Code pilots</span><br/>Naumova · 2023 · U.S. benefits</li>
+        </ul>
+        <p class="small-text" style="border-top: 1px solid var(--hair); padding-top: 14px; margin-top: auto; font-style: italic;">
+          Heavy prompting + human oversight needed to preserve equity.
+        </p>
+      </div>
+
+      <!-- Route 2 -->
+      <div style="padding: 36px 32px; border-right: 1px solid var(--hair); display: flex; flex-direction: column; gap: 18px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.14em; color: var(--muted); margin: 0;">ROUTE&nbsp;·&nbsp;02</p>
+        <h3 style="font-size: 34px; font-weight: 500; line-height: 1.1; margin: 0;">Fine-tune on regulation text</h3>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px;">
+          <li class="small-text"><span class="mono" style="color: var(--ink);">IBM Alignment Studio</span><br/>Achintalwar · 2024</li>
+        </ul>
+        <blockquote class="serif" style="font-size: 24px; line-height: 1.3; font-style: italic; margin: 0; padding: 14px 18px; border-left: 3px solid var(--ink); color: var(--ink-2);">
+          Authors attribute observed limitations to the <em>literal-textual character</em> of the training signal.
+        </blockquote>
+        <p class="small-text" style="border-top: 1px solid var(--hair); padding-top: 14px; margin-top: auto; font-style: italic;">
+          The lexicon is learned; the principle is fragile.
+        </p>
+      </div>
+
+      <!-- Our work -->
+      <div style="padding: 36px 32px; background: var(--paper-2); display: flex; flex-direction: column; gap: 18px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.14em; color: var(--ink); margin: 0;">THIS&nbsp;WORK</p>
+        <h3 style="font-size: 34px; font-weight: 500; line-height: 1.1; margin: 0;">Controlled legend-vs-regulation study</h3>
+        <p class="body-text" style="font-size: 24px;">
+          Same backbone, same prompt, same format — only the corpus content varies. Measured on a benchmark designed for the regulation's structure.
+        </p>
+        <div style="margin-top: auto; display: flex; align-items: center; gap: 14px; color: var(--ink);">
+          <span class="mono" style="font-size: 34px;">←</span>
+          <p class="small-text" style="margin: 0;">picks up where Route 2's limitation stops.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-rail">
+    <div>§3 · RELATED WORK</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>06</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 7 — RELATED WORK · NLU BENCHMARKS                      -->
+<!-- ============================================================ -->
+<section data-label="07 Related work — benchmarks">
+  <div class="corner-id">
+    <div class="left"><b>§3</b><span>Related work</span></div>
+    <div class="right">07 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">NLU benchmarks &amp; their limit</p>
+      <h1 class="slide-title">GLUE measures generic language — not regulatory reasoning.</h1>
+    </div>
+
+    <div style="flex: 1; display: grid; grid-template-columns: 1.05fr 1.25fr; gap: 80px; align-items: stretch;">
+
+      <!-- Left: argument -->
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+        <p class="body-text" style="font-size: 28px;">
+          GLUE and SuperGLUE compose scores across
+          <span class="mono" style="color: var(--ink);">SST-2</span>,
+          <span class="mono" style="color: var(--ink);">MNLI</span>,
+          <span class="mono" style="color: var(--ink);">RTE</span>,
+          <span class="mono" style="color: var(--ink);">SQuAD</span>,
+          <span class="mono" style="color: var(--ink);">BoolQ</span>,
+          <span class="mono" style="color: var(--ink);">WSC</span>,
+          <span class="mono" style="color: var(--ink);">COPA</span>,
+          <span class="mono" style="color: var(--ink);">WinoBias</span>.
+        </p>
+        <p class="body-text" style="font-size: 28px;">
+          The design choice is <em>deliberately domain-agnostic</em>. A high GLUE score is evidence of generic linguistic competence, not of reasoning over a specific regulation's structure.
+        </p>
+        <div style="border: 1px solid var(--benchmark); background: #FBF8F1; padding: 28px; ">
+          <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--benchmark); margin: 0 0 10px 0;">OUR MOVE</p>
+          <p class="body-text" style="font-size: 26px; color: var(--ink);">
+            GenderEqGLUE adapts the five canonical templates <strong>one-to-one</strong> to the EU Gender Equality Strategy — anchored in held-out passages.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: mapping table -->
+      <div style="display:flex; flex-direction:column; gap: 14px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.14em; color: var(--muted); margin: 0;">ONE-TO-ONE TEMPLATE MAPPING</p>
+        <div style="border: 1px solid var(--ink); background: #FBF8F1;">
+          <div class="mono" style="display:grid; grid-template-columns: 1fr 80px 1fr; font-size: 24px; letter-spacing: 0.06em; padding: 14px 22px; color: var(--muted); border-bottom: 1px solid var(--ink); text-transform: uppercase;">
+            <span>GLUE / SuperGLUE</span><span></span><span>GenderEqGLUE</span>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 80px 1fr; padding: 18px 22px; align-items:center; border-bottom: 1px solid var(--hair); font-size: 26px;">
+            <span>SST-2</span><span class="mono" style="text-align:center; color: var(--benchmark);">→</span><span class="mono">GE-CLS</span>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 80px 1fr; padding: 18px 22px; align-items:center; border-bottom: 1px solid var(--hair); font-size: 26px;">
+            <span>MNLI · RTE</span><span class="mono" style="text-align:center; color: var(--benchmark);">→</span><span class="mono">GE-NLI</span>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 80px 1fr; padding: 18px 22px; align-items:center; border-bottom: 1px solid var(--hair); font-size: 26px;">
+            <span>SQuAD · BoolQ</span><span class="mono" style="text-align:center; color: var(--benchmark);">→</span><span class="mono">GE-QA</span>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 80px 1fr; padding: 18px 22px; align-items:center; border-bottom: 1px solid var(--hair); font-size: 26px;">
+            <span>WSC · Winogender</span><span class="mono" style="text-align:center; color: var(--benchmark);">→</span><span class="mono">GE-WSC</span>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 80px 1fr; padding: 18px 22px; align-items:center; font-size: 26px;">
+            <span>COPA</span><span class="mono" style="text-align:center; color: var(--benchmark);">→</span><span class="mono">GE-NEXT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§3 · RELATED WORK</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>07</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 8 — PIPELINE OVERVIEW                                  -->
+<!-- ============================================================ -->
+<section data-label="08 Pipeline overview">
+  <div class="corner-id">
+    <div class="left"><b>§4</b><span>Methodology · Pipeline</span></div>
+    <div class="right">08 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--pipeline);">Pipeline · overview</p>
+      <h1 class="slide-title">Two parallel tracks differ <em class="serif">only</em> in source content.</h1>
+    </div>
+
+    <!-- pipeline visual -->
+    <div style="flex:1; display:flex; flex-direction:column; gap: 18px; margin-top: 10px;">
+
+      <!-- legends track (top) -->
+      <div style="display:grid; grid-template-columns: 200px 1fr 240px; gap: 24px; align-items:center;">
+        <div style="display:flex; flex-direction:column; gap: 6px; align-items:flex-end; padding-right: 12px;">
+          <p class="mono" style="font-size: 24px; color: var(--legends); letter-spacing: 0.1em; margin: 0;">LEGENDS</p>
+          <p class="mono" style="font-size: 36px; color: var(--ink); margin: 0;">327</p>
+          <p class="small-text" style="margin: 0;">JSONL lines</p>
+        </div>
+        <div style="height: 70px; border: 2px solid var(--legends); background: var(--legends-tint); position:relative; display:flex; align-items:center; padding-left: 30px;">
+          <p class="body-text" style="font-size: 24px; color: var(--ink); margin: 0;">15 legends · 5 per pillar from 3 generators</p>
+        </div>
+        <div></div>
+      </div>
+
+      <!-- shared spine -->
+      <div style="display:grid; grid-template-columns: 200px 1fr 240px; gap: 24px; align-items:center;">
+        <div style="text-align:right; padding-right: 12px;">
+          <p class="mono" style="font-size: 24px; color: var(--muted); letter-spacing: 0.1em; margin: 0;">SHARED</p>
+          <p class="small-text" style="margin: 4px 0 0 0;">classifier · extractor · generator · system prompt · chat format</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;">
+          <div style="border: 1px solid var(--ink); padding: 18px 14px; background: var(--paper); text-align:center;">
+            <p class="mono" style="font-size: 24px; color: var(--muted); margin:0; letter-spacing: 0.1em;">01</p>
+            <p style="font-size: 24px; margin: 4px 0 0 0; font-weight: 500;">PDF→MD</p>
+            <p class="small-text" style="font-size: 24px; margin: 2px 0 0 0;">preprocess</p>
+          </div>
+          <div style="border: 1px solid var(--legends); padding: 18px 14px; background: var(--legends-tint); text-align:center; position:relative;">
+            <p class="mono" style="font-size: 24px; color: var(--muted); margin:0; letter-spacing: 0.1em;">02</p>
+            <p style="font-size: 24px; margin: 4px 0 0 0; font-weight: 500;">Legends gen.</p>
+            <p class="small-text" style="font-size: 24px; margin: 2px 0 0 0; color: var(--legends);">legend-only</p>
+          </div>
+          <div style="border: 1px solid var(--ink); padding: 18px 14px; background: var(--paper); text-align:center;">
+            <p class="mono" style="font-size: 24px; color: var(--muted); margin:0; letter-spacing: 0.1em;">03</p>
+            <p style="font-size: 24px; margin: 4px 0 0 0; font-weight: 500;">6-class clf.</p>
+            <p class="small-text" style="font-size: 24px; margin: 2px 0 0 0;">pillars</p>
+          </div>
+          <div style="border: 1px solid var(--ink); padding: 18px 14px; background: var(--paper); text-align:center;">
+            <p class="mono" style="font-size: 24px; color: var(--muted); margin:0; letter-spacing: 0.1em;">04</p>
+            <p style="font-size: 24px; margin: 4px 0 0 0; font-weight: 500;">Spans</p>
+            <p class="small-text" style="font-size: 24px; margin: 2px 0 0 0;">2-stage</p>
+          </div>
+          <div style="border: 1px solid var(--ink); padding: 18px 14px; background: var(--paper); text-align:center;">
+            <p class="mono" style="font-size: 24px; color: var(--muted); margin:0; letter-spacing: 0.1em;">05</p>
+            <p style="font-size: 24px; margin: 4px 0 0 0; font-weight: 500;">Q&amp;A gen.</p>
+            <p class="small-text" style="font-size: 24px; margin: 2px 0 0 0;">factoid + nf</p>
+          </div>
+          <div style="border: 1px solid var(--ink); padding: 18px 14px; background: var(--paper); text-align:center;">
+            <p class="mono" style="font-size: 24px; color: var(--muted); margin:0; letter-spacing: 0.1em;">06</p>
+            <p style="font-size: 24px; margin: 4px 0 0 0; font-weight: 500;">Fine-tune</p>
+            <p class="small-text" style="font-size: 24px; margin: 2px 0 0 0;">FineTuneDB</p>
+          </div>
+        </div>
+        <div style="text-align:left; padding-left: 12px;">
+          <p class="mono" style="font-size: 24px; color: var(--ink); letter-spacing: 0.1em; margin: 0;">→ JSONL</p>
+          <p class="small-text" style="margin: 4px 0 0 0;">backbone <span class="mono" style="font-size: 24px;">gpt-4o-2024-08-06</span></p>
+        </div>
+      </div>
+
+      <!-- regulation track -->
+      <div style="display:grid; grid-template-columns: 200px 1fr 240px; gap: 24px; align-items:center;">
+        <div style="display:flex; flex-direction:column; gap: 6px; align-items:flex-end; padding-right: 12px;">
+          <p class="mono" style="font-size: 24px; color: var(--regulation); letter-spacing: 0.1em; margin: 0;">REGULATION</p>
+          <p class="mono" style="font-size: 36px; color: var(--ink); margin: 0;">293</p>
+          <p class="small-text" style="margin: 0;">JSONL lines</p>
+        </div>
+        <div style="height: 70px; border: 2px solid var(--regulation); background: var(--regulation-tint); position:relative; display:flex; align-items:center; padding-left: 30px;">
+          <p class="body-text" style="font-size: 24px; color: var(--ink); margin: 0;">EU Gender Equality Strategy 2020–2025 · raw regulatory text</p>
+        </div>
+        <div></div>
+      </div>
+
+      <!-- caption -->
+      <div style="margin-top: 18px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--hair); padding-top: 18px;">
+        <p class="body-text" style="font-size: 24px; color: var(--ink);">
+          <span class="mono" style="color: var(--pipeline);">∎</span>&nbsp;Only the <em>source content</em> varies. Everything downstream is shared.
+        </p>
+        <p class="small-text">~10% line-count gap, treated as corpus-size baseline.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§4 · METHODOLOGY</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>08</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 9 — LEGENDS GENERATION                                 -->
+<!-- ============================================================ -->
+<section data-label="09 Legends generation">
+  <div class="corner-id">
+    <div class="left"><b>§4</b><span>Methodology · Stage 2</span></div>
+    <div class="right">09 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--pipeline);">Stage 2 · legends generation</p>
+      <h1 class="slide-title">Fifteen legends expand to 327 closed-book Q&amp;A pairs.</h1>
+    </div>
+
+    <div style="flex: 1; display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: stretch; margin-top: 8px;">
+
+      <!-- left: funnel -->
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <!-- generators -->
+        <div>
+          <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 14px 0;">3 GENERATORS · APRIL 2026</p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+            <div style="border: 1px solid var(--ink); padding: 18px; background: var(--paper);">
+              <p class="mono" style="font-size: 24px; color: var(--muted); margin: 0;">G1</p>
+              <p style="font-size: 24px; margin: 4px 0 0 0; font-weight: 500;">GPT-5.4 Pro</p>
+            </div>
+            <div style="border: 1px solid var(--ink); padding: 18px; background: var(--paper);">
+              <p class="mono" style="font-size: 24px; color: var(--muted); margin: 0;">G2</p>
+              <p style="font-size: 24px; margin: 4px 0 0 0; font-weight: 500;">Gemini 3 Pro</p>
+            </div>
+            <div style="border: 1px solid var(--ink); padding: 18px; background: var(--paper);">
+              <p class="mono" style="font-size: 24px; color: var(--muted); margin: 0;">G3</p>
+              <p style="font-size: 24px; margin: 4px 0 0 0; font-weight: 500;">MS Copilot</p>
+            </div>
+          </div>
+          <p class="small-text" style="margin-top: 10px; font-style: italic;">Multi-LLM mixing → stylistic diversity.</p>
+        </div>
+
+        <div style="display:flex; justify-content:center;">
+          <span class="mono" style="font-size: 36px; color: var(--ink);">↓</span>
+        </div>
+
+        <!-- 15 legend cards -->
+        <div>
+          <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 14px 0;">15 LEGENDS · 5 PER GENERATOR</p>
+          <div style="display: grid; grid-template-columns: repeat(15, 1fr); gap: 6px;">
+            <!-- 15 mini cards -->
+            <div style="height: 60px; background: var(--cip); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--pipeline); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--benchmark); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--regulation); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--legends); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--cip); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--pipeline); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--benchmark); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--regulation); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--legends); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--cip); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--pipeline); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--benchmark); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--regulation); opacity: 1;"></div>
+            <div style="height: 60px; background: var(--legends); opacity: 1;"></div>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:center;">
+          <span class="mono" style="font-size: 36px; color: var(--ink);">↓</span>
+        </div>
+
+        <div style="border: 2px solid var(--ink); background: var(--paper-2); padding: 18px 28px; display: flex; align-items: baseline; gap: 24px;">
+          <p class="mono" style="font-size: 50px; margin: 0; color: var(--ink);">327</p>
+          <p class="body-text" style="font-size: 24px; color: var(--ink); margin: 0;">Q&amp;A pairs after extraction + generation</p>
+        </div>
+      </div>
+
+      <!-- right: legend format + pillars -->
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+
+        <div class="card" style="padding: 28px;">
+          <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 14px 0;">FIXED LEGEND FORMAT</p>
+          <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px;">
+            <li class="small-text"><span class="mono" style="color:var(--ink);">·</span>&nbsp;Title — short, evocative</li>
+            <li class="small-text"><span class="mono" style="color:var(--ink);">·</span>&nbsp;Setting — org / sector / country</li>
+            <li class="small-text"><span class="mono" style="color:var(--ink);">·</span>&nbsp;3–5 named characters</li>
+            <li class="small-text"><span class="mono" style="color:var(--ink);">·</span>&nbsp;400–600-word narrative arc</li>
+            <li class="small-text"><span class="mono" style="color:var(--ink);">·</span>&nbsp;≥1 direct-speech dialogue</li>
+            <li class="small-text"><span class="mono" style="color:var(--ink);">·</span>&nbsp;Measurable outcome</li>
+            <li class="small-text"><span class="mono" style="color:var(--ink);">·</span>&nbsp;Explicit Strategy acknowledgement</li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 14px 0;">5 PILLARS</p>
+          <div class="mono" style="display:flex; flex-direction:column; gap: 8px; font-size: 24px;">
+            <span><span style="display:inline-block; width:10px; height:10px; background: var(--cip); margin-right:10px; vertical-align:middle;"></span>violence_stereotypes</span>
+            <span><span style="display:inline-block; width:10px; height:10px; background: var(--pipeline); margin-right:10px; vertical-align:middle;"></span>equal_economy</span>
+            <span><span style="display:inline-block; width:10px; height:10px; background: var(--benchmark); margin-right:10px; vertical-align:middle;"></span>leadership_participation</span>
+            <span><span style="display:inline-block; width:10px; height:10px; background: var(--regulation); margin-right:10px; vertical-align:middle;"></span>mainstreaming_intersectionality</span>
+            <span><span style="display:inline-block; width:10px; height:10px; background: var(--legends); margin-right:10px; vertical-align:middle;"></span>funding_global_action</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§4 · METHODOLOGY</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>09</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 10 — FINE-TUNING PROTOCOL                              -->
+<!-- ============================================================ -->
+<section data-label="10 Fine-tuning protocol">
+  <div class="corner-id">
+    <div class="left"><b>§4</b><span>Methodology · Controlled comparison</span></div>
+    <div class="right">10 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--pipeline);">Fine-tuning protocol</p>
+      <h1 class="slide-title">Only the corpus content varies. Every other axis is held constant.</h1>
+    </div>
+
+    <div style="flex:1; display:grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items:stretch; margin-top: 8px;">
+
+      <!-- left: held-constant cards + varies card -->
+      <div style="display:flex; flex-direction:column; gap: 18px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--good); margin: 0;">✓ HELD CONSTANT</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div style="border: 1px solid var(--ink); padding: 22px; background: var(--paper);">
+            <p class="mono" style="font-size: 24px; color: var(--muted); margin: 0;">BACKBONE</p>
+            <p class="mono" style="font-size: 24px; margin: 6px 0 0 0; color: var(--ink);">gpt-4o-2024-08-06</p>
+          </div>
+          <div style="border: 1px solid var(--ink); padding: 22px; background: var(--paper);">
+            <p class="mono" style="font-size: 24px; color: var(--muted); margin: 0;">SYSTEM PROMPT</p>
+            <p style="font-size: 24px; margin: 6px 0 0 0;">verbatim across both runs</p>
+          </div>
+          <div style="border: 1px solid var(--ink); padding: 22px; background: var(--paper);">
+            <p class="mono" style="font-size: 24px; color: var(--muted); margin: 0;">CHAT FORMAT</p>
+            <p style="font-size: 24px; margin: 6px 0 0 0;">JSONL · system + user + assistant</p>
+          </div>
+          <div style="border: 1px solid var(--ink); padding: 22px; background: var(--paper);">
+            <p class="mono" style="font-size: 24px; color: var(--muted); margin: 0;">HYPERPARAMETERS</p>
+            <p style="font-size: 24px; margin: 6px 0 0 0;">FineTuneDB defaults (both)</p>
+          </div>
+        </div>
+
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--bad); margin: 14px 0 0 0;">✗ VARIES</p>
+        <div style="border: 2px solid var(--bad); padding: 22px; background: var(--paper);">
+          <p class="mono" style="font-size: 24px; color: var(--bad); margin: 0;">CORPUS CONTENT</p>
+          <p style="font-size: 28px; margin: 6px 0 0 0;">legends &nbsp;<span class="mono" style="color: var(--muted);">|</span>&nbsp; regulation</p>
+        </div>
+      </div>
+
+      <!-- right: balance scale visual -->
+      <div style="display:flex; flex-direction:column; justify-content:space-between;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">LINE COUNTS</p>
+
+        <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: end; padding: 30px 0;">
+          <!-- legends pan -->
+          <div style="text-align: center; display:flex; flex-direction:column; gap: 16px; align-items:center;">
+            <div style="display:flex; flex-direction:column; align-items:center; gap: 6px;">
+              <p class="mono" style="font-size: 54px; color: var(--legends); margin: 0;">327</p>
+              <p class="chip chip-legends" style="font-size: 24px;"><span class="swatch"></span>tuned-legends</p>
+            </div>
+            <div style="height: 12px; width: 100%; background: var(--legends);"></div>
+            <div style="font-size: 24px; font-family: 'IBM Plex Mono', monospace; color: var(--muted); display:flex; flex-direction:column; gap: 2px;">
+              <span>199&nbsp;non-factoid</span>
+              <span>128&nbsp;factoid</span>
+            </div>
+          </div>
+          <!-- regulation pan -->
+          <div style="text-align: center; display:flex; flex-direction:column; gap: 16px; align-items:center;">
+            <div style="display:flex; flex-direction:column; align-items:center; gap: 6px;">
+              <p class="mono" style="font-size: 54px; color: var(--regulation); margin: 0;">293</p>
+              <p class="chip chip-regulation" style="font-size: 24px;"><span class="swatch"></span>tuned-regulation</p>
+            </div>
+            <div style="height: 12px; width: 90%; background: var(--regulation);"></div>
+            <div style="font-size: 24px; font-family: 'IBM Plex Mono', monospace; color: var(--muted); display:flex; flex-direction:column; gap: 2px;">
+              <span>184&nbsp;non-factoid</span>
+              <span>109&nbsp;factoid</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--ink); padding-top: 18px;">
+          <p class="body-text" style="font-size: 24px; margin: 0;">
+            <span class="mono" style="color: var(--cip);">!</span>&nbsp;
+            Cost of the guarantee: closed platform → no logits / gradients.
+          </p>
+          <p class="small-text" style="margin: 6px 0 0 0; font-style: italic;">This motivates CIP (Slide 13).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§4 · METHODOLOGY</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>10</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 11 — GENDEREQGLUE FIVE TASKS                           -->
+<!-- ============================================================ -->
+<section data-label="11 GenderEqGLUE tasks">
+  <div class="corner-id">
+    <div class="left"><b>§5</b><span>Benchmark</span></div>
+    <div class="right">11 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--benchmark);">GenderEqGLUE · five tasks</p>
+      <h1 class="slide-title">Five GLUE/SuperGLUE templates — anchored in 217 held-out EU passages.</h1>
+    </div>
+
+    <div style="flex: 1; margin-top: 4px;">
+      <table class="data-table" style="font-size: 24px;">
+        <thead>
+          <tr>
+            <th style="width: 16%;">Task</th>
+            <th style="width: 30%;">What it measures</th>
+            <th style="width: 18%;">GLUE analogue</th>
+            <th style="width: 20%;">Source</th>
+            <th style="width: 16%;">Metric</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="mono" style="color: var(--benchmark);">GE-CLS</td>
+            <td>Pillar classification (6-class)</td>
+            <td class="mono small-text">SST-2</td>
+            <td class="small-text">CEB-CLS &nbsp;<span class="mono">(72)</span></td>
+            <td class="mono small-text">Macro-F1</td>
+          </tr>
+          <tr>
+            <td class="mono" style="color: var(--benchmark);">GE-NLI</td>
+            <td>Compliance entailment (3-class)</td>
+            <td class="mono small-text">MNLI · RTE</td>
+            <td class="small-text">CEB-NLI &nbsp;<span class="mono">(168)</span></td>
+            <td class="mono small-text">Accuracy</td>
+          </tr>
+          <tr>
+            <td class="mono" style="color: var(--benchmark);">GE-QA</td>
+            <td>Reading comprehension (open-book)</td>
+            <td class="mono small-text">SQuAD · BoolQ</td>
+            <td class="small-text">CEB-QA</td>
+            <td class="mono small-text">F1 / EM · Acc.</td>
+          </tr>
+          <tr>
+            <td class="mono" style="color: var(--benchmark);">GE-WSC</td>
+            <td>Stereotype-aware coreference</td>
+            <td class="mono small-text">WSC · Winogender</td>
+            <td class="small-text">WinoBias <em>as-is</em></td>
+            <td class="mono small-text">Acc. + Parity</td>
+          </tr>
+          <tr>
+            <td class="mono" style="color: var(--benchmark);">GE-NEXT</td>
+            <td>Compliant-action selection (4-choice)</td>
+            <td class="mono small-text">COPA</td>
+            <td class="small-text">Vignettes &nbsp;<span class="mono">(150)</span></td>
+            <td class="mono small-text">Accuracy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 60px; align-items: center; border-top: 1px solid var(--hair); padding-top: 22px;">
+      <div>
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">COMMON EVALUATION BASE · 217</p>
+        <p class="body-text" style="font-size: 24px; margin: 8px 0 0 0;">
+          Roadmap for Women's Rights 2025 · GAP III · Council Conclusions on Pay Gap 2019 · Directive 2022/2381 — held-out from training.
+        </p>
+      </div>
+      <div>
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">AGGREGATE</p>
+        <p class="body-text" style="font-size: 24px; margin: 8px 0 0 0;">Unweighted arithmetic mean of five headline metrics.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§5 · BENCHMARK</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>11</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 12 — GE-NLI & GE-NEXT                                  -->
+<!-- ============================================================ -->
+<section data-label="12 NLI and NEXT">
+  <div class="corner-id">
+    <div class="left"><b>§5</b><span>Hypothesis-central tasks</span></div>
+    <div class="right">12 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--benchmark);">Two hypothesis-central tasks</p>
+      <h1 class="slide-title">GE-NLI probes <em class="serif">recognition</em>. GE-NEXT probes <em class="serif">selection</em>.</h1>
+    </div>
+
+    <div style="flex:1; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 8px;">
+
+      <!-- GE-NLI -->
+      <div style="border-top: 4px solid var(--benchmark); padding: 28px 28px 24px; background: #FBF8F1; display:flex; flex-direction:column; gap: 18px;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between;">
+          <p class="mono" style="font-size: 24px; color: var(--benchmark); letter-spacing: 0.12em; margin:0;">GE-NLI</p>
+          <p class="mono" style="font-size: 24px; color: var(--ink); margin: 0;">168 · 3 × 56</p>
+        </div>
+        <h3 style="font-size: 32px; font-weight: 500; line-height: 1.1; margin: 0;">Compliance entailment</h3>
+        <p class="body-text" style="font-size: 24px;">
+          Premise = organisational scenario. Hypothesis = regulatory clause. The model labels entailment / contradiction / neutral.
+        </p>
+        <!-- triangle: 3 vertices -->
+        <div style="display:flex; justify-content:center; padding: 6px 0;">
+          <div style="position: relative; width: 320px; height: 180px;">
+            <div style="position:absolute; left:50%; top: 0; transform:translateX(-50%); border:1px solid var(--benchmark); background: var(--paper); padding: 6px 14px;">
+              <p class="mono" style="font-size: 24px; margin: 0;">entailment</p>
+            </div>
+            <div style="position:absolute; left:0; bottom: 0; border:1px solid var(--benchmark); background: var(--paper); padding: 6px 14px;">
+              <p class="mono" style="font-size: 24px; margin: 0;">contradiction</p>
+            </div>
+            <div style="position:absolute; right:0; bottom: 0; border:1px solid var(--benchmark); background: var(--paper); padding: 6px 14px;">
+              <p class="mono" style="font-size: 24px; margin: 0;">neutral</p>
+            </div>
+            <svg viewBox="0 0 320 180" style="position:absolute; inset:0; pointer-events:none;">
+              <polygon points="160,22 50,158 270,158" fill="none" stroke="#2F569E" stroke-width="1" stroke-dasharray="4 4" opacity="0.45"/>
+            </svg>
+          </div>
+        </div>
+        <div style="margin-top: auto; border-top: 1px solid var(--hair); padding-top: 12px;">
+          <p class="small-text"><span class="mono" style="color: var(--ink);">Construction:</span> 5-stage — clause extraction → compliant scenario → factual perturbation → cross-pillar pairing → balance verification.</p>
+        </div>
+      </div>
+
+      <!-- GE-NEXT -->
+      <div style="border-top: 4px solid var(--benchmark); padding: 28px 28px 24px; background: #FBF8F1; display:flex; flex-direction:column; gap: 18px;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between;">
+          <p class="mono" style="font-size: 24px; color: var(--benchmark); letter-spacing: 0.12em; margin:0;">GE-NEXT</p>
+          <p class="mono" style="font-size: 24px; color: var(--ink); margin: 0;">150 · 30 per pillar</p>
+        </div>
+        <h3 style="font-size: 32px; font-weight: 500; line-height: 1.1; margin: 0;">Compliant-action selection</h3>
+        <p class="body-text" style="font-size: 24px;">
+          Each item: middle-manager protagonist + quantified gap + four candidate actions. The model picks one.
+        </p>
+
+        <!-- four options stack -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="border: 2px solid var(--good); background: #EEF6F0; padding: 12px 16px; display:flex; justify-content:space-between; align-items:center;">
+            <span class="mono" style="font-size: 24px; color: var(--good);">A · SUBSTANTIVE-COMPLIANT</span>
+            <span style="color: var(--good); font-size: 24px;">✓ gold</span>
+          </div>
+          <div style="border: 1px solid var(--hair); background: var(--paper); padding: 12px 16px;">
+            <span class="mono" style="font-size: 24px; color: var(--muted);">B · PERFORMATIVE</span>
+            <span class="small-text" style="margin-left: 14px; font-size: 24px;">symbolic gesture, no KPIs</span>
+          </div>
+          <div style="border: 1px solid var(--hair); background: var(--paper); padding: 12px 16px;">
+            <span class="mono" style="font-size: 24px; color: var(--muted);">C · COST-OPTIMISING</span>
+            <span class="small-text" style="margin-left: 14px; font-size: 24px;">defer / minimise / absorb</span>
+          </div>
+          <div style="border: 1px solid var(--hair); background: var(--paper); padding: 12px 16px;">
+            <span class="mono" style="font-size: 24px; color: var(--muted);">D · ORTHOGONAL</span>
+            <span class="small-text" style="margin-left: 14px; font-size: 24px;">different GE concern</span>
+          </div>
+        </div>
+
+        <div style="margin-top: auto; border-top: 1px solid var(--hair); padding-top: 12px;">
+          <p class="small-text"><span class="mono" style="color: var(--ink);">Why central:</span> direct probe of the compliance-vs-cost arbitrage at the centre of the conflict.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§5 · BENCHMARK</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>12</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 13 — CIP                                               -->
+<!-- ============================================================ -->
+<section data-label="13 CIP protocol">
+  <div class="corner-id">
+    <div class="left"><b>§6</b><span>Probing protocol</span></div>
+    <div class="right">13 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--cip);">Counterfactual Input Probing</p>
+      <h1 class="slide-title">CIP is the behavioural-only protocol the access constraint <em class="serif">admits</em>.</h1>
+    </div>
+
+    <div style="flex:1; display: grid; grid-template-columns: 1.25fr 1fr; gap: 60px; align-items:stretch; margin-top: 8px;">
+
+      <!-- left: 3-step ladder -->
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">ONE BASE VIGNETTE · THREE VARIANTS</p>
+
+        <div style="border: 1px solid var(--ink); padding: 18px 24px; background: var(--paper); display: grid; grid-template-columns: 56px 1fr 200px; align-items: center; gap: 20px;">
+          <p class="mono" style="font-size: 36px; color: var(--cip); margin: 0;">A</p>
+          <div>
+            <p style="font-size: 26px; font-weight: 500; margin: 0;">Original baseline</p>
+            <p class="small-text" style="margin: 4px 0 0 0;">full regulatory vocabulary present</p>
+          </div>
+          <p class="mono small-text" style="text-align: right; margin: 0;">lexical cues&nbsp;✓</p>
+        </div>
+
+        <div style="border: 1px solid var(--ink); padding: 18px 24px; background: var(--paper); display: grid; grid-template-columns: 56px 1fr 200px; align-items: center; gap: 20px;">
+          <p class="mono" style="font-size: 36px; color: var(--cip); margin: 0;">B</p>
+          <div>
+            <p style="font-size: 26px; font-weight: 500; margin: 0;">Keyword-stripped</p>
+            <p class="small-text" style="margin: 4px 0 0 0;">domain terminology removed; semantic content preserved</p>
+          </div>
+          <p class="mono small-text" style="text-align: right; margin: 0;">lexical cues&nbsp;✕</p>
+        </div>
+
+        <div style="border: 1px solid var(--ink); padding: 18px 24px; background: var(--paper); display: grid; grid-template-columns: 56px 1fr 200px; align-items: center; gap: 20px;">
+          <p class="mono" style="font-size: 36px; color: var(--cip); margin: 0;">C</p>
+          <div>
+            <p style="font-size: 26px; font-weight: 500; margin: 0;">Adversarially framed</p>
+            <p class="small-text" style="margin: 4px 0 0 0;">competing discursive frame — meritocracy · cost · cultural relativism · phased · scientific-integrity</p>
+          </div>
+          <p class="mono small-text" style="text-align: right; margin: 0;">frame attacks</p>
+        </div>
+
+        <div style="margin-top: 6px; border-top: 1px solid var(--ink); padding-top: 12px; display: flex; justify-content: space-between; align-items: baseline;">
+          <p class="body-text" style="font-size: 24px;">Binary scoring · <span class="mono">1</span> maintained &nbsp;|&nbsp; <span class="mono">0</span> abandoned</p>
+          <p class="mono" style="font-size: 26px; color: var(--cip); margin: 0;">5 × 3 × 3 = 45</p>
+        </div>
+
+        <p class="small-text" style="margin: 4px 0 0 0; font-style: italic;">
+          Structural reasoning survives B and C; lexical mimicry fails under B.
+        </p>
+      </div>
+
+      <!-- right: blocked methods + CIP -->
+      <div style="display:flex; flex-direction:column; gap: 14px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">PLATFORM ACCESS</p>
+        <div style="border: 1px solid var(--hair); padding: 18px; background: var(--paper-2);">
+          <p class="mono small-text" style="margin: 0;">FineTuneDB Studio</p>
+          <p style="font-size: 24px; margin: 4px 0 0 0;">GUI-only · no logits · no gradients · no batched API</p>
+        </div>
+
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 8px 0 0 0;">BLOCKED METHODS</p>
+        <div style="display:flex; flex-direction:column; gap: 8px;">
+          <div style="display:flex; justify-content:space-between; padding: 12px 16px; background: var(--paper); border: 1px solid var(--hair); text-decoration: line-through; color: var(--muted);">
+            <span class="mono" style="font-size: 24px;">SHAP</span>
+            <span class="small-text" style="text-decoration: none; font-style: italic;">needs gradients</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 12px 16px; background: var(--paper); border: 1px solid var(--hair); text-decoration: line-through; color: var(--muted);">
+            <span class="mono" style="font-size: 24px;">LIME</span>
+            <span class="small-text" style="text-decoration: none; font-style: italic;">hundreds of passes</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 12px 16px; background: var(--paper); border: 1px solid var(--hair); text-decoration: line-through; color: var(--muted);">
+            <span class="mono" style="font-size: 24px;">Integrated Gradients</span>
+            <span class="small-text" style="text-decoration: none; font-style: italic;">needs gradients</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 12px 16px; background: var(--paper); border: 1px solid var(--hair); text-decoration: line-through; color: var(--muted);">
+            <span class="mono" style="font-size: 24px;">Attention Rollout</span>
+            <span class="small-text" style="text-decoration: none; font-style: italic;">needs attention</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; padding: 14px 16px; background: var(--paper); border: 2px solid var(--cip);">
+            <span class="mono" style="font-size: 24px; color: var(--cip);">CIP &nbsp;◆</span>
+            <span class="small-text" style="font-style: italic; color: var(--ink);">text-level perturbation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§6 · PROBING</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>13</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 14 — HEADLINE RESULTS                                  -->
+<!-- ============================================================ -->
+<section data-label="14 Headline results">
+  <div class="corner-id">
+    <div class="left"><b>§7</b><span>Results</span></div>
+    <div class="right">14 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">Headline results</p>
+      <h1 class="slide-title"><span class="mono" style="color: var(--regulation); font-size: 56px;">tuned-regulation</span> leads aggregate; per-task wins split <span class="mono" style="font-size: 56px;">3–3</span>.</h1>
+    </div>
+
+    <div style="display:flex; gap: 24px; align-items: center; margin-top: 6px;">
+      <span class="chip chip-base"><span class="swatch"></span>base · 0.904</span>
+      <span class="chip chip-legends"><span class="swatch"></span>tuned-legends · 0.926</span>
+      <span class="chip chip-regulation"><span class="swatch"></span>tuned-regulation · 0.938</span>
+    </div>
+
+    <!-- grouped bar chart -->
+    <div style="flex:1; display: grid; grid-template-columns: 60px 1fr; gap: 14px; margin-top: 10px;">
+      <!-- y axis -->
+      <div style="position:relative; height: 100%; font-family: 'IBM Plex Mono', monospace; font-size: 24px; color: var(--muted);">
+        <span style="position:absolute; right:0; top: 0;">1.00</span>
+        <span style="position:absolute; right:0; top: 25%;">0.95</span>
+        <span style="position:absolute; right:0; top: 50%;">0.90</span>
+        <span style="position:absolute; right:0; top: 75%;">0.85</span>
+        <span style="position:absolute; right:0; bottom: 0;">0.80</span>
+      </div>
+      <!-- chart area -->
+      <div style="position:relative; border-left: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 0 30px;">
+        <!-- gridlines -->
+        <div style="position:absolute; left:0; right:0; top:0; height: 1px; background: var(--hair);"></div>
+        <div style="position:absolute; left:0; right:0; top:25%; height: 1px; background: var(--hair);"></div>
+        <div style="position:absolute; left:0; right:0; top:50%; height: 1px; background: var(--hair);"></div>
+        <div style="position:absolute; left:0; right:0; top:75%; height: 1px; background: var(--hair);"></div>
+
+        <div style="display:grid; grid-template-columns: repeat(6, 1fr); height: 100%; align-items: end; gap: 0;">
+
+          <!-- GE-CLS  base 0.833 legends 0.839 reg 0.928 -->
+          <!-- normalize: bar height % = (val - 0.80) / 0.20 * 100 -->
+          <div style="display:flex; flex-direction:column; align-items:center; gap: 0; height: 100%; padding: 0 16px; position: relative;">
+            <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap: 6px; width:100%;">
+              <div style="width: 28%; background: var(--base); height: 16.5%; position:relative;"><span class="mono" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size: 24px; color:var(--muted);">.833</span></div>
+              <div style="width: 28%; background: var(--legends); height: 19.5%; position:relative;"><span class="mono" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size: 24px; color:var(--legends);">.839</span></div>
+              <div style="width: 28%; background: var(--regulation); height: 64%; position:relative;"><span class="mono" style="position:absolute; top:-26px; left:50%; transform:translateX(-50%); font-size: 24px; color: var(--regulation); font-weight: 700;">.928 ★</span></div>
+            </div>
+          </div>
+
+          <!-- GE-NLI  0.899 0.929 0.911 -->
+          <div style="display:flex; flex-direction:column; align-items:center; height: 100%; padding: 0 16px;">
+            <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap: 6px; width:100%;">
+              <div style="width: 28%; background: var(--base); height: 49.5%; position:relative;"><span class="mono" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size: 24px; color:var(--muted);">.899</span></div>
+              <div style="width: 28%; background: var(--legends); height: 64.5%; position:relative;"><span class="mono" style="position:absolute; top:-26px; left:50%; transform:translateX(-50%); font-size: 24px; color: var(--legends); font-weight: 700;">.929 ★</span></div>
+              <div style="width: 28%; background: var(--regulation); height: 55.5%; position:relative;"><span class="mono" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size: 24px; color: var(--regulation);">.911</span></div>
+            </div>
+          </div>
+
+          <!-- GE-QA 0.929 0.938 0.944 -->
+          <div style="display:flex; flex-direction:column; align-items:center; height: 100%; padding: 0 16px;">
+            <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap: 6px; width:100%;">
+              <div style="width: 28%; background: var(--base); height: 64.5%; position:relative;"><span class="mono" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size: 24px; color:var(--muted);">.929</span></div>
+              <div style="width: 28%; background: var(--legends); height: 69%; position:relative;"><span class="mono" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size: 24px; color: var(--legends);">.938</span></div>
+              <div style="width: 28%; background: var(--regulation); height: 72%; position:relative;"><span class="mono" style="position:absolute; top:-26px; left:50%; transform:translateX(-50%); font-size: 24px; color: var(--regulation); font-weight: 700;">.944 ★</span></div>
+            </div>
+          </div>
+
+          <!-- GE-WSC 0.930 0.960 0.960 -->
+          <div style="display:flex; flex-direction:column; align-items:center; height: 100%; padding: 0 16px;">
+            <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap: 6px; width:100%;">
+              <div style="width: 28%; background: var(--base); height: 65%; position:relative;"><span class="mono" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size: 24px; color:var(--muted);">.930</span></div>
+              <div style="width: 28%; background: var(--legends); height: 80%; position:relative;"><span class="mono" style="position:absolute; top:-26px; left:50%; transform:translateX(-50%); font-size: 24px; color: var(--legends); font-weight: 700;">.960 ★</span></div>
+              <div style="width: 28%; background: var(--regulation); height: 80%; position:relative;"><span class="mono" style="position:absolute; top:-26px; left:50%; transform:translateX(-50%); font-size: 24px; color: var(--regulation); font-weight: 700;">.960 ★</span></div>
+            </div>
+          </div>
+
+          <!-- GE-NEXT 0.927 0.967 0.947 -->
+          <div style="display:flex; flex-direction:column; align-items:center; height: 100%; padding: 0 16px;">
+            <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap: 6px; width:100%;">
+              <div style="width: 28%; background: var(--base); height: 63.5%; position:relative;"><span class="mono" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size: 24px; color:var(--muted);">.927</span></div>
+              <div style="width: 28%; background: var(--legends); height: 83.5%; position:relative;"><span class="mono" style="position:absolute; top:-26px; left:50%; transform:translateX(-50%); font-size: 24px; color: var(--legends); font-weight: 700;">.967 ★</span></div>
+              <div style="width: 28%; background: var(--regulation); height: 73.5%; position:relative;"><span class="mono" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size: 24px; color: var(--regulation);">.947</span></div>
+            </div>
+          </div>
+
+          <!-- AGGREGATE 0.904 0.926 0.938 -->
+          <div style="display:flex; flex-direction:column; align-items:center; height: 100%; padding: 0 16px; background: var(--paper-2);">
+            <div style="flex:1; display:flex; align-items:flex-end; justify-content:center; gap: 6px; width:100%;">
+              <div style="width: 28%; background: var(--base); height: 52%; position:relative;"><span class="mono" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size: 24px; color:var(--muted);">.904</span></div>
+              <div style="width: 28%; background: var(--legends); height: 63%; position:relative;"><span class="mono" style="position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size: 24px; color: var(--legends);">.926</span></div>
+              <div style="width: 28%; background: var(--regulation); height: 69%; position:relative;"><span class="mono" style="position:absolute; top:-26px; left:50%; transform:translateX(-50%); font-size: 24px; color: var(--regulation); font-weight: 700;">.938 ★</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- x labels -->
+    <div style="display: grid; grid-template-columns: 60px 1fr; gap: 14px;">
+      <div></div>
+      <div style="display: grid; grid-template-columns: repeat(6, 1fr); padding: 0 30px;">
+        <p class="mono small-text" style="text-align:center; margin:0; color: var(--ink);">GE-CLS</p>
+        <p class="mono small-text" style="text-align:center; margin:0; color: var(--ink);">GE-NLI</p>
+        <p class="mono small-text" style="text-align:center; margin:0; color: var(--ink);">GE-QA</p>
+        <p class="mono small-text" style="text-align:center; margin:0; color: var(--ink);">GE-WSC</p>
+        <p class="mono small-text" style="text-align:center; margin:0; color: var(--ink);">GE-NEXT</p>
+        <p class="mono small-text" style="text-align:center; margin:0; color: var(--ink); font-weight: 700;">AGGREGATE</p>
+      </div>
+    </div>
+
+    <p class="body-text" style="font-size: 24px; color: var(--ink); border-top: 1px solid var(--ink); padding-top: 16px;">
+      Two fine-tuned models, three wins each — no dominance. Base wins zero.
+    </p>
+  </div>
+
+  <div class="footer-rail">
+    <div>§7 · RESULTS</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>14</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 15 — WHERE THE WINS GO                                 -->
+<!-- ============================================================ -->
+<section data-label="15 Where the wins go">
+  <div class="corner-id">
+    <div class="left"><b>§7</b><span>Results · Per-task pattern</span></div>
+    <div class="right">15 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">Per-task pattern</p>
+      <h1 class="slide-title">Wins partition by task type — not by overall quality.</h1>
+    </div>
+
+    <div style="flex:1; display:grid; grid-template-columns: 1fr 140px 1fr; gap: 0; margin-top: 14px; align-items: stretch;">
+
+      <!-- legends wins card -->
+      <div style="border: 1px solid var(--legends); display:flex; flex-direction:column;">
+        <div style="background: var(--legends); color: white; padding: 18px 28px; display:flex; justify-content:space-between; align-items:baseline;">
+          <span class="mono" style="font-size: 24px; letter-spacing: 0.1em;">tuned-legends · WINS</span>
+          <span class="mono" style="font-size: 24px;">3</span>
+        </div>
+        <div style="background: var(--legends-tint); flex:1; padding: 28px; display:flex; flex-direction:column; gap: 18px;">
+          <div style="display:grid; grid-template-columns: 160px 1fr; align-items:center; gap: 20px; border-bottom: 1px dashed var(--hair); padding-bottom: 16px;">
+            <p class="mono" style="font-size: 30px; color: var(--ink); margin: 0;">GE-NLI</p>
+            <p class="body-text" style="font-size: 24px; margin: 0; color: var(--ink);">compliance recognition</p>
+          </div>
+          <div style="display:grid; grid-template-columns: 160px 1fr; align-items:center; gap: 20px; border-bottom: 1px dashed var(--hair); padding-bottom: 16px;">
+            <p class="mono" style="font-size: 30px; color: var(--ink); margin: 0;">GE-NEXT</p>
+            <p class="body-text" style="font-size: 24px; margin: 0; color: var(--ink);">compliant-action selection</p>
+          </div>
+          <div style="display:grid; grid-template-columns: 160px 1fr; align-items:center; gap: 20px;">
+            <p class="mono" style="font-size: 30px; color: var(--ink); margin: 0;">GE-WSC</p>
+            <p class="body-text" style="font-size: 24px; margin: 0; color: var(--ink-2);">tied · 0.960</p>
+          </div>
+          <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid var(--legends-soft);">
+            <p class="mono small-text" style="color: var(--legends); letter-spacing: 0.08em;">→ hypothesis-central reasoning</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- center divider -->
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap: 20px;">
+        <div style="width: 1px; flex:1; background: var(--hair);"></div>
+        <div style="border: 1.5px solid var(--ink); background: var(--paper); padding: 14px 16px; text-align:center; width: 80px;">
+          <p class="mono" style="font-size: 25px; margin: 0;">3 – 3</p>
+        </div>
+        <div style="width: 1px; flex:1; background: var(--hair);"></div>
+      </div>
+
+      <!-- regulation wins card -->
+      <div style="border: 1px solid var(--regulation); display:flex; flex-direction:column;">
+        <div style="background: var(--regulation); color: white; padding: 18px 28px; display:flex; justify-content:space-between; align-items:baseline;">
+          <span class="mono" style="font-size: 24px; letter-spacing: 0.1em;">tuned-regulation · WINS</span>
+          <span class="mono" style="font-size: 24px;">3</span>
+        </div>
+        <div style="background: var(--regulation-tint); flex:1; padding: 28px; display:flex; flex-direction:column; gap: 18px;">
+          <div style="display:grid; grid-template-columns: 160px 1fr; align-items:center; gap: 20px; border-bottom: 1px dashed var(--hair); padding-bottom: 16px;">
+            <p class="mono" style="font-size: 30px; color: var(--ink); margin: 0;">GE-CLS</p>
+            <p class="body-text" style="font-size: 24px; margin: 0; color: var(--ink);">pillar ontology</p>
+          </div>
+          <div style="display:grid; grid-template-columns: 160px 1fr; align-items:center; gap: 20px; border-bottom: 1px dashed var(--hair); padding-bottom: 16px;">
+            <p class="mono" style="font-size: 30px; color: var(--ink); margin: 0;">GE-QA</p>
+            <p class="body-text" style="font-size: 24px; margin: 0; color: var(--ink);">short-span factoid</p>
+          </div>
+          <div style="display:grid; grid-template-columns: 160px 1fr; align-items:center; gap: 20px;">
+            <p class="mono" style="font-size: 30px; color: var(--ink); margin: 0;">GE-WSC</p>
+            <p class="body-text" style="font-size: 24px; margin: 0; color: var(--ink-2);">tied · 0.960</p>
+          </div>
+          <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid var(--regulation-soft);">
+            <p class="mono small-text" style="color: var(--regulation); letter-spacing: 0.08em;">→ regulation lexicon &amp; ontology</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-text" style="font-size: 26px; border-top: 1px solid var(--ink); padding-top: 18px; margin-top: 4px;">
+      The aggregate score <em>conceals</em> this partition — it must be read alongside per-task results, not instead of them.
+    </p>
+  </div>
+
+  <div class="footer-rail">
+    <div>§7 · RESULTS</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>15</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 16 — GE-WSC PARITY                                     -->
+<!-- ============================================================ -->
+<section data-label="16 Parity diagnostic">
+  <div class="corner-id">
+    <div class="left"><b>§7</b><span>Results · Parity diagnostic</span></div>
+    <div class="right">16 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">Behind the GE-WSC tie</p>
+      <h1 class="slide-title">Same accuracy. Only <span class="mono" style="color: var(--legends); font-size: 56px;">tuned-legends</span> achieves perfect gender parity.</h1>
+    </div>
+
+    <div style="flex:1; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; margin-top: 8px; align-items:stretch;">
+
+      <!-- left: pro/anti chart -->
+      <div style="display:flex; flex-direction:column; gap: 18px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">PRO-STEREOTYPE vs ANTI-STEREOTYPE · WINOBIAS</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; flex:1;">
+
+          <!-- pro -->
+          <div style="display:flex; flex-direction:column; gap: 10px;">
+            <p style="font-size: 24px; margin: 0; font-weight: 500;">Pro-stereotype</p>
+            <div style="display:flex; flex-direction:column; gap: 10px; flex:1; justify-content: flex-end;">
+              <div style="display:grid; grid-template-columns: 130px 1fr 60px; gap: 12px; align-items:center;">
+                <span class="mono small-text" style="text-align:right;">base</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 92%; background: var(--base);"></div></div>
+                <span class="mono small-text">.92</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 130px 1fr 60px; gap: 12px; align-items:center;">
+                <span class="mono small-text" style="text-align:right; color: var(--legends);">legends</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 96%; background: var(--legends);"></div></div>
+                <span class="mono small-text">.96</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 130px 1fr 60px; gap: 12px; align-items:center;">
+                <span class="mono small-text" style="text-align:right; color: var(--regulation);">regulation</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--regulation);"></div></div>
+                <span class="mono small-text">1.00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- anti -->
+          <div style="display:flex; flex-direction:column; gap: 10px;">
+            <p style="font-size: 24px; margin: 0; font-weight: 500;">Anti-stereotype</p>
+            <div style="display:flex; flex-direction:column; gap: 10px; flex:1; justify-content: flex-end;">
+              <div style="display:grid; grid-template-columns: 130px 1fr 60px; gap: 12px; align-items:center;">
+                <span class="mono small-text" style="text-align:right;">base</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 88%; background: var(--base);"></div></div>
+                <span class="mono small-text">.88</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 130px 1fr 60px; gap: 12px; align-items:center;">
+                <span class="mono small-text" style="text-align:right; color: var(--legends);">legends</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 96%; background: var(--legends);"></div></div>
+                <span class="mono small-text">.96</span>
+              </div>
+              <div style="display:grid; grid-template-columns: 130px 1fr 60px; gap: 12px; align-items:center;">
+                <span class="mono small-text" style="text-align:right; color: var(--regulation);">regulation</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 92%; background: var(--regulation);"></div></div>
+                <span class="mono small-text">.92</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 10px;">
+          <div></div>
+          <div style="border: 1px solid var(--bad); padding: 10px 14px; background: var(--paper);">
+            <p class="mono small-text" style="margin: 0; color: var(--bad);">regulation Type-1 gap → 0.08</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- right: parity scores -->
+      <div style="display:flex; flex-direction:column; gap: 14px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">GENDER PARITY SCORE&nbsp; · &nbsp;|ACC<span style="font-size: 24px;">·PRO</span> − ACC<span style="font-size: 24px;">·ANTI</span>|</p>
+
+        <div style="border: 2px solid var(--legends); padding: 22px 26px; background: var(--legends-tint);">
+          <div style="display:flex; justify-content:space-between; align-items:baseline;">
+            <span class="mono" style="font-size: 24px; color: var(--legends);">tuned-legends</span>
+            <span class="mono" style="font-size: 44px; color: var(--legends); font-weight: 700;">0.000</span>
+          </div>
+          <p class="small-text" style="margin: 6px 0 0 0; color: var(--ink);">Type-1 = 0.000 · Type-2 = 0.000 · stereotype-invariant ✓</p>
+        </div>
+
+        <div style="border: 2px solid var(--regulation); padding: 22px 26px; background: var(--regulation-tint);">
+          <div style="display:flex; justify-content:space-between; align-items:baseline;">
+            <span class="mono" style="font-size: 24px; color: var(--regulation);">tuned-regulation</span>
+            <span class="mono" style="font-size: 44px; color: var(--regulation); font-weight: 700;">0.040</span>
+          </div>
+          <p class="small-text" style="margin: 6px 0 0 0; color: var(--ink);">Type-1 = 0.080 · Type-2 = 0.000 — gain entirely from pro-stereotype items</p>
+        </div>
+
+        <div style="border: 1px solid var(--hair); padding: 22px 26px; background: var(--paper);">
+          <div style="display:flex; justify-content:space-between; align-items:baseline;">
+            <span class="mono" style="font-size: 24px; color: var(--muted);">base</span>
+            <span class="mono" style="font-size: 44px; color: var(--muted);">0.040</span>
+          </div>
+          <p class="small-text" style="margin: 6px 0 0 0;">reference</p>
+        </div>
+
+        <p class="body-text" style="font-size: 24px; margin: 12px 0 0 0; border-top: 1px solid var(--hair); padding-top: 14px;">
+          Same destination, <em>different routes</em>. Only <span class="mono" style="color: var(--legends);">tuned-legends</span> satisfies the fairness criterion.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§7 · RESULTS</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>16</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 17 — CIP ROBUSTNESS                                    -->
+<!-- ============================================================ -->
+<section data-label="17 CIP robustness">
+  <div class="corner-id">
+    <div class="left"><b>§7</b><span>Results · CIP</span></div>
+    <div class="right">17 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--cip);">CIP robustness</p>
+      <h1 class="slide-title">Aggregates compress near-ceiling. Read the <em class="serif">failures</em>, not the totals.</h1>
+    </div>
+
+    <div style="flex:1; display: grid; grid-template-columns: 1.25fr 1fr; gap: 60px; align-items:stretch; margin-top: 8px;">
+
+      <!-- left: aggregate CIP table -->
+      <div>
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 14px 0;">AGGREGATE · ROBUSTNESS PER MODEL</p>
+        <table class="data-table" style="font-size: 24px;">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th class="num">Var. A</th>
+              <th class="num">Var. B</th>
+              <th class="num">Var. C</th>
+              <th class="num">Total</th>
+              <th class="num">Rob.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="chip chip-base" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>base</span></td>
+              <td class="num">5/5</td><td class="num">4/5</td><td class="num">4/5</td>
+              <td class="num">13/15</td><td class="num">86.7%</td>
+            </tr>
+            <tr>
+              <td><span class="chip chip-regulation" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>tuned-regulation</span></td>
+              <td class="num">5/5</td><td class="num">4/5</td><td class="num">4/5</td>
+              <td class="num">13/15</td><td class="num">86.7%</td>
+            </tr>
+            <tr style="background: var(--legends-tint);">
+              <td><span class="chip chip-legends" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>tuned-legends</span></td>
+              <td class="num">5/5</td><td class="num win">5/5</td><td class="num">4/5</td>
+              <td class="num win">14/15</td><td class="num win">93.3%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top: 22px; border: 1px solid var(--cip); background: #FBF2F2; padding: 18px 22px;">
+          <p class="mono small-text" style="color: var(--cip); margin: 0; letter-spacing: 0.1em;">⚠ HONEST DISCLAIMER</p>
+          <p class="body-text" style="font-size: 24px; margin: 6px 0 0 0; color: var(--ink);">
+            At <span class="mono">n=15</span> the aggregate gap is too small for strong inferential claims. CIP surfaces patterns for replication — not established findings.
+          </p>
+        </div>
+      </div>
+
+      <!-- right: 5x3 heat-grid per model -->
+      <div style="display:flex; flex-direction:column; gap: 14px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">FAILURE DISTRIBUTION</p>
+
+        <!-- column headers -->
+        <div style="display:grid; grid-template-columns: 60px 1fr; gap: 16px;">
+          <div></div>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+            <p class="mono small-text" style="text-align:center; margin:0; color: var(--ink);">base</p>
+            <p class="mono small-text" style="text-align:center; margin:0; color: var(--regulation);">regulation</p>
+            <p class="mono small-text" style="text-align:center; margin:0; color: var(--legends);">legends</p>
+          </div>
+        </div>
+
+        <!-- each row = pillar -->
+        <!-- rows: violence_stereotypes / equal_economy / leadership_participation / mainstreaming_intersectionality / funding_global_action -->
+        <!-- columns: A B C per model -->
+
+        <!-- Helper: pass cell = light filled square w check; fail = X cross. base fails: violence_stereotypes B, equal_economy C. regulation fails: mainstreaming B + C. legends fails: mainstreaming C -->
+
+        <div style="display:grid; grid-template-columns: 60px 1fr; gap: 16px; align-items: center;">
+          <p class="mono" style="font-size: 24px; text-align: right; margin: 0; color: var(--ink);">vio.</p>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+            <!-- base ABC -->
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--bad); display:flex; align-items:center; justify-content:center; color:white; font-family: 'IBM Plex Mono', monospace; font-size: 24px;">✕</div><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div></div>
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div></div>
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div></div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 60px 1fr; gap: 16px; align-items: center;">
+          <p class="mono" style="font-size: 24px; text-align: right; margin: 0; color: var(--ink);">eco.</p>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--bad); display:flex; align-items:center; justify-content:center; color:white; font-family: 'IBM Plex Mono', monospace; font-size: 24px;">✕</div></div>
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div></div>
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div></div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 60px 1fr; gap: 16px; align-items: center;">
+          <p class="mono" style="font-size: 24px; text-align: right; margin: 0; color: var(--ink);">lead.</p>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div></div>
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div></div>
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div></div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 60px 1fr; gap: 16px; align-items: center;">
+          <p class="mono" style="font-size: 24px; text-align: right; margin: 0; color: var(--ink);">main.</p>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div></div>
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--bad); display:flex; align-items:center; justify-content:center; color:white; font-family: 'IBM Plex Mono', monospace; font-size: 24px;">✕</div><div style="flex:1; aspect-ratio: 1; background: var(--bad); display:flex; align-items:center; justify-content:center; color:white; font-family: 'IBM Plex Mono', monospace; font-size: 24px;">✕</div></div>
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--bad); display:flex; align-items:center; justify-content:center; color:white; font-family: 'IBM Plex Mono', monospace; font-size: 24px;">✕</div></div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 60px 1fr; gap: 16px; align-items: center;">
+          <p class="mono" style="font-size: 24px; text-align: right; margin: 0; color: var(--ink);">fund.</p>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--base-soft);"></div></div>
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--regulation-soft);"></div></div>
+            <div class="row" style="gap: 4px;"><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div><div style="flex:1; aspect-ratio: 1; background: var(--legends-soft);"></div></div>
+          </div>
+        </div>
+
+        <!-- column subheaders -->
+        <div style="display:grid; grid-template-columns: 60px 1fr; gap: 16px;">
+          <div></div>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+            <div class="mono" style="display:flex; gap: 4px; font-size: 24px; color: var(--muted);"><span style="flex:1; text-align:center;">A</span><span style="flex:1; text-align:center;">B</span><span style="flex:1; text-align:center;">C</span></div>
+            <div class="mono" style="display:flex; gap: 4px; font-size: 24px; color: var(--muted);"><span style="flex:1; text-align:center;">A</span><span style="flex:1; text-align:center;">B</span><span style="flex:1; text-align:center;">C</span></div>
+            <div class="mono" style="display:flex; gap: 4px; font-size: 24px; color: var(--muted);"><span style="flex:1; text-align:center;">A</span><span style="flex:1; text-align:center;">B</span><span style="flex:1; text-align:center;">C</span></div>
+          </div>
+        </div>
+
+        <p class="small-text" style="margin-top: 6px; font-style: italic;">All 3 models converge on failing <span class="mono">main.</span> Variant C — likely a property of the <em>frame</em>, not the models.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§7 · RESULTS</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>17</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 18 — COMPLEMENTARITY                                   -->
+<!-- ============================================================ -->
+<section data-label="18 Complementarity">
+  <div class="corner-id">
+    <div class="left"><b>§8</b><span>Headline finding</span></div>
+    <div class="right">18 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">The headline finding</p>
+      <h1 class="slide-title">Legends and regulation teach <em class="serif">complementary</em> compliance competences.</h1>
+    </div>
+
+    <div style="flex:1; display: grid; grid-template-columns: 1.55fr 1fr; gap: 50px; margin-top: 6px; align-items: stretch;">
+
+      <!-- routing table -->
+      <div>
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 12px 0;">COMPETENCE → BEST MODEL</p>
+        <div style="border: 1px solid var(--ink);">
+
+          <!-- legends regime -->
+          <div style="background: var(--legends-tint); padding: 6px 0; ">
+            <div style="display:grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 12px 18px; align-items:center; gap: 14px;">
+              <span style="font-size: 24px;">Recognising compliance (entailment)</span>
+              <span class="chip chip-legends" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>legends</span>
+              <span class="mono small-text" style="text-align:right;">GE-NLI &nbsp;.929 v .911</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 12px 18px; align-items:center; gap: 14px; border-top: 1px dashed var(--legends-soft);">
+              <span style="font-size: 24px;">Selecting the compliant action</span>
+              <span class="chip chip-legends" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>legends</span>
+              <span class="mono small-text" style="text-align:right;">GE-NEXT &nbsp;.967</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 12px 18px; align-items:center; gap: 14px; border-top: 1px dashed var(--legends-soft);">
+              <span style="font-size: 24px;">Long-form factoid extraction</span>
+              <span class="chip chip-legends" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>legends</span>
+              <span class="mono small-text" style="text-align:right;">GE-QA long-answer</span>
+            </div>
+          </div>
+
+          <!-- regulation regime -->
+          <div style="background: var(--regulation-tint); padding: 6px 0;">
+            <div style="display:grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 12px 18px; align-items:center; gap: 14px;">
+              <span style="font-size: 24px;">Detecting violations (contradiction)</span>
+              <span class="chip chip-regulation" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>regulation</span>
+              <span class="mono small-text" style="text-align:right;">GE-NLI contradiction</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 12px 18px; align-items:center; gap: 14px; border-top: 1px dashed var(--regulation-soft);">
+              <span style="font-size: 24px;">Classifying into regulation ontology</span>
+              <span class="chip chip-regulation" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>regulation</span>
+              <span class="mono small-text" style="text-align:right;">GE-CLS &nbsp;.928 v .839</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 1.4fr 1fr 1fr; padding: 12px 18px; align-items:center; gap: 14px; border-top: 1px dashed var(--regulation-soft);">
+              <span style="font-size: 24px;">Short-span factoid extraction</span>
+              <span class="chip chip-regulation" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>regulation</span>
+              <span class="mono small-text" style="text-align:right;">GE-QA short-span</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right: deployment router -->
+      <div style="display:flex; flex-direction:column; gap: 18px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">DEPLOYMENT ROUTER</p>
+
+        <div style="border: 2px solid var(--ink); padding: 24px; background: var(--paper);">
+          <p class="mono small-text" style="margin: 0; color: var(--muted); letter-spacing: 0.1em;">ASK</p>
+          <p class="serif" style="font-size: 28px; line-height: 1.25; margin: 8px 0 0 0; font-style: italic;">
+            What does your deployment <em>fail</em> at?
+          </p>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap: 14px; flex:1;">
+          <div style="border: 1px solid var(--legends); background: var(--legends-tint); padding: 18px 22px;">
+            <p class="mono small-text" style="margin: 0; color: var(--legends); letter-spacing: 0.1em;">→ MISJUDGING COMPLIANCE</p>
+            <p class="body-text" style="font-size: 24px; color: var(--ink); margin: 6px 0 0 0;">route to <span class="mono" style="color: var(--legends);">tuned-legends</span></p>
+          </div>
+          <div style="border: 1px solid var(--regulation); background: var(--regulation-tint); padding: 18px 22px;">
+            <p class="mono small-text" style="margin: 0; color: var(--regulation); letter-spacing: 0.1em;">→ MISCLASSIFYING ONTOLOGY</p>
+            <p class="body-text" style="font-size: 24px; color: var(--ink); margin: 6px 0 0 0;">route to <span class="mono" style="color: var(--regulation);">tuned-regulation</span></p>
+          </div>
+        </div>
+
+        <p class="small-text" style="margin: 0; border-top: 1px solid var(--hair); padding-top: 12px; font-style: italic;">
+          A 1.2-pt aggregate-score lag is acceptable when the dominant risk profile points the other way.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§8 · FINDING</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>18</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 19 — LIMITATIONS                                       -->
+<!-- ============================================================ -->
+<section data-label="19 Limitations">
+  <div class="corner-id">
+    <div class="left"><b>§9</b><span>Limitations</span></div>
+    <div class="right">19 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">Limitations · declared scope</p>
+      <h1 class="slide-title">Five limitations bound the study — each names a replication direction.</h1>
+    </div>
+
+    <div style="flex:1; display:flex; flex-direction:column; gap: 14px; margin-top: 8px;">
+
+      <div style="display:grid; grid-template-columns: 72px 1fr 1.5fr 280px; gap: 24px; align-items:center; border: 1px solid var(--hair); padding: 14px 28px; background: var(--paper);">
+        <p class="mono" style="font-size: 26px; color: var(--cip); margin: 0;">01</p>
+        <p style="font-size: 26px; font-weight: 500; margin: 0;">Small test sets</p>
+        <p class="body-text" style="font-size: 24px; margin: 0;">Aggregate gaps measurable; per-class confidence bands wide on minority pillars.</p>
+        <p class="mono small-text" style="margin: 0; text-align: right; color: var(--ink);">GE-CLS 72 · GE-NLI 168 · GE-QA-F 123 · GE-WSC 100 · GE-NEXT 150 · CIP 15</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 72px 1fr 1.5fr 280px; gap: 24px; align-items:center; border: 1px solid var(--hair); padding: 14px 28px; background: var(--paper);">
+        <p class="mono" style="font-size: 26px; color: var(--cip); margin: 0;">02</p>
+        <p style="font-size: 26px; font-weight: 500; margin: 0;">Single backbone</p>
+        <p class="body-text" style="font-size: 24px; margin: 0;">Backbone generalisability untested; family-specific effects cannot be ruled out.</p>
+        <p class="mono small-text" style="margin: 0; text-align: right; color: var(--ink);">gpt-4o-2024-08-06 only</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 72px 1fr 1.5fr 280px; gap: 24px; align-items:center; border: 1px solid var(--hair); padding: 14px 28px; background: var(--paper);">
+        <p class="mono" style="font-size: 26px; color: var(--cip); margin: 0;">03</p>
+        <p style="font-size: 26px; font-weight: 500; margin: 0;">Discriminative ceiling</p>
+        <p class="body-text" style="font-size: 24px; margin: 0;">The backbone is already strong — fine-tuning headroom is compressed.</p>
+        <p class="mono small-text" style="margin: 0; text-align: right; color: var(--ink);">base GE-WSC .93 · legends GE-NEXT .967</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 72px 1fr 1.5fr 280px; gap: 24px; align-items:center; border: 1px solid var(--hair); padding: 14px 28px; background: var(--paper);">
+        <p class="mono" style="font-size: 26px; color: var(--cip); margin: 0;">04</p>
+        <p style="font-size: 26px; font-weight: 500; margin: 0;">Evaluator affinity</p>
+        <p class="body-text" style="font-size: 24px; margin: 0;">LLM-generated vignettes &amp; options share latent affinity with the LLM evaluator.</p>
+        <p class="mono small-text" style="margin: 0; text-align: right; color: var(--ink);">cross-model comparisons remain valid · absolute GE-NEXT indicative</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 72px 1fr 1.5fr 280px; gap: 24px; align-items:center; border: 2px solid var(--ink); padding: 14px 28px; background: var(--paper-2);">
+        <p class="mono" style="font-size: 26px; color: var(--cip); margin: 0;">05</p>
+        <p style="font-size: 26px; font-weight: 500; margin: 0;">Data &amp; access deficit</p>
+        <p class="body-text" style="font-size: 24px; margin: 0;">Small N + single backbone + closed platform — the single most consequential operational constraint.</p>
+        <p class="mono small-text" style="margin: 0; text-align: right; color: var(--ink);">replication horizon</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§9 · LIMITATIONS</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>19</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 20 — CONCLUSION & FUTURE WORK                          -->
+<!-- ============================================================ -->
+<section data-label="20 Conclusion">
+  <div class="corner-id">
+    <div class="left"><b>§10</b><span>Conclusion</span></div>
+    <div class="right">20 · 21</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">Conclusion &amp; future work</p>
+      <h1 class="slide-title">Hypothesis supported in central formulation — bounded by complementarity.</h1>
+    </div>
+
+    <div style="flex:1; display: grid; grid-template-columns: 1fr 1.05fr 1fr; gap: 0; margin-top: 8px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);">
+
+      <!-- contributions -->
+      <div style="padding: 28px 30px; border-right: 1px solid var(--hair); display: flex; flex-direction: column; gap: 18px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">CONTRIBUTIONS · DELIVERED</p>
+
+        <div style="display:flex; gap: 16px; align-items:flex-start;">
+          <div style="width: 6px; align-self: stretch; background: var(--pipeline);"></div>
+          <div>
+            <p style="font-size: 24px; font-weight: 500; margin: 0;">SustainableQA-derived pipeline</p>
+            <p class="small-text" style="margin: 4px 0 0 0;">matched legend / regulation corpora</p>
+          </div>
+        </div>
+        <div style="display:flex; gap: 16px; align-items:flex-start;">
+          <div style="width: 6px; align-self: stretch; background: var(--benchmark);"></div>
+          <div>
+            <p style="font-size: 24px; font-weight: 500; margin: 0;">GenderEqGLUE</p>
+            <p class="small-text" style="margin: 4px 0 0 0;">five-task benchmark · 217 CEB</p>
+          </div>
+        </div>
+        <div style="display:flex; gap: 16px; align-items:flex-start;">
+          <div style="width: 6px; align-self: stretch; background: var(--cip);"></div>
+          <div>
+            <p style="font-size: 24px; font-weight: 500; margin: 0;">CIP</p>
+            <p class="small-text" style="margin: 4px 0 0 0;">behavioural-only probing protocol</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- conclusions -->
+      <div style="padding: 28px 30px; border-right: 1px solid var(--hair); display: flex; flex-direction: column; gap: 18px;">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">CONCLUSIONS · THREE</p>
+
+        <div>
+          <p class="mono" style="font-size: 24px; color: var(--muted); margin: 0;">01 · AGGREGATE</p>
+          <p class="body-text" style="font-size: 24px; margin: 6px 0 0 0;">
+            <span class="mono" style="color: var(--regulation);">regulation</span> 0.938&nbsp; · &nbsp;
+            <span class="mono" style="color: var(--legends);">legends</span> 0.926&nbsp; · &nbsp;
+            <span class="mono" style="color: var(--base);">base</span> 0.904
+          </p>
+        </div>
+        <div>
+          <p class="mono" style="font-size: 24px; color: var(--good); margin: 0;">02 · SUPPORTED</p>
+          <p class="body-text" style="font-size: 24px; margin: 6px 0 0 0;">Legends are strongest on GE-NEXT; NLI direction, WSC parity, CIP corroborate.</p>
+        </div>
+        <div>
+          <p class="mono" style="font-size: 24px; color: var(--cip); margin: 0;">03 · BOUNDED</p>
+          <p class="body-text" style="font-size: 24px; margin: 6px 0 0 0;">Does not generalise to ontology classification or short-span factoid recall.</p>
+        </div>
+      </div>
+
+      <!-- next -->
+      <div style="padding: 28px 30px; display: flex; flex-direction: column; gap: 18px; background: var(--paper-2);">
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--ink); margin: 0;">NEXT · GENDEREQGLUE v2</p>
+
+        <div>
+          <p style="font-size: 24px; font-weight: 500; margin: 0;">Scale</p>
+          <p class="small-text" style="margin: 4px 0 0 0;">≥500 items per task</p>
+        </div>
+        <div>
+          <p style="font-size: 24px; font-weight: 500; margin: 0;">Difficulty</p>
+          <p class="small-text" style="margin: 4px 0 0 0;">harder GE-NEXT &amp; coreference items (GAP, BUG)</p>
+        </div>
+        <div>
+          <p style="font-size: 24px; font-weight: 500; margin: 0;">Multi-backbone</p>
+          <p class="small-text" style="margin: 4px 0 0 0;">replication across model families</p>
+        </div>
+
+        <div style="margin-top: auto; text-align: right;">
+          <span class="mono" style="font-size: 38px; color: var(--ink);">v2 →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>§10 · CONCLUSION</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>20</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 21 — THANK YOU / Q&A                                   -->
+<!-- ============================================================ -->
+<section data-label="21 Q and A">
+  <div class="corner-id">
+    <div class="left"><b>FIN</b><span>Q &amp; A</span></div>
+    <div class="right">21 · 21</div>
+  </div>
+
+  <div style="flex:1; min-height:0; display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center; padding-top: 40px;">
+    <div style="display:flex; flex-direction:column; gap: 40px;">
+      <p class="eyebrow">Thank you</p>
+      <h1 class="serif" style="font-size: 180px; font-weight: 400; font-style: italic; line-height: 1; letter-spacing: -0.02em; margin: 0;">Questions?</h1>
+      <div style="height: 1px; background: var(--ink); width: 280px;"></div>
+      <div style="display:flex; flex-direction:column; gap: 10px;">
+        <p class="body-text" style="color: var(--ink); margin: 0; font-weight: 500;">Bylyshi · El-Khazri · Ouardi</p>
+        <p class="mono" style="font-size: 24px; color: var(--ink-2); margin: 0;">
+          {fatmir.bylyshi, hicham.elkhazri, ilyass.ouardi}@studenti.unimi.it
+        </p>
+        <p class="small-text" style="margin: 0;">Department of Computer Science · University of Milan</p>
+      </div>
+    </div>
+
+    <!-- bookend bars -->
+    <div style="display:flex; align-items:flex-end; justify-content:center; gap: 36px; height: 600px;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap: 14px;">
+        <div style="width: 90px; height: 360px; background: var(--base); border-top: 4px solid var(--ink);"></div>
+        <span class="mono small-text" style="color: var(--ink);">base</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap: 14px;">
+        <div style="width: 90px; height: 460px; background: var(--legends); border-top: 4px solid var(--ink);"></div>
+        <span class="mono small-text" style="color: var(--ink);">legends</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap: 14px;">
+        <div style="width: 90px; height: 500px; background: var(--regulation); border-top: 4px solid var(--ink);"></div>
+        <span class="mono small-text" style="color: var(--ink);">regulation</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>FIN · Q &amp; A</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>21</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BACKUP SLIDES                                                -->
+<!-- ============================================================ -->
+
+<!-- B1 — full pipeline diagram -->
+<section data-label="B1 Full pipeline">
+  <div class="corner-id">
+    <div class="left"><b>BACKUP</b><span>B1 · Pipeline expanded</span></div>
+    <div class="right">B1</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--pipeline);">Backup · pipeline expanded</p>
+      <h1 class="slide-title">Both branches in full — paper Figure 2 redrawn for projection.</h1>
+    </div>
+
+    <div style="flex:1; display:flex; flex-direction:column; gap: 8px; margin-top: 4px;">
+      <!-- shared stage row -->
+      <div style="display:grid; grid-template-columns: 220px 1fr; gap: 22px; align-items:center;">
+        <p class="mono" style="font-size: 24px; color: var(--muted); letter-spacing: 0.1em; text-align:right;">SOURCE PDFS</p>
+        <div style="border: 1px solid var(--ink); padding: 8px 16px; background: var(--paper); display:flex; gap:14px;">
+          <p class="mono small-text" style="margin: 0;">EU GE Strategy 2020–2025 · GAP III · Roadmap · Council Conclusions · Directive 2022/2381</p>
+        </div>
+      </div>
+
+      <!-- preprocessing -->
+      <div style="display:grid; grid-template-columns: 220px 1fr; gap: 22px; align-items:center;">
+        <p class="mono" style="font-size: 24px; color: var(--muted); letter-spacing: 0.1em; text-align:right;">01 · PREPROCESS</p>
+        <div style="border: 1px solid var(--ink); padding: 8px 16px; background: var(--paper);">
+          <p class="body-text" style="font-size: 24px; margin: 0;">PDF → Markdown · structural normalisation · footer / footnote stripping</p>
+        </div>
+      </div>
+
+      <!-- branch split -->
+      <div style="display:grid; grid-template-columns: 220px 1fr 1fr; gap: 22px; align-items:stretch;">
+        <p class="mono" style="font-size: 24px; color: var(--muted); letter-spacing: 0.1em; text-align:right;">02 · LEGEND&nbsp;ONLY</p>
+        <div style="border: 1px solid var(--legends); background: var(--legends-tint); padding: 8px 16px;">
+          <p class="mono small-text" style="color: var(--legends); margin: 0; letter-spacing: 0.1em;">LEGEND BRANCH</p>
+          <p class="body-text" style="font-size: 24px; margin: 6px 0 0 0;">15 legends synthesised by 3 LLMs · 5 per pillar · fixed format</p>
+        </div>
+        <div style="border: 1px dashed var(--regulation); background: var(--paper); padding: 8px 16px; opacity: 0.5;">
+          <p class="mono small-text" style="color: var(--regulation); margin: 0; letter-spacing: 0.1em;">REGULATION BRANCH</p>
+          <p class="body-text" style="font-size: 24px; margin: 6px 0 0 0;">(skips this stage — raw regulation passes through)</p>
+        </div>
+      </div>
+
+      <!-- merged: pillar -->
+      <div style="display:grid; grid-template-columns: 220px 1fr; gap: 22px; align-items:center;">
+        <p class="mono" style="font-size: 24px; color: var(--muted); letter-spacing: 0.1em; text-align:right;">03 · CLASSIFY</p>
+        <div style="border: 1px solid var(--ink); padding: 8px 16px; background: var(--paper);">
+          <p class="body-text" style="font-size: 24px; margin: 0;">6-class pillar classifier · violence_stereotypes · equal_economy · leadership_participation · mainstreaming_intersectionality · funding_global_action · unknown</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 220px 1fr; gap: 22px; align-items:center;">
+        <p class="mono" style="font-size: 24px; color: var(--muted); letter-spacing: 0.1em; text-align:right;">04 · EXTRACT</p>
+        <div style="border: 1px solid var(--ink); padding: 8px 16px; background: var(--paper);">
+          <p class="body-text" style="font-size: 24px; margin: 0;">Two-stage span extraction · candidate spans → ranked spans → factoid + non-factoid splits</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 220px 1fr; gap: 22px; align-items:center;">
+        <p class="mono" style="font-size: 24px; color: var(--muted); letter-spacing: 0.1em; text-align:right;">05 · Q&amp;A GEN</p>
+        <div style="border: 1px solid var(--ink); padding: 8px 16px; background: var(--paper);">
+          <p class="body-text" style="font-size: 24px; margin: 0;">Per-span Q&amp;A generation · JSONL chat format · system + user + assistant</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 220px 1fr 1fr; gap: 22px; align-items:stretch;">
+        <p class="mono" style="font-size: 24px; color: var(--muted); letter-spacing: 0.1em; text-align:right;">06 · FINE-TUNE</p>
+        <div style="border: 2px solid var(--legends); background: var(--legends-tint); padding: 8px 16px; display:flex; justify-content:space-between; align-items:center;">
+          <span class="mono small-text" style="color: var(--legends);">tuned-legends · 327 lines · 199 nf / 128 f</span>
+        </div>
+        <div style="border: 2px solid var(--regulation); background: var(--regulation-tint); padding: 8px 16px; display:flex; justify-content:space-between; align-items:center;">
+          <span class="mono small-text" style="color: var(--regulation);">tuned-regulation · 293 lines · 184 nf / 109 f</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>BACKUP · B1</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>B1</div>
+  </div>
+</section>
+
+<!-- B2 — CEB composition -->
+<section data-label="B2 CEB composition">
+  <div class="corner-id">
+    <div class="left"><b>BACKUP</b><span>B2 · Evaluation base</span></div>
+    <div class="right">B2</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--benchmark);">Backup · common evaluation base</p>
+      <h1 class="slide-title">217 EU passages held out, stratified per pillar across four documents.</h1>
+    </div>
+
+    <div style="flex:1; display:grid; grid-template-columns: 1.4fr 1fr; gap: 60px; margin-top: 8px; align-items:stretch;">
+
+      <div>
+        <table class="data-table" style="font-size: 24px;">
+          <thead>
+            <tr><th>Pillar</th><th class="num">D1</th><th class="num">D2</th><th class="num">D3</th><th class="num">Total</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="mono small-text">violence_stereotypes</td><td class="num">24</td><td class="num">24</td><td class="num">24</td><td class="num win">72</td></tr>
+            <tr><td class="mono small-text">leadership_participation</td><td class="num">15</td><td class="num">15</td><td class="num">15</td><td class="num">45</td></tr>
+            <tr><td class="mono small-text">funding_global_action</td><td class="num">7</td><td class="num">7</td><td class="num">7</td><td class="num">21</td></tr>
+            <tr><td class="mono small-text">equal_economy</td><td class="num">6</td><td class="num">6</td><td class="num">6</td><td class="num">18</td></tr>
+            <tr><td class="mono small-text">mainstreaming_intersectionality</td><td class="num">4</td><td class="num">3</td><td class="num">4</td><td class="num">11</td></tr>
+            <tr><td class="mono small-text">unknown</td><td class="num">16</td><td class="num">17</td><td class="num">17</td><td class="num">50</td></tr>
+            <tr style="background: var(--paper-2);">
+              <td class="mono small-text" style="font-weight:700; color: var(--ink);">TOTAL</td>
+              <td class="num win">72</td><td class="num win">72</td><td class="num win">73</td><td class="num win">217</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap: 16px;">
+        <div>
+          <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0;">DOCUMENTS</p>
+          <div style="display:flex; flex-direction:column; gap: 6px; margin-top: 10px;">
+            <p class="small-text"><span class="mono" style="color: var(--ink);">D1</span> Roadmap for Women's Rights 2025</p>
+            <p class="small-text"><span class="mono" style="color: var(--ink);">D2</span> GAP III</p>
+            <p class="small-text"><span class="mono" style="color: var(--ink);">D3</span> Council Conclusions on Pay Gap 2019</p>
+            <p class="small-text"><span class="mono" style="color: var(--ink);">+</span> Directive 2022/2381 (sourcing only)</p>
+          </div>
+        </div>
+
+        <div style="border: 1px solid var(--cip); padding: 18px 22px; background: var(--paper); margin-top: 20px;">
+          <p class="mono small-text" style="color: var(--cip); margin: 0; letter-spacing: 0.1em;">⚠ ANTICIPATED REVIEWER CONCERN</p>
+          <p class="body-text" style="font-size: 24px; margin: 8px 0 0 0; color: var(--ink);">
+            Three minority pillars (<span class="mono">equal_economy</span>, <span class="mono">mainstreaming_intersectionality</span>, <span class="mono">funding_global_action</span>) carry low support — per-class F1 for <span class="mono">n &lt; 30</span> is flagged low-confidence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>BACKUP · B2</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>B2</div>
+  </div>
+</section>
+
+<!-- B3 — cross-task pillar gains -->
+<section data-label="B3 Pillar gains">
+  <div class="corner-id">
+    <div class="left"><b>BACKUP</b><span>B3 · Per-pillar gains</span></div>
+    <div class="right">B3</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">Backup · per-pillar gains</p>
+      <h1 class="slide-title">Where fine-tuning helps most — winning fine-tuned model minus base.</h1>
+    </div>
+
+    <div style="flex:1; margin-top: 6px;">
+      <table class="data-table" style="font-size: 24px;">
+        <thead>
+          <tr>
+            <th>Pillar</th>
+            <th class="num">GE-CLS</th>
+            <th class="num">GE-NLI</th>
+            <th class="num">GE-QA</th>
+            <th class="num">GE-NEXT</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="mono small-text">violence_stereotypes</td>
+            <td class="num" style="background: rgba(44,122,87,0.22);">+0.08</td>
+            <td class="num" style="background: rgba(44,122,87,0.18);">+0.04</td>
+            <td class="num" style="background: rgba(44,122,87,0.10);">+0.02</td>
+            <td class="num" style="background: rgba(44,122,87,0.36);">+0.10</td>
+            <td class="small-text">largest pillar</td>
+          </tr>
+          <tr><td class="mono small-text">leadership_participation</td>
+            <td class="num" style="background: rgba(44,122,87,0.28);">+0.09</td>
+            <td class="num" style="background: rgba(44,122,87,0.14);">+0.03</td>
+            <td class="num" style="background: rgba(44,122,87,0.18);">+0.04</td>
+            <td class="num" style="background: rgba(44,122,87,0.30);">+0.08</td>
+            <td class="small-text">n = 45</td>
+          </tr>
+          <tr><td class="mono small-text">funding_global_action</td>
+            <td class="num" style="background: rgba(44,122,87,0.20);">+0.06</td>
+            <td class="num" style="background: rgba(44,122,87,0.10);">+0.02</td>
+            <td class="num" style="background: rgba(44,122,87,0.18);">+0.04</td>
+            <td class="num" style="background: rgba(44,122,87,0.18);">+0.04</td>
+            <td class="small-text" style="color: var(--cip);">n = 7 · low-conf</td>
+          </tr>
+          <tr><td class="mono small-text">equal_economy</td>
+            <td class="num" style="background: rgba(44,122,87,0.10);">+0.02</td>
+            <td class="num" style="background: rgba(44,122,87,0.06);">+0.01</td>
+            <td class="num" style="background: rgba(44,122,87,0.20);">+0.05</td>
+            <td class="num" style="background: rgba(44,122,87,0.18);">+0.04</td>
+            <td class="small-text" style="color: var(--cip);">n = 6 · low-conf</td>
+          </tr>
+          <tr><td class="mono small-text">mainstreaming_intersectionality</td>
+            <td class="num" style="background: rgba(164,50,43,0.12);">−0.02</td>
+            <td class="num" style="background: rgba(44,122,87,0.10);">+0.02</td>
+            <td class="num" style="background: rgba(44,122,87,0.06);">+0.01</td>
+            <td class="num" style="background: rgba(164,50,43,0.10);">−0.01</td>
+            <td class="small-text" style="color: var(--cip);">n = 4 · weakest</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="small-text" style="margin: 0; border-top: 1px solid var(--hair); padding-top: 14px; font-style: italic;">
+      Darker green = larger positive gain. Red cells = regression. Minority-pillar (n &lt; 30) values reported with caution.
+    </p>
+  </div>
+
+  <div class="footer-rail">
+    <div>BACKUP · B3</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>B3</div>
+  </div>
+</section>
+
+<!-- B4 — full CIP matrix -->
+<section data-label="B4 Full CIP matrix">
+  <div class="corner-id">
+    <div class="left"><b>BACKUP</b><span>B4 · Full CIP matrix</span></div>
+    <div class="right">B4</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--cip);">Backup · full CIP matrix</p>
+      <h1 class="slide-title">All 45 cells · five pillars × three variants × three models.</h1>
+    </div>
+
+    <div style="flex:1; margin-top: 6px;">
+      <table class="data-table" style="font-size: 24px;">
+        <thead>
+          <tr>
+            <th rowspan="2">Pillar</th>
+            <th colspan="3" style="text-align:center; border-right: 1px solid var(--hair);"><span class="chip chip-base" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>base</span></th>
+            <th colspan="3" style="text-align:center; border-right: 1px solid var(--hair);"><span class="chip chip-regulation" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>regulation</span></th>
+            <th colspan="3" style="text-align:center;"><span class="chip chip-legends" style="font-size: 24px; padding: 4px 12px;"><span class="swatch"></span>legends</span></th>
+          </tr>
+          <tr>
+            <th class="num">A</th><th class="num">B</th><th class="num" style="border-right: 1px solid var(--hair);">C</th>
+            <th class="num">A</th><th class="num">B</th><th class="num" style="border-right: 1px solid var(--hair);">C</th>
+            <th class="num">A</th><th class="num">B</th><th class="num">C</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="mono small-text">violence_stereotypes</td>
+            <td class="num">✓</td><td class="num" style="color: var(--bad); font-weight: 700;">✕</td><td class="num" style="border-right: 1px solid var(--hair);">✓</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num" style="border-right: 1px solid var(--hair);">✓</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num">✓</td>
+          </tr>
+          <tr>
+            <td class="mono small-text">equal_economy</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num" style="color: var(--bad); font-weight: 700; border-right: 1px solid var(--hair);">✕</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num" style="border-right: 1px solid var(--hair);">✓</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num">✓</td>
+          </tr>
+          <tr>
+            <td class="mono small-text">leadership_participation</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num" style="border-right: 1px solid var(--hair);">✓</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num" style="border-right: 1px solid var(--hair);">✓</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num">✓</td>
+          </tr>
+          <tr style="background: rgba(164,50,43,0.06);">
+            <td class="mono small-text">mainstreaming_intersectionality</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num" style="border-right: 1px solid var(--hair);">✓</td>
+            <td class="num">✓</td><td class="num" style="color: var(--bad); font-weight: 700;">✕</td><td class="num" style="color: var(--bad); font-weight: 700; border-right: 1px solid var(--hair);">✕</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num" style="color: var(--bad); font-weight: 700;">✕</td>
+          </tr>
+          <tr>
+            <td class="mono small-text">funding_global_action</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num" style="border-right: 1px solid var(--hair);">✓</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num" style="border-right: 1px solid var(--hair);">✓</td>
+            <td class="num">✓</td><td class="num">✓</td><td class="num">✓</td>
+          </tr>
+          <tr style="background: var(--paper-2);">
+            <td class="mono small-text" style="font-weight: 700; color: var(--ink);">TOTAL</td>
+            <td class="num">5</td><td class="num">4</td><td class="num" style="border-right: 1px solid var(--hair);">4</td>
+            <td class="num">5</td><td class="num">4</td><td class="num" style="border-right: 1px solid var(--hair);">4</td>
+            <td class="num">5</td><td class="num win">5</td><td class="num">4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="small-text" style="margin: 0; border-top: 1px solid var(--hair); padding-top: 14px; font-style: italic;">
+      Convergent failure on <span class="mono">mainstreaming_intersectionality · Variant&nbsp;C</span> across all three models — likely a property of the phased-implementation frame.
+    </p>
+  </div>
+
+  <div class="footer-rail">
+    <div>BACKUP · B4</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>B4</div>
+  </div>
+</section>
+
+<!-- B5 — Inés Lobato vignette -->
+<section data-label="B5 GE-NEXT example">
+  <div class="corner-id">
+    <div class="left"><b>BACKUP</b><span>B5 · GE-NEXT example</span></div>
+    <div class="right">B5</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--benchmark);">Backup · GE-NEXT vignette</p>
+      <h1 class="slide-title">A concrete look — the Inés Lobato item.</h1>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap: 22px; margin-top: 6px; flex: 1;">
+      <!-- vignette card -->
+      <div class="card" style="padding: 24px 28px; border-left: 4px solid var(--benchmark);">
+        <p class="mono small-text" style="color: var(--benchmark); margin: 0; letter-spacing: 0.1em;">VIGNETTE</p>
+        <p class="body-text" style="font-size: 24px; color: var(--ink); margin: 10px 0 0 0;">
+          <strong>Inés Lobato</strong>, Head of People at a Madrid logistics company with 380 employees, has completed the firm's first salary audit following the transposition of the <em>Pay Transparency Directive</em>. The audit reveals a <strong>9% unexplained gender pay gap</strong> concentrated in the operations division, affecting 42 women. Inés must propose a remediation plan to the board.
+        </p>
+      </div>
+
+      <!-- four options -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;">
+        <div style="border: 1px solid var(--hair); padding: 18px 22px; background: var(--paper); display:grid; grid-template-columns: 40px 1fr 160px; gap: 16px; align-items: center;">
+          <p class="mono" style="font-size: 28px; margin: 0; color: var(--muted);">A</p>
+          <p class="body-text" style="font-size: 24px; margin: 0;">Company-wide statement reaffirming the firm's commitment to gender equality.</p>
+          <p class="mono small-text" style="margin: 0; text-align: right; color: var(--muted);">performative</p>
+        </div>
+        <div style="border: 1px solid var(--hair); padding: 18px 22px; background: var(--paper); display:grid; grid-template-columns: 40px 1fr 160px; gap: 16px; align-items: center;">
+          <p class="mono" style="font-size: 28px; margin: 0; color: var(--muted);">B</p>
+          <p class="body-text" style="font-size: 24px; margin: 0;">Defer formal remediation to the next fiscal year and observe whether the gap narrows organically.</p>
+          <p class="mono small-text" style="margin: 0; text-align: right; color: var(--muted);">cost-optimising</p>
+        </div>
+        <div style="border: 2.5px solid var(--good); padding: 18px 22px; background: #EEF6F0; display:grid; grid-template-columns: 40px 1fr 160px; gap: 16px; align-items: center;">
+          <p class="mono" style="font-size: 28px; margin: 0; color: var(--good); font-weight: 700;">C</p>
+          <p class="body-text" style="font-size: 24px; margin: 0;">24-month banded remediation plan with quarterly adjustments + Works-Council disclosure.</p>
+          <p class="mono small-text" style="margin: 0; text-align: right; color: var(--good); font-weight: 700;">GOLD ✓</p>
+        </div>
+        <div style="border: 1px solid var(--hair); padding: 18px 22px; background: var(--paper); display:grid; grid-template-columns: 40px 1fr 160px; gap: 16px; align-items: center;">
+          <p class="mono" style="font-size: 28px; margin: 0; color: var(--muted);">D</p>
+          <p class="body-text" style="font-size: 24px; margin: 0;">Six-month external diversity-training programme for all middle managers.</p>
+          <p class="mono small-text" style="margin: 0; text-align: right; color: var(--muted);">orthogonal</p>
+        </div>
+      </div>
+
+      <p class="mono" style="font-size: 24px; margin: 0; color: var(--ink); border-top: 1px solid var(--hair); padding-top: 14px;">LABEL · C</p>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>BACKUP · B5</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>B5</div>
+  </div>
+</section>
+
+<!-- B6 — CIP variants single example -->
+<section data-label="B6 CIP variant construction">
+  <div class="corner-id">
+    <div class="left"><b>BACKUP</b><span>B6 · CIP variant construction</span></div>
+    <div class="right">B6</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow" style="color: var(--cip);">Backup · CIP variant construction</p>
+      <h1 class="slide-title">One scenario · three lexical / framing conditions.</h1>
+    </div>
+
+    <div style="flex:1; display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 8px;">
+
+      <div style="border: 1px solid var(--ink); display:flex; flex-direction:column;">
+        <div style="background: var(--ink); color: var(--paper); padding: 14px 22px;">
+          <p class="mono" style="font-size: 24px; margin: 0; letter-spacing: 0.1em;">A · ORIGINAL</p>
+        </div>
+        <div style="padding: 24px; background: var(--paper); flex:1;">
+          <p class="small-text" style="margin: 0; color: var(--muted);">pillar · leadership_participation</p>
+          <p class="body-text" style="font-size: 24px; line-height: 1.4; margin: 12px 0 0 0;">
+            "The board reviews progress against the firm's <span style="color: var(--legends); font-weight: 600;">gender-balance target</span> under the <span style="color: var(--legends); font-weight: 600;">Listed-Companies Directive 2022/2381</span>; the <span style="color: var(--legends); font-weight: 600;">40% under-represented sex</span> threshold on non-executive seats is not yet met..."
+          </p>
+        </div>
+      </div>
+
+      <div style="border: 1px solid var(--ink); display:flex; flex-direction:column;">
+        <div style="background: var(--ink); color: var(--paper); padding: 14px 22px;">
+          <p class="mono" style="font-size: 24px; margin: 0; letter-spacing: 0.1em;">B · STRIPPED</p>
+        </div>
+        <div style="padding: 24px; background: var(--paper); flex:1;">
+          <p class="small-text" style="margin: 0; color: var(--muted);">lexical cues removed</p>
+          <p class="body-text" style="font-size: 24px; line-height: 1.4; margin: 12px 0 0 0;">
+            "The board reviews progress against the firm's <s style="color: var(--muted);">gender-balance target</s> <span style="color: var(--ink-2);">composition target</span>; the <s style="color: var(--muted);">40% under-represented sex</s> <span style="color: var(--ink-2);">threshold</span> on non-executive seats is not yet met..."
+          </p>
+          <p class="small-text" style="margin-top: 14px; font-style: italic;">Semantic content preserved.</p>
+        </div>
+      </div>
+
+      <div style="border: 1px solid var(--ink); display:flex; flex-direction:column;">
+        <div style="background: var(--ink); color: var(--paper); padding: 14px 22px;">
+          <p class="mono" style="font-size: 24px; margin: 0; letter-spacing: 0.1em;">C · ADVERSARIAL</p>
+        </div>
+        <div style="padding: 24px; background: var(--paper); flex:1;">
+          <p class="small-text" style="margin: 0; color: var(--muted);">frame · meritocracy camouflage</p>
+          <p class="body-text" style="font-size: 24px; line-height: 1.4; margin: 12px 0 0 0;">
+            "Several board members argue the firm should <em>not</em> chase the <span style="color: var(--cip); font-weight: 600;">"40% quota"</span> on principle — promotions must remain strictly merit-based, and a target risks signalling that the under-represented sex was promoted on grounds other than competence..."
+          </p>
+          <p class="small-text" style="margin-top: 14px; font-style: italic; color: var(--cip);">Full content + competing frame.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="small-text" style="margin: 0; border-top: 1px solid var(--hair); padding-top: 14px; font-style: italic;">
+      A model maintains its position iff it survives both B (no lexicon) and C (counter-frame).
+    </p>
+  </div>
+
+  <div class="footer-rail">
+    <div>BACKUP · B6</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>B6</div>
+  </div>
+</section>
+
+<!-- B7 — Why not SHAP/LIME -->
+<section data-label="B7 Why not SHAP">
+  <div class="corner-id">
+    <div class="left"><b>BACKUP</b><span>B7 · Q&amp;A · Why not SHAP / LIME?</span></div>
+    <div class="right">B7</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">Anticipated question</p>
+      <h1 class="slide-title">Each canonical method assumes access FineTuneDB does not grant.</h1>
+    </div>
+
+    <div style="flex:1; display:grid; grid-template-columns: repeat(4, 1fr) 1.3fr; gap: 14px; margin-top: 10px; align-items: stretch;">
+
+      <div style="border: 1px solid var(--hair); padding: 22px; background: var(--paper); display:flex; flex-direction:column; gap: 14px; opacity: 0.78;">
+        <p class="mono" style="font-size: 24px; margin: 0; text-decoration: line-through; color: var(--muted);">SHAP</p>
+        <p class="body-text" style="font-size: 24px; margin: 0;">Needs gradients <em>or</em> very large per-instance evaluation budgets.</p>
+        <p class="mono small-text" style="margin-top: auto; color: var(--bad);">✕ blocked</p>
+      </div>
+
+      <div style="border: 1px solid var(--hair); padding: 22px; background: var(--paper); display:flex; flex-direction:column; gap: 14px; opacity: 0.78;">
+        <p class="mono" style="font-size: 24px; margin: 0; text-decoration: line-through; color: var(--muted);">LIME</p>
+        <p class="body-text" style="font-size: 24px; margin: 0;">Hundreds of forward passes per explanation — impractical on a metered, unbatched API.</p>
+        <p class="mono small-text" style="margin-top: auto; color: var(--bad);">✕ blocked</p>
+      </div>
+
+      <div style="border: 1px solid var(--hair); padding: 22px; background: var(--paper); display:flex; flex-direction:column; gap: 14px; opacity: 0.78;">
+        <p class="mono" style="font-size: 24px; margin: 0; text-decoration: line-through; color: var(--muted);">Integrated Gradients</p>
+        <p class="body-text" style="font-size: 24px; margin: 0;">Needs gradients — closed platform does not expose them.</p>
+        <p class="mono small-text" style="margin-top: auto; color: var(--bad);">✕ blocked</p>
+      </div>
+
+      <div style="border: 1px solid var(--hair); padding: 22px; background: var(--paper); display:flex; flex-direction:column; gap: 14px; opacity: 0.78;">
+        <p class="mono" style="font-size: 24px; margin: 0; text-decoration: line-through; color: var(--muted);">Attention Rollout</p>
+        <p class="body-text" style="font-size: 24px; margin: 0;">Needs access to attention weights across the transformer stack — blocked.</p>
+        <p class="mono small-text" style="margin-top: auto; color: var(--bad);">✕ blocked</p>
+      </div>
+
+      <div style="border: 2px solid var(--cip); padding: 22px; background: var(--paper); display:flex; flex-direction:column; gap: 14px;">
+        <p class="mono" style="font-size: 24px; margin: 0; color: var(--cip);">CIP&nbsp; ◆</p>
+        <p class="body-text" style="font-size: 24px; margin: 0; color: var(--ink);">
+          FineTuneDB surfaces <em>only generated text</em>. CIP borrows LIME's perturbation logic at the <strong>text level</strong> — substitute access constraint for a different epistemic target.
+        </p>
+        <p class="mono small-text" style="margin-top: auto; color: var(--cip);">→ admitted by the access shape</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>BACKUP · B7</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>B7</div>
+  </div>
+</section>
+
+<!-- B8 — Legend format -->
+<section data-label="B8 What is a legend">
+  <div class="corner-id">
+    <div class="left"><b>BACKUP</b><span>B8 · Q&amp;A · What is a legend?</span></div>
+    <div class="right">B8</div>
+  </div>
+
+  <div class="slide-frame">
+    <div class="stack-s">
+      <p class="eyebrow">Anticipated question</p>
+      <h1 class="slide-title">A legend has a fixed shape — narrative, not clauses.</h1>
+    </div>
+
+    <div style="flex:1; display:grid; grid-template-columns: 1fr 1.2fr; gap: 60px; margin-top: 8px; align-items: stretch;">
+
+      <!-- left: format spec -->
+      <div>
+        <p class="mono" style="font-size: 24px; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 14px 0;">FORMAT SPEC</p>
+        <div style="display:flex; flex-direction:column; gap: 12px;">
+          <div style="display:grid; grid-template-columns: 36px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--hair);">
+            <p class="mono small-text" style="margin: 0; color: var(--legends);">01</p>
+            <div><p style="font-size: 24px; margin: 0; font-weight: 500;">Title</p><p class="small-text" style="margin: 4px 0 0 0;">short · evocative</p></div>
+          </div>
+          <div style="display:grid; grid-template-columns: 36px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--hair);">
+            <p class="mono small-text" style="margin: 0; color: var(--legends);">02</p>
+            <div><p style="font-size: 24px; margin: 0; font-weight: 500;">Setting</p><p class="small-text" style="margin: 4px 0 0 0;">organisation · sector · country (varied)</p></div>
+          </div>
+          <div style="display:grid; grid-template-columns: 36px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--hair);">
+            <p class="mono small-text" style="margin: 0; color: var(--legends);">03</p>
+            <div><p style="font-size: 24px; margin: 0; font-weight: 500;">Characters</p><p class="small-text" style="margin: 4px 0 0 0;">3–5 named · role + one-line description</p></div>
+          </div>
+          <div style="display:grid; grid-template-columns: 36px 1fr; gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--hair);">
+            <p class="mono small-text" style="margin: 0; color: var(--legends);">04</p>
+            <div><p style="font-size: 24px; margin: 0; font-weight: 500;">The Story</p><p class="small-text" style="margin: 4px 0 0 0;">400–600 words · ≥1 direct-speech dialogue · concrete gap + specific measures · measurable outcome · explicit Strategy acknowledgement</p></div>
+          </div>
+          <div style="display:grid; grid-template-columns: 36px 1fr; gap: 14px; padding: 12px 0;">
+            <p class="mono small-text" style="margin: 0; color: var(--legends);">05</p>
+            <div><p style="font-size: 24px; margin: 0; font-weight: 500;">Content rules</p><p class="small-text" style="margin: 4px 0 0 0;">one regulation point · cite Strategy ≥1 time · no reused sectors / countries / character names</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right: stylised mock card -->
+      <div style="border: 1px solid var(--legends); background: var(--legends-tint); padding: 28px 32px; display:flex; flex-direction:column; gap: 16px;">
+        <p class="mono small-text" style="color: var(--legends); margin: 0; letter-spacing: 0.1em;">LEGEND · 04 · LEADERSHIP_PARTICIPATION</p>
+        <h3 class="serif" style="font-size: 38px; font-weight: 500; line-height: 1.1; margin: 0; font-style: italic;">The Seat at the Table</h3>
+        <div style="display:flex; flex-direction:column; gap: 10px;">
+          <p class="small-text" style="margin: 0;"><span class="mono" style="color: var(--ink);">Setting</span>&nbsp;·&nbsp; Stora Vänern Energi · regional utility · Sweden · 240 employees</p>
+          <p class="small-text" style="margin: 0;"><span class="mono" style="color: var(--ink);">Characters</span>&nbsp;·&nbsp; Astrid Lindh (CEO) · Olu Adebayo (CHRO) · Tomas Wirén (Board chair) · Sara Lipic (Counsel)</p>
+        </div>
+        <p class="body-text serif" style="font-size: 24px; line-height: 1.45; margin: 0; font-style: italic; color: var(--ink-2);">
+          "We have three months before disclosure," Astrid said, sliding the audit across the table. "Forty percent. It is not a target, it is the floor the Strategy expects us to hold." The board did not yet know what she would propose. Olu did. He had spent the past six weeks pairing the nomination committee with two candidate registers built outside the firm's usual network…
+        </p>
+        <p class="small-text" style="margin: 0;"><span class="mono" style="color: var(--ink);">Outcome</span>&nbsp;·&nbsp; non-executive composition shifts from 25/75 to 40/60 within 18 months — disclosed in the firm's GAP&nbsp;III-aligned report.</p>
+        <p class="mono small-text" style="margin: 0; color: var(--legends);">→ EU Gender Equality Strategy 2020–2025</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-rail">
+    <div>BACKUP · B8</div>
+    <div>THE LEGEND CHALLENGE<span class="dot"></span>B8</div>
+  </div>
+</section>
+
+</deck-stage>
+
+</body>
+</html>

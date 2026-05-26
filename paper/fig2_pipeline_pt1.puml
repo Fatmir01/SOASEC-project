@@ -1,0 +1,123 @@
+@startuml
+' ══════════════════════════════════════════════════════════════
+'  End-to-end Pipeline (LegendsQA) — compact landscape layout
+' ══════════════════════════════════════════════════════════════
+
+' left to right direction
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Serif"
+skinparam defaultFontSize 10
+skinparam ArrowThickness 1.1
+skinparam ArrowColor #555555
+skinparam roundCorner 12
+skinparam linetype ortho
+skinparam nodesep 12
+skinparam ranksep 22
+skinparam padding 2
+
+skinparam rectangle {
+    BorderThickness 1.4
+    BackgroundColor<<prep>>   #E1F5EE
+    BorderColor<<prep>>       #0F6E56
+    FontColor<<prep>>         #0F6E56
+    BackgroundColor<<leg>>    #EEEDFE
+    BorderColor<<leg>>        #3C3489
+    FontColor<<leg>>          #3C3489
+    BackgroundColor<<shared>> #F1EFE8
+    BorderColor<<shared>>     #444441
+    FontColor<<shared>>       #444441
+    BackgroundColor<<ft>>     #E6F1FB
+    BorderColor<<ft>>         #0C447C
+    FontColor<<ft>>           #0C447C
+    BackgroundColor<<amber>>  #FAEEDA
+    BorderColor<<amber>>      #854F0B
+    FontColor<<amber>>        #854F0B
+    BackgroundColor<<pink>>   #FBEAF0
+    BorderColor<<pink>>       #72243E
+    FontColor<<pink>>         #72243E
+}
+skinparam artifact {
+    BorderThickness 1.0
+    BackgroundColor<<prep>>   #F0FAF6
+    BorderColor<<prep>>       #0F6E56
+    FontColor<<prep>>         #0F6E56
+    BackgroundColor<<leg>>    #F6F5FE
+    BorderColor<<leg>>        #3C3489
+    FontColor<<leg>>          #3C3489
+    BackgroundColor<<reg>>    #FDF6F2
+    BorderColor<<reg>>        #993C1D
+    FontColor<<reg>>          #993C1D
+    BackgroundColor<<ft>>     #F2F8FE
+    BorderColor<<ft>>         #0C447C
+    FontColor<<ft>>           #0C447C
+}
+skinparam node {
+    BorderThickness 1.2
+    BackgroundColor<<ft>>     #DDEAFB
+    BorderColor<<ft>>         #0C447C
+    FontColor<<ft>>           #0C447C
+}
+skinparam package {
+    BackgroundColor #FAFAF7
+    BorderColor #BBBBBB
+    FontColor #666666
+    FontSize 9
+    FontStyle italic
+}
+
+' ── 1. Preprocessing (horizontal chain) ────────────────────
+
+package "Preprocessing" as PRP {
+  artifact "**PDF**\n<size:8><i>reg + 4 CEB</i></size>"            <<prep>> as A_PDF
+  rectangle "**PDF→Markdown**\n<size:8><i>Marker + regex</i></size>" <<prep>> as P_MD
+  rectangle "**Segmentation**\n<size:8><i>thematic split</i></size>" <<prep>> as P_SEG
+  artifact "**5 thematic parts**\n<size:8><i>regulation passages</i></size>" <<prep>> as A_PARTS
+}
+
+A_PDF -right-> P_MD    #0F6E56
+P_MD  -right-> P_SEG   #0F6E56
+P_SEG -right-> A_PARTS #0F6E56
+
+
+' ── 2. Branches (legends above, regulation below) ──────────
+rectangle "**Legends generation**\n<size:8><i>3 LLMs × 5 pillars</i></size>" <<leg>> as P_LGEN
+artifact "**Legends**\n<size:8><i>narrative exemplars</i></size>"             <<leg>> as A_LEG
+artifact "**Regulation passages**\n<size:8><i>cleaned text</i></size>"        <<reg>> as A_REG
+
+
+A_PARTS -right-> P_LGEN   #3C3489
+'P_SEG -[hidden]down-> P_LGEN   #3C3489
+P_LGEN  -down-> A_LEG #3C3489
+P_SEG -[hidden]down-> A_REG   #3C3489
+A_PARTS  -down-> A_REG  #993C1D
+A_LEG -[hidden]left-> A_REG  #993C1D
+
+
+
+' ── 3. Shared dataset-creation chain ───────────────────────
+package "Dataset Creation" as DC {
+    rectangle "**Classification**\n<size:8><i>6-class pillar</i></size>"       <<shared>> as P_CLS
+    rectangle "**Span extraction**\n<size:8><i>2-stage</i></size>"              <<shared>> as P_SPAN
+    rectangle "**Q&A generation**\n<size:8><i>factoid + non-factoid</i></size>" <<shared>> as P_QA
+    rectangle "**JSON→JSONL**\n<size:8><i>closed-book</i></size>"               <<shared>> as P_J2J
+}
+
+
+
+A_LEG -down-> P_CLS  #3C3489
+A_REG -down-> P_CLS  #993C1D
+P_CLS  -right-> P_SPAN #444441
+P_SPAN -right-> P_QA   #444441
+P_QA   -right-> P_J2J  #444441
+
+' ── 4. JSONL outputs (split back into branches) ────────────
+artifact "**JSONL leg.**\n<size:8><i>327 lines</i></size>"  <<leg>> as A_JLEG
+artifact "**JSONL reg.**\n<size:8><i>293 lines</i></size>"  <<reg>> as A_JREG
+
+P_J2J --down->   A_JLEG #3C3489
+P_J2J --down-> A_JREG #993C1D
+A_JLEG --[hidden]right-> A_JREG #993C1D
+
+
+@enduml

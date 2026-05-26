@@ -1,0 +1,505 @@
+\begin{thebibliography}{}
+\renewcommand{\doi}[1]{\url{https://doi.org/#1}}
+\bibcommenthead
+
+\bibitem [\protect \citeauthoryear {%
+Abnar%
+\ \BBA {} Zuidema%
+}{%
+Abnar%
+\ \BBA {} Zuidema%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+abnar2020rollout}
+\APACinsertmetastar {%
+abnar2020rollout}%
+\begin{APACrefauthors}%
+Abnar, S.%
+\BCBT {}\ \BBA {} Zuidema, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Quantifying attention flow in transformers} {Quantifying
+  attention flow in transformers}.{\BBCQ}
+\newblock
+ \APACrefbtitle {Proceedings of the 58th Annual Meeting of the Association for
+  Computational Linguistics (ACL 2020)} {Proceedings of the 58th annual meeting
+  of the association for computational linguistics (acl 2020)}\ (\BPGS\
+  4190--4197).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Achintalwar%
+\ \protect \BOthers {.}}{%
+Achintalwar%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2024}}%
+}]{%
+achintalwar2024alignment}
+\APACinsertmetastar {%
+achintalwar2024alignment}%
+\begin{APACrefauthors}%
+Achintalwar, S.%
+\BCBT {}\ \BOthersPeriod {.}
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Alignment Studio: Aligning large language models to
+  particular contextual regulations} {Alignment studio: Aligning large language
+  models to particular contextual regulations}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Internet Computing}{}{}{,}
+\newblock
+
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Clark%
+\ \protect \BOthers {.}}{%
+Clark%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+clark2019boolq}
+\APACinsertmetastar {%
+clark2019boolq}%
+\begin{APACrefauthors}%
+Clark, C.%
+, Lee, K.%
+, Chang, M\BHBI W.%
+, Kwiatkowski, T.%
+, Collins, M.%
+\BCBL {} Toutanova, K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {BoolQ: Exploring the surprising difficulty of natural
+  yes/no questions} {Boolq: Exploring the surprising difficulty of natural
+  yes/no questions}.{\BBCQ}
+\newblock
+ \APACrefbtitle {Proceedings of the 2019 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies (NAACL 2019)} {Proceedings of the 2019 conference of the north
+  american chapter of the association for computational linguistics: Human
+  language technologies (naacl 2019)}\ (\BPGS\ 2924--2936).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lundberg%
+\ \BBA {} Lee%
+}{%
+Lundberg%
+\ \BBA {} Lee%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+lundberg2017shap}
+\APACinsertmetastar {%
+lundberg2017shap}%
+\begin{APACrefauthors}%
+Lundberg, S.M.%
+\BCBT {}\ \BBA {} Lee, S\BHBI I.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A unified approach to interpreting model predictions} {A
+  unified approach to interpreting model predictions}.{\BBCQ}
+\newblock
+ \APACrefbtitle {Advances in Neural Information Processing Systems 30 (NeurIPS
+  2017).} {Advances in neural information processing systems 30 (neurips
+  2017).}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+McLaughlin%
+\ \BBA {} Stover%
+}{%
+McLaughlin%
+\ \BBA {} Stover%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+mclaughlin2021x2rl}
+\APACinsertmetastar {%
+mclaughlin2021x2rl}%
+\begin{APACrefauthors}%
+McLaughlin, P.A.%
+\BCBT {}\ \BBA {} Stover, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Drafting X2RL: A semantic regulatory machine-readable
+  format} {Drafting x2rl: A semantic regulatory machine-readable
+  format}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{MIT Computational Law Report}{}{}{,}
+\newblock
+
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Motzfeldt%
+\ \BBA {} N{\ae}sborg-Andersen%
+}{%
+Motzfeldt%
+\ \BBA {} N{\ae}sborg-Andersen%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+motzfeldt2018digital}
+\APACinsertmetastar {%
+motzfeldt2018digital}%
+\begin{APACrefauthors}%
+Motzfeldt, H.M.%
+\BCBT {}\ \BBA {} N{\ae}sborg-Andersen, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Developing administrative law into handling the
+  challenges of digital government in Denmark} {Developing administrative law
+  into handling the challenges of digital government in denmark}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Electronic Journal of e-Government}{16}{2}{136--146,}
+\newblock
+
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Naumova%
+}{%
+Naumova%
+}{%
+{\protect \APACyear {2023}}%
+}]{%
+naumova2023responsibility}
+\APACinsertmetastar {%
+naumova2023responsibility}%
+\begin{APACrefauthors}%
+Naumova, E.N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Who is responsible for AI-generated public health
+  policies?} {Who is responsible for ai-generated public health
+  policies?}{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Public Health Policy}{44}{4}{517--522,}
+\newblock
+
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Paruchuri%
+}{%
+Paruchuri%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+paruchuri2024marker}
+\APACinsertmetastar {%
+paruchuri2024marker}%
+\begin{APACrefauthors}%
+Paruchuri, V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+\APACrefbtitle {Marker: PDF to Markdown conversion library.} {Marker: Pdf to
+  markdown conversion library.}
+\newblock
+\APAChowpublished {\url{https://github.com/datalab-to/marker}}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rajpurkar%
+, Zhang%
+, Lopyrev%
+\BCBL {}\ \BBA {} Liang%
+}{%
+Rajpurkar%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+rajpurkar2016squad}
+\APACinsertmetastar {%
+rajpurkar2016squad}%
+\begin{APACrefauthors}%
+Rajpurkar, P.%
+, Zhang, J.%
+, Lopyrev, K.%
+\BCBL {} Liang, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {SQuAD: 100,000+ questions for machine comprehension of
+  text} {Squad: 100,000+ questions for machine comprehension of text}.{\BBCQ}
+\newblock
+ \APACrefbtitle {Proceedings of the 2016 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP 2016)} {Proceedings of the 2016 conference
+  on empirical methods in natural language processing (emnlp 2016)}\ (\BPGS\
+  2383--2392).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ribeiro%
+, Singh%
+\BCBL {}\ \BBA {} Guestrin%
+}{%
+Ribeiro%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+ribeiro2016lime}
+\APACinsertmetastar {%
+ribeiro2016lime}%
+\begin{APACrefauthors}%
+Ribeiro, M.T.%
+, Singh, S.%
+\BCBL {} Guestrin, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {``Why should I trust you?'': Explaining the predictions
+  of any classifier} {``why should i trust you?'': Explaining the predictions
+  of any classifier}.{\BBCQ}
+\newblock
+ \APACrefbtitle {Proceedings of the 22nd ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining (KDD 2016)} {Proceedings of the 22nd acm
+  sigkdd international conference on knowledge discovery and data mining (kdd
+  2016)}\ (\BPGS\ 1135--1144).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Roemmele%
+, Bejan%
+\BCBL {}\ \BBA {} Gordon%
+}{%
+Roemmele%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+roemmele2011copa}
+\APACinsertmetastar {%
+roemmele2011copa}%
+\begin{APACrefauthors}%
+Roemmele, M.%
+, Bejan, C.A.%
+\BCBL {} Gordon, A.S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Choice of plausible alternatives: An evaluation of
+  commonsense causal reasoning} {Choice of plausible alternatives: An
+  evaluation of commonsense causal reasoning}.{\BBCQ}
+\newblock
+ \APACrefbtitle {AAAI Spring Symposium on Logical Formalizations of Commonsense
+  Reasoning.} {Aaai spring symposium on logical formalizations of commonsense
+  reasoning.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sargsyan%
+\ \BBA {} Damiani%
+}{%
+Sargsyan%
+\ \BBA {} Damiani%
+}{%
+{\protect \APACyear {2025}}%
+}]{%
+sargsyan2025legends}
+\APACinsertmetastar {%
+sargsyan2025legends}%
+\begin{APACrefauthors}%
+Sargsyan, G.N.%
+\BCBT {}\ \BBA {} Damiani, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Using legends to embed ethics into AI-based
+  decision-making} {Using legends to embed ethics into ai-based
+  decision-making}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{[Venue to be confirmed]}{}{}{,}
+\newblock
+\APACrefnote{Pages to be confirmed}
+\newblock
+
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sundararajan%
+, Taly%
+\BCBL {}\ \BBA {} Yan%
+}{%
+Sundararajan%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+sundararajan2017ig}
+\APACinsertmetastar {%
+sundararajan2017ig}%
+\begin{APACrefauthors}%
+Sundararajan, M.%
+, Taly, A.%
+\BCBL {} Yan, Q.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Axiomatic attribution for deep networks} {Axiomatic
+  attribution for deep networks}.{\BBCQ}
+\newblock
+ \APACrefbtitle {Proceedings of the 34th International Conference on Machine
+  Learning (ICML 2017)} {Proceedings of the 34th international conference on
+  machine learning (icml 2017)}\ (\BPGS\ 3319--3328).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wang%
+\ \protect \BOthers {.}}{%
+Wang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+wang2019superglue}
+\APACinsertmetastar {%
+wang2019superglue}%
+\begin{APACrefauthors}%
+Wang, A.%
+, Pruksachatkun, Y.%
+, Nangia, N.%
+, Singh, A.%
+, Michael, J.%
+, Hill, F.%
+\BDBL {}Bowman, S.R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {SuperGLUE: A stickier benchmark for general-purpose
+  language understanding systems} {Superglue: A stickier benchmark for
+  general-purpose language understanding systems}.{\BBCQ}
+\newblock
+ \APACrefbtitle {Advances in Neural Information Processing Systems 32 (NeurIPS
+  2019).} {Advances in neural information processing systems 32 (neurips
+  2019).}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wang%
+\ \protect \BOthers {.}}{%
+Wang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+wang2018glue}
+\APACinsertmetastar {%
+wang2018glue}%
+\begin{APACrefauthors}%
+Wang, A.%
+, Singh, A.%
+, Michael, J.%
+, Hill, F.%
+, Levy, O.%
+\BCBL {} Bowman, S.R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {GLUE: A multi-task benchmark and analysis platform for
+  natural language understanding} {Glue: A multi-task benchmark and analysis
+  platform for natural language understanding}.{\BBCQ}
+\newblock
+ \APACrefbtitle {Proceedings of the EMNLP 2018 Workshop BlackboxNLP: Analyzing
+  and Interpreting Neural Networks for NLP.} {Proceedings of the emnlp 2018
+  workshop blackboxnlp: Analyzing and interpreting neural networks for nlp.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wattenberg%
+\ \protect \BOthers {.}}{%
+Wattenberg%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+wattenberg2025sustainableqa}
+\APACinsertmetastar {%
+wattenberg2025sustainableqa}%
+\begin{APACrefauthors}%
+Wattenberg, G.N.%
+\BCBT {}\ \BOthersPeriod {.}
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {SustainableQA: A comprehensive question answering
+  dataset for corporate sustainability and EU taxonomy reporting}
+  {Sustainableqa: A comprehensive question answering dataset for corporate
+  sustainability and eu taxonomy reporting}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint arXiv:2508.03000}{}{}{,}
+\newblock
+
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zhao%
+}{%
+Zhao%
+}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+zhao2018winobias}
+\APACinsertmetastar {%
+zhao2018winobias}%
+\begin{APACrefauthors}%
+Zhao, J..t.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

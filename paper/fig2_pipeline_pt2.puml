@@ -1,0 +1,143 @@
+@startuml
+' ══════════════════════════════════════════════════════════════
+'  End-to-end Pipeline (LegendsQA) — compact landscape layout
+' ══════════════════════════════════════════════════════════════
+
+'left to right direction
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Serif"
+skinparam defaultFontSize 10
+skinparam ArrowThickness 1.1
+skinparam ArrowColor #555555
+skinparam roundCorner 12
+skinparam linetype ortho
+skinparam nodesep 12
+skinparam ranksep 22
+skinparam padding 2
+
+skinparam rectangle {
+    BorderThickness 1.4
+    BackgroundColor<<prep>>   #E1F5EE
+    BorderColor<<prep>>       #0F6E56
+    FontColor<<prep>>         #0F6E56
+    BackgroundColor<<leg>>    #EEEDFE
+    BorderColor<<leg>>        #3C3489
+    FontColor<<leg>>          #3C3489
+    BackgroundColor<<shared>> #F1EFE8
+    BorderColor<<shared>>     #444441
+    FontColor<<shared>>       #444441
+    BackgroundColor<<ft>>     #E6F1FB
+    BorderColor<<ft>>         #0C447C
+    FontColor<<ft>>           #0C447C
+    BackgroundColor<<amber>>  #FAEEDA
+    BorderColor<<amber>>      #854F0B
+    FontColor<<amber>>        #854F0B
+    BackgroundColor<<pink>>   #FBEAF0
+    BorderColor<<pink>>       #72243E
+    FontColor<<pink>>         #72243E
+}
+skinparam artifact {
+    BorderThickness 1.0
+    BackgroundColor<<prep>>   #F0FAF6
+    BorderColor<<prep>>       #0F6E56
+    FontColor<<prep>>         #0F6E56
+    BackgroundColor<<leg>>    #F6F5FE
+    BorderColor<<leg>>        #3C3489
+    FontColor<<leg>>          #3C3489
+    BackgroundColor<<reg>>    #FDF6F2
+    BorderColor<<reg>>        #993C1D
+    FontColor<<reg>>          #993C1D
+    BackgroundColor<<ft>>     #F2F8FE
+    BorderColor<<ft>>         #0C447C
+    FontColor<<ft>>           #0C447C
+BackgroundColor<<amber>>  #FAEEDA
+    BorderColor<<amber>>      #854F0B
+    FontColor<<amber>>        #854F0B
+}
+skinparam node {
+    BorderThickness 1.2
+    BackgroundColor<<ft>>     #DDEAFB
+    BorderColor<<ft>>         #0C447C
+    FontColor<<ft>>           #0C447C
+}
+skinparam package {
+    BackgroundColor #FAFAF7
+    BorderColor #BBBBBB
+    FontColor #666666
+    FontSize 9
+    FontStyle italic
+}
+
+' ── 4. JSONL outputs (split back into branches) ────────────
+together {
+  artifact "**JSONL leg.**\n<size:8><i>327 lines</i></size>"  <<leg>> as A_JLEG1   
+  artifact "**JSONL reg.**\n<size:8><i>293 lines</i></size>"  <<reg>> as A_JREG1
+}
+
+
+
+' ── 5. Fine-tuning + models ────────────────────────────────
+node "FineTuneDB Studio" <<ft>> as N_FT {
+    rectangle "**Fine-tuning**\n<size:8><i>GPT-4o backbone</i></size>" <<ft>> as P_FT
+}
+
+package "Models" as MODELS{
+artifact "**Base model**" <<ft>> as A_MODELS
+artifact "**Tuned-leg model**" <<ft>> as A_MODELS1
+artifact "**tuned-reg model**" <<ft>> as A_MODELS2
+
+A_MODELS -[hidden]down-> A_MODELS1 #0C447C
+A_MODELS1 -[hidden]down-> A_MODELS2 #0C447C
+}
+A_JLEG1 -[hidden]down-> N_FT #3C3489
+A_JLEG1 -[norank]down-> N_FT #3C3489
+A_JREG1 -[hidden]down-> N_FT  #993C1D
+A_JREG1 -down-> N_FT  #993C1D
+N_FT    -right-> MODELS #0C447C
+'N_FT    --right-> A_MODELS1 #0C447C
+'N_FT    --right-> A_MODELS2 #0C447C
+
+
+' ── 6. Evaluation (3×2 grid style alignment) + CIP ─────────
+package "GenderEqGLUE" as GLUE {
+    rectangle "**GE-CLS**\n<size:8><i>pillar cls.</i></size>"     <<amber>> as T1
+    rectangle "**GE-NLI**\n<size:8><i>entailment</i></size>"      <<amber>> as T2
+    rectangle "**GE-QA**\n<size:8><i>open Q&A</i></size>"          <<amber>> as T3
+    rectangle "**GE-WSC**\n<size:8><i>Winograd</i></size>"        <<amber>> as T4
+    rectangle "**GE-NEXT**\n<size:8><i>next sentence</i></size>"  <<amber>> as T5
+    
+    ' Layout constraints inside the package to keep it structurally clean
+    T1 -[hidden]down- T2
+    'T2 -[hidden]down- T3
+    'T3 -[hidden]down- T4
+    'T4 -[hidden]down- T5
+}
+
+rectangle "**CIP**\n<size:8><i>counterfactual probing</i></size>" <<pink>> as CIP
+
+' Parallel pipeline routing
+MODELS -right-> GLUE  #854F0B
+MODELS -down-> CIP   #72243E
+GLUE -[hidden]- CIP
+'A_JREG1 -[hidden]right-> MODELS 
+
+artifact "**GenderEqGLUE SCORE**" <<amber>> as SCORE
+
+GLUE --> SCORE #854F0B
+
+' ── Legend ─────────────────────────────────────────────────
+legend bottom left
+  |= Shape    |= Meaning                            |
+  | Rectangle | **Process** / transformation step   |
+  | Artifact  | **Data file** / output / input      |
+  | Node      | **Platform** / runtime              |
+  |<#E1F5EE>  | Shared preprocessing                |
+  |<#EEEDFE>  | Legends branch                      |
+  |<#FAECE7>  | Regulation branch                   |
+  |<#F1EFE8>  | Shared stages                       |
+  |<#E6F1FB>  | Fine-tuning / models                |
+  |<#FAEEDA>  | GenderEqGLUE                        |
+  |<#FBEAF0>  | Explainability (CIP)                |
+end legend
+@enduml
