@@ -9,7 +9,7 @@ Abnar%
 Abnar%
 \ \BBA {} Zuidema%
 }{%
-{\protect \APACyear {2020}}%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
 }]{%
 abnar2020rollout}
 \APACinsertmetastar {%
@@ -20,15 +20,13 @@ Abnar, S.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2020}{}{}.
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Quantifying attention flow in transformers} {Quantifying
-  attention flow in transformers}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Quantifying {{Attention Flow}} in {{Transformers}}}
+  {Quantifying {{Attention Flow}} in {{Transformers}}}.{\BBCQ}.
 \newblock
- \APACrefbtitle {Proceedings of the 58th Annual Meeting of the Association for
-  Computational Linguistics (ACL 2020)} {Proceedings of the 58th annual meeting
-  of the association for computational linguistics (acl 2020)}\ (\BPGS\
-  4190--4197).
+\begin{APACrefURL} [{2026-05-31}]{http://arxiv.org/abs/2005.00928}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -43,21 +41,52 @@ achintalwar2024alignment}
 achintalwar2024alignment}%
 \begin{APACrefauthors}%
 Achintalwar, S.%
-\BCBT {}\ \BOthersPeriod {.}
+, Baldini, I.%
+, Bouneffouf, D.%
+, Byamugisha, J.%
+, Chang, M.%
+, Dognin, P.%
+\BDBL {}Varshney, K.R.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2024}{}{}.
+\APACrefYearMonthDay{2024}{{\APACmonth{03}}}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Alignment Studio: Aligning large language models to
-  particular contextual regulations} {Alignment studio: Aligning large language
-  models to particular contextual regulations}.{\BBCQ}
+\APACrefbtitle {Alignment {{Studio}}: {{Aligning Large Language Models}} to
+  {{Particular Contextual Regulations}}} {Alignment {{Studio}}: {{Aligning
+  Large Language Models}} to {{Particular Contextual Regulations}}}\ (\BNUM\
+  arXiv:2403.09704).
 \newblock
-\APACjournalVolNumPages{IEEE Internet Computing}{}{}{,}
-\newblock
+\APACaddressPublisher{}{arXiv}.
+\PrintBackRefs{\CurrentBib}
 
+\bibitem [\protect \citeauthoryear {%
+Ali%
+, Abdallah%
+\BCBL {}\ \BBA {} Jatowt%
+}{%
+Ali%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+wattenberg2025sustainableqa}
+\APACinsertmetastar {%
+wattenberg2025sustainableqa}%
+\begin{APACrefauthors}%
+Ali, M.%
+, Abdallah, A.%
+\BCBL {} Jatowt, A.%
+\end{APACrefauthors}%
+\unskip\
 \newblock
-
+\APACrefYearMonthDay{2025}{}{}.
+\newblock
+\APACrefbtitle {SustainableQA: A Comprehensive Question Answering Dataset for
+  Corporate Sustainability and EU Taxonomy Reporting.} {Sustainableqa: A
+  comprehensive question answering dataset for corporate sustainability and eu
+  taxonomy reporting.}
+\newblock
+\begin{APACrefURL} {https://arxiv.org/abs/2508.03000} \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -80,17 +109,169 @@ Clark, C.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2019}{}{}.
+\APACrefYearMonthDay{2019}{{\APACmonth{05}}}{}.
 \newblock
-{\BBOQ}\APACrefatitle {BoolQ: Exploring the surprising difficulty of natural
-  yes/no questions} {Boolq: Exploring the surprising difficulty of natural
-  yes/no questions}.{\BBCQ}
+\APACrefbtitle {{{BoolQ}}: {{Exploring}} the {{Surprising Difficulty}} of
+  {{Natural Yes}}/{{No Questions}}} {{{BoolQ}}: {{Exploring}} the {{Surprising
+  Difficulty}} of {{Natural Yes}}/{{No Questions}}}\ (\BNUM\ arXiv:1905.10044).
 \newblock
- \APACrefbtitle {Proceedings of the 2019 Conference of the North American
-  Chapter of the Association for Computational Linguistics: Human Language
-  Technologies (NAACL 2019)} {Proceedings of the 2019 conference of the north
-  american chapter of the association for computational linguistics: Human
-  language technologies (naacl 2019)}\ (\BPGS\ 2924--2936).
+\APACaddressPublisher{}{arXiv}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{European Commission}%
+}{%
+{European Commission}%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+europeancommission2020strategy}
+\APACinsertmetastar {%
+europeancommission2020strategy}%
+\begin{APACrefauthors}%
+{European Commission}%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {A Union of Equality: Gender Equality Strategy 2020--2025.} {A
+  union of equality: Gender equality strategy 2020--2025.}
+\newblock
+\APAChowpublished {COM(2020) 152 final}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{European Commission}%
+}{%
+{European Commission}%
+}{%
+{\protect \APACyear {2022}}%
+}]{%
+europeancommission2022csrd}
+\APACinsertmetastar {%
+europeancommission2022csrd}%
+\begin{APACrefauthors}%
+{European Commission}%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2022}{}{}.
+\newblock
+\APACrefbtitle {Corporate Sustainability Reporting Directive {(CSRD)}.}
+  {Corporate sustainability reporting directive {(CSRD)}.}
+\newblock
+\APAChowpublished {Directive (EU) 2022/2464}.
+\newblock
+\APACrefnote{Effective from January 2024}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{European Commission}%
+}{%
+{European Commission}%
+}{%
+{\protect \APACyear {2025}}%
+{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+europeancommission2025equalpay}
+\APACinsertmetastar {%
+europeancommission2025equalpay}%
+\begin{APACrefauthors}%
+{European Commission}%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025{\protect \BCnt {1}}}{}{}.
+\newblock
+\APACrefbtitle {Equal Pay Directive: Pay Transparency and Reporting on Gender
+  Pay Disparities.} {Equal pay directive: Pay transparency and reporting on
+  gender pay disparities.}
+\newblock
+\APAChowpublished {Directive (EU) 2023/970}.
+\newblock
+\APACrefnote{Accessed 2025}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{European Commission}%
+}{%
+{European Commission}%
+}{%
+{\protect \APACyear {2025}}%
+{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
+europeancommission2025taxonomy}
+\APACinsertmetastar {%
+europeancommission2025taxonomy}%
+\begin{APACrefauthors}%
+{European Commission}%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025{\protect \BCnt {2}}}{}{}.
+\newblock
+\APACrefbtitle {{EU} Taxonomy Regulation.} {{EU} taxonomy regulation.}
+\newblock
+\APAChowpublished {Regulation (EU) 2020/852, as amended}.
+\newblock
+\APACrefnote{Accessed 2025}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{European Parliament}%
+}{%
+{European Parliament}%
+}{%
+{\protect \APACyear {2022}}%
+}]{%
+europeanparliament2022wob}
+\APACinsertmetastar {%
+europeanparliament2022wob}%
+\begin{APACrefauthors}%
+{European Parliament}%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2022}{}{}.
+\newblock
+\APACrefbtitle {Directive on Improving the Gender Balance Among Directors of
+  Listed Companies (Women on Boards).} {Directive on improving the gender
+  balance among directors of listed companies (women on boards).}
+\newblock
+\APAChowpublished {Directive (EU) 2022/2381}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Kanyamukenge%
+\ \BBA {} Kagwaini%
+}{%
+Kanyamukenge%
+\ \BBA {} Kagwaini%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+kanyamukenge2024testimonials}
+\APACinsertmetastar {%
+kanyamukenge2024testimonials}%
+\begin{APACrefauthors}%
+Kanyamukenge, C.I.%
+\BCBT {}\ \BBA {} Kagwaini, D.M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{{\APACmonth{10}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Role of {{Ethical Leadership}} in {{Promoting
+  Sustainable Business Practices}}} {Role of {{Ethical Leadership}} in
+  {{Promoting Sustainable Business Practices}}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Business and
+  Management}{19}{6}{p209,}
+\newblock
+\begin{APACrefDOI} \doi{10.5539/ijbm.v19n6p209} \end{APACrefDOI}
+\newblock
+
+\newblock
+
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -106,19 +287,17 @@ lundberg2017shap}
 \APACinsertmetastar {%
 lundberg2017shap}%
 \begin{APACrefauthors}%
-Lundberg, S.M.%
+Lundberg, S.%
 \BCBT {}\ \BBA {} Lee, S\BHBI I.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2017}{}{}.
+\APACrefYearMonthDay{2017}{{\APACmonth{05}}}{}.
 \newblock
-{\BBOQ}\APACrefatitle {A unified approach to interpreting model predictions} {A
-  unified approach to interpreting model predictions}.{\BBCQ}
+\APACrefbtitle {A {{Unified Approach}} to {{Interpreting Model Predictions}}.}
+  {A {{Unified Approach}} to {{Interpreting Model Predictions}}.}
 \newblock
- \APACrefbtitle {Advances in Neural Information Processing Systems 30 (NeurIPS
-  2017).} {Advances in neural information processing systems 30 (neurips
-  2017).}
+\APAChowpublished {https://arxiv.org/abs/1705.07874v2}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -139,11 +318,11 @@ McLaughlin, P.A.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2021}{}{}.
+\APACrefYearMonthDay{2021}{{\APACmonth{05}}}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Drafting X2RL: A semantic regulatory machine-readable
-  format} {Drafting x2rl: A semantic regulatory machine-readable
-  format}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Drafting {{X2RL}}: {{A Semantic Regulatory
+  Machine-Readable Format}}} {Drafting {{X2RL}}: {{A Semantic Regulatory
+  Machine-Readable Format}}}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{MIT Computational Law Report}{}{}{,}
 \newblock
@@ -154,10 +333,10 @@ McLaughlin, P.A.%
 
 \bibitem [\protect \citeauthoryear {%
 Motzfeldt%
-\ \BBA {} N{\ae}sborg-Andersen%
+\ \BBA {} {N{\ae}sborg-Andersen}%
 }{%
 Motzfeldt%
-\ \BBA {} N{\ae}sborg-Andersen%
+\ \BBA {} {N{\ae}sborg-Andersen}%
 }{%
 {\protect \APACyear {2018}}%
 }]{%
@@ -166,17 +345,19 @@ motzfeldt2018digital}
 motzfeldt2018digital}%
 \begin{APACrefauthors}%
 Motzfeldt, H.M.%
-\BCBT {}\ \BBA {} N{\ae}sborg-Andersen, A.%
+\BCBT {}\ \BBA {} {N{\ae}sborg-Andersen}, A.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2018}{}{}.
+\APACrefYearMonthDay{2018}{{\APACmonth{10}}}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Developing administrative law into handling the
-  challenges of digital government in Denmark} {Developing administrative law
-  into handling the challenges of digital government in denmark}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Developing {{Administrative Law}} into {{Handling}} the
+  {{Challenges}} of {{Digital Government}} in {{Denmark}}} {Developing
+  {{Administrative Law}} into {{Handling}} the {{Challenges}} of {{Digital
+  Government}} in {{Denmark}}}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Electronic Journal of e-Government}{16}{2}{136--146,}
+\APACjournalVolNumPages{Electronic Journal of
+  e-Government}{16}{2}{pp136-146-pp136-146,}
 \newblock
 
 \newblock
@@ -184,29 +365,39 @@ Motzfeldt, H.M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Naumova%
+Northcutt%
+, Wu%
+\BCBL {}\ \BBA {} Chuang%
 }{%
-Naumova%
-}{%
-{\protect \APACyear {2023}}%
+Northcutt%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
 }]{%
-naumova2023responsibility}
+northcutt2017cleaning}
 \APACinsertmetastar {%
-naumova2023responsibility}%
+northcutt2017cleaning}%
 \begin{APACrefauthors}%
-Naumova, E.N.%
+Northcutt, C.G.%
+, Wu, T.%
+\BCBL {} Chuang, I.L.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2023}{}{}.
+\APACrefYearMonthDay{2017}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Who is responsible for AI-generated public health
-  policies?} {Who is responsible for ai-generated public health
-  policies?}{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of Public Health Policy}{44}{4}{517--522,}
+{\BBOQ}\APACrefatitle {Learning with {{Confident Examples}}: {{Rank Pruning}}
+  for {{Robust Classification}} with {{Noisy Labels}}} {Learning with
+  {{Confident Examples}}: {{Rank Pruning}} for {{Robust Classification}} with
+  {{Noisy Labels}}}.{\BBCQ}
 \newblock
 
+\newblock
+\begin{APACrefDOI} \doi{10.48550/arXiv.1705.01936} \end{APACrefDOI}
+\newblock
+\begin{APACrefURL} [{2026-05-31}]{http://arxiv.org/abs/1705.01936}
+  \end{APACrefURL}
+\newblock
+{\href{https://arxiv.org/abs/1705.01936}{{1705.01936}}}
 \newblock
 
 \PrintBackRefs{\CurrentBib}
@@ -340,7 +531,7 @@ sargsyan2025legends}
 \APACinsertmetastar {%
 sargsyan2025legends}%
 \begin{APACrefauthors}%
-Sargsyan, G.N.%
+Sargsyan, G.%
 \BCBT {}\ \BBA {} Damiani, E.%
 \end{APACrefauthors}%
 \unskip\
@@ -351,9 +542,45 @@ Sargsyan, G.N.%
   decision-making} {Using legends to embed ethics into ai-based
   decision-making}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{[Venue to be confirmed]}{}{}{,}
+\APACjournalVolNumPages{Working paper / Preprint}{}{}{,}
 \newblock
-\APACrefnote{Pages to be confirmed}
+
+\newblock
+
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Storey%
+, Yue%
+, Zhao%
+\BCBL {}\ \BBA {} Lukyanenko%
+}{%
+Storey%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2025}}%
+}]{%
+storey2025genai}
+\APACinsertmetastar {%
+storey2025genai}%
+\begin{APACrefauthors}%
+Storey, V.C.%
+, Yue, W.T.%
+, Zhao, J.L.%
+\BCBL {} Lukyanenko, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2025}{{\APACmonth{10}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Generative {{Artificial Intelligence}}: {{Evolving
+  Technology}}, {{Growing Societal Impact}}, and {{Opportunities}} for
+  {{Information Systems Research}}} {Generative {{Artificial Intelligence}}:
+  {{Evolving Technology}}, {{Growing Societal Impact}}, and {{Opportunities}}
+  for {{Information Systems Research}}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Information Systems Frontiers}{27}{5}{2081--2102,}
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s10796-025-10581-7} \end{APACrefDOI}
 \newblock
 
 \newblock
@@ -379,14 +606,35 @@ Sundararajan, M.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2017}{}{}.
+\APACrefYearMonthDay{2017}{{\APACmonth{06}}}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Axiomatic attribution for deep networks} {Axiomatic
-  attribution for deep networks}.{\BBCQ}
+\APACrefbtitle {Axiomatic {{Attribution}} for {{Deep Networks}}} {Axiomatic
+  {{Attribution}} for {{Deep Networks}}}\ (\BNUM\ arXiv:1703.01365).
 \newblock
- \APACrefbtitle {Proceedings of the 34th International Conference on Machine
-  Learning (ICML 2017)} {Proceedings of the 34th international conference on
-  machine learning (icml 2017)}\ (\BPGS\ 3319--3328).
+\APACaddressPublisher{}{arXiv}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{The Economist}%
+}{%
+{The Economist}%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+economist2024gartner}
+\APACinsertmetastar {%
+economist2024gartner}%
+\begin{APACrefauthors}%
+{The Economist}%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+\APACrefbtitle {Gartner Forecasts on {AI} and Middle Management.} {Gartner
+  forecasts on {AI} and middle management.}
+\newblock
+\APAChowpublished {The Economist}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -406,19 +654,21 @@ Wang, A.%
 , Singh, A.%
 , Michael, J.%
 , Hill, F.%
-\BDBL {}Bowman, S.R.%
+\BDBL {}Bowman, S.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
 \APACrefYearMonthDay{2019}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {SuperGLUE: A stickier benchmark for general-purpose
-  language understanding systems} {Superglue: A stickier benchmark for
-  general-purpose language understanding systems}.{\BBCQ}
+{\BBOQ}\APACrefatitle {{{SuperGLUE}}: {{A Stickier Benchmark}} for
+  {{General-Purpose Language Understanding Systems}}} {{{SuperGLUE}}: {{A
+  Stickier Benchmark}} for {{General-Purpose Language Understanding
+  Systems}}}.{\BBCQ}
 \newblock
- \APACrefbtitle {Advances in Neural Information Processing Systems 32 (NeurIPS
-  2019).} {Advances in neural information processing systems 32 (neurips
-  2019).}
+ \APACrefbtitle {Advances in {{Neural Information Processing Systems}}}
+  {Advances in {{Neural Information Processing Systems}}}\ (\BVOL~32).
+\newblock
+\APACaddressPublisher{}{Curran Associates, Inc.}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -441,65 +691,62 @@ Wang, A.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2018}{}{}.
+\APACrefYearMonthDay{2018}{{\APACmonth{11}}}{}.
 \newblock
-{\BBOQ}\APACrefatitle {GLUE: A multi-task benchmark and analysis platform for
-  natural language understanding} {Glue: A multi-task benchmark and analysis
-  platform for natural language understanding}.{\BBCQ}
+{\BBOQ}\APACrefatitle {{{GLUE}}: {{A Multi-Task Benchmark}} and {{Analysis
+  Platform}} for {{Natural Language Understanding}}} {{{GLUE}}: {{A Multi-Task
+  Benchmark}} and {{Analysis Platform}} for {{Natural Language
+  Understanding}}}.{\BBCQ}
 \newblock
- \APACrefbtitle {Proceedings of the EMNLP 2018 Workshop BlackboxNLP: Analyzing
-  and Interpreting Neural Networks for NLP.} {Proceedings of the emnlp 2018
-  workshop blackboxnlp: Analyzing and interpreting neural networks for nlp.}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Wattenberg%
-\ \protect \BOthers {.}}{%
-Wattenberg%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2025}}%
-}]{%
-wattenberg2025sustainableqa}
-\APACinsertmetastar {%
-wattenberg2025sustainableqa}%
-\begin{APACrefauthors}%
-Wattenberg, G.N.%
-\BCBT {}\ \BOthersPeriod {.}
-\end{APACrefauthors}%
-\unskip\
+ T.~Linzen, G.~Chrupa{\l}a\BCBL {}\ \BBA {} A.~Alishahi\ (\BEDS),
+  \APACrefbtitle {Proceedings of the 2018 {{EMNLP Workshop BlackboxNLP}}:
+  {{Analyzing}} and {{Interpreting Neural Networks}} for {{NLP}}} {Proceedings
+  of the 2018 {{EMNLP Workshop BlackboxNLP}}: {{Analyzing}} and {{Interpreting
+  Neural Networks}} for {{NLP}}}\ (\BPGS\ 353--355).
 \newblock
-\APACrefYearMonthDay{2025}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {SustainableQA: A comprehensive question answering
-  dataset for corporate sustainability and EU taxonomy reporting}
-  {Sustainableqa: A comprehensive question answering dataset for corporate
-  sustainability and eu taxonomy reporting}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{arXiv preprint arXiv:2508.03000}{}{}{,}
-\newblock
-
-\newblock
-
+\APACaddressPublisher{Brussels, Belgium}{Association for Computational
+  Linguistics}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
 Zhao%
+, Wang%
+, Yatskar%
+, Ordonez%
+\BCBL {}\ \BBA {} Chang%
 }{%
 Zhao%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
 }]{%
 zhao2018winobias}
 \APACinsertmetastar {%
 zhao2018winobias}%
 \begin{APACrefauthors}%
-Zhao, J..t.%
+Zhao, J.%
+, Wang, T.%
+, Yatskar, M.%
+, Ordonez, V.%
+\BCBL {} Chang, K\BHBI W.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\APACrefYearMonthDay{2018}{{\APACmonth{06}}}{}.
 \newblock
-
+{\BBOQ}\APACrefatitle {Gender {{Bias}} in {{Coreference Resolution}}:
+  {{Evaluation}} and {{Debiasing Methods}}} {Gender {{Bias}} in {{Coreference
+  Resolution}}: {{Evaluation}} and {{Debiasing Methods}}}.{\BBCQ}
+\newblock
+ M.~Walker, H.~Ji\BCBL {}\ \BBA {} A.~Stent\ (\BEDS), \APACrefbtitle
+  {Proceedings of the 2018 {{Conference}} of the {{North American Chapter}} of
+  the {{Association}} for {{Computational Linguistics}}: {{Human Language
+  Technologies}}, {{Volume}} 2 ({{Short Papers}})} {Proceedings of the 2018
+  {{Conference}} of the {{North American Chapter}} of the {{Association}} for
+  {{Computational Linguistics}}: {{Human Language Technologies}}, {{Volume}} 2
+  ({{Short Papers}})}\ (\BPGS\ 15--20).
+\newblock
+\APACaddressPublisher{New Orleans, Louisiana}{Association for Computational
+  Linguistics}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
