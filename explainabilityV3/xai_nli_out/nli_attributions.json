@@ -1,0 +1,4038 @@
+[
+  {
+    "id": "ge_nli_127",
+    "label": "contradiction",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 3,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "MédiasBelgique SA, a Brussels-based media group, launched an awareness campaign in 2022 focused on victim self-reporting rather than bystander action, with no specific call for witnesses to come forward.",
+      "In the 12 months following launch, calls to the Institute's reporting line decreased by 18% compared to the prior year, attributed to public desensitisation.",
+      "The proportion of GBV reports originating from witnesses remained unchanged at 9% nationally."
+    ],
+    "hypothesis_sents": [
+      "States parties must encourage and facilitate the reporting of gender-based violence by any witness to competent authorities or relevant organisations."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0012359415413811803,
+        "fields": {
+          "premise": 11.733151456224732,
+          "hypothesis": 4.41722871910315
+        },
+        "sentences": {
+          "premise": [
+            0.09939886431675404,
+            0.0013464979128912091,
+            -0.0011397889829822816
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -8.256334695033729e-05,
+        "fields": {
+          "premise": 0.5341705570754129,
+          "hypothesis": 4.140470434242161
+        },
+        "sentences": {
+          "premise": [
+            -6.794609089411097e-05,
+            -7.72439766478783e-05,
+            -7.474070025637047e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.009451827965676785,
+        "fields": {
+          "premise": 0.9235741281881928,
+          "hypothesis": 0.9685979867354035
+        },
+        "sentences": {
+          "premise": [
+            0.030017063952982426,
+            -0.004089529626071453,
+            -0.007603392121382058
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_101",
+    "label": "contradiction",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "RisortoItalia S.r.l., a Naples-based hotel and catering group, became aware of employee domestic violence situations in 2022 but did not establish a victim support fund or provide legal representation.",
+      "Affected employees were referred to general employee assistance contacts but received no help in pursuing compensation claims against perpetrators.",
+      "Of seven employees who later disclosed GBV situations, none initiated civil compensation proceedings due to lack of support and information.",
+      "None were directed to Italy's state victim compensation fund."
+    ],
+    "hypothesis_sents": [
+      "States parties must guarantee victims of gender-based violence the right to claim compensation from perpetrators and provide state compensation where other sources are unavailable."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.00044032474397681653,
+        "fields": {
+          "premise": 6.78197029689909,
+          "hypothesis": 11.999559675256023
+        },
+        "sentences": {
+          "premise": [
+            -0.00042320421016484033,
+            0.021015710110077634,
+            0.0002541183785069734,
+            0.06399827162385918
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -1.7954958821064793e-05,
+        "fields": {
+          "premise": 0.4055876890288346,
+          "hypothesis": 5.543492482052898
+        },
+        "sentences": {
+          "premise": [
+            -1.3946828858024674e-05,
+            -1.3589217815024313e-05,
+            -1.1801163054769859e-05,
+            7.998565888556186e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.001212614355608821,
+        "fields": {
+          "premise": 0.5142136041540653,
+          "hypothesis": 0.022563955979421735
+        },
+        "sentences": {
+          "premise": [
+            -0.0012087254294783634,
+            0.007642679149284959,
+            0.0003898455761373043,
+            0.01750294421799481
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_087",
+    "label": "contradiction",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 3,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "IndustriaGlobal España S.A., a Valencia-based manufacturing multinational, implemented an internal workplace safety code of conduct in 2022 but did not extend its programme to law enforcement capacity building.",
+      "No partnership with legal reform NGOs was established and no training was provided to police officers or justice system actors in Morocco or Tunisia.",
+      "Worker awareness of GBV reporting procedures remained at 24%, virtually unchanged from the 23% baseline, as no community-facing or victim-centred outreach was conducted."
+    ],
+    "hypothesis_sents": [
+      "EU external action must support legislation criminalising all forms of gender-based violence and strengthen law enforcement capacity through a victim-centred approach."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.00024834630312398076,
+        "fields": {
+          "premise": 11.18727454188047,
+          "hypothesis": 11.999751653696876
+        },
+        "sentences": {
+          "premise": [
+            -0.00023658993541175732,
+            0.038642585452180356,
+            0.3535150850075297
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0002550217031966895,
+        "fields": {
+          "premise": 1.3908852008462418,
+          "hypothesis": 7.078054991114186
+        },
+        "sentences": {
+          "premise": [
+            -0.00024767587092355825,
+            0.007456540159182623,
+            -0.0001821138575905934
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.00676463358104229,
+        "fields": {
+          "premise": 0.7415136862546206,
+          "hypothesis": 0.2462302315980196
+        },
+        "sentences": {
+          "premise": [
+            -0.0067557381007645745,
+            -2.98377126455307e-05,
+            -0.0026585678569972515
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_110",
+    "label": "neutral",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "The Dutch Authority for the Financial Markets completed its first comprehensive Women on Boards Directive implementation report in November 2025 and submitted it to the European Commission on 18 December 2025, within the statutory deadline.",
+      "The report covered all 147 listed companies subject to the Directive, including data on board gender composition, compliance status with each objective, and disaggregated information on non-executive versus executive representation.",
+      "It reported that 63 companies, representing 43% of the total, had reached the 40% non-executive target.",
+      "The Authority committed to publishing the next biennial report by December 2027, in accordance with the mandated reporting cycle."
+    ],
+    "hypothesis_sents": [
+      "Relevant authorities must regularly publish disaggregated data on the gender pay gap, its determinants, and its consequences on earnings and pensions."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.10180865228176117,
+        "fields": {
+          "premise": -0.0995288600679487,
+          "hypothesis": 0.6277375370264053
+        },
+        "sentences": {
+          "premise": [
+            -0.0015443861484527588,
+            -0.0878444965928793,
+            -0.03285333514213562,
+            -0.07547560520470142
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -1.137065052986145,
+        "fields": {
+          "premise": 2.1047338247299194,
+          "hypothesis": 1.567686915397644
+        },
+        "sentences": {
+          "premise": [
+            0.36497747898101807,
+            -9.453296661376953e-05,
+            -0.23885822296142578,
+            0.0865316390991211
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.57609623670578,
+        "fields": {
+          "premise": 0.5923081040382385,
+          "hypothesis": 4.935282528400421
+        },
+        "sentences": {
+          "premise": [
+            0.398285448551178,
+            -0.3239743411540985,
+            -0.18901261687278748,
+            -0.51407690346241
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_158",
+    "label": "neutral",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "WarszawaLogistyk sp. z o.o., a Warsaw-based logistics company, developed a due diligence protocol in 2022 for handling gender-based violence incidents involving employees or subcontractors, in cooperation with the Polish Ombudsman's Office.",
+      "The protocol established mandatory internal investigations to be completed within 14 days of any reported incident, with referral to the National Prosecution Service where criminal conduct was identified.",
+      "A victim compensation fund of PLN 200,000 was set up, from which four employees received compensation in 2023 independent of criminal proceedings.",
+      "All investigation records were maintained under strict data protection standards and shared with prosecution authorities upon request, resulting in three successful prosecutions within 18 months of protocol implementation."
+    ],
+    "hypothesis_sents": [
+      "States and organisations must address structural barriers causing the digital gender divide, ensuring women's equal access to digital technologies and ICT career opportunities."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -2.935296834039036e-06,
+        "fields": {
+          "premise": 9.524372489977395e-05,
+          "hypothesis": 7.4160303326780195
+        },
+        "sentences": {
+          "premise": [
+            3.254259991081199e-05,
+            1.4185236977937166e-05,
+            3.5761099752562586e-06,
+            1.5138865819608327e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.011053833179175854,
+        "fields": {
+          "premise": 3.410861221142113,
+          "hypothesis": 1.9034026535227895
+        },
+        "sentences": {
+          "premise": [
+            0.30227523762732744,
+            0.015259589068591595,
+            0.05095754284411669,
+            0.01220270898193121
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -7.624555291840807e-05,
+        "fields": {
+          "premise": 1.711736608260253,
+          "hypothesis": 0.6169756538802176
+        },
+        "sentences": {
+          "premise": [
+            0.0002623159307404421,
+            -6.889972064527683e-05,
+            -3.8502785173477605e-05,
+            -2.825127012329176e-05
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_122",
+    "label": "entailment",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 6,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "FundacjaPol, a Warsaw-based governance advisory foundation, worked with 12 Polish listed companies in 2022 to implement board diversity action plans compliant with the Women on Boards Directive.",
+      "Each company signed a legally binding memorandum committing to specific gender representation targets and annual reporting obligations.",
+      "FundacjaPol provided each company with a tailored nomination process review and access to a database of 240 pre-screened qualified female board candidates.",
+      "Across the 12 companies, female board representation increased from an average of 18% to 31% over 24 months.",
+      "Three companies reached the 40% non-executive threshold by December 2023.",
+      "FundacjaPol published a progress report confirming all 12 companies maintained or increased their female board share year-on-year."
+    ],
+    "hypothesis_sents": [
+      "Listed companies must achieve a more balanced representation of women and men among their directors through effective and legally binding measures."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -1.5048530030981055e-06,
+        "fields": {
+          "premise": 11.999998495146997,
+          "hypothesis": 11.999998495146997
+        },
+        "sentences": {
+          "premise": [
+            1.2635588632292638e-05,
+            0.001229798701956497,
+            -4.768146482092561e-07,
+            -5.96018367104989e-07,
+            -1.5048530030981055e-06,
+            0.0
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0003385614836588502,
+        "fields": {
+          "premise": 2.607542984536849,
+          "hypothesis": 8.539135925821029
+        },
+        "sentences": {
+          "premise": [
+            4.754393012262881e-05,
+            0.033775233081541955,
+            -4.5763212256133556e-05,
+            5.0404807552695274e-05,
+            -0.00011928987805731595,
+            0.00034456461435183883
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -2.5822400857578032e-05,
+        "fields": {
+          "premise": 0.8940455181600555,
+          "hypothesis": 0.220812485933493
+        },
+        "sentences": {
+          "premise": [
+            1.0847534213098697e-05,
+            0.0009713798372104065,
+            8.236972826125566e-05,
+            0.00010048135482065845,
+            5.113837141834665e-05,
+            3.456906233623158e-05
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_016",
+    "label": "entailment",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 6,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Lernwelt AG, a Düsseldorf-listed educational technology company, revised its director appointment process in 2022 to embed gender-balance criteria at every stage, from role specification through to final board presentation.",
+      "The nomination committee adopted a requirement that all shortlists for non-executive positions include at least one candidate of each sex.",
+      "Candidate evaluations were conducted using a structured scoring rubric separating objective competency criteria from cultural-fit assessments to reduce bias.",
+      "External search firms were contractually required to demonstrate gender-balanced long lists.",
+      "In the two appointment rounds conducted in 2023, all four shortlists met the gender balance requirement, and two of the three positions filled were awarded to women.",
+      "Female non-executive representation rose from 27% to 38%."
+    ],
+    "hypothesis_sents": [
+      "Listed companies must apply gender-balance criteria at every appropriate stage of the director selection and shortlisting process."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": 0.0,
+        "fields": {
+          "premise": 12.0,
+          "hypothesis": 12.0
+        },
+        "sentences": {
+          "premise": [
+            1.5048530030981055e-06,
+            3.128163257315464e-07,
+            1.9361264946837764e-07,
+            3.128163257315464e-07,
+            1.9361264946837764e-07,
+            0.0
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0001317871210630983,
+        "fields": {
+          "premise": 1.1522325860860292,
+          "hypothesis": 0.35583022111677565
+        },
+        "sentences": {
+          "premise": [
+            0.00023406831314787269,
+            -4.93429834023118e-05,
+            -4.219076072331518e-05,
+            0.00017126265447586775,
+            0.00027111865347251296,
+            5.125391180627048e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0002819544170051813,
+        "fields": {
+          "premise": 0.6285654657986015,
+          "hypothesis": 1.6372478955890983
+        },
+        "sentences": {
+          "premise": [
+            0.00834832969121635,
+            -0.00024254279924207367,
+            0.0029083548579365015,
+            -0.00014671038661617786,
+            -4.134536720812321e-05,
+            -0.00026662193886295427
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_004",
+    "label": "entailment",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "HealthCare Ireland Group plc, a Dublin-based healthcare provider, submitted data to a Department of Justice public consultation in 2022 documenting the deterrent effect of clear, escalating disciplinary sanctions on workplace gender-based harassment.",
+      "The submission showed that explicit, proportionate sanctions had reduced repeat harassment incidents within the organisation from 12 per year in 2016 to 2 per year in 2021.",
+      "HealthCare Ireland updated its professional standards charter to align offence categorisation and sanctions with Istanbul Convention Article 45, providing responses calibrated to severity.",
+      "The charter's most serious offences triggered permanent professional debarment and mandatory referral to the Health and Social Care Regulatory Forum, ensuring effective and dissuasive consequences."
+    ],
+    "hypothesis_sents": [
+      "States parties must ensure that offences under the Convention are punishable with effective, proportionate, and dissuasive sanctions, including imprisonment where appropriate."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0007071906002238393,
+        "fields": {
+          "premise": 11.999292809399776,
+          "hypothesis": 1.482475001248531
+        },
+        "sentences": {
+          "premise": [
+            -0.0005405996780609712,
+            -0.00031548264087177813,
+            0.013511903467588127,
+            -0.000368986715329811
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.15615765750408173,
+        "fields": {
+          "premise": 2.477304294705391,
+          "hypothesis": 0.6632995158433914
+        },
+        "sentences": {
+          "premise": [
+            -0.06464481353759766,
+            -0.05174326151609421,
+            0.21434880793094635,
+            0.32029227912425995
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.00012880703434348106,
+        "fields": {
+          "premise": 2.20700496295467,
+          "hypothesis": 0.10312109300866723
+        },
+        "sentences": {
+          "premise": [
+            9.356386726722121e-05,
+            6.61506928736344e-05,
+            0.00014611435472033918,
+            0.00036310352152213454
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_044",
+    "label": "contradiction",
+    "pillar": "equal_economy",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Cork City Council, Ireland, reviewed its grading system in 2022 but retained the legacy seniority-based classification after a working group concluded the existing system was sufficiently objective.",
+      "No gender-neutral job evaluation framework was implemented and no regrading was conducted.",
+      "Female representation in senior management fell from 27% to 19% by December 2023, following several retirements replaced without gender-conscious recruitment.",
+      "No representation target was set and the methodology review was not published."
+    ],
+    "hypothesis_sents": [
+      "Employers must adopt gender-neutral job evaluation methods and promote gender-balanced representation in managerial positions to reduce occupational segregation."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -2.816093228830141e-06,
+        "fields": {
+          "premise": 11.234396979438998,
+          "hypothesis": 11.999997183906771
+        },
+        "sentences": {
+          "premise": [
+            5.960182534181513e-07,
+            5.960182534181513e-07,
+            -1.7880548739412916e-06,
+            2.3840743779146578e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -6.869017852295656e-06,
+        "fields": {
+          "premise": 0.33116926294587756,
+          "hypothesis": 7.077721879303681
+        },
+        "sentences": {
+          "premise": [
+            -5.960182534181513e-07,
+            4.887349859927781e-06,
+            8.46346028993139e-06,
+            7.152220860007219e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -1.282920129597187e-05,
+        "fields": {
+          "premise": 0.3376463211607188,
+          "hypothesis": 0.035162997199222445
+        },
+        "sentences": {
+          "premise": [
+            -4.887350769422483e-06,
+            0.00015113924746401608,
+            3.814517185674049e-06,
+            5.483369022840634e-06
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_108",
+    "label": "neutral",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "EduReform România asbl, a Bucharest-based educational charity, partnered with Romania's National Agency for Equal Opportunities in 2022 to launch a perpetrator intervention programme in three counties.",
+      "The 26-week programme addressed cognitive distortions, anger regulation, and healthy relationship skills, certified in accordance with Istanbul Convention standards.",
+      "Forty-eight men completed the programme in 2023, of whom 38 were court-referred and 10 self-referred.",
+      "A six-month follow-up using police records and victim-reported contact data found recidivism among programme completers at 14%, compared to 38% in a matched comparison group.",
+      "The National Agency confirmed funding for two additional regional programme sites for 2024 based on the evaluation findings."
+    ],
+    "hypothesis_sents": [
+      "Employers must adopt gender-neutral job evaluation methods and promote gender-balanced representation in managerial positions to reduce occupational segregation."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -3.650518920039758e-06,
+        "fields": {
+          "premise": 0.00011825003093690611,
+          "hypothesis": 0.010750199002359295
+        },
+        "sentences": {
+          "premise": [
+            -4.768146482092561e-07,
+            6.556201697094366e-06,
+            0.00017092704729293473,
+            4.93503175675869e-05,
+            -3.5761104300036095e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.003613728331401944,
+        "fields": {
+          "premise": 3.4349860965739936,
+          "hypothesis": 1.0469640314113349
+        },
+        "sentences": {
+          "premise": [
+            -0.0031236057984642684,
+            -0.0016761701554059982,
+            -0.0008029073942452669,
+            0.007458145497366786,
+            0.00890852021984756
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.000563638168387115,
+        "fields": {
+          "premise": 1.439725620788522,
+          "hypothesis": 0.027752017718739808
+        },
+        "sentences": {
+          "premise": [
+            0.0035202206345275044,
+            0.04803440917748958,
+            0.017600467544980347,
+            -0.000300156680168584,
+            0.013615035568363965
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_153",
+    "label": "entailment",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "AnasaziRomania asbl, a Bucharest-based cross-border victim support NGO operating across Romania, Moldova, and Ukraine, established a transnational information-sharing protocol in 2022 modelled on the mutual legal assistance principles of the Istanbul Convention.",
+      "Under the protocol, when a victim relocated across a border, the sending country organisation notified the receiving counterpart within 24 hours, transmitting anonymised risk assessments and referral documentation.",
+      "Where intelligence suggested imminent risk of further violence, information was transmitted proactively without a prior request.",
+      "In 2023, 47 cross-border referrals were completed, with 38 resulting in the receiving organisation establishing protective contact within 48 hours.",
+      "The protocol was formally recognised by the Romanian Ministry of Justice as a model for inter-state victim protection coordination."
+    ],
+    "hypothesis_sents": [
+      "States parties must promptly inform requesting states of the outcome of requested actions and may spontaneously share information to help prevent or investigate offences under the Convention."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0048989239148795605,
+        "fields": {
+          "premise": 11.99510107608512,
+          "hypothesis": 11.99510107608512
+        },
+        "sentences": {
+          "premise": [
+            0.0005147112533450127,
+            -0.0006977682933211327,
+            0.07080953242257237,
+            -0.0017980963457375765,
+            0.006624753121286631
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0028701385017484426,
+        "fields": {
+          "premise": 0.817568306112662,
+          "hypothesis": 9.071670953417197
+        },
+        "sentences": {
+          "premise": [
+            0.030176818603649735,
+            0.001010338542982936,
+            0.16322611668147147,
+            0.002007669536396861,
+            -0.0009613727452233434
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -5.157039049663581e-05,
+        "fields": {
+          "premise": 2.3657578702222963,
+          "hypothesis": 0.7269194598447939
+        },
+        "sentences": {
+          "premise": [
+            0.00010739150093286298,
+            0.01111002705511055,
+            0.0003114241662842687,
+            0.00017068130182451569,
+            0.000271379070909461
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_056",
+    "label": "contradiction",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Hellenic Education Agency, a public body in Athens, adopted a diversity action plan in 2022 but removed gender balance criteria from annual performance review scorecards for heads of department following a legal review that raised concerns about indirect discrimination.",
+      "No gender equality officer was required on appointment panels.",
+      "By December 2023, women held 21% of senior management positions within the Agency, down from 33% in 2021, following several uncontested appointments of male candidates.",
+      "Gender composition data for the 42 supervised institutions was not published."
+    ],
+    "hypothesis_sents": [
+      "EU institutions must achieve gender parity of 50/50 in management positions and embed gender equality commitments in leadership appointment and performance assessment criteria."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -2.47495681833243e-05,
+        "fields": {
+          "premise": 7.2194667322128225,
+          "hypothesis": 11.999975250431817
+        },
+        "sentences": {
+          "premise": [
+            -1.609249557077419e-05,
+            -1.7284532077610493e-05,
+            -1.7999754163611215e-05,
+            -4.7681533033028245e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0015560438623651862,
+        "fields": {
+          "premise": 0.09562873339746147,
+          "hypothesis": 8.376077050925232
+        },
+        "sentences": {
+          "premise": [
+            -0.0015419034207297955,
+            -0.001295780879445374,
+            -0.0015302214615076082,
+            -0.0011620710138231516
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0016111508011817932,
+        "fields": {
+          "premise": 0.47461216896772385,
+          "hypothesis": 0.3155321106314659
+        },
+        "sentences": {
+          "premise": [
+            -0.001560295630042674,
+            -0.0009643597877584398,
+            0.03693045675754547,
+            0.011298097670078278
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_073",
+    "label": "neutral",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "GezondheidEdu B.V., a Rotterdam-based health education company, partnered with the Dutch Ministry of Education and 60 primary and secondary schools across North Holland in 2022 to develop and deliver a gender equality curriculum package.",
+      "The package included age-appropriate classroom modules on gender equality, non-stereotyped role models, healthy relationship skills, and the right to bodily autonomy.",
+      "Teachers received 12 hours of professional development before delivery.",
+      "By June 2023, 12,400 students had completed at least four curriculum sessions.",
+      "A pre-post assessment showed a 24 percentage point increase in students correctly identifying coercive behaviour in relationship scenarios and a 19 percentage point increase in reported confidence to seek help in situations of harm."
+    ],
+    "hypothesis_sents": [
+      "Listed companies must apply gender-balance criteria at every appropriate stage of the director selection and shortlisting process."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0001097417771234177,
+        "fields": {
+          "premise": 5.518028774531558e-05,
+          "hypothesis": 0.0034997171387658454
+        },
+        "sentences": {
+          "premise": [
+            2.2164553229231387e-05,
+            0.0,
+            -7.81976013968233e-05,
+            0.0003573928042897023,
+            -0.00010609125820337795
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.009775093756616116,
+        "fields": {
+          "premise": 3.477783032692969,
+          "hypothesis": 0.2993630850687623
+        },
+        "sentences": {
+          "premise": [
+            0.0062792180106043816,
+            -0.005140978842973709,
+            0.010796925984323025,
+            -0.0065887076780200005,
+            -0.00844009208958596
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.004081959370523691,
+        "fields": {
+          "premise": 2.653117661830038,
+          "hypothesis": 0.21882057702168822
+        },
+        "sentences": {
+          "premise": [
+            0.019182273652404547,
+            -0.0021496351109817624,
+            0.0011551161296665668,
+            0.0026372037827968597,
+            0.0011566588655114174
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_040",
+    "label": "entailment",
+    "pillar": "mainstreaming_intersectionality",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "SaúdeTech Portugal Lda, a Lisbon-based health technology company, launched a Digital Inclusion for Women programme in 2022 targeting rural communities in Alentejo and Trás-os-Montes.",
+      "The programme trained 600 women in digital skills, internet safety, and online health service access through 18 community health centres.",
+      "A fast-track ICT apprenticeship for 45 women from target communities resulted in 32 permanent employment contracts.",
+      "A subsidised mobile internet access scheme was provided to 200 low-income women for 12 months.",
+      "By programme end, internet usage among participating women rose from 28% to 79%, and the gender gap in ICT employment within target municipalities narrowed by 11 percentage points."
+    ],
+    "hypothesis_sents": [
+      "States and organisations must address structural barriers causing the digital gender divide, ensuring women's equal access to digital technologies and ICT career opportunities."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -4.320199877838604e-07,
+        "fields": {
+          "premise": 11.999999567980012,
+          "hypothesis": 4.425719305986604
+        },
+        "sentences": {
+          "premise": [
+            -2.3840733831548278e-07,
+            -4.320199877838604e-07,
+            0.0,
+            -1.1920366205231403e-07,
+            -1.1920366205231403e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0022226988803595304,
+        "fields": {
+          "premise": 0.2160638750065118,
+          "hypothesis": 11.481359797762707
+        },
+        "sentences": {
+          "premise": [
+            -0.0019489658589009196,
+            0.0027935414109379053,
+            0.008895392762497067,
+            0.0029841375071555376,
+            -9.515741840004921e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.00013524403038900346,
+        "fields": {
+          "premise": 0.6564410913997563,
+          "hypothesis": 6.013816057544318
+        },
+        "sentences": {
+          "premise": [
+            0.0006113736453698948,
+            1.894970773719251e-05,
+            0.0005683704075636342,
+            3.576104063540697e-06,
+            0.00018162971537094563
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_102",
+    "label": "neutral",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Lusitano Resorts S.A., a hotel and hospitality group operating across Lisbon and the Algarve, Portugal, launched a Women in Work initiative in 2021 targeting the persistent gender employment gap in its sector.",
+      "The group recruited 210 women into full-time positions previously dominated by men, including maintenance, kitchen management, and security.",
+      "It introduced flexible shift scheduling and subsidised childcare at two flagship resorts, increasing female workforce participation from 41% to 54% by 2023.",
+      "The gender employment gap within the group fell from 18 percentage points in 2019 to 8 percentage points by 2023, placing the group ahead of the national 2030 trajectory towards halving the gap."
+    ],
+    "hypothesis_sents": [
+      "The European Commission must publish annual progress reports on GAP III implementation and conduct a mid-term and final evaluation of its impact on gender equality."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0008583390736021101,
+        "fields": {
+          "premise": 0.00456751132151112,
+          "hypothesis": 0.031194189039524645
+        },
+        "sentences": {
+          "premise": [
+            -0.000688648855430074,
+            -0.00075205419852864,
+            -0.0007298896525753662,
+            -0.0001349441008642316
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.1801331788301468,
+        "fields": {
+          "premise": 2.0937723368406296,
+          "hypothesis": 0.33569012582302094
+        },
+        "sentences": {
+          "premise": [
+            -0.10097737610340118,
+            0.20707185566425323,
+            -0.11811844259500504,
+            -0.1568471658974886
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.048634715378284454,
+        "fields": {
+          "premise": 0.9783243462443352,
+          "hypothesis": 0.1858232095837593
+        },
+        "sentences": {
+          "premise": [
+            -0.04712294926866889,
+            -0.04820023162756115,
+            -0.03046557307243347,
+            -0.04338020831346512
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_039",
+    "label": "contradiction",
+    "pillar": "equal_economy",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Jämlikhetsfonden, a Stockholm-based equality foundation, launched a biannual Gender Pay Report in 2022 but published only a single aggregate, unadjusted national pay gap figure without disaggregation by age, occupation, contract type, or part-time incidence.",
+      "The pension gap module was dropped from the final publication due to data availability issues.",
+      "No determinant analysis or earnings consequence modelling was included.",
+      "The 2022 edition reported one national figure of 7.2% and was downloaded 340 times, cited in no parliamentary inquiries."
+    ],
+    "hypothesis_sents": [
+      "Relevant authorities must regularly publish disaggregated data on the gender pay gap, its determinants, and its consequences on earnings and pensions."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -1.5048530030981055e-06,
+        "fields": {
+          "premise": 6.501517698333032,
+          "hypothesis": 11.999998495146997
+        },
+        "sentences": {
+          "premise": [
+            1.442364248305239e-05,
+            -2.3840732410462806e-07,
+            1.1920360520889517e-07,
+            -8.344256912096171e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -9.088346359931165e-07,
+        "fields": {
+          "premise": 0.11679793162852548,
+          "hypothesis": 5.816160723703206
+        },
+        "sentences": {
+          "premise": [
+            4.410535666465876e-06,
+            5.96018367104989e-07,
+            2.6224806788377464e-06,
+            1.4304439446277684e-06
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -4.4849443838757e-06,
+        "fields": {
+          "premise": 0.35500477284904264,
+          "hypothesis": 0.8279775235128
+        },
+        "sentences": {
+          "premise": [
+            0.00021454824263855699,
+            -1.430443717254093e-06,
+            4.648942649509991e-06,
+            4.410535893839551e-06
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_029",
+    "label": "entailment",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "LogiCar România S.A., a Bucharest-listed freight logistics company, submitted a detailed written contribution to the European Commission's 2030 review of the Women on Boards Directive in October 2030.",
+      "The submission documented the company's progress from 9% to 43% female non-executive board representation over eight years and argued in favour of extending the Directive's scope to large non-listed companies.",
+      "It presented sector data showing that Romanian logistics companies outside the Directive's scope showed virtually no progress, with average female board representation stagnating at 12%.",
+      "LogiCar's contribution was cited in the Commission's official review report as an example of effective voluntary adoption beyond statutory requirements."
+    ],
+    "hypothesis_sents": [
+      "By 31 December 2030, the Commission must review and assess whether the Directive has effectively improved gender balance on boards and consider extending its scope if needed."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0008197537390515208,
+        "fields": {
+          "premise": 11.999180246260948,
+          "hypothesis": 11.999180246260948
+        },
+        "sentences": {
+          "premise": [
+            0.003809492220170796,
+            0.002806446864269674,
+            0.006086956360377371,
+            0.10534000035841018
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.013132700696587563,
+        "fields": {
+          "premise": 2.1773203518241644,
+          "hypothesis": 11.446142544969916
+        },
+        "sentences": {
+          "premise": [
+            -0.012881135888164863,
+            -0.011177663691341877,
+            0.0017315102741122246,
+            -0.011763058369979262
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0007609111489728093,
+        "fields": {
+          "premise": 7.633190275984816,
+          "hypothesis": 0.5503902452765033
+        },
+        "sentences": {
+          "premise": [
+            0.0016936959000304341,
+            -0.00017415842739865184,
+            0.0007721594301983714,
+            -0.00038290792144834995
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_054",
+    "label": "contradiction",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "InnovaTech France S.A., a Paris-listed software services company, conducted an internal review in 2022 that identified low female representation in senior roles but concluded no targeted measures were warranted, attributing the gap to pipeline supply.",
+      "No Women in Leadership programme, sponsorship pairing, or promotion scorecard revision was introduced.",
+      "By December 2023, female representation in senior management had fallen to 8% and board membership to 6%, following departures of three senior women without gender-conscious succession planning.",
+      "No quarterly progress dashboard was published."
+    ],
+    "hypothesis_sents": [
+      "Listed companies must introduce measures to encourage career progression for women at all levels of management and address the underrepresentation of women on boards."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -5.512236498361744e-07,
+        "fields": {
+          "premise": 10.187555715561018,
+          "hypothesis": 11.99999944877635
+        },
+        "sentences": {
+          "premise": [
+            3.0992952702035836e-06,
+            5.960183102615702e-07,
+            0.0,
+            -1.1920366205231403e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -3.531315314830863e-06,
+        "fields": {
+          "premise": 0.4114998432612538,
+          "hypothesis": 7.506396100184929
+        },
+        "sentences": {
+          "premise": [
+            1.192036734209978e-06,
+            -2.8608880029423744e-06,
+            3.4569063700473635e-06,
+            7.235662428684009e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -1.0280383548888494e-06,
+        "fields": {
+          "premise": 2.37362568094602,
+          "hypothesis": 0.020139619849828705
+        },
+        "sentences": {
+          "premise": [
+            -4.76814705052675e-07,
+            3.576109861569421e-06,
+            1.1920366205231403e-06,
+            3.5761092931352323e-07
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_038",
+    "label": "neutral",
+    "pillar": "equal_economy",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "The Małopolska Regional Education Authority in Kraków, Poland, introduced a mandatory pay transparency register for all 214 public schools under its jurisdiction in September 2022.",
+      "Each school was required to publish anonymised salary ranges by role and seniority on its institutional website.",
+      "The Authority established a dedicated equal pay complaint unit staffed by two labour law specialists, which processed 31 complaints in its first year and issued binding corrective orders in 18 cases.",
+      "Training on the equal pay principle was delivered to all 214 head teachers and school administrators.",
+      "By December 2023, the average gender pay gap across the network had narrowed from 11.8% to 6.4%, verified by an independent audit commissioned by the Authority."
+    ],
+    "hypothesis_sents": [
+      "EU external action must combine gender mainstreaming, targeted actions, and political dialogue to accelerate progress towards global gender equality and empowerment goals."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.014006944373250008,
+        "fields": {
+          "premise": -0.013884574334952049,
+          "hypothesis": 0.3188419621437788
+        },
+        "sentences": {
+          "premise": [
+            -0.0006656711921095848,
+            0.010023137554526329,
+            -0.0073661766946315765,
+            0.002565734088420868,
+            -0.004539409652352333
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.00033879990223795176,
+        "fields": {
+          "premise": 1.8244427371537313,
+          "hypothesis": 1.9162316251313314
+        },
+        "sentences": {
+          "premise": [
+            0.022945000207982957,
+            0.0006987720262259245,
+            0.02942210657056421,
+            0.010747692896984518,
+            -0.00024062088050413877
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.004085997585207224,
+        "fields": {
+          "premise": 0.32816522335633636,
+          "hypothesis": 0.6129281125031412
+        },
+        "sentences": {
+          "premise": [
+            0.04452759539708495,
+            0.0026362361386418343,
+            0.010091968346387148,
+            0.010093850549310446,
+            0.00453755771741271
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_139",
+    "label": "contradiction",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 3,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "TransilvaniaCapital S.A., a Bucharest-based investment group, funded a Women in Governance programme between 2021 and 2023, but participation was low and only 28 of the targeted 120 women completed training.",
+      "In the 2020 local elections within target counties, female candidacy rates fell by 8 percentage points due to campaign funding constraints, and women's seat share on local councils declined from 16% to 11%.",
+      "No mediation certification programme was established and no female mediators were appointed to post-election processes."
+    ],
+    "hypothesis_sents": [
+      "Women and girls must participate equally in public and private spheres, including as elected officials, peace negotiators, and mediators, to fulfil the right to democracy for all."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -1.3306015716807451e-05,
+        "fields": {
+          "premise": 7.68796257746817,
+          "hypothesis": 3.469224021559967
+        },
+        "sentences": {
+          "premise": [
+            3.456906597421039e-06,
+            0.0004518020659816102,
+            0.007984127639247163
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -8.756989700486884e-05,
+        "fields": {
+          "premise": 0.29813112741248915,
+          "hypothesis": 7.21075837736862
+        },
+        "sentences": {
+          "premise": [
+            -7.128379002097063e-05,
+            -5.7217757785110734e-05,
+            0.002223268420493696
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0002659847668837756,
+        "fields": {
+          "premise": 1.0110808322497178,
+          "hypothesis": 5.758474917180138
+        },
+        "sentences": {
+          "premise": [
+            -0.0002580429163572262,
+            0.006613491597818211,
+            0.0012732807372231036
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_030",
+    "label": "entailment",
+    "pillar": "mainstreaming_intersectionality",
+    "n_premise_sents": 6,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "HealthTech NL B.V., an Amsterdam-based digital health company, deployed an EU-co-funded telemedicine platform across 60 rural clinics in Rwanda and Burundi between 2022 and 2024.",
+      "The platform was designed with an accessibility-first approach, incorporating audio navigation and simplified interfaces for users with low literacy or visual impairments.",
+      "Of 38,000 patient consultations completed, 67% were with women and 9% with persons with disabilities.",
+      "The system integrated maternal care, contraception counselling, and HIV/AIDS prevention modules.",
+      "Coverage of essential reproductive health services in target districts rose from 34% to 58% over the project period.",
+      "An accessibility audit confirmed the platform met international standards for assistive technology compatibility."
+    ],
+    "hypothesis_sents": [
+      "EU external action must promote universal health coverage by ensuring equitable access to essential health services and information, including for women and girls with disabilities."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -1.0445127372804563e-05,
+        "fields": {
+          "premise": 11.999989554872627,
+          "hypothesis": 11.999989554872627
+        },
+        "sentences": {
+          "premise": [
+            2.6224806788377464e-06,
+            0.00036827332678512903,
+            0.00016890059214347275,
+            0.00017080783891287865,
+            0.00025780449959711405,
+            8.046247694437625e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.001220105797983706,
+        "fields": {
+          "premise": 1.549214364378713,
+          "hypothesis": 7.811511637060903
+        },
+        "sentences": {
+          "premise": [
+            -0.0005432937759906054,
+            0.0022943239891901612,
+            0.0003724785055965185,
+            -0.00024195783771574497,
+            0.006652434705756605,
+            -5.309877451509237e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.00014716439181938767,
+        "fields": {
+          "premise": 2.8004996175295673,
+          "hypothesis": 0.3547432119376026
+        },
+        "sentences": {
+          "premise": [
+            -3.229685535188764e-05,
+            0.00022571306908503175,
+            -5.458793748402968e-05,
+            0.0003320060495752841,
+            -4.159474337939173e-05,
+            2.3479457013309002e-05
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_009",
+    "label": "neutral",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "The Municipality of Padova, Italy, funded a three-year programme targeting the elimination of female genital mutilation and early child marriage in Ethiopia and Somalia, launched in 2021 with a municipal contribution of €320,000 complemented by EU co-funding.",
+      "The programme reached 14 communities and trained 180 community health workers, teachers, and religious leaders as gender equality advocates.",
+      "By 2023, rates of FGM among girls under 15 in the 14 target communities had fallen by 38% according to community health records, and 60 families had signed voluntary pledges to abandon the practice.",
+      "The Municipality published an annual impact report and presented findings at the 2023 European Municipal Gender Equality Forum in Vienna."
+    ],
+    "hypothesis_sents": [
+      "EU funding must support the elimination of harmful practices such as female genital mutilation and child marriage while ensuring access to sexual and reproductive health services."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -12.0,
+        "fields": {
+          "premise": -11.999783946899697,
+          "hypothesis": -3.748652458190918
+        },
+        "sentences": {
+          "premise": [
+            -3.9683475494384766,
+            -1.3749608993530273,
+            -0.7968530654907227,
+            -0.046860694885253906
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -7.628958702087402,
+        "fields": {
+          "premise": -5.316218852996826,
+          "hypothesis": -7.60540834069252
+        },
+        "sentences": {
+          "premise": [
+            0.24716520309448242,
+            -1.5001959800720215,
+            0.12336349487304688,
+            -1.8743348121643066
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -8.751690864562988,
+        "fields": {
+          "premise": -7.333735704421997,
+          "hypothesis": -8.689207013696432
+        },
+        "sentences": {
+          "premise": [
+            1.498678207397461,
+            3.2483091354370117,
+            0.9987115859985352,
+            3.2483091354370117
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_114",
+    "label": "contradiction",
+    "pillar": "funding_global_action",
+    "n_premise_sents": 3,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "EduGlobal Belgium asbl, a Brussels-based international education policy organisation, served as civil society partner in three UN Commission on the Status of Women sessions between 2022 and 2024 and co-drafted gender-responsive language amendments for 12 draft resolutions.",
+      "However, EU delegations declined to formally sponsor the amendments in 10 of the 12 resolutions, citing negotiating sensitivities with bloc partners.",
+      "Only 2 of the 12 resolutions were adopted with gender-responsive language; in the remaining 10, the amendments were dropped in final negotiation rounds."
+    ],
+    "hypothesis_sents": [
+      "The EU must actively promote the inclusion of gender-responsive language in all multilateral resolutions and declarations on gender equality and women's rights."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.00018268341955263168,
+        "fields": {
+          "premise": 8.656247561026248,
+          "hypothesis": 11.999817316580447
+        },
+        "sentences": {
+          "premise": [
+            -0.00017891369702738302,
+            0.40566066389146727,
+            0.004187976635876112
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -2.0339031834737398e-05,
+        "fields": {
+          "premise": 0.28881643817840086,
+          "hypothesis": 5.585689709643702
+        },
+        "sentences": {
+          "premise": [
+            -1.8118956859325408e-05,
+            0.1020300994914578,
+            -1.5496476407861337e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.01775945909321308,
+        "fields": {
+          "premise": 0.3960366975516081,
+          "hypothesis": 3.272737128660083
+        },
+        "sentences": {
+          "premise": [
+            -0.01171216182410717,
+            10.982402665540576,
+            -0.00908863265067339
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_136",
+    "label": "neutral",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "CeltaTech Ltd, a Dublin-based technology company, partnered with the Irish Department of Justice in 2022 to pilot a national workplace GBV coordination framework under Ireland's Second National Strategy on Domestic, Sexual and Gender-Based Violence.",
+      "CeltaTech seconded a senior HR specialist to the national implementation working group for 12 months and contributed to standardised victim-centred support pathways for the Irish private sector.",
+      "Internally, the company launched a cross-functional GBV response team combining HR, legal, occupational health, and security functions, ensuring coordinated responses to all reported incidents.",
+      "In 2023, CeltaTech received the Excellence in Workplace Safety Award from Safe Ireland for its contribution to national policy and its internal zero-tolerance culture."
+    ],
+    "hypothesis_sents": [
+      "Listed companies must ensure that members of the underrepresented sex hold at least 40% of non-executive director positions by 30 June 2026."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -5.5577775128767826e-06,
+        "fields": {
+          "premise": 0.00018785030169965466,
+          "hypothesis": 7.212355777976882
+        },
+        "sentences": {
+          "premise": [
+            0.000851827679980488,
+            -5.125757525092922e-06,
+            1.3350810149859171e-05,
+            6.317794031929225e-06
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0024801772087812424,
+        "fields": {
+          "premise": 4.893287034705281,
+          "hypothesis": 0.4134614486247301
+        },
+        "sentences": {
+          "premise": [
+            0.04054744727909565,
+            0.006141727790236473,
+            0.02730363793671131,
+            0.03118995763361454
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.00020520923135336488,
+        "fields": {
+          "premise": 0.7545694208383793,
+          "hypothesis": 0.13987607719900552
+        },
+        "sentences": {
+          "premise": [
+            0.00013192179903853685,
+            -0.0001764067401381908,
+            -0.00019953225000790553,
+            -0.00018570462452771608
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_017",
+    "label": "entailment",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "RheinFracht GmbH, a Frankfurt-based freight logistics company, updated its disciplinary code in 2022 following Germany's implementation of the psychological violence provisions of the Istanbul Convention.",
+      "The code explicitly defined psychologically coercive conduct — including sustained threats, intimidation, and systematic humiliation — as a dismissible offence and obligated the company to refer credible cases to the public prosecutor.",
+      "Training on recognising and reporting psychological violence was delivered to 280 supervisors and team leaders.",
+      "In 2023, the company investigated four complaints of coercive conduct, dismissed two employees, issued formal warnings in the remaining cases, and referred all four to the Frankfurt Prosecution Service.",
+      "The updated code was endorsed by the works council as compliant with the German Act on Violence Against Women."
+    ],
+    "hypothesis_sents": [
+      "States parties must criminalise intentional conduct that seriously impairs the psychological integrity of a person through coercion or threats."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.013353502377867699,
+        "fields": {
+          "premise": 11.986646497622132,
+          "hypothesis": 11.986646497622132
+        },
+        "sentences": {
+          "premise": [
+            -0.01268217375036329,
+            0.034763528034090996,
+            0.007324205711483955,
+            0.002862216904759407,
+            0.01267911121249199
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -1.6929892301559448,
+        "fields": {
+          "premise": -0.036986589431762695,
+          "hypothesis": 9.718496441841125
+        },
+        "sentences": {
+          "premise": [
+            -0.5916708707809448,
+            -0.40491950511932373,
+            0.589795708656311,
+            0.19801056385040283,
+            0.2784435749053955
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0012077342253178358,
+        "fields": {
+          "premise": 1.4307600010652095,
+          "hypothesis": 1.4262566317338496
+        },
+        "sentences": {
+          "premise": [
+            -0.0006228887941688299,
+            0.010089768329635262,
+            -0.0006548207020387053,
+            -0.0005259193712845445,
+            -8.668855298310518e-05
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_161",
+    "label": "entailment",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "IndustriaGlobal España S.A., a Valencia-based manufacturing multinational, implemented a supplier code of conduct in 2022 requiring all partner factories to adopt zero-tolerance policies on gender-based violence and cooperate with local law enforcement.",
+      "Working with a Moroccan legal reform NGO, IndustriaGlobal co-funded a capacity-building programme for 120 police officers in three production provinces on victim-centred investigation techniques and referral procedures.",
+      "A baseline assessment showed only 23% of workers knew how to report GBV incidents; by programme end the figure had risen to 67%.",
+      "IndustriaGlobal published a supplier compliance report confirming 94% of its 48 partner factories met the updated code of conduct requirements."
+    ],
+    "hypothesis_sents": [
+      "EU external action must support legislation criminalising all forms of gender-based violence and strengthen law enforcement capacity through a victim-centred approach."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0012362991692498326,
+        "fields": {
+          "premise": 11.99876370083075,
+          "hypothesis": 11.99876370083075
+        },
+        "sentences": {
+          "premise": [
+            -0.00035604130243882537,
+            1.0708315576193854,
+            -8.190947119146585e-05,
+            0.00024856720119714737
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.16498540341854095,
+        "fields": {
+          "premise": 0.7056143432855606,
+          "hypothesis": 0.6804578453302383
+        },
+        "sentences": {
+          "premise": [
+            -0.1259453147649765,
+            5.3943560272455215,
+            0.1316113919019699,
+            -0.07518375664949417
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0009225384565070271,
+        "fields": {
+          "premise": 3.9104856475023553,
+          "hypothesis": 5.533535621943884
+        },
+        "sentences": {
+          "premise": [
+            -0.0006142473721411079,
+            2.164975784602575,
+            -0.0004532582242973149,
+            -0.0006583417416550219
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_113",
+    "label": "contradiction",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Rijksdienst Jeugdzorg, a Dutch public authority for youth welfare, submitted a formal recommendation to the Dutch Ministry of Justice in 2022 on extending the statute of limitations for serious sexual offences against minors.",
+      "The Ministry rejected the recommendation in October 2022, concluding that extension beyond the existing 5 years after majority was disproportionate to defendants' due process rights.",
+      "The 2023 Criminal Procedure Reform Act left the limitation period for Article 244 and 245 offences unchanged.",
+      "Rijksdienst Jeugdzorg published a critical note documenting the rejection and its consequences for historical abuse survivors."
+    ],
+    "hypothesis_sents": [
+      "States parties must ensure that the statute of limitations for serious sexual offences is extended sufficiently to allow victims who were minors at the time to prosecute perpetrators after reaching adulthood."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.00016074994346126914,
+        "fields": {
+          "premise": 9.37493461748818,
+          "hypothesis": 8.37507766863564
+        },
+        "sentences": {
+          "premise": [
+            -0.00013635798677569255,
+            0.19348630687454715,
+            0.006939154176507145,
+            -0.00010178892625845037
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -9.372294698550832e-06,
+        "fields": {
+          "premise": 0.039245322882379696,
+          "hypothesis": 0.04898092204257409
+        },
+        "sentences": {
+          "premise": [
+            1.2039569810440298e-05,
+            0.0002449341818646644,
+            -6.675405074929586e-06,
+            8.344259185832925e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0021169506944715977,
+        "fields": {
+          "premise": 0.4444550550542772,
+          "hypothesis": 3.0481788790784776
+        },
+        "sentences": {
+          "premise": [
+            -0.0021107968987053027,
+            0.02865838585421443,
+            0.007650941144675016,
+            -0.0009319586679339409
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_015",
+    "label": "entailment",
+    "pillar": "equal_economy",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Clínica SaludMed S.A., a private hospital network across Barcelona and Valencia, Spain, conducted a comprehensive pay equity audit in 2023 covering 620 employees across twelve job families.",
+      "The independent audit revealed an unexplained gender pay gap of 14.3% concentrated in nursing management and administrative coordination roles.",
+      "The hospital revised its salary bands, reclassified six job titles following a gender-neutral evaluation process, and issued pay corrections to 87 employees, 79 of whom were women.",
+      "Following remediation, the adjusted gender pay gap fell to 2.1%.",
+      "Clínica SaludMed published the full audit findings and remediation steps in its 2023 annual report, becoming the first private healthcare group in Catalonia to do so voluntarily."
+    ],
+    "hypothesis_sents": [
+      "Employers must apply the principle of equal pay for equal work to close the gender pay gap, currently at approximately 16% across EU Member States."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0002969703928101808,
+        "fields": {
+          "premise": 11.99970302960719,
+          "hypothesis": 0.6419775881513488
+        },
+        "sentences": {
+          "premise": [
+            -0.0002893861528718844,
+            0.0006604654190596193,
+            0.003972080041421577,
+            0.0003051522944588214,
+            -0.00025875080973492004
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0033218422904610634,
+        "fields": {
+          "premise": 1.10591225232929,
+          "hypothesis": 1.8720097979530692
+        },
+        "sentences": {
+          "premise": [
+            0.004673583433032036,
+            -0.0012736446224153042,
+            0.013724756427109241,
+            0.0023178784176707268,
+            -0.00043767807073891163
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.00011117222311440855,
+        "fields": {
+          "premise": 2.010007789111114,
+          "hypothesis": 0.547221472239471
+        },
+        "sentences": {
+          "premise": [
+            0.005165039314306341,
+            -3.85027815354988e-05,
+            0.00015815025835763663,
+            0.00044507898564916104,
+            -5.244961357675493e-06
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_007",
+    "label": "neutral",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "BerlinMedienGruppe GmbH, a Berlin-based media organisation, issued an editorial policy in 2022 requiring all conflict and peacetime reporting to apply a unified Istanbul Convention framework when covering gender-based violence.",
+      "Correspondents were trained in trauma-informed interviewing for GBV survivors, with 62 journalists completing a certified 16-hour module.",
+      "In 2023, BerlinMedienGruppe published 38 in-depth investigations on gender-based violence, 14 of which covered conflict-affected settings.",
+      "An independent editorial review confirmed that all 38 investigations complied with the Convention reporting framework, including anonymisation protocols and survivor-centred framing, regardless of whether the setting was peacetime or active conflict."
+    ],
+    "hypothesis_sents": [
+      "The European Commission must adopt a stand-alone gender equality strategy that includes specific policies aimed at closing the gender pay gap."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0004011177225038409,
+        "fields": {
+          "premise": 0.1297790474491194,
+          "hypothesis": 0.15509449609089643
+        },
+        "sentences": {
+          "premise": [
+            -0.00027195307484362274,
+            -0.00030520356813212857,
+            -4.73018444608897e-05,
+            0.0021987970685586333
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.014173625037074089,
+        "fields": {
+          "premise": 4.2603358048945665,
+          "hypothesis": 0.7637645620852709
+        },
+        "sentences": {
+          "premise": [
+            0.11278987117111683,
+            0.08604791946709156,
+            0.45994278974831104,
+            -2.3543834686279297e-06
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0009176511666737497,
+        "fields": {
+          "premise": 2.9991891603567638,
+          "hypothesis": 5.033924839983229
+        },
+        "sentences": {
+          "premise": [
+            0.0015700176008976996,
+            -0.0004752999811898917,
+            0.00582933850819245,
+            0.0371545996167697
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_152",
+    "label": "contradiction",
+    "pillar": "equal_economy",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "The Małopolska Regional Education Authority in Kraków, Poland, proposed a mandatory pay transparency register for its 214 public schools in September 2022 but withdrew the initiative three months later following objections from school principals over administrative burden.",
+      "No complaint unit was established and no salary data was published on institutional websites.",
+      "Head teachers received no training on the equal pay principle.",
+      "By December 2023, the average gender pay gap across the network remained at 11.2%, virtually unchanged from the 11.8% baseline, with no corrective orders having been issued."
+    ],
+    "hypothesis_sents": [
+      "Member States must take effective measures to enforce the legal principle of equal pay for equal work and improve pay transparency at the national level."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -7.584239938296378e-06,
+        "fields": {
+          "premise": 8.687668845508597,
+          "hypothesis": 11.999992415760062
+        },
+        "sentences": {
+          "premise": [
+            -4.6489431042573415e-06,
+            -3.2184989322558977e-06,
+            -3.2184989322558977e-06,
+            -5.960182534181513e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -3.8889261304575484e-06,
+        "fields": {
+          "premise": 0.3160527798322619,
+          "hypothesis": 3.3546356412557543
+        },
+        "sentences": {
+          "premise": [
+            -7.152218586270465e-07,
+            6.079386821511434e-06,
+            8.46345983518404e-06,
+            1.1920383258257061e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -2.2200749754119897e-06,
+        "fields": {
+          "premise": 0.5040863009287477,
+          "hypothesis": 5.472058460314429
+        },
+        "sentences": {
+          "premise": [
+            1.0728329016274074e-06,
+            2.5032770736288512e-06,
+            7.748237976556993e-06,
+            1.6688512687323964e-05
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_121",
+    "label": "neutral",
+    "pillar": "equal_economy",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "NordStaal B.V., a Rotterdam-based steel manufacturer, pre-emptively adopted a company-level gender equality strategy in 2021 modelled on the forthcoming EU framework.",
+      "The strategy included four pillars: equal pay certification, women-in-STEM recruitment targets, gender-sensitive ergonomics in production facilities, and eight-week paid paternity leave.",
+      "An independent pay equity review identified a 9.7% raw gender pay gap, reduced to 3.2% after controlling for role and seniority.",
+      "NordStaal set a binding target of closing the residual gap to below 1% by 2024 and submitted its strategy to the Dutch Social and Economic Council as a sectoral model.",
+      "By 2023, female employment in technical roles had grown from 8% to 14%."
+    ],
+    "hypothesis_sents": [
+      "States must ensure sustained funding of universal health coverage, including sexual and reproductive health services, with particular attention to women and girls with disabilities."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -7.791440293658525e-05,
+        "fields": {
+          "premise": 5.0065500545315444e-06,
+          "hypothesis": 8.01233987887099
+        },
+        "sentences": {
+          "premise": [
+            0.00029150616319384426,
+            -7.557512435596436e-05,
+            -4.6370227209990844e-05,
+            4.5766879338771105e-05,
+            1.013230939861387e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0010369796073064208,
+        "fields": {
+          "premise": 1.6584214192116633,
+          "hypothesis": 0.3906129520619288
+        },
+        "sentences": {
+          "premise": [
+            0.20045440609101206,
+            0.008731032372452319,
+            0.017129704006947577,
+            0.2244137894595042,
+            0.0017759796464815736
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0011751054553315043,
+        "fields": {
+          "premise": 1.76462727796752,
+          "hypothesis": 0.015862586093135178
+        },
+        "sentences": {
+          "premise": [
+            0.0020078386878594756,
+            0.007446918752975762,
+            -3.5762786865234375e-07,
+            0.02209064003545791,
+            0.00033011543564498425
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_137",
+    "label": "entailment",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "WarszawaLogistyk sp. z o.o., a Warsaw-based logistics company, developed a due diligence protocol in 2022 for handling gender-based violence incidents involving employees or subcontractors, in cooperation with the Polish Ombudsman's Office.",
+      "The protocol established mandatory internal investigations to be completed within 14 days of any reported incident, with referral to the National Prosecution Service where criminal conduct was identified.",
+      "A victim compensation fund of PLN 200,000 was set up, from which four employees received compensation in 2023 independent of criminal proceedings.",
+      "All investigation records were maintained under strict data protection standards and shared with prosecution authorities upon request, resulting in three successful prosecutions within 18 months of protocol implementation."
+    ],
+    "hypothesis_sents": [
+      "States must exercise due diligence to prevent, investigate, and prosecute acts of violence against women committed by non-state actors and ensure compensation for victims."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.04177580773830414,
+        "fields": {
+          "premise": 11.958224192261696,
+          "hypothesis": 11.958224192261696
+        },
+        "sentences": {
+          "premise": [
+            -0.04065976128913462,
+            -0.03655841341242194,
+            0.41961778700351715,
+            -0.03940836410038173
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.14768019318580627,
+        "fields": {
+          "premise": 3.6328586041927338,
+          "hypothesis": 11.53562268614769
+        },
+        "sentences": {
+          "premise": [
+            -0.14618925843387842,
+            -0.08174566179513931,
+            0.534470409154892,
+            -0.0559365376830101
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0019460106268525124,
+        "fields": {
+          "premise": 1.6187294339761138,
+          "hypothesis": 0.8861414408311248
+        },
+        "sentences": {
+          "premise": [
+            -0.0018325735363760032,
+            0.06063649710267782,
+            0.27075212355703115,
+            0.05306186806410551
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_050",
+    "label": "neutral",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 6,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "FundacjaPol, a Warsaw-based governance advisory foundation, worked with 12 Polish listed companies in 2022 to implement board diversity action plans compliant with the Women on Boards Directive.",
+      "Each company signed a legally binding memorandum committing to specific gender representation targets and annual reporting obligations.",
+      "FundacjaPol provided each company with a tailored nomination process review and access to a database of 240 pre-screened qualified female board candidates.",
+      "Across the 12 companies, female board representation increased from an average of 18% to 31% over 24 months.",
+      "Three companies reached the 40% non-executive threshold by December 2023.",
+      "FundacjaPol published a progress report confirming all 12 companies maintained or increased their female board share year-on-year."
+    ],
+    "hypothesis_sents": [
+      "States parties must establish or support intervention programmes for domestic violence perpetrators aimed at encouraging non-violent behaviour and preventing future offences."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -4.084206375409849e-05,
+        "fields": {
+          "premise": 7.533671669079922e-05,
+          "hypothesis": 5.345565484993131
+        },
+        "sentences": {
+          "premise": [
+            -5.840982339577749e-06,
+            -3.4688267987803556e-05,
+            -3.635711937022279e-05,
+            -1.943019924510736e-05,
+            1.4304423530120403e-06,
+            2.193347245338373e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.03806088864803314,
+        "fields": {
+          "premise": 2.294928327202797,
+          "hypothesis": 6.104325547814369
+        },
+        "sentences": {
+          "premise": [
+            0.655355229973793,
+            0.787958636879921,
+            -0.02554146759212017,
+            0.4361700862646103,
+            0.04084828495979309,
+            0.18742719292640686
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -6.051066520740278e-05,
+        "fields": {
+          "premise": 3.010668563812942,
+          "hypothesis": 2.1419170379340358
+        },
+        "sentences": {
+          "premise": [
+            0.038025162339181406,
+            5.089996921014972e-05,
+            -1.1085940059274435e-05,
+            0.0011256697289354634,
+            0.0018739592451311182,
+            0.048575452685327036
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_116",
+    "label": "contradiction",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "TecnoBarcelona S.L., a Barcelona-based software development firm, updated its code of conduct in 2022 following Spain's stalking legislation reform but did not implement a digital harassment monitoring protocol for company-issued devices.",
+      "Cybersecurity and HR teams received no training on identifying patterns of repeated threatening or surveillance behaviour.",
+      "In 2023, two incidents later identified as stalking were handled informally as interpersonal disputes and closed without referral to the National Police.",
+      "No restraining orders were sought and neither affected employee received legal support."
+    ],
+    "hypothesis_sents": [
+      "States parties must criminalise stalking, defined as intentional and repeated threatening conduct directed at another person that causes them to fear for their safety."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.08818928152322769,
+        "fields": {
+          "premise": 7.849677883088589,
+          "hypothesis": 11.911810718476772
+        },
+        "sentences": {
+          "premise": [
+            -0.0497119165956974,
+            0.5164986476302147,
+            0.6699595078825951,
+            0.33588283509016037
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.018355369567871094,
+        "fields": {
+          "premise": 0.4787428081035614,
+          "hypothesis": 8.558577537536621
+        },
+        "sentences": {
+          "premise": [
+            -0.002169797196984291,
+            0.008080080151557922,
+            0.02492092177271843,
+            0.0023377444595098495
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.8745765089988708,
+        "fields": {
+          "premise": -0.16680824756622314,
+          "hypothesis": -0.8435584548860788
+        },
+        "sentences": {
+          "premise": [
+            -0.7129833847284317,
+            -0.008977830410003662,
+            1.2641573548316956,
+            -0.2949373722076416
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_100",
+    "label": "entailment",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "FarmaGroup S.p.A., a Milan-listed pharmaceutical manufacturer, launched a board renewal programme in 2022 to comply with the Women on Boards Directive.",
+      "Following a rigorous external search process conducted by a gender-aware executive search firm, three new female non-executive directors were appointed between March 2022 and June 2023.",
+      "The appointments raised female non-executive board membership from 25% to 44%, exceeding the 40% threshold two years ahead of the June 2026 statutory deadline.",
+      "The nomination committee revised its candidate assessment criteria to include explicit references to diversity objectives.",
+      "FarmaGroup published its board gender composition data and appointment methodology in its 2023 annual corporate governance report."
+    ],
+    "hypothesis_sents": [
+      "Listed companies must ensure that members of the underrepresented sex hold at least 40% of non-executive director positions by 30 June 2026."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -1.9361264946837764e-07,
+        "fields": {
+          "premise": 11.99999980638735,
+          "hypothesis": 0.29882566641084907
+        },
+        "sentences": {
+          "premise": [
+            0.0,
+            0.0,
+            2.1554494352173066,
+            1.1920367626316875e-07,
+            -1.9361264946837764e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0001129602751461789,
+        "fields": {
+          "premise": 4.394636204306153,
+          "hypothesis": 9.12737994438794
+        },
+        "sentences": {
+          "premise": [
+            9.536306606605649e-07,
+            -3.2542593544349074e-05,
+            0.8009678626694949,
+            -3.2661802833899856e-05,
+            1.560835517011583e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.001940057729370892,
+        "fields": {
+          "premise": 4.000365926767699,
+          "hypothesis": 0.005772450822405517
+        },
+        "sentences": {
+          "premise": [
+            -0.0009653483284637332,
+            -0.0010045370436273515,
+            4.759381963755004,
+            -0.00041841238271445036,
+            0.0005697280867025256
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_060",
+    "label": "neutral",
+    "pillar": "mainstreaming_intersectionality",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "SaúdeTech Portugal Lda, a Lisbon-based health technology company, launched a Digital Inclusion for Women programme in 2022 targeting rural communities in Alentejo and Trás-os-Montes.",
+      "The programme trained 600 women in digital skills, internet safety, and online health service access through 18 community health centres.",
+      "A fast-track ICT apprenticeship for 45 women from target communities resulted in 32 permanent employment contracts.",
+      "A subsidised mobile internet access scheme was provided to 200 low-income women for 12 months.",
+      "By programme end, internet usage among participating women rose from 28% to 79%, and the gender gap in ICT employment within target municipalities narrowed by 11 percentage points."
+    ],
+    "hypothesis_sents": [
+      "Member States must take effective measures to enforce the legal principle of equal pay for equal work and improve pay transparency at the national level."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -7.219262624857947e-05,
+        "fields": {
+          "premise": 0.00011978499969700351,
+          "hypothesis": 0.023034570513118524
+        },
+        "sentences": {
+          "premise": [
+            0.00038088320434326306,
+            0.0005001400786568411,
+            -1.3350811059353873e-05,
+            0.00011775854363804683,
+            1.132434408646077e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0007177923689596355,
+        "fields": {
+          "premise": 2.703694667958189,
+          "hypothesis": 0.03646744444267824
+        },
+        "sentences": {
+          "premise": [
+            0.1262570287217386,
+            0.03297320782439783,
+            0.0017660728772170842,
+            0.0329548793961294,
+            0.05420646845595911
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0007152927573770285,
+        "fields": {
+          "premise": 2.4241728412453085,
+          "hypothesis": 0.02831276343204081
+        },
+        "sentences": {
+          "premise": [
+            -1.7880229279398918e-06,
+            -0.0006160409029689617,
+            -0.0006860134508315241,
+            -0.0006369015391101129,
+            -0.0006390472044586204
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_095",
+    "label": "contradiction",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 3,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "AnasaziRomania asbl, a Bucharest-based cross-border victim support NGO, established a transnational network in 2022, but delays in inter-organisational communication meant that information on relocated victims was transmitted on average 12 days after relocation, well beyond the 24-hour target.",
+      "Proactive sharing of risk intelligence without a prior request never occurred during the 2023 operating period.",
+      "Of 47 cross-border referrals attempted, only 4 resulted in the receiving organisation establishing protective contact within 48 hours, and 19 cases were lost to follow-up entirely due to communication failures."
+    ],
+    "hypothesis_sents": [
+      "States parties must promptly inform requesting states of the outcome of requested actions and may spontaneously share information to help prevent or investigate offences under the Convention."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.00041458409396000206,
+        "fields": {
+          "premise": 8.68725803095731,
+          "hypothesis": 11.99958541590604
+        },
+        "sentences": {
+          "premise": [
+            0.036231584585038945,
+            0.09736840773257427,
+            0.012937986030010507
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -9.253090865968261e-06,
+        "fields": {
+          "premise": 0.4807335590658113,
+          "hypothesis": 4.119700715476029
+        },
+        "sentences": {
+          "premise": [
+            -5.602571945928503e-06,
+            0.005311428633831383,
+            0.0002628110587465926
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.000251326389843598,
+        "fields": {
+          "premise": 1.5595745708269533,
+          "hypothesis": 0.695367779902881
+        },
+        "sentences": {
+          "premise": [
+            0.0004918343911413103,
+            0.005143454152857885,
+            0.0014193309179972857
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_014",
+    "label": "neutral",
+    "pillar": "funding_global_action",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "EqualAid Belgium asbl, a Brussels-based international development NGO, facilitated a structured civil society dialogue in 2021 to support the European Parliament's deliberations on endorsing GAP III.",
+      "The organisation convened four thematic hearings attended by 68 MEPs and 40 women's rights organisations from EU partner countries, producing 22 consolidated civil society recommendations on GAP III implementation priorities.",
+      "EqualAid published a policy brief comparing GAP III commitments with GAP II and identifying six areas requiring stronger oversight.",
+      "The European Parliament adopted a resolution endorsing GAP III in March 2021, incorporating 14 of the 22 civil society recommendations.",
+      "EqualAid subsequently monitored and reported annually on Parliament's follow-up to the resolution."
+    ],
+    "hypothesis_sents": [
+      "EU external action must support legislation criminalising all forms of gender-based violence and strengthen law enforcement capacity through a victim-centred approach."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0002631238894537091,
+        "fields": {
+          "premise": -0.00018330223247176036,
+          "hypothesis": 4.829171270946972
+        },
+        "sentences": {
+          "premise": [
+            0.0008094608783721924,
+            0.00020162659347988665,
+            9.498331928625703e-05,
+            0.000595215184148401,
+            0.0002109208144247532
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.11321423202753067,
+        "fields": {
+          "premise": 1.7026205286383629,
+          "hypothesis": -0.0811188779771328
+        },
+        "sentences": {
+          "premise": [
+            0.3668028637766838,
+            0.3168557211756706,
+            -0.09500949829816818,
+            0.9412365183234215,
+            0.014120660722255707
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.024069765582680702,
+        "fields": {
+          "premise": 0.842091640457511,
+          "hypothesis": 0.015187228098511696
+        },
+        "sentences": {
+          "premise": [
+            0.08663110248744488,
+            0.29058980010449886,
+            0.07661032490432262,
+            0.014273377135396004,
+            0.05710865370929241
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_013",
+    "label": "entailment",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "GezondheidEdu B.V., a Rotterdam-based health education company, partnered with the Dutch Ministry of Education and 60 primary and secondary schools across North Holland in 2022 to develop and deliver a gender equality curriculum package.",
+      "The package included age-appropriate classroom modules on gender equality, non-stereotyped role models, healthy relationship skills, and the right to bodily autonomy.",
+      "Teachers received 12 hours of professional development before delivery.",
+      "By June 2023, 12,400 students had completed at least four curriculum sessions.",
+      "A pre-post assessment showed a 24 percentage point increase in students correctly identifying coercive behaviour in relationship scenarios and a 19 percentage point increase in reported confidence to seek help in situations of harm."
+    ],
+    "hypothesis_sents": [
+      "States parties must include in school curricula at all levels educational materials on gender equality, non-stereotyped gender roles, and the right to personal integrity."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -3.173704271830502e-06,
+        "fields": {
+          "premise": 11.999996826295728,
+          "hypothesis": 8.314792320375318
+        },
+        "sentences": {
+          "premise": [
+            7.509830766139203e-06,
+            0.0003147728668864147,
+            -1.9072585928370245e-06,
+            -4.768146482092561e-07,
+            -1.0728329016274074e-06
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0069390251301229,
+        "fields": {
+          "premise": 2.267059473786503,
+          "hypothesis": 9.290261177811772
+        },
+        "sentences": {
+          "premise": [
+            0.0017888895235955715,
+            0.39906191686168313,
+            -0.00461189984343946,
+            0.03834600606933236,
+            0.027878920082002878
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.003336337162181735,
+        "fields": {
+          "premise": 4.43547687237151,
+          "hypothesis": 2.242836090968922
+        },
+        "sentences": {
+          "premise": [
+            -0.0029764419014099985,
+            -0.0026809671544469893,
+            -0.003191318435710855,
+            -0.0030407971935346723,
+            -0.0019619378726929426
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_130",
+    "label": "contradiction",
+    "pillar": "funding_global_action",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "EqualAid Belgium asbl, a Brussels-based international development NGO, facilitated civil society hearings in 2021 ahead of the European Parliament's deliberations on GAP III.",
+      "The Parliament's resolution, adopted in September 2021 with 31 votes against and 14 abstentions, declined to formally endorse GAP III as presented, calling instead for significant revisions to the implementation framework.",
+      "Only 3 of the 22 civil society recommendations were referenced in the resolution text.",
+      "The Council issued no formal endorsement position by end of 2021."
+    ],
+    "hypothesis_sents": [
+      "The European Parliament and the Council must endorse the EU Gender Action Plan III and cooperate with the Commission in its full implementation."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.007958762347698212,
+        "fields": {
+          "premise": 6.680796273052692,
+          "hypothesis": 11.992041237652302
+        },
+        "sentences": {
+          "premise": [
+            -0.007898490090155974,
+            0.01593932695686817,
+            0.001576196402311325,
+            0.004206360317766666
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -3.416665640543215e-05,
+        "fields": {
+          "premise": 0.7609498964920931,
+          "hypothesis": 3.048647092498868
+        },
+        "sentences": {
+          "premise": [
+            -3.015852644239203e-05,
+            0.00015530770542682149,
+            3.218499114154838e-05,
+            -2.133745510946028e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.006193506997078657,
+        "fields": {
+          "premise": 0.7067312118597329,
+          "hypothesis": 3.76762379379943
+        },
+        "sentences": {
+          "premise": [
+            -0.005510023271199316,
+            0.09732030751183629,
+            0.02560673328116536,
+            -0.004584025009535253
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_165",
+    "label": "contradiction",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 3,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Energía Ibérica S.A., a Madrid-listed energy utility, collected board gender composition data from 2022 but treated the information as commercially sensitive and did not publish it on its corporate website or include it in its annual integrated report.",
+      "The data was shared only with the nomination committee at its annual closed meeting.",
+      "No external auditor reviewed the figures, no corrective roadmap was published, and no gender balance disclosures were filed with Spain's National Securities Market Commission."
+    ],
+    "hypothesis_sents": [
+      "Listed companies must publish annually on their website and in their annual reports the gender composition of their boards and the measures taken to achieve gender balance."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -3.128163257315464e-07,
+        "fields": {
+          "premise": 7.750447437275227,
+          "hypothesis": 11.999999687183674
+        },
+        "sentences": {
+          "premise": [
+            3.6953136373085727e-06,
+            1.1920366205231403e-07,
+            8.344256343661982e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -2.45848218582978e-06,
+        "fields": {
+          "premise": 0.07486673465450622,
+          "hypothesis": 7.924055502028068
+        },
+        "sentences": {
+          "premise": [
+            -7.152218586270465e-07,
+            -7.152218586270465e-07,
+            -1.9072585359936056e-06
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -4.320199877838604e-07,
+        "fields": {
+          "premise": 0.690435692781648,
+          "hypothesis": 0.002678436107999005
+        },
+        "sentences": {
+          "premise": [
+            2.3840732410462806e-07,
+            2.3840732410462806e-07,
+            5.96018367104989e-07
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_117",
+    "label": "entailment",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "BerlinMedienGruppe GmbH, a Berlin-based media organisation, issued an editorial policy in 2022 requiring all conflict and peacetime reporting to apply a unified Istanbul Convention framework when covering gender-based violence.",
+      "Correspondents were trained in trauma-informed interviewing for GBV survivors, with 62 journalists completing a certified 16-hour module.",
+      "In 2023, BerlinMedienGruppe published 38 in-depth investigations on gender-based violence, 14 of which covered conflict-affected settings.",
+      "An independent editorial review confirmed that all 38 investigations complied with the Convention reporting framework, including anonymisation protocols and survivor-centred framing, regardless of whether the setting was peacetime or active conflict."
+    ],
+    "hypothesis_sents": [
+      "The Convention applies to all forms of violence against women, including domestic violence, in both peacetime and situations of armed conflict."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -2.3199920178740285e-05,
+        "fields": {
+          "premise": 11.999976800079821,
+          "hypothesis": 2.2807645064549433
+        },
+        "sentences": {
+          "premise": [
+            0.0014766642361792037,
+            9.560134094499517e-05,
+            1.2039568900945596e-05,
+            0.0009195885158987949
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.00023596010578330606,
+        "fields": {
+          "premise": 1.3811687973939115,
+          "hypothesis": 0.20329311468231026
+        },
+        "sentences": {
+          "premise": [
+            -6.436996045522392e-06,
+            0.00041786029760260135,
+            -1.645009615458548e-05,
+            0.0005214940902078524
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.00018065694894175977,
+        "fields": {
+          "premise": 2.256072108706576,
+          "hypothesis": 0.05814854156051297
+        },
+        "sentences": {
+          "premise": [
+            0.037899968287092634,
+            -2.71784228971228e-05,
+            0.0005461912514874712,
+            -0.00011072919005528092
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_147",
+    "label": "neutral",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "MédiasBelgique SA, a Brussels-based media group, launched a public awareness campaign in 2022 in partnership with the Belgian Institute for the Equality of Women and Men, encouraging bystander reporting of gender-based violence.",
+      "The campaign reached an estimated audience of 2.1 million across five television channels and four regional newspapers, directing viewers to a single non-emergency reporting line.",
+      "A companion documentary series profiled eight witnesses who had reported violence and the outcomes achieved.",
+      "In the 12 months following launch, calls to the reporting line increased by 43%, and the proportion of GBV reports originating from witnesses rather than victims rose from 9% to 19% nationally."
+    ],
+    "hypothesis_sents": [
+      "The European Commission must publish annual progress reports on GAP III implementation and conduct a mid-term and final evaluation of its impact on gender equality."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.002478508511558175,
+        "fields": {
+          "premise": 0.0009248470887541771,
+          "hypothesis": 0.19222495122812688
+        },
+        "sentences": {
+          "premise": [
+            -0.0015359584940597415,
+            -0.002031750453170389,
+            -0.0023703163824393414,
+            -0.0013421039329841733
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.1003061980009079,
+        "fields": {
+          "premise": 1.5202528983354568,
+          "hypothesis": 0.4107234627008438
+        },
+        "sentences": {
+          "premise": [
+            0.4233110696077347,
+            0.04242734611034393,
+            0.12531307339668274,
+            0.24818696081638336
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.10035482794046402,
+        "fields": {
+          "premise": 1.7165789231657982,
+          "hypothesis": -0.08460767567157745
+        },
+        "sentences": {
+          "premise": [
+            -0.0936177927069366,
+            -0.09172371681779623,
+            -0.09508051676675677,
+            -0.06228315085172653
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_018",
+    "label": "neutral",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "ManufactureVerte S.A.S., a Lyons-based composite materials manufacturer, partnered with the Rhône-Alpes child protection services agency in 2022 to integrate child witness support into the domestic violence response offered through its employee assistance scheme.",
+      "All employees seeking domestic violence protection were automatically assessed for dependent children in the household, with referrals to age-appropriate psychosocial support made within five working days.",
+      "In 2023, 11 children of affected employees were referred to specialised therapeutic services, including three receiving trauma-focused cognitive behavioural therapy.",
+      "ManufactureVerte reported a 100% referral completion rate and zero cases in which child witness needs were overlooked in the adult victim support process."
+    ],
+    "hypothesis_sents": [
+      "Listed companies must achieve a more balanced representation of women and men among their directors through effective and legally binding measures."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -3.6550729419104755e-05,
+        "fields": {
+          "premise": 0.0002978422708110884,
+          "hypothesis": 5.225476907522534
+        },
+        "sentences": {
+          "premise": [
+            8.368097041966394e-05,
+            6.556201697094366e-06,
+            9.607082756701857e-05,
+            6.329714960884303e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.004117223434150219,
+        "fields": {
+          "premise": 3.6136300833895802,
+          "hypothesis": 1.5539872916415334
+        },
+        "sentences": {
+          "premise": [
+            -0.0034829414798878133,
+            -2.2080261260271072e-05,
+            -0.0037777083343826234,
+            0.0018329094164073467
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.000556843588128686,
+        "fields": {
+          "premise": 1.7781506606843323,
+          "hypothesis": 3.814315659692511
+        },
+        "sentences": {
+          "premise": [
+            0.00015749555313959718,
+            -0.00029324289062060416,
+            -0.0004971673479303718,
+            -0.00043137425382155925
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_081",
+    "label": "entailment",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "TransilvaniaCapital S.A., a Bucharest-based investment group, funded a €500,000 Women in Governance programme in partnership with the Romanian Government and UNDP between 2021 and 2023.",
+      "The programme trained 120 women candidates from rural constituencies for local council elections and provided 30 women with advanced conflict resolution certification recognised by the Romanian Council of Mediation.",
+      "In the 2020 local elections within target counties, female candidacy rates rose by 14 percentage points and women's seat share on local councils increased from 16% to 23%.",
+      "Two programme graduates were appointed as official mediators in post-election dispute resolution processes, the first female mediator appointments in those jurisdictions."
+    ],
+    "hypothesis_sents": [
+      "Women and girls must participate equally in public and private spheres, including as elected officials, peace negotiators, and mediators, to fulfil the right to democracy for all."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -1.8624639324116288e-06,
+        "fields": {
+          "premise": 11.999998137536068,
+          "hypothesis": 7.455447718682308
+        },
+        "sentences": {
+          "premise": [
+            4.0290840161105734e-05,
+            0.00010275356112288137,
+            0.0001565034101531637,
+            0.00046336485615938727
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0011262869229540229,
+        "fields": {
+          "premise": 2.9893064523348585,
+          "hypothesis": 4.189503195346333
+        },
+        "sentences": {
+          "premise": [
+            -0.0005584802711382508,
+            -0.0005512125208042562,
+            0.0007486911490559578,
+            0.004126323503442109
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.001960274763405323,
+        "fields": {
+          "premise": 3.616786482743919,
+          "hypothesis": 7.513647559098899
+        },
+        "sentences": {
+          "premise": [
+            0.002234469633549452,
+            0.0007556783966720104,
+            -0.00036995531991124153,
+            -0.0010253500659018755
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_084",
+    "label": "contradiction",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "WarszawaLogistyk sp. z o.o., a Warsaw-based logistics company, was notified of gender-based violence incidents involving employees in 2022 but did not establish a formal investigation protocol or victim compensation mechanism.",
+      "Reported incidents were acknowledged informally by HR with no mandatory timelines or referral obligations.",
+      "No cases were referred to the National Prosecution Service.",
+      "Zero employees received compensation, and all four incidents reported during 2023 were closed administratively without documented investigation outcomes."
+    ],
+    "hypothesis_sents": [
+      "States must exercise due diligence to prevent, investigate, and prosecute acts of violence against women committed by non-state actors and ensure compensation for victims."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -1.771655115589965e-05,
+        "fields": {
+          "premise": 9.250090048646598,
+          "hypothesis": 11.999982283448844
+        },
+        "sentences": {
+          "premise": [
+            -1.3350810149859171e-05,
+            2.121825127687771e-05,
+            8.654186058265623e-05,
+            0.00012885182331956457
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -3.4121114822482923e-06,
+        "fields": {
+          "premise": 0.030535454184928312,
+          "hypothesis": 7.009844228879729
+        },
+        "sentences": {
+          "premise": [
+            -8.344254638359416e-07,
+            -1.6688511550455587e-06,
+            2.5032770736288512e-06,
+            3.5761104300036095e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -1.3425219549390022e-05,
+        "fields": {
+          "premise": 0.7369291640634401,
+          "hypothesis": 0.004466540906832961
+        },
+        "sentences": {
+          "premise": [
+            -1.0132311672350625e-05,
+            -2.741684511420317e-06,
+            -6.556201697094366e-06,
+            -1.0370718882768415e-05
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_075",
+    "label": "neutral",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 3,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Rijksdienst Jeugdzorg, a Dutch public authority for youth welfare, submitted a formal policy recommendation to the Dutch Ministry of Justice in 2022 supporting the extension of the statute of limitations for serious sexual offences against minors, based on an analysis of 84 closed cases in which victims had been unable to initiate prosecution due to limitation periods expiring before they were psychologically ready to report.",
+      "The recommendation was adopted in the 2023 Criminal Procedure Reform Act, which extended the limitation period for sexual offences against minors from 12 to 20 years post-majority, in line with Istanbul Convention requirements.",
+      "Rijksdienst Jeugdzorg published a guidance note for youth welfare workers explaining the new provisions and referral rights for victims of historical sexual abuse."
+    ],
+    "hypothesis_sents": [
+      "States and organisations must address structural barriers causing the digital gender divide, ensuring women's equal access to digital technologies and ICT career opportunities."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -4.127333340875339e-06,
+        "fields": {
+          "premise": 2.753604803729104e-05,
+          "hypothesis": 5.244534656693759
+        },
+        "sentences": {
+          "premise": [
+            8.46346028993139e-06,
+            -2.3840721041779034e-07,
+            1.4304441720014438e-06
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.07890751957893372,
+        "fields": {
+          "premise": 3.4867362678050995,
+          "hypothesis": 0.09484820067882538
+        },
+        "sentences": {
+          "premise": [
+            0.39529332518577576,
+            1.3273425996303558,
+            -0.07671835902146995
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.00018422940047457814,
+        "fields": {
+          "premise": 2.001674481842201,
+          "hypothesis": 0.291622975084465
+        },
+        "sentences": {
+          "premise": [
+            -0.00010643419955158606,
+            0.0007304526516236365,
+            0.00024989675148390234
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_052",
+    "label": "contradiction",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Fabbrica Ferretti S.p.A., a Brescia-based manufacturing company with 480 employees, was informed in January 2023 about employees experiencing domestic violence but declined to establish a formal workplace policy, citing concerns about overstepping into employees' personal lives.",
+      "No safety leave provision was created and no partnership with a local anti-violence centre was pursued.",
+      "Two employees who disclosed domestic violence situations were advised to handle personal matters outside work hours.",
+      "By year-end, both employees had resigned and 0% of line managers had received any training on supporting at-risk staff."
+    ],
+    "hypothesis_sents": [
+      "States parties must protect women from all forms of violence and establish comprehensive policies and support measures for all victims of domestic violence."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -1.981667537620524e-06,
+        "fields": {
+          "premise": 6.2519468517980386,
+          "hypothesis": 11.999998018332462
+        },
+        "sentences": {
+          "premise": [
+            -2.3840721041779034e-07,
+            1.0728331290010829e-06,
+            7.867441581765888e-06,
+            7.509830993512878e-06
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -1.4736459888808895e-05,
+        "fields": {
+          "premise": 0.7824685432451588,
+          "hypothesis": 5.802960441305004
+        },
+        "sentences": {
+          "premise": [
+            -4.6489431042573415e-06,
+            1.7761346498446073e-05,
+            2.026462425419595e-06,
+            -7.271423783095088e-06
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.00013691288768313825,
+        "fields": {
+          "premise": 1.1939250816649292,
+          "hypothesis": 0.004048689181217924
+        },
+        "sentences": {
+          "premise": [
+            -0.00013552723839893588,
+            -1.6919591871555895e-05,
+            -0.00011979235387116205,
+            0.0015023222949821502
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_162",
+    "label": "entailment",
+    "pillar": "funding_global_action",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "EqualAid Belgium asbl, a Brussels-based international development NGO, facilitated a structured civil society dialogue in 2021 to support the European Parliament's deliberations on endorsing GAP III.",
+      "The organisation convened four thematic hearings attended by 68 MEPs and 40 women's rights organisations from EU partner countries, producing 22 consolidated civil society recommendations on GAP III implementation priorities.",
+      "EqualAid published a policy brief comparing GAP III commitments with GAP II and identifying six areas requiring stronger oversight.",
+      "The European Parliament adopted a resolution endorsing GAP III in March 2021, incorporating 14 of the 22 civil society recommendations.",
+      "EqualAid subsequently monitored and reported annually on Parliament's follow-up to the resolution."
+    ],
+    "hypothesis_sents": [
+      "The European Parliament and the Council must endorse the EU Gender Action Plan III and cooperate with the Commission in its full implementation."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.1824309378862381,
+        "fields": {
+          "premise": 11.817569062113762,
+          "hypothesis": 11.817569062113762
+        },
+        "sentences": {
+          "premise": [
+            0.009410396218299866,
+            0.22571201622486115,
+            0.07082296907901764,
+            0.1702144891023636,
+            -0.04672674834728241
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.10016051679849625,
+        "fields": {
+          "premise": 3.453227125108242,
+          "hypothesis": 3.806934915482998
+        },
+        "sentences": {
+          "premise": [
+            0.05842260271310806,
+            0.6027097925543785,
+            0.526392363011837,
+            2.4986124858260155,
+            0.11654455214738846
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.009300658479332924,
+        "fields": {
+          "premise": 3.6065099742263556,
+          "hypothesis": 7.771648934110999
+        },
+        "sentences": {
+          "premise": [
+            0.0006335610523819923,
+            -0.0012905653566122055,
+            0.014789247885346413,
+            0.5715548899024725,
+            0.006781807169318199
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_006",
+    "label": "entailment",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "The Câmara Municipal de Coimbra, Portugal, established a Multi-Agency Safeguarding Hub in 2022, bringing together the municipal police, social services, health authority, public prosecution, and the local women's shelter in a co-located coordination unit.",
+      "The Hub operated a shared case management system under a data-sharing protocol approved by the Portuguese Data Protection Authority.",
+      "In its first year, the Hub processed 312 domestic violence cases, of which 94% received a coordinated multi-agency response within 48 hours.",
+      "Victim satisfaction surveys completed by 180 survivors rated the coordination as helpful or very helpful in 86% of cases.",
+      "The model was endorsed by the Portuguese Commission for Citizenship and Gender Equality as a national replication framework."
+    ],
+    "hypothesis_sents": [
+      "States parties must ensure adequate cooperation mechanisms among all relevant authorities to protect and support victims of violence, prioritising their safety and human rights."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -3.128163257315464e-07,
+        "fields": {
+          "premise": 11.999999687183674,
+          "hypothesis": 11.999999687183674
+        },
+        "sentences": {
+          "premise": [
+            2.0264622548893385e-06,
+            -3.128163257315464e-07,
+            0.0,
+            2.3840732410462806e-07,
+            0.0
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.010629544034600258,
+        "fields": {
+          "premise": 2.1341048385947943,
+          "hypothesis": 9.596563449129462
+        },
+        "sentences": {
+          "premise": [
+            -0.0038663302548229694,
+            -0.0002021854743361473,
+            0.009846363216638565,
+            -0.009350975276902318,
+            0.005709435790777206
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0003886086633428931,
+        "fields": {
+          "premise": 0.23401802650187165,
+          "hypothesis": 2.867155327112414
+        },
+        "sentences": {
+          "premise": [
+            -1.5969621017575264e-05,
+            -2.811738522723317e-05,
+            -0.00025181498494930565,
+            -0.0002040216641034931,
+            -0.00018840597476810217
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_058",
+    "label": "neutral",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "AnasaziRomania asbl, a Bucharest-based cross-border victim support NGO operating across Romania, Moldova, and Ukraine, established a transnational information-sharing protocol in 2022 modelled on the mutual legal assistance principles of the Istanbul Convention.",
+      "Under the protocol, when a victim relocated across a border, the sending country organisation notified the receiving counterpart within 24 hours, transmitting anonymised risk assessments and referral documentation.",
+      "Where intelligence suggested imminent risk of further violence, information was transmitted proactively without a prior request.",
+      "In 2023, 47 cross-border referrals were completed, with 38 resulting in the receiving organisation establishing protective contact within 48 hours.",
+      "The protocol was formally recognised by the Romanian Ministry of Justice as a model for inter-state victim protection coordination."
+    ],
+    "hypothesis_sents": [
+      "The Horizon Europe programme must support gender studies, women's access to research funding, and the integration of a gender perspective in research content."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0021867838222533464,
+        "fields": {
+          "premise": -0.0018670491990633309,
+          "hypothesis": 7.923163882223889
+        },
+        "sentences": {
+          "premise": [
+            -0.0020421227090992033,
+            -0.0019653665513033047,
+            -0.00199504460033495,
+            -0.001961909656529315,
+            -0.0016154010663740337
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.00038169484469108284,
+        "fields": {
+          "premise": 2.4944832457986195,
+          "hypothesis": 0.082663214096101
+        },
+        "sentences": {
+          "premise": [
+            -0.00023965620493981987,
+            0.0011312633578199893,
+            0.006360678264172748,
+            0.0004259111301507801,
+            0.0015515830891672522
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.000205566844670102,
+        "fields": {
+          "premise": 1.6751427150156815,
+          "hypothesis": 2.228512475528987
+        },
+        "sentences": {
+          "premise": [
+            0.037843609490664676,
+            -0.0001792676303011831,
+            -0.00019059197802562267,
+            -0.00018951914535136893,
+            -4.290963988751173e-05
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_146",
+    "label": "contradiction",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "FinPolska S.A., a Warsaw-based financial services group, expanded its international supply chain ethics programme in 2022 but explicitly excluded health and cultural practices — including FGM — from its scope, limiting the focus to labour rights and environmental standards.",
+      "No FGM awareness training was delivered and no legal literacy support was provided to women and girls in partner countries.",
+      "Partner organisations were not required to certify FGM-free practices.",
+      "Zero FGM prevention cases were reported to local authorities, and no helpline for affected women or girls was established."
+    ],
+    "hypothesis_sents": [
+      "States parties must criminalise all forms of female genital mutilation, including excision and infibulation, and all acts of inciting or compelling a woman or girl to undergo such procedures."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.23868519067764282,
+        "fields": {
+          "premise": 5.982068955898285,
+          "hypothesis": 11.761314809322357
+        },
+        "sentences": {
+          "premise": [
+            0.8774532675743103,
+            -0.1663065254688263,
+            0.17441463470458984,
+            0.21273675560951233
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.043240685015916824,
+        "fields": {
+          "premise": 0.04502227529883385,
+          "hypothesis": 6.788355212658644
+        },
+        "sentences": {
+          "premise": [
+            0.34383774921298027,
+            -0.04101168271154165,
+            -0.009471774101257324,
+            0.09970575198531151
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -5.504604339599609,
+        "fields": {
+          "premise": -5.145132273435593,
+          "hypothesis": -5.497395548969507
+        },
+        "sentences": {
+          "premise": [
+            -1.9744069576263428,
+            -4.367280125617981,
+            2.495741844177246,
+            0.7473926544189453
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_080",
+    "label": "neutral",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "FarmaGroup S.p.A., a Milan-listed pharmaceutical manufacturer, launched a board renewal programme in 2022 to comply with the Women on Boards Directive.",
+      "Following a rigorous external search process conducted by a gender-aware executive search firm, three new female non-executive directors were appointed between March 2022 and June 2023.",
+      "The appointments raised female non-executive board membership from 25% to 44%, exceeding the 40% threshold two years ahead of the June 2026 statutory deadline.",
+      "The nomination committee revised its candidate assessment criteria to include explicit references to diversity objectives.",
+      "FarmaGroup published its board gender composition data and appointment methodology in its 2023 annual corporate governance report."
+    ],
+    "hypothesis_sents": [
+      "EU funding must support the elimination of harmful practices such as female genital mutilation and child marriage while ensuring access to sexual and reproductive health services."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -1.8624639324116288e-06,
+        "fields": {
+          "premise": 0.00013040147973697458,
+          "hypothesis": 2.8645468207025715
+        },
+        "sentences": {
+          "premise": [
+            1.7880549876281293e-06,
+            1.4304439446277684e-06,
+            5.721776005884749e-06,
+            2.0264621980459196e-06,
+            1.3350810377232847e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0017119476106017828,
+        "fields": {
+          "premise": 1.6853012016508728,
+          "hypothesis": 7.000512974569574
+        },
+        "sentences": {
+          "premise": [
+            0.0035738677252084017,
+            -0.001669198289164342,
+            -0.0016854099885676987,
+            -0.0016352252423530445,
+            -0.0014112819044385105
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -3.6789137084269896e-05,
+        "fields": {
+          "premise": 1.4151664245546272,
+          "hypothesis": 5.511474059861939
+        },
+        "sentences": {
+          "premise": [
+            3.993323116446845e-05,
+            -3.373463641764829e-05,
+            -2.5151972295134328e-05,
+            -3.3973043855439755e-05,
+            0.0008824116339383181
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_142",
+    "label": "entailment",
+    "pillar": "mainstreaming_intersectionality",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Rheinkapital AG, a Frankfurt-based asset management firm, integrated a gender mainstreaming methodology into all five of its EU-co-funded investment programmes in 2022.",
+      "Each programme underwent a gender impact assessment prior to disbursement conducted by an external equality specialist.",
+      "The firm appointed gender equality coordinators in each of its three investment divisions and introduced mandatory gender-disaggregated reporting for all portfolio companies receiving EU structural funds.",
+      "Procurement contracts above €50,000 were subject to a gender-responsive clause requiring suppliers to demonstrate active equal-opportunity policies.",
+      "By the end of the financial year, 100% of EU-funded programmes had been reviewed and adjusted under the framework, and gender-disaggregated outcome data was published in Rheinkapital's annual sustainability report."
+    ],
+    "hypothesis_sents": [
+      "All EU budget programmes must be implemented taking into account the principle of gender equality through an appropriate gender mainstreaming methodology."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": 0.0,
+        "fields": {
+          "premise": 12.0,
+          "hypothesis": 12.0
+        },
+        "sentences": {
+          "premise": [
+            3.128163257315464e-07,
+            0.0,
+            0.0,
+            1.9361264946837764e-07,
+            3.128163257315464e-07
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -3.583550642360933e-05,
+        "fields": {
+          "premise": 1.2957261073570407,
+          "hypothesis": 0.6856443750839389
+        },
+        "sentences": {
+          "premise": [
+            0.009439258759812219,
+            7.009175533312373e-05,
+            3.874118920066394e-05,
+            6.806529199820943e-05,
+            6.150909393909387e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -5.6696149840718135e-05,
+        "fields": {
+          "premise": 1.9696857211856695,
+          "hypothesis": 0.20241102853105986
+        },
+        "sentences": {
+          "premise": [
+            0.0007638920542376582,
+            -3.456905687926337e-06,
+            3.218498022761196e-06,
+            7.294530587387271e-05,
+            0.000386128176614875
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_106",
+    "label": "contradiction",
+    "pillar": "equal_economy",
+    "n_premise_sents": 3,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "Emerald Hospitality Group Ltd, a Dublin-based hotel and catering company, launched a Women's Financial Inclusion Initiative in 2022 but encountered significant resistance from local customary authorities and the cooperative bank withdrew from the programme after three months.",
+      "Only 6 of the targeted 140 women succeeded in formally registering land titles, and only 12 women obtained micro-credit.",
+      "Average annual income among participating women did not change significantly compared to a matched control group, and no reform of discriminatory property or inheritance regulations was achieved."
+    ],
+    "hypothesis_sents": [
+      "Legal frameworks must be reformed to eliminate discriminatory regulations on property ownership, access to bank credit, and inheritance rights that disadvantage women."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.025707347318530083,
+        "fields": {
+          "premise": 7.943395989015698,
+          "hypothesis": 11.97429265268147
+        },
+        "sentences": {
+          "premise": [
+            -0.02566817410843214,
+            0.06614810414612293,
+            1.6890629697591066
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0032534082420170307,
+        "fields": {
+          "premise": 0.23667833907529712,
+          "hypothesis": 0.3103674571029842
+        },
+        "sentences": {
+          "premise": [
+            -0.0032335460255126236,
+            -0.002685363171622157,
+            0.07788038207218051
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.1007891595363617,
+        "fields": {
+          "premise": 0.31912487745285034,
+          "hypothesis": 0.8881538808345795
+        },
+        "sentences": {
+          "premise": [
+            -0.09204777330160141,
+            0.4754883348941803,
+            2.4800118505954742
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_025",
+    "label": "entailment",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "NordMedia AB, a Stockholm-listed digital publishing company, submitted documentation to Sweden's Companies Registration Office in December 2022 demonstrating that women held 34% of its non-executive director positions as of 27 December 2022, thereby meeting the 30% threshold required for suspension eligibility under the Women on Boards Directive.",
+      "The submission included a verified board composition registry, a gender balance governance report, and an external auditor's declaration confirming accuracy.",
+      "NordMedia also provided evidence of an internal nominee pipeline showing 38% female candidates for future board appointments and committed to maintaining representation above 30% through a voluntary annual review.",
+      "The Registration Office accepted the suspension documentation in February 2023."
+    ],
+    "hypothesis_sents": [
+      "A Member State may suspend the gender balance obligation under this Directive only if the underrepresented sex already holds at least 30% of non-executive director positions."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -2.4391956685576588e-05,
+        "fields": {
+          "premise": 11.999975608043314,
+          "hypothesis": 2.3797885638996377
+        },
+        "sentences": {
+          "premise": [
+            0.9202106458469643,
+            0.00034455180139048025,
+            0.00015054322284413502,
+            3.5999506508233026e-05
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0013908311957493424,
+        "fields": {
+          "premise": 5.7599025800591335,
+          "hypothesis": 0.08955771324690431
+        },
+        "sentences": {
+          "premise": [
+            -0.0010594182822387666,
+            -0.001229842848260887,
+            -0.0007560724043287337,
+            0.0005413738545030355
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0005984273157082498,
+        "fields": {
+          "premise": 6.959534171561245,
+          "hypothesis": 0.08380399231100455
+        },
+        "sentences": {
+          "premise": [
+            0.0004255700041539967,
+            -0.0003761756233870983,
+            -0.0005635454363073222,
+            0.00029230944346636534
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_109",
+    "label": "contradiction",
+    "pillar": "funding_global_action",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "The French Ministry of Europe and Foreign Affairs participated in the EU's GAP III framework from 2022 to 2024 but did not submit annual monitoring contributions to the EU reporting system for 2022 or 2023.",
+      "No mid-term evaluation of France's GAP III contribution was commissioned.",
+      "Gender-tagged expenditure data was collected internally but not published.",
+      "Bilateral gender equality activities were reported only in an aggregated end-of-term narrative without quantitative progress indicators against GAP III thematic priorities."
+    ],
+    "hypothesis_sents": [
+      "The European Commission must publish annual progress reports on GAP III implementation and conduct a mid-term and final evaluation of its impact on gender equality."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.3976675570011139,
+        "fields": {
+          "premise": 5.417835563421249,
+          "hypothesis": 11.602332442998886
+        },
+        "sentences": {
+          "premise": [
+            -0.3976351784003782,
+            0.6767723262310028,
+            -0.12714222073554993,
+            -0.03907698392868042
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.0009480224689468741,
+        "fields": {
+          "premise": 0.22108227445278317,
+          "hypothesis": 8.03760330809746
+        },
+        "sentences": {
+          "premise": [
+            -0.0009382925627505756,
+            0.06936860515270382,
+            0.003708757576532662,
+            -0.0005467855662573129
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -1.0185260772705078,
+        "fields": {
+          "premise": -0.8104320615530014,
+          "hypothesis": -1.0149368168786168
+        },
+        "sentences": {
+          "premise": [
+            -1.01847712936069,
+            1.1240475177764893,
+            -0.8035764694213867,
+            -0.6266918480396271
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_151",
+    "label": "neutral",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 4,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "NordMedia AB, a Stockholm-listed digital publishing company, submitted documentation to Sweden's Companies Registration Office in December 2022 demonstrating that women held 34% of its non-executive director positions as of 27 December 2022, thereby meeting the 30% threshold required for suspension eligibility under the Women on Boards Directive.",
+      "The submission included a verified board composition registry, a gender balance governance report, and an external auditor's declaration confirming accuracy.",
+      "NordMedia also provided evidence of an internal nominee pipeline showing 38% female candidates for future board appointments and committed to maintaining representation above 30% through a voluntary annual review.",
+      "The Registration Office accepted the suspension documentation in February 2023."
+    ],
+    "hypothesis_sents": [
+      "States parties must recognise, encourage, and support relevant NGOs and civil society organisations working to combat violence against women at all levels."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.0002969703928101808,
+        "fields": {
+          "premise": 7.709910278208554e-05,
+          "hypothesis": 0.18932976803625934
+        },
+        "sentences": {
+          "premise": [
+            -0.00019843375775963068,
+            -0.00021893678786000237,
+            -0.0002605388654046692,
+            -0.0001223928265972063
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.10027427226305008,
+        "fields": {
+          "premise": 1.8400115296244621,
+          "hypothesis": 3.3731034323573112
+        },
+        "sentences": {
+          "premise": [
+            -0.10011316470627207,
+            -0.09893938980530947,
+            0.725723497569561,
+            -0.09264528378844261
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0025056246668100357,
+        "fields": {
+          "premise": 1.2807898875325918,
+          "hypothesis": 4.0381871815770864
+        },
+        "sentences": {
+          "premise": [
+            0.01190219633281231,
+            -0.001551884168293327,
+            -0.000549752963706851,
+            -0.0024411802805843763
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_155",
+    "label": "entailment",
+    "pillar": "leadership_participation",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "MediaPro România S.A., a Bucharest-based broadcasting conglomerate, adopted a formal Gender Equality in Leadership Policy in March 2022.",
+      "The policy established mandatory gender balance targets for all editorial boards, production committees, and senior editorial teams, setting a minimum representation floor of 40% for either sex.",
+      "A cross-departmental steering committee reviewed appointment decisions quarterly.",
+      "By December 2023, women held 44% of editorial board seats and 38% of programme director positions, up from 29% and 22% respectively in 2020.",
+      "The company also launched a mentorship programme pairing 30 junior female journalists with senior editors, with 12 participants promoted within 18 months of completing the programme."
+    ],
+    "hypothesis_sents": [
+      "Gender equality policies are vital to economic growth, and organisations must promote the equal participation of women and men in decision-making at all levels."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.00021891399228479713,
+        "fields": {
+          "premise": 11.999781086007715,
+          "hypothesis": 0.3599880774418125
+        },
+        "sentences": {
+          "premise": [
+            0.0002150929212803021,
+            -0.00021311780756150256,
+            -0.0001851049455581233,
+            -0.00021860117595906559,
+            0.00433997054642532
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.007172351237386465,
+        "fields": {
+          "premise": 1.437624687794596,
+          "hypothesis": 0.8087045499123633
+        },
+        "sentences": {
+          "premise": [
+            -0.005201370222494006,
+            0.006688704248517752,
+            -0.0039175162091851234,
+            0.008047071751207113,
+            0.0026192734949290752
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -0.0002084277366520837,
+        "fields": {
+          "premise": 0.5848069288040278,
+          "hypothesis": 4.86038679855119
+        },
+        "sentences": {
+          "premise": [
+            0.0018275139591423795,
+            0.0002098516415571794,
+            1.9068917026743293e-05,
+            -0.0001114407496061176,
+            2.5505913072265685e-05
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  },
+  {
+    "id": "ge_nli_033",
+    "label": "neutral",
+    "pillar": "violence_stereotypes",
+    "n_premise_sents": 5,
+    "n_hypothesis_sents": 1,
+    "premise_sents": [
+      "MadridHoteles S.A., a hospitality group operating 14 hotels across Madrid and Seville, Spain, adopted a Zero Tolerance Against Violence policy in 2022.",
+      "All 1,200 employees completed a four-hour awareness programme on recognising and responding to violence, harassment, and coercion in both public and private contexts.",
+      "The company installed discreet emergency alert systems in all 14 hotel lobbies and trained 340 front-of-house staff to activate confidential guest protection procedures.",
+      "In 2023, 16 incidents involving potential victims of domestic violence were identified and managed, with all 16 individuals connected to police or support services.",
+      "Employee satisfaction with workplace safety rose from 71% to 89% in the annual survey."
+    ],
+    "hypothesis_sents": [
+      "Member States must strive to at least halve the gender employment gap compared to 2019 levels by 2030, as required by the European Pillar of Social Rights Action Plan."
+    ],
+    "models": {
+      "base": {
+        "full_logprob": -0.00016706773021724075,
+        "fields": {
+          "premise": -0.00010870273035834543,
+          "hypothesis": 6.093048397815437
+        },
+        "sentences": {
+          "premise": [
+            -2.1691390429623425e-05,
+            0.000567156370379962,
+            -9.23718253034167e-05,
+            1.7280864994972944e-05,
+            0.00033866318699438125
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-legends": {
+        "full_logprob": -0.00018161057960242033,
+        "fields": {
+          "premise": 2.6018715548561886,
+          "hypothesis": 2.5879665064858273
+        },
+        "sentences": {
+          "premise": [
+            -0.00013909966583014466,
+            0.012335459818132222,
+            0.0074342378647997975,
+            0.00025263475254178047,
+            0.005762118496932089
+          ],
+          "hypothesis": []
+        }
+      },
+      "tuned-regulation": {
+        "full_logprob": -1.981667537620524e-06,
+        "fields": {
+          "premise": 0.2551886590204049,
+          "hypothesis": 0.10039003957126624
+        },
+        "sentences": {
+          "premise": [
+            2.3840743779146578e-07,
+            0.0,
+            1.192036734209978e-06,
+            -1.0728329016274074e-06,
+            -3.5761092931352323e-07
+          ],
+          "hypothesis": []
+        }
+      }
+    }
+  }
+]
